@@ -1,10 +1,12 @@
 #!MC 1410
-$!VarSet |LFDSFN1| = '"_buildo.Modflow.GWF.tecplot.dat"'
-$!VarSet |LFDSVL1| = '"X" "Y" "Z" "GWF Layer" "GWF Zone" "GWF Cell Top" "GWF Cell Bottom" "GWF Kh" "GWF Kv" "GWF Ss" "GWF Sy" "GWF Alpha" "GWF Beta" "GWF Sr" "GWF Brooks" "GWF Initial head"'
-$!VarSet |LFDSFN2| = '"_buildo.Modflow.GWF_CELLS.tecplot.dat" "_buildo.Modflow.GWF_RCH.tecplot.dat"'
-$!VarSet |LFDSVL2| = '"X" "Y" "Z" "RCH"'
-$!VarSet |LFDSFN3| = '"_buildo.Modflow.GWF_DRN.tecplot.dat"'
-$!VarSet |LFDSVL3| = '"X" "Y" "Z" "RCH" "DRN"'
+$!VarSet |LFDSFN1| = '"_buildo.Modflow.GWF_CELLS.tecplot.dat"'
+$!VarSet |LFDSVL1| = '"X" "Y" "Z"'
+$!VarSet |LFDSFN2| = '"_buildo.Modflow.GWF.tecplot.dat"'
+$!VarSet |LFDSVL2| = '"X" "Y" "Z" "GWF Layer" "GWF Zone" "GWF Cell Top" "GWF Cell Bottom" "GWF Kh" "GWF Kv" "GWF Ss" "GWF Sy" "GWF Alpha" "GWF Beta" "GWF Sr" "GWF Brooks" "GWF Initial head"'
+$!VarSet |LFDSFN3| = '"_buildo.Modflow.SWF.tecplot.dat"'
+$!VarSet |LFDSVL3| = '"X" "Y" "Z" "SWF Zone" "SWF zCell" "SWF SWF-GWF connection length" "SWF Initial Depth" "SWF Cell area"'
+$!VarSet |LFDSFN4| = '"_buildo.Modflow.SWF_CELLS.tecplot.dat" "_buildo.Modflow.SWF_RCH.tecplot.dat" "_buildo.Modflow.SWF_SWBC.tecplot.dat"'
+$!VarSet |LFDSVL4| = '"X" "Y" "Z" "RCH" "SWBC"'
 $!SetStyleBase Factory
 $!CreateColorMap 
   Name = 'Sequential - Viridis'
@@ -220,45 +222,6 @@ $!Page
       }
     }
 ### Frame Number 1 ###
-$!FrameLayout 
-  ShowHeader = No
-  HeaderColor = Green
-  XYPos
-    {
-    X = -1.3515
-    Y = 0.25
-    }
-  Width = 11.351
-  Height = 8
-$!ThreeDAxis 
-  AspectRatioLimit = 25
-  BoxAspectRatioLimit = 25
-$!FrameName  = '--------------------------------------------'
-$!GlobalTime 
-  SolutionTime = 0
-$!SketchAxis 
-  DepXToYRatio = 1
-$!SketchAxis 
-  XDetail
-    {
-    RangeMin = 0
-    RangeMax = 1.4201626418988651
-    GRSpacing = 0.2
-    }
-$!SketchAxis 
-  YDetail
-    {
-    RangeMin = 0
-    RangeMax = 1.0009075090468611
-    GRSpacing = 0.2
-    }
-$!Linking 
-  BetweenFrames
-    {
-    LinkFrameSizeAndPosition = Yes
-    }
-### Frame Number 2 ###
-$!CreateNewFrame 
 $!ReadDataSet  '|LFDSFN1|'
   InitialPlotType = Cartesian3D
   IncludeText = No
@@ -272,13 +235,630 @@ $!RemoveVar |LFDSFN1|
 $!FrameLayout 
   ShowHeader = No
   IsTransparent = Yes
+  HeaderColor = Cyan
+  XYPos
+    {
+    X = -1.3268
+    Y = 0.25
+    }
+  Width = 11.327
+  Height = 8
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = Cartesian3D
+$!FrameName  = 'GWF Cells'
+$!GlobalTime 
+  SolutionTime = 0
+$!ActiveFieldMaps  =  [1]
+$!GlobalRGB 
+  RangeMin = 0
+  RangeMax = 1
+$!GlobalContour  1
+  ColorMapName = 'Sequential - Viridis'
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!GlobalContour  2
+  ColorMapName = 'Sequential - Viridis'
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!GlobalContour  3
+  ColorMapName = 'Sequential - Viridis'
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!GlobalContour  4
+  ColorMapName = 'Sequential - Viridis'
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!GlobalContour  5
+  ColorMapName = 'Sequential - Viridis'
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!GlobalContour  6
+  ColorMapName = 'Sequential - Viridis'
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!GlobalContour  7
+  ColorMapName = 'Sequential - Viridis'
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!GlobalContour  8
+  ColorMapName = 'Sequential - Viridis'
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!GlobalScatter 
+  Var = 3
+  RelativeSize = 0.1025
+  Legend
+    {
+    XYPos
+      {
+      X = 95
+      }
+    }
+  RefScatSymbol
+    {
+    Color = Red
+    FillColor = Red
+    }
+$!FieldMap  [1]
+  Mesh
+    {
+    Color = Black
+    }
+  Contour
+    {
+    ContourType = Flood
+    Color = Black
+    UseLightingEffect = Yes
+    }
+  Vector
+    {
+    Color = Black
+    }
+  Scatter
+    {
+    SymbolShape
+      {
+      GeomShape = Sphere
+      }
+    Color = Black
+    FrameSize = 0.5
+    }
+  Shade
+    {
+    Color = Custom2
+    }
+  EdgeLayer
+    {
+    Show = No
+    Color = Black
+    LineThickness = 0.1
+    }
+  Points
+    {
+    PointsToPlot = SurfaceNodes
+    }
+  Surfaces
+    {
+    SurfacesToPlot = None
+    IRange
+      {
+      Max = 1
+      }
+    }
+  VolumeMode
+    {
+    VolumeObjectsToPlot
+      {
+      ShowIsosurfaces = No
+      ShowSlices = No
+      ShowStreamtraces = No
+      }
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!ThreeDAxis 
+  XDetail
+    {
+    VarNum = 1
+    }
+  YDetail
+    {
+    VarNum = 2
+    }
+  ZDetail
+    {
+    VarNum = 3
+    }
+$!View Fit
+$!ThreeDAxis 
+  AxisMode = XYZDependent
+  XYDepXToYRatio = 1
+  DepXToYRatio = 1
+  DepXToZRatio = 1
+$!ThreeDAxis 
+  XDetail
+    {
+    ShowAxis = No
+    RangeMin = -0.82641296386499996
+    RangeMax = 17.354672241164998
+    GRSpacing = 5
+    AxisLine
+      {
+      Edge = 2
+      }
+    }
+$!ThreeDAxis 
+  YDetail
+    {
+    ShowAxis = No
+    RangeMin = -4.0005001068100006
+    RangeMax = 84.010502243009995
+    GRSpacing = 20
+    AxisLine
+      {
+      Edge = 3
+      }
+    }
+$!ThreeDAxis 
+  ZDetail
+    {
+    ShowAxis = No
+    RangeMin = -16.75
+    RangeMax = -0.25
+    GRSpacing = 5
+    AxisLine
+      {
+      Edge = 3
+      }
+    }
+$!IsoSurfaceAttributes  1
+  IsoSurfaceSelection = OneSpecificValue
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  2
+  DefinitionContourGroup = 2
+  IsoSurfaceSelection = OneSpecificValue
+  Contour
+    {
+    LineContourGroup = 2
+    FloodColoring = Group2
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  3
+  DefinitionContourGroup = 3
+  IsoSurfaceSelection = OneSpecificValue
+  Contour
+    {
+    LineContourGroup = 3
+    FloodColoring = Group3
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  4
+  DefinitionContourGroup = 4
+  IsoSurfaceSelection = OneSpecificValue
+  Contour
+    {
+    LineContourGroup = 4
+    FloodColoring = Group4
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  5
+  DefinitionContourGroup = 5
+  IsoSurfaceSelection = OneSpecificValue
+  Contour
+    {
+    LineContourGroup = 5
+    FloodColoring = Group5
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  6
+  DefinitionContourGroup = 6
+  IsoSurfaceSelection = OneSpecificValue
+  Contour
+    {
+    LineContourGroup = 6
+    FloodColoring = Group6
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  7
+  DefinitionContourGroup = 7
+  IsoSurfaceSelection = OneSpecificValue
+  Contour
+    {
+    LineContourGroup = 7
+    FloodColoring = Group7
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  8
+  DefinitionContourGroup = 8
+  IsoSurfaceSelection = OneSpecificValue
+  Contour
+    {
+    LineContourGroup = 8
+    FloodColoring = Group8
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!SliceAttributes  1
+  PrimaryPosition
+    {
+    X = 0
+    Y = 0
+    Z = 0
+    I = 1
+    J = 1
+    K = 1
+    }
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+  SliceConstraint
+    {
+    Include = No
+    Origin
+      {
+      X = 0
+      Y = 0
+      Z = 0
+      }
+    BoxDimension
+      {
+      X = 0
+      Y = 0
+      Z = 0
+      }
+    }
+$!SliceAttributes  2
+  SliceSurface = YPlanes
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+$!SliceAttributes  3
+  SliceSurface = ZPlanes
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+$!SliceAttributes  4
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+$!SliceAttributes  5
+  SliceSurface = YPlanes
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+$!SliceAttributes  6
+  SliceSurface = ZPlanes
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+$!SliceAttributes  7
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+$!SliceAttributes  8
+  SliceSurface = YPlanes
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+$!StreamAttributes 
+  StreamTiming
+    {
+    MarkSize = 1
+    MarkSymbol
+      {
+      GeomShape = Sphere
+      }
+    }
+  RodRibbon
+    {
+    Effects
+      {
+      LightingEffect = Gouraud
+      }
+    }
+  MaxSteps = 10000
+$!GlobalThreeD 
+  AxisScaleFact
+    {
+    X = 1
+    Y = 1
+    Z = 1
+    }
+  RotateOrigin
+    {
+    X = 8.264129800500001
+    Y = 40.0049997515
+    Z = -8.086397079999999
+    }
+  LightSource
+    {
+    XYZDirection
+      {
+      X = -0.2
+      Y = -0.2
+      Z = 0.9591663046625438
+      }
+    Intensity = 75
+    BackgroundLight = 25
+    IncludeSpecular = Yes
+    SpecularIntensity = 40
+    SpecularShininess = 60
+    }
+  LineLiftFraction = 0.2
+  SymbolLiftFraction = 0.6
+  VectorLiftFraction = 0.7
+  NearPlaneFraction = 0.1
+$!ThreeDView 
+  PSIAngle = 56.6522
+  ThetaAngle = -149.075
+  AlphaAngle = -0.0755064
+  ViewerPosition
+    {
+    X = 129.2642092115391
+    Y = 263.0338507061699
+    Z = 158.3810404497073
+    }
+  ViewWidth = 107.413
+$!FieldLayers 
+  ShowMesh = No
+  ShowScatter = Yes
+  ShowShade = Yes
+  ShowEdge = No
+$!StreamtraceLayers 
+  Show = No
+$!Linking 
+  BetweenFrames
+    {
+    LinkFrameSizeAndPosition = Yes
+    Link3DView = Yes
+    }
+### Frame Number 2 ###
+$!CreateNewFrame 
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Green
+  XYPos
+    {
+    X = -1.3268
+    Y = 0.25
+    }
+  Width = 11.327
+  Height = 8
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!FrameName  = '-------------------------------------------'
+$!GlobalTime 
+  SolutionTime = 0
+$!SketchAxis 
+  DepXToYRatio = 1
+$!SketchAxis 
+  XDetail
+    {
+    RangeMin = 0
+    RangeMax = 1.4147505144032924
+    GRSpacing = 0.2
+    }
+$!SketchAxis 
+  YDetail
+    {
+    RangeMin = 0
+    RangeMax = 0.99920580164441941
+    GRSpacing = 0.2
+    }
+$!Linking 
+  BetweenFrames
+    {
+    LinkFrameSizeAndPosition = Yes
+    }
+### Frame Number 3 ###
+$!CreateNewFrame 
+$!ReadDataSet  '|LFDSFN2|'
+  InitialPlotType = Cartesian3D
+  IncludeText = No
+  IncludeGeom = No
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL2|'
+$!RemoveVar |LFDSVL2|
+$!RemoveVar |LFDSFN2|
+$!FrameLayout 
+  ShowHeader = No
   HeaderColor = Red
   XYPos
     {
-    X = -1.3515
+    X = -1.3268
     Y = 0.25
     }
-  Width = 11.351
+  Width = 11.327
   Height = 8
 $!ThreeDAxis 
   AspectRatioLimit = 25
@@ -297,51 +877,47 @@ $!GlobalRGB
 $!GlobalContour  1
   Var = 4
   ColorMapName = 'Sequential - Viridis'
-  DefNumLevels = 19
+  DefNumLevels = 14
   Legend
     {
     Show = Yes
     XYPos
       {
-      X = 95
+      X = 95.798
+      Y = 53.587
       }
     }
   ColorCutoff
     {
-    RangeMin = 26
-    RangeMax = 76
+    RangeMin = 4.75
+    RangeMax = 12.25
     }
   ColorMapFilter
     {
     ContinuousColor
       {
       CMin = 1
-      CMax = 101
+      CMax = 16
       }
     }
 $!ContourLevels New
   ContourGroup = 1
   RawData
-19
+14
+2
+3
+4
 5
+6
+7
+8
+9
 10
+11
+12
+13
+14
 15
-20
-25
-30
-35
-40
-45
-50
-55
-60
-65
-70
-75
-80
-85
-90
-95
 $!GlobalContour  2
   Var = 5
   ColorMapName = 'Sequential - Viridis'
@@ -349,13 +925,10 @@ $!GlobalContour  2
   Legend
     {
     Show = Yes
-    RowSpacing = 2.2
     XYPos
       {
-      X = 92.314
-      Y = 74.245
+      X = 95
       }
-    OverlayBarGrid = No
     }
   ColorCutoff
     {
@@ -369,27 +942,14 @@ $!GlobalContour  2
       CMax = 1
       }
     }
-$!GlobalContour  2
-  ColorMapFilter
-    {
-    ColorMapOverrideActive = Yes
-    ColorMapOverride 1
-      {
-      Include = Yes
-      Color = White
-      StartLevel = 1
-      EndLevel = 4
-      }
-    }
 $!ContourLevels New
   ContourGroup = 2
   RawData
 1
-1.5
+1
 $!GlobalContour  3
   Var = 6
   ColorMapName = 'Sequential - Viridis'
-  DefNumLevels = 19
   Legend
     {
     Show = Yes
@@ -409,30 +969,25 @@ $!GlobalContour  3
 $!ContourLevels New
   ContourGroup = 3
   RawData
-19
-5
-10
 15
-20
-25
-30
-35
-40
-45
-50
-55
-60
-65
-70
-75
-80
-85
-90
-95
+-13.4080882353
+-12.5808823529
+-11.7536764705
+-10.9264705882
+-10.0992647059
+-9.2720588235
+-8.44485294115
+-7.6176470588
+-6.79044117645
+-5.9632352941
+-5.13602941175
+-4.3088235294
+-3.48161764705
+-2.6544117647
+-1.82720588235
 $!GlobalContour  4
   Var = 7
   ColorMapName = 'Sequential - Viridis'
-  DefNumLevels = 19
   Legend
     {
     Show = Yes
@@ -452,30 +1007,25 @@ $!GlobalContour  4
 $!ContourLevels New
   ContourGroup = 4
   RawData
-19
-5
-10
 15
-20
-25
-30
-35
-40
-45
-50
-55
-60
-65
-70
-75
-80
-85
-90
-95
+-15.0693933824
+-14.1387867647
+-13.2081801471
+-12.2775735294
+-11.3469669118
+-10.4163602941
+-9.48575367647
+-8.55514705882
+-7.62454044118
+-6.69393382353
+-5.76332720588
+-4.83272058824
+-3.90211397059
+-2.97150735294
+-2.0409007353
 $!GlobalContour  5
   Var = 8
   ColorMapName = 'Sequential - Viridis'
-  DefNumLevels = 1
   Legend
     {
     Show = Yes
@@ -496,11 +1046,10 @@ $!ContourLevels New
   ContourGroup = 5
   RawData
 1
-10
+9.99999974738E-006
 $!GlobalContour  6
   Var = 9
   ColorMapName = 'Sequential - Viridis'
-  DefNumLevels = 1
   Legend
     {
     Show = Yes
@@ -521,11 +1070,10 @@ $!ContourLevels New
   ContourGroup = 6
   RawData
 1
-10
+9.99999974738E-006
 $!GlobalContour  7
   Var = 10
   ColorMapName = 'Sequential - Viridis'
-  DefNumLevels = 1
   Legend
     {
     Show = Yes
@@ -546,11 +1094,10 @@ $!ContourLevels New
   ContourGroup = 7
   RawData
 1
-1
+1.19999995718E-007
 $!GlobalContour  8
   Var = 11
   ColorMapName = 'Sequential - Viridis'
-  DefNumLevels = 1
   Legend
     {
     Show = Yes
@@ -571,7 +1118,7 @@ $!ContourLevels New
   ContourGroup = 8
   RawData
 1
-1
+0.340000003576
 $!GlobalScatter 
   Legend
     {
@@ -593,7 +1140,6 @@ $!FieldMap  [1]
   Contour
     {
     ContourType = Flood
-    FloodColoring = Group2
     Color = Black
     UseLightingEffect = Yes
     }
@@ -646,38 +1192,38 @@ $!ThreeDAxis
     }
 $!View Fit
 $!ThreeDAxis 
-  AxisMode = Independent
+  AxisMode = XYZDependent
   XYDepXToYRatio = 1
-  DepXToYRatio = 0.002
-  DepXToZRatio = 0.8
+  DepXToYRatio = 1
+  DepXToZRatio = 1
 $!ThreeDAxis 
   XDetail
     {
-    RangeMin = -50
-    RangeMax = 1050
-    GRSpacing = 200
+    RangeMin = -0.82641296386499996
+    RangeMax = 17.354672241164998
+    GRSpacing = 5
     AxisLine
       {
-      Edge = 1
+      Edge = 2
       }
     }
 $!ThreeDAxis 
   YDetail
     {
-    RangeMin = -0.050000000000000003
-    RangeMax = 1.05
-    GRSpacing = 0.2
+    RangeMin = -4.0005001068100006
+    RangeMax = 84.010502243009995
+    GRSpacing = 20
     AxisLine
       {
-      Edge = 1
+      Edge = 3
       }
     }
 $!ThreeDAxis 
   ZDetail
     {
-    RangeMin = -220
-    RangeMax = 220
-    GRSpacing = 100
+    RangeMin = -16.75
+    RangeMax = -0.25
+    GRSpacing = 5
     AxisLine
       {
       Edge = 3
@@ -685,9 +1231,9 @@ $!ThreeDAxis
     }
 $!IsoSurfaceAttributes  1
   IsoSurfaceSelection = OneSpecificValue
-  Isovalue1 = 26
-  Isovalue2 = 51
-  Isovalue3 = 76
+  Isovalue1 = 4.75
+  Isovalue2 = 8.5
+  Isovalue3 = 12.25
   Effects
     {
     LightingEffect = Gouraud
@@ -791,15 +1337,15 @@ $!SliceAttributes  1
     }
   StartPosition
     {
-    X = 0.05
-    Y = 0.05
-    Z = 4.55
+    X = 0.826412963865
+    Y = 4.00050010681
+    Z = -15.25
     }
   EndPosition
     {
-    X = 0.95
-    Y = 0.95
-    Z = 95.45
+    X = 15.7018463134
+    Y = 76.0095020294
+    Z = -1.75
     }
   EdgeLayer
     {
@@ -922,14 +1468,14 @@ $!GlobalThreeD
   AxisScaleFact
     {
     X = 1
-    Y = 500
-    Z = 1.25
+    Y = 1
+    Z = 1
     }
   RotateOrigin
     {
-    X = 500
-    Y = 0.5
-    Z = 0
+    X = 8.264129800500001
+    Y = 40.0049997515
+    Z = -8.086397079999999
     }
   LightSource
     {
@@ -950,20 +1496,19 @@ $!GlobalThreeD
   VectorLiftFraction = 0.7
   NearPlaneFraction = 0.1
 $!ThreeDView 
-  PSIAngle = 72.3303
-  ThetaAngle = 37.3408
-  AlphaAngle = -1.08599
+  PSIAngle = 56.6522
+  ThetaAngle = -149.075
+  AlphaAngle = -0.0755064
   ViewerPosition
     {
-    X = -4511.776177316163
-    Y = -12.83103105494302
-    Z = 2116.204549167948
+    X = 129.2642092115391
+    Y = 263.0338507061699
+    Z = 158.3810404497073
     }
-  ViewWidth = 1701.5
+  ViewWidth = 107.413
 $!FieldLayers 
   ShowMesh = No
   ShowEdge = No
-  UseTranslucency = Yes
 $!StreamtraceLayers 
   Show = No
 $!Linking 
@@ -972,7 +1517,7 @@ $!Linking
     LinkFrameSizeAndPosition = Yes
     Link3DView = Yes
     }
-### Frame Number 3 ###
+### Frame Number 4 ###
 $!CreateNewFrame 
 $!FrameLayout 
   ShowHeader = No
@@ -980,10 +1525,10 @@ $!FrameLayout
   HeaderColor = Red
   XYPos
     {
-    X = -1.3515
+    X = -1.3268
     Y = 0.25
     }
-  Width = 11.351
+  Width = 11.327
   Height = 8
 $!ThreeDAxis 
   AspectRatioLimit = 25
@@ -1002,7 +1547,49 @@ $!GlobalRGB
 $!GlobalContour  1
   Var = 4
   ColorMapName = 'Sequential - Viridis'
-  DefNumLevels = 19
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95.798
+      Y = 53.587
+      }
+    }
+  ColorCutoff
+    {
+    RangeMin = 4.75
+    RangeMax = 12.25
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 1
+      CMax = 16
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 1
+  RawData
+14
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+$!GlobalContour  2
+  Var = 5
+  ColorMapName = 'Sequential - Viridis'
   Legend
     {
     Show = Yes
@@ -1013,88 +1600,24 @@ $!GlobalContour  1
     }
   ColorCutoff
     {
-    RangeMin = 26
-    RangeMax = 76
-    }
-  ColorMapFilter
-    {
-    ContinuousColor
-      {
-      CMin = 1
-      CMax = 101
-      }
-    }
-$!ContourLevels New
-  ContourGroup = 1
-  RawData
-19
-5
-10
-15
-20
-25
-30
-35
-40
-45
-50
-55
-60
-65
-70
-75
-80
-85
-90
-95
-$!GlobalContour  2
-  Var = 5
-  ColorMapName = 'Sequential - Viridis'
-  DefNumLevels = 1
-  Legend
-    {
-    Show = Yes
-    RowSpacing = 2.2
-    XYPos
-      {
-      X = 95.066
-      Y = 73.423
-      }
-    OverlayBarGrid = No
-    }
-  ColorCutoff
-    {
     RangeMax = 1
     }
   ColorMapFilter
     {
     ContinuousColor
       {
-      CMin = 0
+      CMin = 1
       CMax = 1
-      }
-    }
-$!GlobalContour  2
-  ColorMapFilter
-    {
-    ColorMapOverrideActive = Yes
-    ColorMapOverride 1
-      {
-      Include = Yes
-      Color = White
-      StartLevel = 1
-      EndLevel = 4
       }
     }
 $!ContourLevels New
   ContourGroup = 2
   RawData
 1
-1.5
+1
 $!GlobalContour  3
   Var = 6
   ColorMapName = 'Sequential - Viridis'
-  DefNumLevels = 19
   Legend
     {
     Show = Yes
@@ -1114,30 +1637,23 @@ $!GlobalContour  3
 $!ContourLevels New
   ContourGroup = 3
   RawData
-19
-5
-10
-15
-20
-25
-30
-35
-40
-45
-50
-55
-60
-65
-70
-75
-80
-85
-90
-95
+13
+-14
+-13
+-12
+-11
+-10
+-9
+-8
+-7
+-6
+-5
+-4
+-3
+-2
 $!GlobalContour  4
   Var = 7
   ColorMapName = 'Sequential - Viridis'
-  DefNumLevels = 19
   Legend
     {
     Show = Yes
@@ -1157,30 +1673,24 @@ $!GlobalContour  4
 $!ContourLevels New
   ContourGroup = 4
   RawData
-19
-5
-10
-15
-20
-25
-30
-35
-40
-45
-50
-55
-60
-65
-70
-75
-80
-85
-90
-95
+14
+-15
+-14
+-13
+-12
+-11
+-10
+-9
+-8
+-7
+-6
+-5
+-4
+-3
+-2
 $!GlobalContour  5
   Var = 8
   ColorMapName = 'Sequential - Viridis'
-  DefNumLevels = 1
   Legend
     {
     Show = Yes
@@ -1201,11 +1711,10 @@ $!ContourLevels New
   ContourGroup = 5
   RawData
 1
-10
+1
 $!GlobalContour  6
   Var = 9
   ColorMapName = 'Sequential - Viridis'
-  DefNumLevels = 1
   Legend
     {
     Show = Yes
@@ -1226,11 +1735,10 @@ $!ContourLevels New
   ContourGroup = 6
   RawData
 1
-10
+1
 $!GlobalContour  7
   Var = 10
   ColorMapName = 'Sequential - Viridis'
-  DefNumLevels = 1
   Legend
     {
     Show = Yes
@@ -1255,7 +1763,6 @@ $!ContourLevels New
 $!GlobalContour  8
   Var = 11
   ColorMapName = 'Sequential - Viridis'
-  DefNumLevels = 1
   Legend
     {
     Show = Yes
@@ -1278,6 +1785,8 @@ $!ContourLevels New
 1
 1
 $!GlobalScatter 
+  Var = 4
+  RelativeSize = 0.09686
   Legend
     {
     XYPos
@@ -1298,7 +1807,6 @@ $!FieldMap  [1]
   Contour
     {
     ContourType = Flood
-    FloodColoring = Group2
     Color = Black
     UseLightingEffect = Yes
     }
@@ -1351,38 +1859,41 @@ $!ThreeDAxis
     }
 $!View Fit
 $!ThreeDAxis 
-  AxisMode = Independent
+  AxisMode = XYZDependent
   XYDepXToYRatio = 1
-  DepXToYRatio = 0.002
-  DepXToZRatio = 0.8
+  DepXToYRatio = 1
+  DepXToZRatio = 1
 $!ThreeDAxis 
   XDetail
     {
-    RangeMin = -50
-    RangeMax = 1050
-    GRSpacing = 200
+    ShowAxis = No
+    RangeMin = -0.82641296386499996
+    RangeMax = 17.354672241164998
+    GRSpacing = 5
     AxisLine
       {
-      Edge = 1
+      Edge = 2
       }
     }
 $!ThreeDAxis 
   YDetail
     {
-    RangeMin = -0.050000000000000003
-    RangeMax = 1.05
-    GRSpacing = 0.2
+    ShowAxis = No
+    RangeMin = -4.0005001068100006
+    RangeMax = 84.010502243009995
+    GRSpacing = 20
     AxisLine
       {
-      Edge = 1
+      Edge = 3
       }
     }
 $!ThreeDAxis 
   ZDetail
     {
-    RangeMin = -220
-    RangeMax = 220
-    GRSpacing = 100
+    ShowAxis = No
+    RangeMin = -16.75
+    RangeMax = -0.25
+    GRSpacing = 5
     AxisLine
       {
       Edge = 3
@@ -1390,9 +1901,9 @@ $!ThreeDAxis
     }
 $!IsoSurfaceAttributes  1
   IsoSurfaceSelection = OneSpecificValue
-  Isovalue1 = 26
-  Isovalue2 = 51
-  Isovalue3 = 76
+  Isovalue1 = 4.75
+  Isovalue2 = 8.5
+  Isovalue3 = 12.25
   Effects
     {
     LightingEffect = Gouraud
@@ -1493,18 +2004,6 @@ $!SliceAttributes  1
     I = 1
     J = 1
     K = 1
-    }
-  StartPosition
-    {
-    X = 0.05
-    Y = 0.05
-    Z = 4.55
-    }
-  EndPosition
-    {
-    X = 0.95
-    Y = 0.95
-    Z = 95.45
     }
   EdgeLayer
     {
@@ -1627,14 +2126,14 @@ $!GlobalThreeD
   AxisScaleFact
     {
     X = 1
-    Y = 500
-    Z = 1.25
+    Y = 1
+    Z = 1
     }
   RotateOrigin
     {
-    X = 500
-    Y = 0.5
-    Z = 0
+    X = 8.264129800500001
+    Y = 40.0049997515
+    Z = -8.086397079999999
     }
   LightSource
     {
@@ -1655,18 +2154,17 @@ $!GlobalThreeD
   VectorLiftFraction = 0.7
   NearPlaneFraction = 0.1
 $!ThreeDView 
-  PSIAngle = 72.3303
-  ThetaAngle = 37.3408
-  AlphaAngle = -1.08599
+  PSIAngle = 56.6522
+  ThetaAngle = -149.075
+  AlphaAngle = -0.0755064
   ViewerPosition
     {
-    X = -4511.776177316163
-    Y = -12.83103105494302
-    Z = 2116.204549167948
+    X = 129.2642092115391
+    Y = 263.0338507061699
+    Z = 158.3810404497073
     }
-  ViewWidth = 1701.5
+  ViewWidth = 107.413
 $!FieldLayers 
-  ShowMesh = No
   ShowContour = Yes
   ShowShade = Yes
   ShowEdge = No
@@ -1682,8 +2180,8 @@ $!Linking
 $!AttachText 
   AnchorPos
     {
-    X = 3.79729607113692
-    Y = 96.09455292908531
+    X = 4.087373292729057
+    Y = 96.40287769784173
     }
   TextShape
     {
@@ -1698,8 +2196,8 @@ $!AttachText
 $!AttachText 
   AnchorPos
     {
-    X = 4.015062154069503
-    Y = 3.699897225077077
+    X = 3.288910044132334
+    Y = 3.186022610483064
     }
   TextShape
     {
@@ -1711,23 +2209,12 @@ $!AttachText
     }
   Anchor = HeadLeft
   Text = '&(datasetfname)'
-### Frame Number 4 ###
+### Frame Number 5 ###
 $!CreateNewFrame 
-$!ReadDataSet  '|LFDSFN2|'
-  InitialPlotType = Cartesian3D
-  IncludeText = No
-  IncludeGeom = No
-  ResetStyle = No
-  AssignStrandIDs = Yes
-  VarLoadMode = ByName
-  VarNameList = '|LFDSVL2|'
-$!RemoveVar |LFDSVL2|
-$!RemoveVar |LFDSFN2|
 $!ReadDataSet  '|LFDSFN3|'
   InitialPlotType = Cartesian3D
   IncludeText = No
   IncludeGeom = No
-  ReadDataOption = Append
   ResetStyle = No
   AssignStrandIDs = Yes
   VarLoadMode = ByName
@@ -1737,19 +2224,708 @@ $!RemoveVar |LFDSFN3|
 $!FrameLayout 
   ShowHeader = No
   IsTransparent = Yes
-  HeaderColor = Green
+  HeaderColor = Blue
   XYPos
     {
-    X = -1.3515
+    X = -1.3268
     Y = 0.25
     }
-  Width = 11.351
+  Width = 11.327
   Height = 8
 $!ThreeDAxis 
   AspectRatioLimit = 25
   BoxAspectRatioLimit = 25
 $!PlotType  = Cartesian3D
-$!FrameName  = 'GWF Cells'
+$!FrameName  = 'SWF'
+$!GlobalTime 
+  SolutionTime = 0
+$!ActiveFieldMaps  =  [1]
+$!GlobalRGB 
+  RedChannelVar = 4
+  GreenChannelVar = 4
+  BlueChannelVar = 4
+  RangeMin = 0
+  RangeMax = 1
+$!GlobalContour  1
+  Var = 4
+  ColorMapName = 'Sequential - Viridis'
+  DefNumLevels = 1
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 94.709
+      Y = 75.889
+      }
+    }
+  ColorCutoff
+    {
+    RangeMax = 1
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 1
+  RawData
+1
+1
+$!GlobalContour  2
+  Var = 5
+  ColorMapName = 'Sequential - Viridis'
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 2
+  RawData
+1
+-1
+$!GlobalContour  3
+  Var = 6
+  ColorMapName = 'Sequential - Viridis'
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 3
+  RawData
+1
+0.0010000000475
+$!GlobalContour  4
+  Var = 7
+  ColorMapName = 'Sequential - Viridis'
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 4
+  RawData
+1
+0.0001
+$!GlobalContour  5
+  Var = 8
+  ColorMapName = 'Sequential - Viridis'
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 5
+  RawData
+15
+0.821380701119
+0.821381111912
+0.821381522705
+0.821381933498
+0.82138234429
+0.821382755083
+0.821383165876
+0.821383576669
+0.821383987462
+0.821384398255
+0.821384809048
+0.821385219841
+0.821385630633
+0.821386041426
+0.821386452219
+$!GlobalContour  6
+  Var = 4
+  ColorMapName = 'Sequential - Viridis'
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 6
+  RawData
+1
+1
+$!GlobalContour  7
+  Var = 4
+  ColorMapName = 'Sequential - Viridis'
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 7
+  RawData
+1
+1
+$!GlobalContour  8
+  Var = 4
+  ColorMapName = 'Sequential - Viridis'
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 8
+  RawData
+1
+1
+$!GlobalScatter 
+  Legend
+    {
+    XYPos
+      {
+      X = 95
+      }
+    }
+  RefScatSymbol
+    {
+    Color = Red
+    FillColor = Red
+    }
+$!FieldMap  [1]
+  Mesh
+    {
+    Color = Black
+    }
+  Contour
+    {
+    ContourType = Flood
+    Color = Black
+    UseLightingEffect = Yes
+    }
+  Vector
+    {
+    Color = Black
+    }
+  Scatter
+    {
+    Color = Black
+    }
+  Shade
+    {
+    Color = Custom2
+    }
+  EdgeLayer
+    {
+    Show = Yes
+    Color = Black
+    LineThickness = 0.1
+    }
+  Points
+    {
+    PointsToPlot = SurfaceNodes
+    }
+  Surfaces
+    {
+    SurfacesToPlot = KPlanes
+    IRange
+      {
+      Max = 1
+      }
+    }
+  VolumeMode
+    {
+    VolumeObjectsToPlot
+      {
+      ShowIsosurfaces = No
+      ShowSlices = No
+      ShowStreamtraces = No
+      }
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!ThreeDAxis 
+  XDetail
+    {
+    VarNum = 1
+    }
+  YDetail
+    {
+    VarNum = 2
+    }
+  ZDetail
+    {
+    VarNum = 3
+    }
+$!View Fit
+$!ThreeDAxis 
+  AxisMode = XYZDependent
+  XYDepXToYRatio = 1
+  DepXToYRatio = 1
+  DepXToZRatio = 1
+$!ThreeDAxis 
+  XDetail
+    {
+    ShowAxis = No
+    RangeMin = -0.82641296386499996
+    RangeMax = 17.354672241164998
+    GRSpacing = 5
+    AxisLine
+      {
+      Edge = 2
+      }
+    }
+$!ThreeDAxis 
+  YDetail
+    {
+    ShowAxis = No
+    RangeMin = -4.0005001068100006
+    RangeMax = 84.010502243009995
+    GRSpacing = 20
+    AxisLine
+      {
+      Edge = 3
+      }
+    }
+$!ThreeDAxis 
+  ZDetail
+    {
+    ShowAxis = No
+    RangeMin = -16.75
+    RangeMax = -0.25
+    GRSpacing = 5
+    AxisLine
+      {
+      Edge = 3
+      }
+    }
+$!IsoSurfaceAttributes  1
+  IsoSurfaceSelection = OneSpecificValue
+  Isovalue1 = 1
+  Isovalue2 = 1
+  Isovalue3 = 1
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  2
+  DefinitionContourGroup = 2
+  IsoSurfaceSelection = OneSpecificValue
+  Contour
+    {
+    LineContourGroup = 2
+    FloodColoring = Group2
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  3
+  DefinitionContourGroup = 3
+  IsoSurfaceSelection = OneSpecificValue
+  Contour
+    {
+    LineContourGroup = 3
+    FloodColoring = Group3
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  4
+  DefinitionContourGroup = 4
+  IsoSurfaceSelection = OneSpecificValue
+  Contour
+    {
+    LineContourGroup = 4
+    FloodColoring = Group4
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  5
+  DefinitionContourGroup = 5
+  IsoSurfaceSelection = OneSpecificValue
+  Contour
+    {
+    LineContourGroup = 5
+    FloodColoring = Group5
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  6
+  DefinitionContourGroup = 6
+  IsoSurfaceSelection = OneSpecificValue
+  Contour
+    {
+    LineContourGroup = 6
+    FloodColoring = Group6
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  7
+  DefinitionContourGroup = 7
+  IsoSurfaceSelection = OneSpecificValue
+  Contour
+    {
+    LineContourGroup = 7
+    FloodColoring = Group7
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  8
+  DefinitionContourGroup = 8
+  IsoSurfaceSelection = OneSpecificValue
+  Contour
+    {
+    LineContourGroup = 8
+    FloodColoring = Group8
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!SliceAttributes  1
+  PrimaryPosition
+    {
+    X = 0
+    Y = 0
+    Z = 0
+    I = 1
+    J = 1
+    K = 1
+    }
+  StartPosition
+    {
+    X = 0.826412963865
+    Y = 4.00050010681
+    Z = -1
+    }
+  EndPosition
+    {
+    X = 15.7018463134
+    Y = 76.0095020294
+    Z = -1
+    }
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+  SliceConstraint
+    {
+    Include = No
+    Origin
+      {
+      X = 0
+      Y = 0
+      Z = 0
+      }
+    BoxDimension
+      {
+      X = 0
+      Y = 0
+      Z = 0
+      }
+    }
+$!SliceAttributes  2
+  SliceSurface = YPlanes
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+$!SliceAttributes  3
+  SliceSurface = ZPlanes
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+$!SliceAttributes  4
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+$!SliceAttributes  5
+  SliceSurface = YPlanes
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+$!SliceAttributes  6
+  SliceSurface = ZPlanes
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+$!SliceAttributes  7
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+$!SliceAttributes  8
+  SliceSurface = YPlanes
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+$!StreamAttributes 
+  StreamTiming
+    {
+    MarkSize = 1
+    MarkSymbol
+      {
+      GeomShape = Sphere
+      }
+    }
+  RodRibbon
+    {
+    Effects
+      {
+      LightingEffect = Gouraud
+      }
+    }
+  MaxSteps = 10000
+$!GlobalThreeD 
+  AxisScaleFact
+    {
+    X = 1
+    Y = 1
+    Z = 1
+    }
+  RotateOrigin
+    {
+    X = 8.264129800500001
+    Y = 40.0049997515
+    Z = -8.086397079999999
+    }
+  LightSource
+    {
+    XYZDirection
+      {
+      X = -0.2
+      Y = -0.2
+      Z = 0.9591663046625438
+      }
+    Intensity = 75
+    BackgroundLight = 25
+    IncludeSpecular = Yes
+    SpecularIntensity = 40
+    SpecularShininess = 60
+    }
+  LineLiftFraction = 0.2
+  SymbolLiftFraction = 0.6
+  VectorLiftFraction = 0.7
+  NearPlaneFraction = 0.1
+$!ThreeDView 
+  PSIAngle = 56.6522
+  ThetaAngle = -149.075
+  AlphaAngle = -0.0755064
+  ViewerPosition
+    {
+    X = 129.2642092115391
+    Y = 263.0338507061699
+    Z = 158.3810404497073
+    }
+  ViewWidth = 107.413
+$!FieldLayers 
+  ShowContour = Yes
+  ShowShade = Yes
+  ShowEdge = No
+$!StreamtraceLayers 
+  Show = No
+$!Linking 
+  BetweenFrames
+    {
+    LinkFrameSizeAndPosition = Yes
+    Link3DView = Yes
+    }
+$!AttachText 
+  AnchorPos
+    {
+    X = 4.159960860783303
+    Y = 96.4028776978417
+    }
+  TextShape
+    {
+    IsBold = No
+    }
+  Box
+    {
+    BoxType = Filled
+    }
+  Anchor = HeadLeft
+  Text = '&(datasettitle)\n&(date)'
+$!AttachText 
+  AnchorPos
+    {
+    X = 3.434085180240829
+    Y = 3.186022610483041
+    }
+  TextShape
+    {
+    IsBold = No
+    }
+  Box
+    {
+    BoxType = Filled
+    }
+  Anchor = HeadLeft
+  Text = '&(datasetfname)'
+### Frame Number 6 ###
+$!CreateNewFrame 
+$!ReadDataSet  '|LFDSFN4|'
+  InitialPlotType = Cartesian3D
+  IncludeText = No
+  IncludeGeom = No
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL4|'
+$!RemoveVar |LFDSVL4|
+$!RemoveVar |LFDSFN4|
+$!FrameLayout 
+  ShowHeader = No
+  IsTransparent = Yes
+  HeaderColor = Red
+  XYPos
+    {
+    X = -1.3268
+    Y = 0.25
+    }
+  Width = 11.327
+  Height = 8
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = Cartesian3D
+$!FrameName  = 'SWF Cells'
 $!GlobalTime 
   SolutionTime = 0
 $!ActiveFieldMaps  =  [1-3]
@@ -1901,15 +3077,19 @@ $!GlobalContour  8
       }
     }
 $!GlobalScatter 
-  Var = 4
-  RelativeSize = 0.0007738
+  Var = 3
+  RelativeSize = 0.2793
   Legend
     {
     Show = Yes
+    Box
+      {
+      BoxType = Filled
+      }
     XYPos
       {
-      X = 96.524
-      Y = 23.474
+      X = 78.995
+      Y = 75.067
       }
     }
   RefScatSymbol
@@ -1934,6 +3114,7 @@ $!FieldMap  [1]
     }
   Scatter
     {
+    Show = No
     SymbolShape
       {
       GeomShape = Sphere
@@ -1957,7 +3138,7 @@ $!FieldMap  [1]
     }
   Surfaces
     {
-    SurfacesToPlot = None
+    SurfacesToPlot = KPlanes
     IRange
       {
       Max = 1
@@ -1993,12 +3174,13 @@ $!FieldMap  [2]
     }
   Scatter
     {
+    Show = No
     SymbolShape
       {
       GeomShape = Sphere
       }
-    Color = Custom3
-    FrameSize = 1
+    Color = Custom6
+    FrameSize = 0.5
     }
   Shade
     {
@@ -2016,7 +3198,7 @@ $!FieldMap  [2]
     }
   Surfaces
     {
-    SurfacesToPlot = None
+    SurfacesToPlot = KPlanes
     IRange
       {
       Max = 1
@@ -2056,8 +3238,8 @@ $!FieldMap  [3]
       {
       GeomShape = Sphere
       }
-    Color = Custom29
-    FrameSize = 1
+    Color = Custom3
+    FrameSize = 0.5
     }
   Shade
     {
@@ -2075,7 +3257,7 @@ $!FieldMap  [3]
     }
   Surfaces
     {
-    SurfacesToPlot = None
+    SurfacesToPlot = KPlanes
     IRange
       {
       Max = 1
@@ -2109,41 +3291,41 @@ $!ThreeDAxis
     }
 $!View Fit
 $!ThreeDAxis 
-  AxisMode = Independent
+  AxisMode = XYZDependent
   XYDepXToYRatio = 1
-  DepXToYRatio = 0.002
-  DepXToZRatio = 0.8
+  DepXToYRatio = 1
+  DepXToZRatio = 1
 $!ThreeDAxis 
   XDetail
     {
     ShowAxis = No
-    RangeMin = -50
-    RangeMax = 1050
-    GRSpacing = 200
+    RangeMin = -0.82641296386499996
+    RangeMax = 17.354672241164998
+    GRSpacing = 5
     AxisLine
       {
-      Edge = 1
+      Edge = 2
       }
     }
 $!ThreeDAxis 
   YDetail
     {
     ShowAxis = No
-    RangeMin = -0.050000000000000003
-    RangeMax = 1.05
-    GRSpacing = 0.2
+    RangeMin = -4.0005001068100006
+    RangeMax = 84.010502243009995
+    GRSpacing = 20
     AxisLine
       {
-      Edge = 1
+      Edge = 3
       }
     }
 $!ThreeDAxis 
   ZDetail
     {
     ShowAxis = No
-    RangeMin = -220
-    RangeMax = 220
-    GRSpacing = 100
+    RangeMin = -16.75
+    RangeMax = -0.25
+    GRSpacing = 5
     AxisLine
       {
       Edge = 3
@@ -2370,14 +3552,14 @@ $!GlobalThreeD
   AxisScaleFact
     {
     X = 1
-    Y = 500
-    Z = 1.25
+    Y = 1
+    Z = 1
     }
   RotateOrigin
     {
-    X = 500
-    Y = 0.5
-    Z = 0
+    X = 8.264129800500001
+    Y = 40.0049997515
+    Z = -8.086397079999999
     }
   LightSource
     {
@@ -2398,16 +3580,16 @@ $!GlobalThreeD
   VectorLiftFraction = 0.7
   NearPlaneFraction = 0.1
 $!ThreeDView 
-  PSIAngle = 72.3303
-  ThetaAngle = 37.3408
-  AlphaAngle = -1.08599
+  PSIAngle = 56.6522
+  ThetaAngle = -149.075
+  AlphaAngle = -0.0755064
   ViewerPosition
     {
-    X = -4511.776177316163
-    Y = -12.83103105494302
-    Z = 2116.204549167948
+    X = 129.2642092115391
+    Y = 263.0338507061699
+    Z = 158.3810404497073
     }
-  ViewWidth = 1701.5
+  ViewWidth = 107.413
 $!FieldLayers 
   ShowMesh = No
   ShowScatter = Yes
@@ -2419,8 +3601,9 @@ $!Linking
   BetweenFrames
     {
     LinkFrameSizeAndPosition = Yes
+    LinkSolutionTime = Yes
     Link3DView = Yes
     }
 $!FrameControl ActivateByNumber
-  Frame = 3
+  Frame = 6
 $!SetStyleBase Config
