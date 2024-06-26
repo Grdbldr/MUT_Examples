@@ -1,0 +1,86 @@
+! Examples\1_VSF_Column:
+!   A modflow project of a 1D column generated from a simple 2d rectangular mesh
+build modflow usg
+
+    sms database
+    qrySMS.txt
+    sms parameter set number
+    1
+
+    gwf materials database
+    qryGWFMaterials.txt
+
+    swf materials database
+    qrySWFMaterials.txt
+
+    ! -----------------------------------Grid definition
+    generate uniform rectangles
+    1000.0, 1000   !  Mesh length in X-direction and number of rectangular elements
+    1.0, 1   !  Mesh length in Y-direction and number of rectangular elements
+    
+    
+    generate layered gwf domain
+
+        top elevation
+            elevation from xz pairs 
+                   0.0, 100.0
+                1000.0, 200.0
+            end
+        end
+    
+        new layer
+            layer name
+            Top layer
+    
+            uniform sublayering
+            50
+    
+            elevation constant
+            -200.0
+        end
+    
+    end 
+    
+    ! -----------------------------------Static properties 
+    active domain 
+    gwf
+    
+        choose all cells
+        
+        chosen cells use gwf material number
+        7
+        
+        gwf initial head
+        0.0 
+
+    ! -----------------------------------Stress periods, boundary conditions 
+    ! stress period 1
+    stress period
+        type
+        TR
+        
+        duration
+        200.0
+    end
+
+    active domain 
+    gwf
+        clear chosen cells
+        
+        choose cells by layer
+        1
+        
+        gwf drain
+        1000.0d0     ! drain conductance
+    
+        gwf recharge
+        0.4     ! recharge
+        3       ! recharge option
+                
+    ! -----------------------------------Output Control
+    generate output control file
+    3
+    1.000000e+03  
+    1.000000e+04  
+    1.000000e+05      
+end
