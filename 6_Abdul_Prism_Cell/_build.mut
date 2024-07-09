@@ -1,16 +1,16 @@
 ! This example builds a modflow project from a Grid Builder 2D triangular mesh
-modflow_usg
+build modflow usg
 
     sms database
-    ..\..\database\qrySMS.txt
+    qrySMS.txt
     sms parameter set number
     1
 
     gwf materials database
-    ..\..\database\qryGWFMaterials.txt
+    qryGWFMaterials.txt
 
     swf materials database
-    ..\..\database\qrySWFMaterials.txt
+    qrySWFMaterials.txt
 
     ! -----------------------------------Grid definition
     2d mesh from gb
@@ -121,6 +121,7 @@ modflow_usg
         choose all cells
         swf recharge
         5.56d-6
+        4
         
         ! Required later for building Modflow project
         clear chosen nodes
@@ -133,8 +134,6 @@ modflow_usg
         choose cells from gb elements
         ./gb/grid.echos.Critical depth outlet
         swf critical depth
-!         swf constant head
-!         3.0d0
         
     ! stress period 2
     stress period
@@ -150,6 +149,7 @@ modflow_usg
         choose all cells
         swf recharge
         0.0d0
+        4
         
         
         
