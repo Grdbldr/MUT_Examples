@@ -21,16 +21,16 @@ build modflow usg
     
     generate swf domain
         top elevation
-            elevation from gb file
-            ! kriged cell elevation from tecplot 
+            elevation from ascii file
+            ./TopElevation/Kriged cell top elevation for layer 1.xyz 
         end
     end
 
     generate layered gwf domain
 
         top elevation
-            elevation from gb file
-            ! kriged cell elevation from tecplot 
+            elevation from ascii file
+            ./TopElevation/Kriged cell top elevation for layer 1.xyz 
         end
     
         new layer
@@ -39,21 +39,21 @@ build modflow usg
     
             proportional sublayering
             9  ! # of sublayers then yYoung-jin's proportioning numbers.  
-            1.
-            2.
-            3.
-            4.
-            5.
-            6.
-            7.
-            8.
-            9.
+            7.147192018047142E-003  
+            1.332366374775839E-002  
+            2.333067224682175E-002  
+            4.665393473110133E-002  
+            9.330464062712872E-002  
+            0.106633602976034       
+            0.169944187157907       
+            0.236598232128888       
+            0.303063874366314                   
             
             offset base
-            -10.0  ! Young-Jin's total thickness
+            -3.0009  ! Young-Jin's total thickness
     
-            elevation from gb file
-            ! kriged cell elevation from tecplot
+            elevation from ascii file
+            ./TopElevation/Kriged cell top elevation for layer 1.xyz 
         end
     
     end 
@@ -70,7 +70,10 @@ build modflow usg
         gwf initial head
         2.78d0
         
-        ! Young-Jin's inactive zone stuff
+		clear chosen cells
+		choose cells from file
+		./IBound/GWF_Inactive_Cell_List.dat
+		flag chosen cells inactive
     
     
     active domain 
@@ -93,7 +96,10 @@ build modflow usg
         swf initial depth
         1.0d-4
 
-        ! Young-Jin's inactive zone stuff
+		clear chosen cells
+		choose cells from file
+		./IBound/SWF_Inactive_Cell_List.dat
+		flag chosen cells inactive
 
     ! -----------------------------------Stress periods, boundary conditions 
     ! stress period 1

@@ -1,0 +1,4 @@
+! This example reads a modflow project and postprocesses it
+postprocess existing modflow model
+modflow
+
