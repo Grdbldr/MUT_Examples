@@ -63,6 +63,17 @@ build modflow usg
         
         duration
         200.0
+        
+
+Deltat=1.000000e-03
+Tminat=1.000000e-05
+Tmaxat=60.0d0
+Tadjat=1.100000e+00
+Tcutat=2.000000e+00 
+
+        tmaxat 
+        2.500000e-01
+
     end
 
     active domain 

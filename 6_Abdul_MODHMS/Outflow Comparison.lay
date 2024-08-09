@@ -1,7 +1,7 @@
 #!MC 1410
-$!VarSet |LFDSFN1| = '"data\oh.dat"'
+$!VarSet |LFDSFN1| = '"..\..\..\SandBox\6_Abdul_MODHMS\data\oh.dat"'
 $!VarSet |LFDSVL1| = '"Time(seconds)" "Discharge (m<sup>3</sup>/second)"'
-$!VarSet |LFDSFN2| = '"_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSFN2| = '"..\..\..\SandBox\6_Abdul_MODHMS\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL2| = '"Time(seconds)" "Discharge (m<sup>3</sup>/second)" "TOTAL TIME(SECONDS)" "OUT_SWBC"'
 $!SetStyleBase Factory
 $!GlobalPaper 
@@ -279,6 +279,18 @@ $!XYLineAxis
     }
 $!LinePlotLayers 
   ShowSymbols = Yes
+$!AttachText 
+  AnchorPos
+    {
+    X = 0.5128558949255485
+    Y = 0.6166495375128367
+    }
+  TextShape
+    {
+    IsBold = No
+    Height = 7
+    }
+  Text = '&(datasetfname)'
 $!FrameControl ActivateByNumber
   Frame = 1
 $!SetStyleBase Config

@@ -23,8 +23,8 @@ build modflow usg
 
         top elevation
             elevation from xz pairs 
-                   0.0, 100.0
-                1000.0, 200.0
+                   0.0, 0.0
+                1000.0, 100.0
             end
         end
     
@@ -60,7 +60,17 @@ build modflow usg
         TR
         
         duration
-        200.0
+        1000.
+        
+        tminat 
+        1.000000e-07
+
+        tmaxat 
+        1.000000e+03
+
+        tadjat 
+        1.500000e+00
+
     end
 
     active domain 
@@ -79,8 +89,9 @@ build modflow usg
                 
     ! -----------------------------------Output Control
     generate output control file
-    3
-    1.000000e+03  
-    1.000000e+04  
-    1.000000e+05      
+    4
+    1.
+    10.
+    100.
+    242.313      
 end

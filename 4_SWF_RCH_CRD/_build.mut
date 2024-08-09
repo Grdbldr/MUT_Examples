@@ -1,0 +1,124 @@
+! Examples\4_SWF_RCH_CRD:
+!   A modflow project of a 2D hillslope with surface water flow, rainfall (RCH) and 
+!   critical depth (CRD) boundary conditions 
+build modflow usg
+
+    sms database
+    qrySMS.txt
+    sms parameter set number
+    1
+
+    gwf materials database
+    qryGWFMaterials.txt
+
+    swf materials database
+    qrySWFMaterials.txt
+
+    ! -----------------------------------Grid definition
+    generate uniform rectangles
+    1000.0, 1000   !  Mesh length in X-direction and number of rectangular elements
+    1.0, 1   !  Mesh length in Y-direction and number of rectangular elements
+    
+    
+    generate swf domain
+        top elevation
+            elevation from xz pairs 
+                   0.0, 0.0
+                1000.0, 100.0
+            end elevation from xz pairs
+        end top elevation
+    end generate swf domain
+
+    generate layered gwf domain
+
+        top elevation
+            elevation from xz pairs 
+                   0.0, 0.0
+                1000.0, 100.0
+            end
+        end
+    
+        new layer
+            layer name
+            Top layer
+    
+            uniform sublayering
+            50
+    
+            elevation constant
+            -200.0
+        end
+    
+    end 
+    
+    ! -----------------------------------Static properties 
+    active domain 
+    gwf
+    
+        choose all cells
+        
+        chosen cells use gwf material number
+        7
+        
+        gwf initial head
+        0.0 
+
+    active domain 
+    swf
+    
+        choose all zones
+        
+        chosen zones use swf material number
+        5
+        
+        choose all cells
+        swf initial depth
+        1.0d-4
+
+    ! -----------------------------------Stress periods, boundary conditions 
+    ! stress period 1
+    stress period
+        type
+        TR
+        
+        duration
+        242.313
+
+        tminat 
+        1.000000e-06
+        
+        tmaxat 
+        5.0d0
+        
+        
+
+    end
+
+                
+    active domain 
+    swf
+        clear chosen cells
+        choose all cells
+        swf recharge
+        0.4
+        4
+        
+        clear chosen nodes
+        choose node at xyz
+        0.0  0.0  0.0
+        choose node at xyz
+        0.0  1.0  0.0
+        flag chosen nodes as outer boundary
+        
+        clear chosen cells
+        choose cell at xyz
+        0.5  0.5 0.0
+        swf critical depth
+    ! -----------------------------------Output Control
+    generate output control file
+    4    
+    1.
+    10.
+    100.
+    242.313      
+end

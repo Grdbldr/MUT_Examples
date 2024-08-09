@@ -85,7 +85,6 @@ build modflow usg
         gwf initial head
         2.78d0
     
-    
     active domain 
     swf
     
@@ -142,6 +141,7 @@ build modflow usg
         
         duration
         3000.0d0
+        
     end
 
     active domain 
@@ -150,8 +150,6 @@ build modflow usg
         swf recharge
         0.0d0
         4
-        
-        
         
     ! -----------------------------------Output Control
     generate output control file

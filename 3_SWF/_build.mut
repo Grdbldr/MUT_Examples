@@ -1,0 +1,119 @@
+! Examples\3_SWF:
+!   A modflow project representing a 2D sloping GWF domain with a 
+!   SWF domain along the top to simulate surface flow 
+build modflow usg
+
+    sms database
+    qrySMS.txt
+    sms parameter set number
+    1
+
+    gwf materials database
+    qryGWFMaterials.txt
+
+    swf materials database
+    qryswfMaterials.txt
+
+
+    ! -----------------------------------Grid definition
+    generate uniform rectangles
+    101.0, 101   !  Mesh length in X-direction and number of rectangular elements
+    1.0, 1   !  Mesh length in Y-direction and number of rectangular elements
+    
+    
+    generate swf domain
+        top elevation
+            elevation from xz pairs 
+                   0.0, 2.0
+                 101.0, 1.0
+            end elevation from xz pairs
+        end top elevation
+    end generate swf domain
+
+    generate layered gwf domain
+
+        top elevation
+            elevation from xz pairs 
+                   0.0, 2.0
+                 101.0, 1.0
+            end elevation from xz pairs
+        end top elevation
+    
+        new layer
+            layer name
+            Top layer
+    
+            uniform sublayering
+            1
+            
+            elevation from xz pairs 
+               0.0, 1.0
+             101.0, 0.0
+            end elevation from xz pairs
+        end new layer
+        
+    end generate layered gwf domain
+    
+    
+
+    ! -----------------------------------Static properties 
+    active domain 
+    gwf
+    
+        choose all cells
+        
+        chosen cells use gwf material number
+        8
+        
+        gwf initial head
+        1.0 
+        
+    active domain 
+    swf
+    
+        choose all zones
+        
+        chosen zones use swf material number
+        5
+        
+        choose all cells
+        swf initial depth
+        1.0d-4
+
+        
+
+    ! -----------------------------------Stress periods, boundary conditions 
+    ! stress period 1
+    stress period
+        type
+        TR
+        
+        duration
+        3600.0
+        
+        number of timesteps
+        100
+    end stress period
+
+    active domain 
+    gwf
+
+        clear chosen cells
+        choose cell at xyz
+        0.5, 0.5, 1.5
+        gwf constant head
+        2.05     ! head
+
+        clear chosen cells
+        choose cell at xyz
+        100.5, 0.5,0.5
+        gwf constant head
+        1.01     ! head
+    
+    ! -----------------------------------Output Control
+    generate output control file
+    3
+    60. 
+    300. 
+    3600. 
+end
