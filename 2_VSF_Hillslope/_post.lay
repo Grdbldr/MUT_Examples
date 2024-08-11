@@ -271,7 +271,7 @@ $!ThreeDAxis
 $!PlotType  = Cartesian3D
 $!FrameName  = 'GWF Cells'
 $!GlobalTime 
-  SolutionTime = 242.31299999999999
+  SolutionTime = 7641582592
 $!ActiveFieldMaps  =  [1-3]
 $!GlobalRGB 
   RangeMin = 0
@@ -959,7 +959,7 @@ $!ThreeDAxis
   BoxAspectRatioLimit = 25
 $!FrameName  = '---------------------------------------------'
 $!GlobalTime 
-  SolutionTime = 242.31299999999999
+  SolutionTime = 7641582592
 $!SketchAxis 
   DepXToYRatio = 1
 $!SketchAxis 
@@ -1018,7 +1018,7 @@ $!ThreeDAxis
 $!PlotType  = Cartesian3D
 $!FrameName  = 'Axes'
 $!GlobalTime 
-  SolutionTime = 242.31299999999999
+  SolutionTime = 7641582592
 $!ActiveFieldMaps  =  [1]
 $!GlobalRGB 
   RedChannelVar = 4
@@ -1429,7 +1429,7 @@ $!ThreeDAxis
     {
     RangeMin = -215
     RangeMax = 115
-    GRSpacing = 50
+    GRSpacing = 100
     TickLabel
       {
       TextShape
@@ -1757,7 +1757,7 @@ $!ThreeDAxis
 $!PlotType  = Cartesian3D
 $!FrameName  = 'GWF'
 $!GlobalTime 
-  SolutionTime = 242.31299999999999
+  SolutionTime = 7641582592
 $!ActiveFieldMaps  =  [1]
 $!GlobalEdge 
   MIncreaseAngle = 110
@@ -2147,7 +2147,7 @@ $!ThreeDAxis
     ShowAxis = No
     RangeMin = -215
     RangeMax = 115
-    GRSpacing = 50
+    GRSpacing = 100
     AxisLine
       {
       Edge = 2

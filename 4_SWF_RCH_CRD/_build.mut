@@ -82,15 +82,14 @@ build modflow usg
         TR
         
         duration
-        242.313
+        7641582768.  ! 242.313 years
 
-        tminat 
-        1.000000e-06
-        
+
         tmaxat 
-        5.0d0
-        
-        
+        1.000000e+10
+
+        tadjat 
+        1.500000e+00
 
     end
 
@@ -100,7 +99,7 @@ build modflow usg
         clear chosen cells
         choose all cells
         swf recharge
-        0.4
+        1.26839E-08  
         4
         
         clear chosen nodes
@@ -116,9 +115,8 @@ build modflow usg
         swf critical depth
     ! -----------------------------------Output Control
     generate output control file
-    4    
-    1.
-    10.
-    100.
-    242.313      
+    3
+    76415827.68  
+    764158276.8  
+    7641582768.  
 end

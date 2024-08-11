@@ -60,13 +60,10 @@ build modflow usg
         TR
         
         duration
-        1000.
+        7641582768.  ! 242.313 years
         
-        tminat 
-        1.000000e-07
-
         tmaxat 
-        1.000000e+03
+        1.000000e+10
 
         tadjat 
         1.500000e+00
@@ -84,14 +81,13 @@ build modflow usg
         1000.0d0     ! drain conductance
     
         gwf recharge
-        0.4     ! recharge
+        1.26839E-08      ! recharge
         3       ! recharge option
                 
     ! -----------------------------------Output Control
     generate output control file
-    4
-    1.
-    10.
-    100.
-    242.313      
-end
+    3
+    76415827.68  
+    764158276.8  
+    7641582768.  
+    end
