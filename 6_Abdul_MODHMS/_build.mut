@@ -21,7 +21,7 @@ build modflow usg
     
     generate swf domain
         top elevation
-            elevation from ascii file
+            elevation from list file
             ./TopElevation/Kriged cell top elevation for layer 1.xyz 
         end
     end
@@ -29,7 +29,7 @@ build modflow usg
     generate layered gwf domain
 
         top elevation
-            elevation from ascii file
+            elevation from list file
             ./TopElevation/Kriged cell top elevation for layer 1.xyz 
         end
     
@@ -38,7 +38,7 @@ build modflow usg
             Sand
     
             proportional sublayering
-            9  ! # of sublayers then yYoung-jin's proportioning numbers.  
+            9  ! # of sublayers then Young-Jin's proportioning numbers.  
             7.147192018047142E-003  
             1.332366374775839E-002  
             2.333067224682175E-002  
@@ -52,7 +52,7 @@ build modflow usg
             offset base
             -3.0009  ! Young-Jin's total thickness
     
-            elevation from ascii file
+            elevation from list file
             ./TopElevation/Kriged cell top elevation for layer 1.xyz 
         end
     
@@ -143,16 +143,16 @@ build modflow usg
         
     ! -----------------------------------Output Control
     generate output control file
-    10
-    1e-4
-    60.
-    300.0
-    600.0
-    900.0
-    1200.0
-    1500.0
-    3000.0
-    4500.0
-    6000.0
+        1e-4
+        60.
+        300.0
+        600.0
+        900.0
+        1200.0
+        1500.0
+        3000.0
+        4500.0
+        6000.0
+    end generate output control file
       
-end
+end build modflow usg

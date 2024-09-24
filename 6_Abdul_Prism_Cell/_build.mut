@@ -1,26 +1,16 @@
-! This example builds a modflow project from a Grid Builder 2D triangular mesh
+! This example builds a modflow project of the Abdul Field Experiment
+! The SWF mesh and top of the GWF mesh are defined by a 2D Grid Builder triangular mesh
 build modflow usg
-
-    sms database
-    qrySMS.txt
-    sms parameter set number
-    1
-
-    gwf materials database
-    qryGWFMaterials.txt
-
-    swf materials database
-    qrySWFMaterials.txt
 
     ! -----------------------------------Grid definition
     2d mesh from gb
     ./gb/grid
     
-    ! Required later for building Modflow project
-    clear chosen nodes
-    choose gb nodes
-    ./gb/grid.nchos.Outer boundary nodes
-    flag chosen nodes as outer boundary
+!     ! Required later for building Modflow project
+!     clear chosen nodes
+!     choose gb nodes
+!     ./gb/grid.nchos.Outer boundary nodes
+!     flag chosen nodes as outer boundary
 
     generate swf domain
         top elevation
@@ -73,7 +63,15 @@ build modflow usg
     
     end 
     
-    ! -----------------------------------Static properties 
+    ! -----------------------------------Modflow parameters 
+    sms database
+    qrySMS.txt
+    sms parameter set number
+    1
+
+    gwf materials database
+    qryGWFMaterials.txt
+
     active domain 
     gwf
     
@@ -84,6 +82,9 @@ build modflow usg
         
         gwf initial head
         2.78d0
+    
+    swf materials database
+    qrySWFMaterials.txt
     
     active domain 
     swf
@@ -153,16 +154,16 @@ build modflow usg
         
     ! -----------------------------------Output Control
     generate output control file
-    10
-    1e-4
-    60.
-    300.0
-    600.0
-    900.0
-    1200.0
-    1500.0
-    3000.0
-    4500.0
-    6000.0
+        1e-4
+        60.
+        300.0
+        600.0
+        900.0
+        1200.0
+        1500.0
+        3000.0
+        4500.0
+        6000.0
+    end generate output control file
       
-end
+end build modflow usg

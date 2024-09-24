@@ -451,7 +451,7 @@ $!ContourLevels New
 3.04
 $!GlobalContour  6
   Var = 9
-  ColorMapName = 'Sequential - Viridis'
+  ColorMapName = 'Sequential - Blue'
   DefNumLevels = 18
   Legend
     {
@@ -571,19 +571,6 @@ $!GlobalScatter
     Color = Red
     FillColor = Red
     }
-$!Blanking 
-  Value
-    {
-    Include = Yes
-    Constraint 1
-      {
-      Include = Yes
-      RelOp = LessThan
-      ValueCutoff = 1
-      VarA = 6
-      VarB = 1
-      }
-    }
 $!FieldMap  [1]
   Mesh
     {
@@ -620,7 +607,7 @@ $!FieldMap  [1]
     }
   Surfaces
     {
-    SurfacesToPlot = ExposedCellFaces
+    SurfacesToPlot = BoundaryFaces
     IRange
       {
       Max = 1
@@ -670,7 +657,7 @@ $!ThreeDAxis
     GRSpacing = 5
     AxisLine
       {
-      Edge = 1
+      Edge = 3
       }
     }
 $!ThreeDAxis 
@@ -679,10 +666,10 @@ $!ThreeDAxis
     ShowAxis = No
     RangeMin = 2.8966567277869997
     RangeMax = 4.7302091360129994
-    GRSpacing = 1
+    GRSpacing = 0.5
     AxisLine
       {
-      Edge = 3
+      Edge = 4
       }
     }
 $!IsoSurfaceAttributes  1
@@ -929,9 +916,9 @@ $!GlobalThreeD
     }
   RotateOrigin
     {
-    X = 8.264129638649999
-    Y = 40.0050010681
-    Z = 3.764421463
+    X = 39.892674665
+    Y = 8.264058
+    Z = 3.8134329319
     }
   LightSource
     {
@@ -952,20 +939,21 @@ $!GlobalThreeD
   VectorLiftFraction = 0.7
   NearPlaneFraction = 0.1
 $!ThreeDView 
-  PSIAngle = 41.7346
-  ThetaAngle = 20.5244
-  AlphaAngle = 3.44017
+  PSIAngle = 67.9509
+  ThetaAngle = -74.3385
+  AlphaAngle = 2.01143
   ViewerPosition
     {
-    X = -33.40051953423625
-    Y = -120.1107686745016
-    Z = 62.52572829909111
+    X = 507.7486616995442
+    Y = -114.0739799644487
+    Z = 67.69332641651239
     }
-  ViewWidth = 106.642
+  ViewWidth = 76.8787
 $!FieldLayers 
   ShowMesh = No
   ShowContour = Yes
   ShowEdge = No
+  UseLightingEffect = No
 $!StreamtraceLayers 
   Show = No
 $!Linking 
@@ -1235,12 +1223,7 @@ $!ContourLevels New
 4.5
 $!GlobalContour  6
   Var = 9
-  ColorMapName = 'Sequential - Viridis'
-  DefNumLevels = 9
-  Labels
-    {
-    Show = Yes
-    }
+  DefNumLevels = 10
   Legend
     {
     Show = Yes
@@ -1266,16 +1249,17 @@ $!GlobalContour  6
 $!ContourLevels New
   ContourGroup = 6
   RawData
-9
-1E-005
-2E-005
-3E-005
-4E-005
-5E-005
-6E-005
-7E-005
-8E-005
-9E-005
+10
+0.005
+0.01
+0.015
+0.02
+0.025
+0.03
+0.035
+0.04
+0.045
+0.05
 $!GlobalContour  7
   Var = 10
   ColorMapName = 'Sequential - Viridis'
@@ -1359,19 +1343,6 @@ $!GlobalScatter
     Color = Red
     FillColor = Red
     }
-$!Blanking 
-  Value
-    {
-    Include = Yes
-    Constraint 1
-      {
-      Include = Yes
-      RelOp = LessThan
-      ValueCutoff = 1
-      VarA = 6
-      VarB = 1
-      }
-    }
 $!FieldMap  [1]
   Mesh
     {
@@ -1379,7 +1350,7 @@ $!FieldMap  [1]
     }
   Contour
     {
-    ContourType = BothLinesAndFlood
+    ContourType = Flood
     LineContourGroup = 6
     FloodColoring = Group6
     Color = Black
@@ -1468,7 +1439,7 @@ $!ThreeDAxis
     GRSpacing = 5
     AxisLine
       {
-      Edge = 1
+      Edge = 3
       }
     }
 $!ThreeDAxis 
@@ -1477,10 +1448,10 @@ $!ThreeDAxis
     ShowAxis = No
     RangeMin = 2.8966567277869997
     RangeMax = 4.7302091360129994
-    GRSpacing = 1
+    GRSpacing = 0.5
     AxisLine
       {
-      Edge = 3
+      Edge = 4
       }
     }
 $!IsoSurfaceAttributes  1
@@ -1745,9 +1716,9 @@ $!GlobalThreeD
     }
   RotateOrigin
     {
-    X = 8.264129638649999
-    Y = 40.0050010681
-    Z = 3.764421463
+    X = 39.892674665
+    Y = 8.264058
+    Z = 3.8134329319
     }
   LightSource
     {
@@ -1768,17 +1739,18 @@ $!GlobalThreeD
   VectorLiftFraction = 0.7
   NearPlaneFraction = 0.1
 $!ThreeDView 
-  PSIAngle = 41.7346
-  ThetaAngle = 20.5244
-  AlphaAngle = 3.44017
+  PSIAngle = 67.9509
+  ThetaAngle = -74.3385
+  AlphaAngle = 2.01143
   ViewerPosition
     {
-    X = -33.40051953423625
-    Y = -120.1107686745016
-    Z = 62.52572829909111
+    X = 507.7486616995442
+    Y = -114.0739799644487
+    Z = 67.69332641651239
     }
-  ViewWidth = 106.642
+  ViewWidth = 76.8787
 $!FieldLayers 
+  ShowMesh = No
   ShowContour = Yes
   ShowShade = Yes
   ShowEdge = No

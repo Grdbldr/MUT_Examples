@@ -2,17 +2,6 @@
 !   A modflow project of a 1D column generated from a simple 2d rectangular mesh
 build modflow usg
 
-    sms database
-    qrySMS.txt
-    sms parameter set number
-    1
-
-    gwf materials database
-    qryGWFMaterials.txt
-
-    swf materials database
-    qrySWFMaterials.txt
-
     ! -----------------------------------Grid definition
     generate uniform rectangles
     1.0, 1   !  Mesh length in X-direction and number of rectangular elements
@@ -23,26 +12,35 @@ build modflow usg
 
         top elevation
             elevation constant 
-            100.5
-        end
+            100.0
+        end top elevation
     
         new layer
             layer name
             Top layer
     
             uniform sublayering
-            101
+            100
     
             elevation constant 
-            -0.5
-        end
+            0.0
+        end new layer
     
-    end 
+    end generate layered gwf domain
     
+    ! -----------------------------------Solver parameters 
+    sms database
+    qrySMS.txt
+    sms parameter set number
+    1
+
     ! -----------------------------------Static properties 
+    gwf materials database
+    qryGWFMaterials.txt
+
     active domain 
     gwf
-    
+
         choose all cells
         
         chosen cells use gwf material number
@@ -90,9 +88,9 @@ build modflow usg
                 
     ! -----------------------------------Output Control
     generate output control file
-    3
-    20.  
-    40.
-    200. 
+        20.  
+        40.
+        200.
+    end generate output control file 
       
-end
+end build modflow usg

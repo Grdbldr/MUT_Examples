@@ -228,6 +228,7 @@ $!ReadDataSet  '|LFDSFN1|'
 $!RemoveVar |LFDSVL1|
 $!RemoveVar |LFDSFN1|
 $!FrameLayout 
+  ShowBorder = No
   ShowHeader = No
   HeaderColor = Red
   XYPos
@@ -794,6 +795,7 @@ $!Linking
 ### Frame Number 2 ###
 $!CreateNewFrame 
 $!FrameLayout 
+  ShowBorder = No
   ShowHeader = No
   IsTransparent = Yes
   HeaderColor = Red
@@ -1560,6 +1562,7 @@ $!Linking
 ### Frame Number 3 ###
 $!CreateNewFrame 
 $!FrameLayout 
+  ShowBorder = No
   ShowHeader = No
   IsTransparent = Yes
   HeaderColor = Red
@@ -2311,6 +2314,7 @@ $!ReadDataSet  '|LFDSFN2|'
 $!RemoveVar |LFDSVL2|
 $!RemoveVar |LFDSFN2|
 $!FrameLayout 
+  ShowBorder = No
   ShowHeader = No
   IsTransparent = Yes
   HeaderColor = Green
@@ -2998,5 +3002,5 @@ $!Linking
     Link3DView = Yes
     }
 $!FrameControl ActivateByNumber
-  Frame = 2
+  Frame = 1
 $!SetStyleBase Config

@@ -3,6 +3,12 @@
 !   critical depth (CRD) boundary conditions 
 build modflow usg
 
+    units of time
+    seconds
+
+    units of length
+    meters
+
     sms database
     qrySMS.txt
     sms parameter set number
@@ -13,6 +19,9 @@ build modflow usg
 
     swf materials database
     qrySWFMaterials.txt
+    
+    
+
 
     ! -----------------------------------Grid definition
     generate uniform rectangles
@@ -58,7 +67,7 @@ build modflow usg
         choose all cells
         
         chosen cells use gwf material number
-        7
+        8
         
         gwf initial head
         0.0 
@@ -82,7 +91,7 @@ build modflow usg
         TR
         
         duration
-        7641582768.  ! 242.313 years
+        242.313 
 
 
         tmaxat 
@@ -99,7 +108,7 @@ build modflow usg
         clear chosen cells
         choose all cells
         swf recharge
-        1.26839E-08  
+        4.0e-3  
         4
         
         clear chosen nodes
@@ -115,8 +124,7 @@ build modflow usg
         swf critical depth
     ! -----------------------------------Output Control
     generate output control file
-    3
-    76415827.68  
-    764158276.8  
-    7641582768.  
-end
+        242.313 
+    end generate output control file
+
+end build modflow usg

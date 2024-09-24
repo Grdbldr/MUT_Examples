@@ -112,8 +112,9 @@ build modflow usg
     
     ! -----------------------------------Output Control
     generate output control file
-    3
-    60. 
-    300. 
-    3600. 
-end
+        60. 
+        300. 
+        3600. 
+    end generate output control file
+
+end build modflow usg

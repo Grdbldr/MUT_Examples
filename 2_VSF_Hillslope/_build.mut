@@ -86,8 +86,9 @@ build modflow usg
                 
     ! -----------------------------------Output Control
     generate output control file
-    3
-    76415827.68  
-    764158276.8  
-    7641582768.  
-    end
+        76415827.68  
+        764158276.8  
+        7641582768.  
+    end generate output control file
+
+end build modflow usg
