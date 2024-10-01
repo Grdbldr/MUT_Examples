@@ -939,16 +939,16 @@ $!GlobalThreeD
   VectorLiftFraction = 0.7
   NearPlaneFraction = 0.1
 $!ThreeDView 
-  PSIAngle = 67.9509
-  ThetaAngle = -74.3385
-  AlphaAngle = 2.01143
+  PSIAngle = 61.673
+  ThetaAngle = -61.3367
+  AlphaAngle = -0.360784
   ViewerPosition
     {
-    X = 507.7486616995442
-    Y = -114.0739799644487
-    Z = 67.69332641651239
+    X = 447.7551513924596
+    Y = -202.7028223765654
+    Z = 85.29495043252578
     }
-  ViewWidth = 76.8787
+  ViewWidth = 106.691
 $!FieldLayers 
   ShowMesh = No
   ShowContour = Yes
@@ -1739,16 +1739,16 @@ $!GlobalThreeD
   VectorLiftFraction = 0.7
   NearPlaneFraction = 0.1
 $!ThreeDView 
-  PSIAngle = 67.9509
-  ThetaAngle = -74.3385
-  AlphaAngle = 2.01143
+  PSIAngle = 61.673
+  ThetaAngle = -61.3367
+  AlphaAngle = -0.360784
   ViewerPosition
     {
-    X = 507.7486616995442
-    Y = -114.0739799644487
-    Z = 67.69332641651239
+    X = 447.7551513924596
+    Y = -202.7028223765654
+    Z = 85.29495043252578
     }
-  ViewWidth = 76.8787
+  ViewWidth = 106.691
 $!FieldLayers 
   ShowMesh = No
   ShowContour = Yes

@@ -50,6 +50,7 @@ build modflow usg
         !  z    head 
           0.0  -100.0
         100.0     0.0
+        end gwf initial head function of z
         
     
 

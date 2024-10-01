@@ -75,8 +75,17 @@ build modflow usg
     active domain 
     gwf
     
-        choose all cells
+        clear chosen zones
+        choose zone number
+        1
+        choose zone number
+        2
+        choose zone number
+        3
         
+        clear chosen cells
+        choose cells by chosen zones
+                
         chosen cells use gwf material number
         4
         
