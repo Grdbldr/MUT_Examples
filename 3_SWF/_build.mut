@@ -4,15 +4,15 @@
 build modflow usg
 
     sms database
-    qrySMS.txt
+    qrySMS.csv
     sms parameter set number
     1
 
     gwf materials database
-    qryGWFMaterials.txt
+    qryGWF.csv
 
     swf materials database
-    qryswfMaterials.txt
+    qrySWF.csv
 
 
     ! -----------------------------------Grid definition

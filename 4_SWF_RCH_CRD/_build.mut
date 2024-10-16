@@ -3,26 +3,6 @@
 !   critical depth (CRD) boundary conditions 
 build modflow usg
 
-    units of time
-    seconds
-
-    units of length
-    meters
-
-    sms database
-    qrySMS.txt
-    sms parameter set number
-    1
-
-    gwf materials database
-    qryGWFMaterials.txt
-
-    swf materials database
-    qrySWFMaterials.txt
-    
-    
-
-
     ! -----------------------------------Grid definition
     generate uniform rectangles
     1000.0, 1000   !  Mesh length in X-direction and number of rectangular elements
@@ -61,6 +41,9 @@ build modflow usg
     end 
     
     ! -----------------------------------Static properties 
+    gwf materials database
+    qryGWF.csv
+
     active domain 
     gwf
     
@@ -72,6 +55,9 @@ build modflow usg
         gwf initial head
         0.0 
 
+    swf materials database
+    qrySWF.csv
+    
     active domain 
     swf
     
@@ -126,5 +112,11 @@ build modflow usg
     generate output control file
         242.313 
     end generate output control file
+    
+    ! -----------------------------------Solver paramters
+    sms database
+    qrySMS.csv
+    sms parameter set number
+    1
 
 end build modflow usg

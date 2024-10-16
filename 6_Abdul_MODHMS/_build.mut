@@ -2,17 +2,6 @@
 !   A comparison to the MODHMS Abdul Experiment model
 build modflow usg
 
-    sms database
-    qrySMS.txt
-    sms parameter set number
-    1
-
-    gwf materials database
-    qryGWFMaterials.txt
-
-    swf materials database
-    qrySWFMaterials.txt
-
     ! -----------------------------------Grid definition
     generate uniform rectangles
     16.52826, 23   !  Mesh length in X-direction and number of rectangular elements
@@ -23,8 +12,8 @@ build modflow usg
         top elevation
             elevation from list file
             ./TopElevation/Kriged cell top elevation for layer 1.xyz 
-        end
-    end
+        end top elevation
+    end generate swf domain
 
     generate layered gwf domain
 
@@ -54,11 +43,14 @@ build modflow usg
     
             elevation from list file
             ./TopElevation/Kriged cell top elevation for layer 1.xyz 
-        end
+        end new layer
     
-    end 
+    end generate layered gwf domain
     
     ! -----------------------------------Static properties 
+    gwf materials database
+    qryGWF.csv
+
     active domain 
     gwf
     
@@ -76,6 +68,9 @@ build modflow usg
 		flag chosen cells inactive
     
     
+    swf materials database
+    qrySWF.csv
+
     active domain 
     swf
     
@@ -109,7 +104,7 @@ build modflow usg
         
         duration
         3000.0d0
-    end
+    end stress period
 
     active domain 
     swf
@@ -130,7 +125,7 @@ build modflow usg
         
         duration
         3000.0d0
-    end
+    end stress period
 
     active domain 
     swf
@@ -154,5 +149,11 @@ build modflow usg
         4500.0
         6000.0
     end generate output control file
-      
+
+    ! -----------------------------------Solver paramters
+    sms database
+    qrySMS.csv
+    sms parameter set number
+    1
+
 end build modflow usg

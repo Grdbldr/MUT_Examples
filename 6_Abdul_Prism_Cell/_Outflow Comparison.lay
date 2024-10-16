@@ -98,6 +98,10 @@ $!GlobalLinePlot
   Legend
     {
     Show = Yes
+    TextShape
+      {
+      Height = 2
+      }
     Box
       {
       BoxType = Filled

@@ -3,15 +3,15 @@
 build modflow usg
 
     sms database
-    qrySMS.txt
+    qrySMS.csv
     sms parameter set number
     1
 
     gwf materials database
-    qryGWFMaterials.txt
+    qryGWF.csv
 
     swf materials database
-    qrySWFMaterials.txt
+    qrySWF.csv
 
     ! -----------------------------------Grid definition
     generate uniform rectangles
@@ -25,8 +25,8 @@ build modflow usg
             elevation from xz pairs 
                    0.0, 0.0
                 1000.0, 100.0
-            end
-        end
+            end elevation from xz pairs 
+        end top elevation
     
         new layer
             layer name
@@ -37,9 +37,9 @@ build modflow usg
     
             elevation constant
             -200.0
-        end
+        end new layer
     
-    end 
+    end generate layered gwf domain
     
     ! -----------------------------------Static properties 
     active domain 
@@ -68,7 +68,7 @@ build modflow usg
         tadjat 
         1.500000e+00
 
-    end
+    end stress period
 
     active domain 
     gwf

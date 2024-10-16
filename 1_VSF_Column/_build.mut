@@ -30,13 +30,13 @@ build modflow usg
     
     ! -----------------------------------Solver parameters 
     sms database
-    qrySMS.txt
+    qrySMS.csv
     sms parameter set number
     1
 
     ! -----------------------------------Static properties 
     gwf materials database
-    qryGWFMaterials.txt
+    qryGWF.csv
 
     active domain 
     gwf
