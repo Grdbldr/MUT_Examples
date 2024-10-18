@@ -64,10 +64,6 @@ build modflow usg
     end 
     
     ! -----------------------------------Modflow parameters 
-    sms database
-    SMS.csv
-    sms parameter set number
-    1
 
     gwf materials database
     GWF.csv
@@ -87,7 +83,7 @@ build modflow usg
         choose cells by chosen zones
                 
         chosen cells use gwf material number
-        4
+        5
         
         gwf initial head
         2.78d0
@@ -102,13 +98,13 @@ build modflow usg
         choose zone number
         1
         chosen zones use swf material number
-        1
+        3
         
         clear chosen zones
         choose zone number
         2
         chosen zones use swf material number
-        2
+        4
 
         choose all cells
 
@@ -175,4 +171,10 @@ build modflow usg
         6000.0
     end generate output control file
       
+    ! -----------------------------------Solver paramters
+    sms database
+    SMS.csv
+    sms parameter set number
+    1
+
 end build modflow usg

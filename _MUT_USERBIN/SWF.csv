@@ -1,7 +1,7 @@
 SWF ID,Material Name,Manning's coefficient,Depression storage height,Obstruction storage height,SWF Depth for smoothing (SWFH1),SWF Depth for smoothing (SWFH2),Length Unit,Time Unit,Notes
-1,Streambed,0.03,0.1,0,0.000001,0.000001,METERS,SECONDS,Abdul example
-2,Grass,0.3,0.1,0,0.000001,0.000001,METERS,SECONDS,Abdul example
-3,Panday slope,0.015,0.01,0,0.000001,0.000001,METERS,SECONDS,Panday example
-4,Panday channel,0.15,0.01,0,0.000001,0.000001,METERS,SECONDS,Panday example
-5,3_SWF,0.0548,0.1,0,0.000001,0.000001,METERS,SECONDS,
-6,3_SWF_Year,1.70E-09,0.000001,0.000001,0.000001,0.000001,METERS,YEARS,
+1,2D Hillslope,1.70E-09,0.000001,0.000001,0.000001,0.000001,METERS,YEARS,
+2,2D Hillslope 100 m length,0.0548,0.1,0,0.000001,0.000001,METERS,SECONDS,
+3,Streambed,0.03,0.1,0,0.000001,0.000001,METERS,SECONDS,Abdul example
+4,Grass,0.3,0.1,0,0.000001,0.000001,METERS,SECONDS,Abdul example
+5,Panday slope,0.015,0.01,0,0.000001,0.000001,METERS,SECONDS,Panday example
+6,Panday channel,0.15,0.01,0,0.000001,0.000001,METERS,SECONDS,Panday example

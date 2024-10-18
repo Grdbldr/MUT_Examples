@@ -1,6 +1,6 @@
 ! Examples\4_SWF_RCH_CRD:
-!   A modflow project of a 2D hillslope with surface water flow, rainfall (RCH) and 
-!   critical depth (CRD) boundary conditions 
+!   A modflow project of a 2D hillslope generated from a simple 2d rectangular mesh
+!   with surface water flow, rainfall (RCH) and critical depth (CRD) boundary conditions 
 build modflow usg
 
     units of time
@@ -54,7 +54,7 @@ build modflow usg
         choose all cells
         
         chosen cells use gwf material number
-        9
+        3
         
         gwf initial head
         0.0 
@@ -68,7 +68,7 @@ build modflow usg
         choose all zones
         
         chosen zones use swf material number
-        6
+        1
         
         choose all cells
         swf initial depth
@@ -125,9 +125,5 @@ build modflow usg
     SMS.csv
     sms parameter set number
     2
-
-    
-    
-
 
 end build modflow usg

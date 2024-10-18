@@ -3,18 +3,6 @@
 !   CLN domain along the top to simulate surface flow 
 build modflow usg
 
-    sms database
-    SMS.csv
-    sms parameter set number
-    1
-
-    gwf materials database
-    GWF.csv
-
-    cln materials database
-    CLN.csv
-
-
     ! -----------------------------------Grid definition
     generate uniform rectangles
     101.0, 101   !  Mesh length in X-direction and number of rectangular elements
@@ -55,16 +43,22 @@ build modflow usg
     
 
     ! -----------------------------------Static properties 
+    gwf materials database
+    GWF.csv
+
     active domain 
     gwf
     
         choose all cells
         
         chosen cells use gwf material number
-        8
+        4
         
         gwf initial head
         1.0 
+
+    cln materials database
+    CLN.csv
         
     active domain 
     cln
@@ -72,7 +66,7 @@ build modflow usg
         choose all zones
         
         chosen zones use cln material number
-        3
+        1
         
         choose all cells
         cln initial depth
@@ -112,5 +106,11 @@ build modflow usg
         300. 
         3600. 
     end generate output control file
+
+    ! -----------------------------------Solver paramters
+    sms database
+    SMS.csv
+    sms parameter set number
+    1
 
 end build modflow usg

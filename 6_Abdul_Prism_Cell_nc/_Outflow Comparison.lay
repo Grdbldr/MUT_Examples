@@ -105,11 +105,12 @@ $!GlobalLinePlot
     Box
       {
       BoxType = Filled
+      Margin = 4
       }
     XYPos
       {
-      X = 82.899
-      Y = 79.486
+      X = 86.418
+      Y = 86.064
       }
     }
 $!LineMap  [1]
@@ -250,7 +251,7 @@ $!XYLineAxis
     Title
       {
       TitleMode = UseText
-      Text = 'Time(seconds)'
+      Text = 'Time[seconds]'
       }
     }
 $!XYLineAxis 
@@ -273,24 +274,12 @@ $!XYLineAxis
     Title
       {
       TitleMode = UseText
-      Text = 'Discharge (m<sup>3</sup>/second)'
+      Text = 'Discharge[m<sup>3</sup>/second]'
       Offset = 10
       }
     }
 $!LinePlotLayers 
   ShowSymbols = Yes
-$!AttachText 
-  AnchorPos
-    {
-    X = 0.5128558949255485
-    Y = 0.6166495375128367
-    }
-  TextShape
-    {
-    IsBold = No
-    Height = 7
-    }
-  Text = '&(datasetfname)'
 $!FrameControl ActivateByNumber
   Frame = 1
 $!SetStyleBase Config
