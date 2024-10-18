@@ -3,6 +3,10 @@
 !   critical depth (CRD) boundary conditions 
 build modflow usg
 
+    units of time
+    years
+
+
     ! -----------------------------------Grid definition
     generate uniform rectangles
     1000.0, 1000   !  Mesh length in X-direction and number of rectangular elements
@@ -25,7 +29,7 @@ build modflow usg
                    0.0, 0.0
                 1000.0, 100.0
             end
-        end
+        end top elevation
     
         new layer
             layer name
@@ -36,13 +40,13 @@ build modflow usg
     
             elevation constant
             -200.0
-        end
+        end new layer
     
-    end 
+    end generate layered gwf domain
     
     ! -----------------------------------Static properties 
     gwf materials database
-    qryGWF.csv
+    GWF.csv
 
     active domain 
     gwf
@@ -50,21 +54,21 @@ build modflow usg
         choose all cells
         
         chosen cells use gwf material number
-        8
+        9
         
         gwf initial head
         0.0 
 
     swf materials database
-    qrySWF.csv
-    
+    SWF.csv
+
     active domain 
     swf
     
         choose all zones
         
         chosen zones use swf material number
-        5
+        6
         
         choose all cells
         swf initial depth
@@ -77,11 +81,11 @@ build modflow usg
         TR
         
         duration
-        242.313 
+        100000.000000 
 
 
         tmaxat 
-        1.000000e+10
+        1.000000e+03
 
         tadjat 
         1.500000e+00
@@ -94,7 +98,7 @@ build modflow usg
         clear chosen cells
         choose all cells
         swf recharge
-        4.0e-3  
+        0.5  
         4
         
         clear chosen nodes
@@ -110,13 +114,20 @@ build modflow usg
         swf critical depth
     ! -----------------------------------Output Control
     generate output control file
-        242.313 
+        1.0e-3
+		1000.
+        10000.
+        100000.		
     end generate output control file
-    
+
     ! -----------------------------------Solver paramters
     sms database
-    qrySMS.csv
+    SMS.csv
     sms parameter set number
-    1
+    2
+
+    
+    
+
 
 end build modflow usg

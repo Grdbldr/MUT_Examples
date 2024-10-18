@@ -1,0 +1,105 @@
+! Examples\1_VSF_Column_Brooks:
+!   A modflow project of a 1D column generated from a simple 2d rectangular mesh
+!   Uses Brooks-Corey unsaturated function type
+build modflow usg
+
+    units of length
+    centimeters
+    
+    units of time
+    days
+
+    ! -----------------------------------Grid definition
+    generate uniform rectangles
+    1.0, 1   !  Mesh length in X-direction and number of rectangular elements
+    1.0, 1   !  Mesh length in Y-direction and number of rectangular elements
+    
+    
+    generate layered gwf domain
+
+        top elevation
+            elevation constant 
+            100.0
+        end top elevation
+    
+        new layer
+            layer name
+            Top layer
+    
+            uniform sublayering
+            100
+    
+            elevation constant 
+            0.0
+        end new layer
+    
+    end generate layered gwf domain
+    
+
+    ! -----------------------------------Static properties 
+    gwf materials database
+    GWF.csv
+
+    active domain 
+    gwf
+
+        choose all cells
+        
+        chosen cells use gwf material number
+        2
+        
+        gwf initial head function of z
+        !  z    head 
+          0.0  -100.0
+        100.0     0.0
+        end gwf initial head function of z
+        
+    
+
+    ! -----------------------------------Stress periods, boundary conditions 
+    ! stress period 1
+    stress period
+        type
+        TR
+        
+        duration
+        200.0
+
+        tmaxat 
+        2.500000e-01
+
+    end
+
+    active domain 
+    gwf
+        clear chosen cells
+        
+        choose cell at xyz
+        0.5, 0.5, 0.0
+        
+        gwf constant head
+        -100.0
+    
+        clear chosen cells
+        
+        choose cells by layer
+        1
+
+        gwf recharge
+        0.4     ! recharge
+        3       ! recharge option
+                
+    ! -----------------------------------Output Control
+    generate output control file
+        20.  
+        40.
+        200.
+    end generate output control file 
+      
+    ! -----------------------------------Solver parameters 
+    sms database
+    SMS.csv
+    sms parameter set number
+    1
+
+end build modflow usg

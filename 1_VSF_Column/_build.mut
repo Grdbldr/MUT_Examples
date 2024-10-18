@@ -2,6 +2,12 @@
 !   A modflow project of a 1D column generated from a simple 2d rectangular mesh
 build modflow usg
 
+    units of length
+    centimeters
+    
+    units of time
+    days
+
     ! -----------------------------------Grid definition
     generate uniform rectangles
     1.0, 1   !  Mesh length in X-direction and number of rectangular elements
@@ -28,15 +34,10 @@ build modflow usg
     
     end generate layered gwf domain
     
-    ! -----------------------------------Solver parameters 
-    sms database
-    qrySMS.csv
-    sms parameter set number
-    1
 
     ! -----------------------------------Static properties 
     gwf materials database
-    qryGWF.csv
+    GWF.csv
 
     active domain 
     gwf
@@ -44,7 +45,7 @@ build modflow usg
         choose all cells
         
         chosen cells use gwf material number
-        6
+        1
         
         gwf initial head function of z
         !  z    head 
@@ -94,4 +95,10 @@ build modflow usg
         200.
     end generate output control file 
       
+    ! -----------------------------------Solver parameters 
+    sms database
+    SMS.csv
+    sms parameter set number
+    1
+
 end build modflow usg

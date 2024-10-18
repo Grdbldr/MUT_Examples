@@ -49,7 +49,7 @@ build modflow usg
     
     ! -----------------------------------Static properties 
     gwf materials database
-    qryGWF.csv
+    GWF.csv
 
     active domain 
     gwf
@@ -69,7 +69,7 @@ build modflow usg
     
     
     swf materials database
-    qrySWF.csv
+    SWF.csv
 
     active domain 
     swf
@@ -152,7 +152,7 @@ build modflow usg
 
     ! -----------------------------------Solver paramters
     sms database
-    qrySMS.csv
+    SMS.csv
     sms parameter set number
     1
 

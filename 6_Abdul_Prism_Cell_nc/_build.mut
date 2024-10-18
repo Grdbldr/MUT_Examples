@@ -1,17 +1,6 @@
 ! This example builds a modflow project from a Grid Builder 2D triangular mesh
 build modflow usg
 
-    sms database
-    qrySMS.csv
-    sms parameter set number
-    1
-
-    gwf materials database
-    qryGWF.csv
-
-    swf materials database
-    qrySWF.csv
-    
     ! -----------------------------------Model Options
     nodal control volumes
    
@@ -77,6 +66,9 @@ build modflow usg
     end 
     
     ! -----------------------------------Static properties 
+    gwf materials database
+    GWF.csv
+
     active domain 
     gwf
     
@@ -88,6 +80,9 @@ build modflow usg
         gwf initial head
         2.78d0
     
+    swf materials database
+    SWF.csv
+
     active domain 
     swf
     
@@ -166,5 +161,11 @@ build modflow usg
         4500.0
         6000.0
     end generate output control file
-      
+
+    ! -----------------------------------Solver paramters
+    sms database
+    SMS.csv
+    sms parameter set number
+    1
+
 end build modflow usg

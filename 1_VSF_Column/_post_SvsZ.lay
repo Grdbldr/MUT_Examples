@@ -66,6 +66,12 @@ $!RenameDataSetZone
 $!RenameDataSetVar 
   Var = 9
   Name = 'Saturation[-]'
+$!RenameDataSetVar 
+  Var = 3
+  Name = 'Z[ &(AUXZONE[1]:TimeUnits)]'
+$!RenameDataSetVar 
+  Var = 3
+  Name = 'Z[ &(AUXZONE[1]:LengthUnits)]'
 $!FrameLayout 
   ShowHeader = No
   HeaderColor = Red
@@ -104,7 +110,7 @@ $!GlobalLinePlot
       }
     XYPos
       {
-      X = 34.875
+      X = 32.945
       Y = 86.68
       }
     }
@@ -195,10 +201,6 @@ $!XYLineAxis
     {
     DrawBorder = Yes
     }
-  ViewportPosition
-    {
-    Y2 = 88
-    }
 $!XYLineAxis 
   XDetail 1
     {
@@ -262,7 +264,6 @@ $!XYLineAxis
       }
     Title
       {
-      TitleMode = UseText
       Text = 'Z[cm]'
       }
     }
@@ -314,6 +315,18 @@ $!AttachText
     }
   Anchor = MidCenter
   Text = 'Flow in a 1D column'
+$!AttachText 
+  AnchorPos
+    {
+    X = 0.6825962141515984
+    Y = 0.8221993833504637
+    }
+  TextShape
+    {
+    IsBold = No
+    Height = 10
+    }
+  Text = '&(datasetfname[1])'
 ### Frame Number 2 ###
 $!CreateNewFrame 
 $!ReadDataSet  '|LFDSFN2|'
@@ -382,12 +395,12 @@ $!GlobalLinePlot
       }
     XYPos
       {
-      X = 32.501
-      Y = 78.356
+      X = 30.571
+      Y = 78.562
       }
     }
 $!LineMap  [1]
-  Name = '&ZN&: &(solutiontime[1]) SECONDS'
+  Name = '&ZN&: &(solutiontime[1]) DAYS'
   Assign
     {
     Zone = 1
@@ -418,7 +431,7 @@ $!LineMap  [1]
     Color = Red
     }
 $!LineMap  [2]
-  Name = '&ZN&: &(solutiontime[2]) SECONDS'
+  Name = '&ZN&: &(solutiontime[2]) DAYS'
   Assign
     {
     Zone = 2
@@ -450,16 +463,16 @@ $!LineMap  [2]
     }
 $!XYLineAxis 
   DepXToYRatio = 1
-  ViewportPosition
-    {
-    Y2 = 88
-    }
 $!XYLineAxis 
   XDetail 1
     {
     RangeMin = 0.54999999999999916
     RangeMax = 0.85000000000000009
     GRSpacing = 0.05
+    Title
+      {
+      TitleMode = UseText
+      }
     }
 $!XYLineAxis 
   XDetail 2
@@ -498,7 +511,7 @@ $!XYLineAxis
     Title
       {
       TitleMode = UseText
-      Text = 'Z[cm]'
+      Text = ' '
       }
     }
 $!XYLineAxis 
@@ -541,5 +554,5 @@ $!Linking
     LinkAxisPosition = Yes
     }
 $!FrameControl ActivateByNumber
-  Frame = 2
+  Frame = 1
 $!SetStyleBase Config

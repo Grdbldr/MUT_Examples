@@ -1,8 +1,8 @@
 #!MC 1410
-$!VarSet |LFDSFN1| = '"_posto.modflow.GWF.tecplot.dat"'
-$!VarSet |LFDSVL1| = '"X" "Y" "Z" "GWF z Cell" "GWF Layer" "GWF Ibound" "GWF Initial head" "GWF Head" "GWF Saturation" "GWF to STORAGE" "GWF to CONSTANT_HEAD" "GWF to RECHARGE" "GWF to FLOW_FACES"'
-$!VarSet |LFDSFN2| = '"data\u_1do.pm.dat"'
-$!VarSet |LFDSVL2| = '"X" "Y" "Z" "Zone" "Head" "Sat" "Depth2GWT" "Vx" "Vy" "Vz" "qx" "qy" "qz" "Kxx" "Kyy" "Kzz" "Porosity" "SpStor" "Volume"'
+$!VarSet |LFDSFN1| = '"data\u_1do.pm.dat"'
+$!VarSet |LFDSVL1| = '"X" "Y" "Z" "Zone" "Head" "Sat" "Depth2GWT" "Vx" "Vy" "Vz" "qx" "qy" "qz" "Kxx" "Kyy" "Kzz" "Porosity" "SpStor" "Volume"'
+$!VarSet |LFDSFN2| = '"_posto.modflow.GWF.tecplot.dat"'
+$!VarSet |LFDSVL2| = '"X" "Y" "Z" "GWF z Cell" "GWF Layer" "GWF Ibound" "GWF Initial head" "GWF Head" "GWF Saturation" "GWF to STORAGE" "GWF to CONSTANT_HEAD" "GWF to RECHARGE" "GWF to FLOW_FACES"'
 $!SetStyleBase Factory
 $!GlobalPaper 
   PaperSizeInfo
@@ -49,6 +49,222 @@ $!ReadDataSet  '|LFDSFN1|'
   VarNameList = '|LFDSVL1|'
 $!RemoveVar |LFDSVL1|
 $!RemoveVar |LFDSFN1|
+$!AlterData 
+  Equation = '{Pressure Head [cm]}={Head}-{Z}'
+$!RenameDataSetZone 
+  Zone = 1
+  Name = 'HGS'
+$!RenameDataSetZone 
+  Zone = 2
+  Name = 'HGS'
+$!FrameLayout 
+  ShowHeader = No
+  IsTransparent = Yes
+  HeaderColor = Green
+  XYPos
+    {
+    X = -1.3104
+    Y = 0.25
+    }
+  Width = 13.629
+  Height = 8
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = 'HGS'
+$!GlobalTime 
+  SolutionTime = 20
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-2]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    TextShape
+      {
+      Height = 2
+      }
+    Box
+      {
+      BoxType = Filled
+      Margin = 4
+      }
+    XYPos
+      {
+      X = 32.501
+      Y = 78.356
+      }
+    }
+$!LineMap  [1]
+  Name = '&ZN&: &(solutiontime[1]) DAYS'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 20
+    YAxisVar = 3
+    }
+  Lines
+    {
+    Color = Red
+    }
+  Symbols
+    {
+    SymbolShape
+      {
+      GeomShape = Circle
+      }
+    Color = Red
+    FillColor = Red
+    Size = 0.5
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!LineMap  [2]
+  Name = '&ZN&: &(solutiontime[2]) DAYS'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 20
+    YAxisVar = 3
+    }
+  Lines
+    {
+    Color = Red
+    }
+  Symbols
+    {
+    SymbolShape
+      {
+      GeomShape = Circle
+      }
+    Color = Red
+    FillColor = Red
+    Size = 0.5
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = -100
+    RangeMax = -20
+    GRSpacing = 10
+    Title
+      {
+      TitleMode = UseText
+      }
+    }
+$!XYLineAxis 
+  XDetail 2
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!XYLineAxis 
+  XDetail 3
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!XYLineAxis 
+  XDetail 4
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!XYLineAxis 
+  XDetail 5
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = 0
+    RangeMax = 100.01000000000001
+    GRSpacing = 20
+    Title
+      {
+      TitleMode = UseText
+      }
+    }
+$!XYLineAxis 
+  YDetail 2
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!XYLineAxis 
+  YDetail 3
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!XYLineAxis 
+  YDetail 4
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!XYLineAxis 
+  YDetail 5
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!LinePlotLayers 
+  ShowLines = No
+  ShowSymbols = Yes
+$!Linking 
+  BetweenFrames
+    {
+    LinkFrameSizeAndPosition = Yes
+    LinkXAxisRange = Yes
+    LinkYAxisRange = Yes
+    LinkAxisPosition = Yes
+    }
+### Frame Number 2 ###
+$!CreateNewFrame 
+$!ReadDataSet  '|LFDSFN2|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL2|'
+$!RemoveVar |LFDSVL2|
+$!RemoveVar |LFDSFN2|
 $!RenameDataSetVar 
   Var = 4
   Name = 'GWF z Cell'
@@ -63,6 +279,15 @@ $!RenameDataSetZone
 $!RenameDataSetZone 
   Zone = 3
   Name = 'Modflow'
+$!RenameDataSetVar 
+  Var = 14
+  Name = 'Pressure Head [ &(AUXZONE[1]:LengthUnits)cm]'
+$!RenameDataSetVar 
+  Var = 14
+  Name = 'Pressure Head [ &(AUXZONE[1]:LengthUnits)]'
+$!RenameDataSetVar 
+  Var = 3
+  Name = 'Z[ &(AUXZONE[1]:TimeUnits)]'
 $!FrameLayout 
   ShowHeader = No
   HeaderColor = Red
@@ -255,8 +480,7 @@ $!XYLineAxis
       }
     Title
       {
-      TitleMode = UseText
-      Text = 'Z[cm]'
+      Text = 'Z[ &(AUXZONE[1]:TimeUnits)]'
       }
     }
 $!XYLineAxis 
@@ -307,219 +531,18 @@ $!AttachText
     }
   Anchor = MidCenter
   Text = 'Flow in a 1D column'
-### Frame Number 2 ###
-$!CreateNewFrame 
-$!ReadDataSet  '|LFDSFN2|'
-  InitialPlotType = XYLine
-  IncludeText = No
-  IncludeGeom = No
-  ResetStyle = No
-  AssignStrandIDs = Yes
-  VarLoadMode = ByName
-  VarNameList = '|LFDSVL2|'
-$!RemoveVar |LFDSVL2|
-$!RemoveVar |LFDSFN2|
-$!AlterData 
-  Equation = '{Pressure Head [cm]}={Head}-{Z}'
-$!RenameDataSetZone 
-  Zone = 1
-  Name = 'HGS'
-$!RenameDataSetZone 
-  Zone = 2
-  Name = 'HGS'
-$!FrameLayout 
-  ShowHeader = No
-  IsTransparent = Yes
-  HeaderColor = Green
-  XYPos
+$!AttachText 
+  AnchorPos
     {
-    X = -1.3104
-    Y = 0.25
+    X = 1.346195393611215
+    Y = 1.4388489208633
     }
-  Width = 13.629
-  Height = 8
-$!ThreeDAxis 
-  AspectRatioLimit = 25
-  BoxAspectRatioLimit = 25
-$!PlotType  = XYLine
-$!FrameName  = 'HGS'
-$!GlobalTime 
-  SolutionTime = 20
-$!DeleteLineMaps 
-$!ActiveLineMaps  =  [1-2]
-$!GlobalLinePlot 
-  DataLabels
+  TextShape
     {
-    DistanceSkip = 5
+    IsBold = No
+    Height = 10
     }
-  Legend
-    {
-    Show = Yes
-    TextShape
-      {
-      Height = 2
-      }
-    Box
-      {
-      BoxType = Filled
-      Margin = 4
-      }
-    XYPos
-      {
-      X = 32.501
-      Y = 78.356
-      }
-    }
-$!LineMap  [1]
-  Name = '&ZN&: &(solutiontime[1]) SECONDS'
-  Assign
-    {
-    Zone = 1
-    XAxisVar = 20
-    YAxisVar = 3
-    }
-  Lines
-    {
-    Color = Red
-    }
-  Symbols
-    {
-    SymbolShape
-      {
-      GeomShape = Circle
-      }
-    Color = Red
-    FillColor = Red
-    Size = 0.5
-    }
-  BarCharts
-    {
-    Color = Red
-    FillColor = Red
-    }
-  ErrorBars
-    {
-    Color = Red
-    }
-$!LineMap  [2]
-  Name = '&ZN&: &(solutiontime[2]) SECONDS'
-  Assign
-    {
-    Zone = 2
-    XAxisVar = 20
-    YAxisVar = 3
-    }
-  Lines
-    {
-    Color = Red
-    }
-  Symbols
-    {
-    SymbolShape
-      {
-      GeomShape = Circle
-      }
-    Color = Red
-    FillColor = Red
-    Size = 0.5
-    }
-  BarCharts
-    {
-    Color = Red
-    FillColor = Red
-    }
-  ErrorBars
-    {
-    Color = Red
-    }
-$!XYLineAxis 
-  DepXToYRatio = 1
-$!XYLineAxis 
-  XDetail 1
-    {
-    RangeMin = -100
-    RangeMax = -20
-    GRSpacing = 10
-    }
-$!XYLineAxis 
-  XDetail 2
-    {
-    RangeMin = 0
-    RangeMax = 1
-    GRSpacing = 0.1
-    }
-$!XYLineAxis 
-  XDetail 3
-    {
-    RangeMin = 0
-    RangeMax = 1
-    GRSpacing = 0.1
-    }
-$!XYLineAxis 
-  XDetail 4
-    {
-    RangeMin = 0
-    RangeMax = 1
-    GRSpacing = 0.1
-    }
-$!XYLineAxis 
-  XDetail 5
-    {
-    RangeMin = 0
-    RangeMax = 1
-    GRSpacing = 0.1
-    }
-$!XYLineAxis 
-  YDetail 1
-    {
-    RangeMin = 0
-    RangeMax = 100.01000000000001
-    GRSpacing = 20
-    Title
-      {
-      TitleMode = UseText
-      Text = 'Z[cm]'
-      }
-    }
-$!XYLineAxis 
-  YDetail 2
-    {
-    RangeMin = 0
-    RangeMax = 1
-    GRSpacing = 0.1
-    }
-$!XYLineAxis 
-  YDetail 3
-    {
-    RangeMin = 0
-    RangeMax = 1
-    GRSpacing = 0.1
-    }
-$!XYLineAxis 
-  YDetail 4
-    {
-    RangeMin = 0
-    RangeMax = 1
-    GRSpacing = 0.1
-    }
-$!XYLineAxis 
-  YDetail 5
-    {
-    RangeMin = 0
-    RangeMax = 1
-    GRSpacing = 0.1
-    }
-$!LinePlotLayers 
-  ShowLines = No
-  ShowSymbols = Yes
-$!Linking 
-  BetweenFrames
-    {
-    LinkFrameSizeAndPosition = Yes
-    LinkXAxisRange = Yes
-    LinkYAxisRange = Yes
-    LinkAxisPosition = Yes
-    }
+  Text = '&(datasetfname[1])'
 $!FrameControl ActivateByNumber
   Frame = 2
 $!SetStyleBase Config

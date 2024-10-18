@@ -1,7 +1,0 @@
-"CLN Material ID","Field1","Length Unit","Time Unit","CLN Type","Geometry","Direction","Circular Radius","Rectangular Width","Rectangular Height","Longitudinal hydraulic conductivity","Flow Treatment"
-1,"Default CLN, a 10 cm well","METERS","SECONDS","Well","Circular","Vertical",0.100000000,1.000000000,1.000000000,1.000000000,"Confined\Laminar"
-2,"Channel","METERS","SECONDS","Channel","Rectangular","Horizontal",10.000000000,10.000000000,1.000000000,1.000000000,"Unconfined/Mannings"
-3,"CLN_for_SWF","METERS","SECONDS","Channel","Rectangular","Horizontal",0.100000000,1.000000000,1.000000000,0.054800000,"Unconfined/Mannings"
-4,"Confined Well","METERS","SECONDS","Well","Circular","Vertical",0.100000000,1.000000000,1.000000000,1.000000000,"Confined\Laminar"
-5,"Large Diameter Well","METERS","SECONDS","Well","Circular","Vertical",0.100000000,1.000000000,1.000000000,10.000000000,"Unconfined\Laminar"
-6,"10 cm well","METERS","SECONDS","Well","Circular","Vertical",0.100000000,10.000000000,1.000000000,1.000000000,"Unconfined\Laminar"
