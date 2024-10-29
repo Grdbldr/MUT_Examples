@@ -9,12 +9,10 @@ $!VarSet |LFDSFN4| = '"_buildo.Modflow.SWF_SWBC.tecplot.dat"'
 $!VarSet |LFDSVL4| = '"X" "Y" "Z" "RCH" "SWBC"'
 $!VarSet |LFDSFN5| = '"_buildo.Modflow.GWF.tecplot.dat"'
 $!VarSet |LFDSVL5| = '"X" "Y" "Z" "GWF Layer" "GWF Zone" "GWF Cell Top" "GWF Cell Bottom" "GWF Kh" "GWF Kv" "GWF Ss" "GWF Sy" "GWF Alpha" "GWF Beta" "GWF Sr" "GWF Brooks" "GWF Initial head"'
-$!VarSet |LFDSFN6| = '"CustomLabels_GWF.dat"'
-$!VarSet |LFDSVL6| = ''
-$!VarSet |LFDSFN7| = '"_buildo.Modflow.SWF.tecplot.dat"'
-$!VarSet |LFDSVL7| = '"X" "Y" "Z" "SWF Zone" "SWF zCell" "SWF SWF-GWF connection length" "SWF Initial Depth" "SWF Cell area"'
-$!VarSet |LFDSFN8| = '"CustomLabels_SWF.dat"'
-$!VarSet |LFDSVL8| = ''
+$!VarSet |LFDSFN6| = '"_buildo.Modflow.SWF.tecplot.dat"'
+$!VarSet |LFDSVL6| = '"X" "Y" "Z" "SWF Zone" "SWF zCell" "SWF SWF-GWF connection length" "SWF Initial Depth" "SWF Cell area"'
+$!VarSet |LFDSFN7| = '"CustomLabels_SWF.dat"'
+$!VarSet |LFDSVL7| = ''
 $!SetStyleBase Factory
 $!CreateColorMap 
   Name = 'Sequential - Viridis'
@@ -508,7 +506,7 @@ $!ThreeDAxis
     GRSpacing = 20
     AxisLine
       {
-      Edge = 1
+      Edge = 2
       }
     }
 $!ThreeDAxis 
@@ -532,7 +530,7 @@ $!ThreeDAxis
     GRSpacing = 2
     AxisLine
       {
-      Edge = 4
+      Edge = 2
       }
     }
 $!IsoSurfaceAttributes  1
@@ -784,16 +782,14 @@ $!GlobalThreeD
   VectorLiftFraction = 0.7
   NearPlaneFraction = 0.1
 $!ThreeDView 
-  PSIAngle = 49.2169
-  ThetaAngle = -59.7315
-  AlphaAngle = 7.11659
+  ThetaAngle = 240
   ViewerPosition
     {
-    X = 288.1262161825192
-    Y = -127.0672894085353
-    Z = 83.16597625520244
+    X = 315.3394700701107
+    Y = 179.4452772643428
+    Z = 63.4540922019788
     }
-  ViewWidth = 116.373
+  ViewWidth = 115.793
 $!FieldLayers 
   ShowMesh = No
   ShowScatter = Yes
@@ -1235,7 +1231,7 @@ $!ThreeDAxis
     GRSpacing = 20
     AxisLine
       {
-      Edge = 1
+      Edge = 2
       }
     }
 $!ThreeDAxis 
@@ -1259,7 +1255,7 @@ $!ThreeDAxis
     GRSpacing = 2
     AxisLine
       {
-      Edge = 4
+      Edge = 2
       }
     }
 $!IsoSurfaceAttributes  1
@@ -1511,16 +1507,14 @@ $!GlobalThreeD
   VectorLiftFraction = 0.7
   NearPlaneFraction = 0.1
 $!ThreeDView 
-  PSIAngle = 49.2169
-  ThetaAngle = -59.7315
-  AlphaAngle = 7.11659
+  ThetaAngle = 240
   ViewerPosition
     {
-    X = 288.1262161825192
-    Y = -127.0672894085353
-    Z = 83.16597625520244
+    X = 315.3394700701107
+    Y = 179.4452772643428
+    Z = 63.4540922019788
     }
-  ViewWidth = 116.373
+  ViewWidth = 115.793
 $!FieldLayers 
   ShowMesh = No
   ShowScatter = Yes
@@ -1586,19 +1580,9 @@ $!ReadDataSet  '|LFDSFN5|'
   VarNameList = '|LFDSVL5|'
 $!RemoveVar |LFDSVL5|
 $!RemoveVar |LFDSFN5|
-$!ReadDataSet  '|LFDSFN6|'
-  InitialPlotType = Cartesian3D
-  IncludeText = No
-  IncludeGeom = No
-  ReadDataOption = Append
-  ResetStyle = No
-  AssignStrandIDs = Yes
-  VarLoadMode = ByName
-  VarNameList = '|LFDSVL6|'
-$!RemoveVar |LFDSVL6|
-$!RemoveVar |LFDSFN6|
 $!FrameLayout 
   ShowHeader = No
+  IsTransparent = Yes
   HeaderColor = Red
   XYPos
     {
@@ -2048,35 +2032,34 @@ $!ThreeDAxis
   XYDepXToYRatio = 1
   DepXToYRatio = 1
   DepXToZRatio = 0.041920616021
+  FrameAxis
+    {
+    Show = No
+    }
 $!ThreeDAxis 
   XDetail
     {
     RangeMin = -3.8460053035000006
     RangeMax = 83.63135463350001
     GRSpacing = 20
-    Ticks
-      {
-      Length = 3
-      }
     TickLabel
       {
       TextShape
         {
-        Height = 8
+        Height = 7
         }
-      Offset = 3
       }
     Title
       {
       TextShape
         {
-        Height = 9.6
+        Height = 7.6
         }
       Offset = 20
       }
     AxisLine
       {
-      Edge = 1
+      Edge = 2
       }
     }
 $!ThreeDAxis 
@@ -2085,23 +2068,18 @@ $!ThreeDAxis
     RangeMin = -0.82640580000000008
     RangeMax = 17.354521800000001
     GRSpacing = 5
-    Ticks
-      {
-      Length = 3
-      }
     TickLabel
       {
       TextShape
         {
-        Height = 9
+        Height = 7
         }
-      Offset = 3
       }
     Title
       {
       TextShape
         {
-        Height = 9.6
+        Height = 7.6
         }
       Offset = 20
       }
@@ -2116,29 +2094,25 @@ $!ThreeDAxis
     RangeMin = -0.23234329223649999
     RangeMax = 4.8792091369664998
     GRSpacing = 2
-    Ticks
-      {
-      Length = 3
-      }
     TickLabel
       {
       TextShape
         {
-        Height = 8
+        Height = 7
         }
-      Offset = 3
+      Offset = 4
       }
     Title
       {
       TextShape
         {
-        Height = 9.6
+        Height = 7.6
         }
       Offset = 20
       }
     AxisLine
       {
-      Edge = 4
+      Edge = 2
       }
     }
 $!IsoSurfaceAttributes  1
@@ -2408,16 +2382,14 @@ $!GlobalThreeD
   VectorLiftFraction = 0.7
   NearPlaneFraction = 0.1
 $!ThreeDView 
-  PSIAngle = 49.2169
-  ThetaAngle = -59.7315
-  AlphaAngle = 7.11659
+  ThetaAngle = 240
   ViewerPosition
     {
-    X = 288.1262161825192
-    Y = -127.0672894085353
-    Z = 83.16597625520244
+    X = 315.3394700701107
+    Y = 179.4452772643428
+    Z = 63.4540922019788
     }
-  ViewWidth = 116.373
+  ViewWidth = 115.793
 $!FieldLayers 
   ShowMesh = No
   ShowEdge = No
@@ -2465,7 +2437,7 @@ $!GlobalContour  1
     {
     NumFormat
       {
-      Formatting = CustomLabel
+      Formatting = Integer
       TimeDateFormat = ''
       }
     }
@@ -2522,7 +2494,7 @@ $!GlobalContour  2
     {
     NumFormat
       {
-      Formatting = CustomLabel
+      Formatting = Integer
       TimeDateFormat = ''
       }
     }
@@ -2532,7 +2504,7 @@ $!GlobalContour  2
     XYPos
       {
       X = 91.63
-      Y = 59.857
+      Y = 75.273
       }
     OverlayBarGrid = No
     Box
@@ -2893,7 +2865,7 @@ $!ThreeDAxis
     GRSpacing = 20
     AxisLine
       {
-      Edge = 1
+      Edge = 2
       }
     }
 $!ThreeDAxis 
@@ -2915,16 +2887,9 @@ $!ThreeDAxis
     RangeMin = -0.23234329223649999
     RangeMax = 4.8792091369664998
     GRSpacing = 2
-    TickLabel
-      {
-      TextShape
-        {
-        Height = 5
-        }
-      }
     AxisLine
       {
-      Edge = 4
+      Edge = 2
       }
     }
 $!IsoSurfaceAttributes  1
@@ -3194,16 +3159,14 @@ $!GlobalThreeD
   VectorLiftFraction = 0.7
   NearPlaneFraction = 0.1
 $!ThreeDView 
-  PSIAngle = 49.2169
-  ThetaAngle = -59.7315
-  AlphaAngle = 7.11659
+  ThetaAngle = 240
   ViewerPosition
     {
-    X = 288.1262161825192
-    Y = -127.0672894085353
-    Z = 83.16597625520244
+    X = 315.3394700701107
+    Y = 179.4452772643428
+    Z = 63.4540922019788
     }
-  ViewWidth = 116.373
+  ViewWidth = 115.793
 $!FieldLayers 
   ShowContour = Yes
   ShowShade = Yes
@@ -3250,17 +3213,17 @@ $!AttachText
   Text = '&(datasettitle)\n&(date)'
 ### Frame Number 6 ###
 $!CreateNewFrame 
-$!ReadDataSet  '|LFDSFN7|'
+$!ReadDataSet  '|LFDSFN6|'
   InitialPlotType = Cartesian3D
   IncludeText = No
   IncludeGeom = No
   ResetStyle = No
   AssignStrandIDs = Yes
   VarLoadMode = ByName
-  VarNameList = '|LFDSVL7|'
-$!RemoveVar |LFDSVL7|
-$!RemoveVar |LFDSFN7|
-$!ReadDataSet  '|LFDSFN8|'
+  VarNameList = '|LFDSVL6|'
+$!RemoveVar |LFDSVL6|
+$!RemoveVar |LFDSFN6|
+$!ReadDataSet  '|LFDSFN7|'
   InitialPlotType = Cartesian3D
   IncludeText = No
   IncludeGeom = No
@@ -3268,9 +3231,9 @@ $!ReadDataSet  '|LFDSFN8|'
   ResetStyle = No
   AssignStrandIDs = Yes
   VarLoadMode = ByName
-  VarNameList = '|LFDSVL8|'
-$!RemoveVar |LFDSVL8|
-$!RemoveVar |LFDSFN8|
+  VarNameList = '|LFDSVL7|'
+$!RemoveVar |LFDSVL7|
+$!RemoveVar |LFDSFN7|
 $!FrameLayout 
   ShowHeader = No
   IsTransparent = Yes
@@ -3298,7 +3261,6 @@ $!GlobalRGB
   RangeMax = 1
 $!GlobalContour  1
   Var = 4
-  ColorMapName = 'Sequential - Viridis'
   DefNumLevels = 2
   Labels
     {
@@ -3313,8 +3275,8 @@ $!GlobalContour  1
     Show = Yes
     XYPos
       {
-      X = 94.699
-      Y = 75.273
+      X = 94.639
+      Y = 58.11
       }
     OverlayBarGrid = No
     Box
@@ -3334,7 +3296,6 @@ $!GlobalContour  1
       CMin = 1
       CMax = 2
       }
-    ReverseColorMap = Yes
     }
 $!GlobalContour  1
   ColorMapFilter
@@ -3714,7 +3675,7 @@ $!ThreeDAxis
     GRSpacing = 20
     AxisLine
       {
-      Edge = 1
+      Edge = 2
       }
     }
 $!ThreeDAxis 
@@ -3738,7 +3699,7 @@ $!ThreeDAxis
     GRSpacing = 2
     AxisLine
       {
-      Edge = 4
+      Edge = 2
       }
     }
 $!IsoSurfaceAttributes  1
@@ -4005,21 +3966,18 @@ $!GlobalThreeD
   VectorLiftFraction = 0.7
   NearPlaneFraction = 0.1
 $!ThreeDView 
-  PSIAngle = 49.2169
-  ThetaAngle = -59.7315
-  AlphaAngle = 7.11659
+  ThetaAngle = 240
   ViewerPosition
     {
-    X = 288.1262161825192
-    Y = -127.0672894085353
-    Z = 83.16597625520244
+    X = 315.3394700701107
+    Y = 179.4452772643428
+    Z = 63.4540922019788
     }
-  ViewWidth = 116.373
+  ViewWidth = 115.793
 $!FieldLayers 
   ShowContour = Yes
   ShowShade = Yes
   ShowEdge = No
-  UseLightingEffect = No
 $!StreamtraceLayers 
   Show = No
 $!Linking 

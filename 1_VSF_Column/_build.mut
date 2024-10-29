@@ -47,6 +47,9 @@ build modflow usg
         chosen cells use gwf material number
         1
         
+        gwf kh
+        1e-5
+        
         gwf initial head function of z
         !  z    head 
           0.0  -100.0
