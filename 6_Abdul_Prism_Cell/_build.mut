@@ -160,6 +160,8 @@ build modflow usg
     ! -----------------------------------Output Control
     generate output control file
         1e-4
+        1.
+        10.
         60.
         300.0
         600.0

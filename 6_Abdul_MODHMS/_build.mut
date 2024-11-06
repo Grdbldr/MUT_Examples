@@ -11,7 +11,7 @@ build modflow usg
     generate swf domain
         top elevation
             elevation from list file
-            ./TopElevation/Kriged cell top elevation for layer 1.xyz 
+            ./TopElevation/Kriged cell elevation for layer 1.lst 
         end top elevation
     end generate swf domain
 
@@ -19,7 +19,7 @@ build modflow usg
 
         top elevation
             elevation from list file
-            ./TopElevation/Kriged cell top elevation for layer 1.xyz 
+            ./TopElevation/Kriged cell elevation for layer 1.lst 
         end
     
         new layer
@@ -42,7 +42,7 @@ build modflow usg
             -3.0009  ! Young-Jin's total thickness
     
             elevation from list file
-            ./TopElevation/Kriged cell top elevation for layer 1.xyz 
+            ./TopElevation/Kriged cell elevation for layer 1.lst
         end new layer
     
     end generate layered gwf domain
@@ -64,7 +64,7 @@ build modflow usg
         
 		clear chosen cells
 		choose cells from file
-		./IBound/GWF_Inactive_Cell_List.dat
+		./IBound/new_GWF_Inactive_Cell_List.dat
 		flag chosen cells inactive
     
     
@@ -93,7 +93,7 @@ build modflow usg
 
 		clear chosen cells
 		choose cells from file
-		./IBound/SWF_Inactive_Cell_List.dat
+		./IBound/new_SWF_Inactive_Cell_List.dat
 		flag chosen cells inactive
 
     ! -----------------------------------Stress periods, boundary conditions 
@@ -115,7 +115,7 @@ build modflow usg
         
         clear chosen cells
         choose cell at xyz
-        2.5215503461815594,70.294007536679004,-1,0
+        14.016193562722918, 70.270774744547424, 3.0260327980010855
         swf critical depth with sidelength1
         
     ! stress period 2

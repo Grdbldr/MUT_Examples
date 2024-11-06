@@ -666,7 +666,7 @@ $!ThreeDAxis
       }
     AxisLine
       {
-      Edge = 1
+      Edge = 2
       }
     }
 $!ThreeDAxis 
@@ -723,11 +723,11 @@ $!ThreeDAxis
         {
         Height = 8.6
         }
-      Offset = 20
+      Offset = 40
       }
     AxisLine
       {
-      Edge = 4
+      Edge = 2
       }
     }
 $!IsoSurfaceAttributes  1
@@ -997,16 +997,14 @@ $!GlobalThreeD
   VectorLiftFraction = 0.7
   NearPlaneFraction = 0.1
 $!ThreeDView 
-  PSIAngle = 61.673
-  ThetaAngle = -61.3367
-  AlphaAngle = -0.360784
+  ThetaAngle = 240
   ViewerPosition
     {
-    X = 465.0656203214098
-    Y = -212.1656208674179
-    Z = 88.83977316521917
+    X = 346.819808747048
+    Y = 200.4239315823702
+    Z = 72.08143815011511
     }
-  ViewWidth = 106.691
+  ViewWidth = 118.928
 $!FieldLayers 
   ShowMesh = No
   ShowEdge = No
@@ -1416,7 +1414,7 @@ $!ThreeDAxis
     GRSpacing = 20
     AxisLine
       {
-      Edge = 1
+      Edge = 2
       }
     }
 $!ThreeDAxis 
@@ -1440,7 +1438,7 @@ $!ThreeDAxis
     GRSpacing = 2
     AxisLine
       {
-      Edge = 4
+      Edge = 2
       }
     }
 $!IsoSurfaceAttributes  1
@@ -1722,16 +1720,14 @@ $!GlobalThreeD
   VectorLiftFraction = 0.7
   NearPlaneFraction = 0.1
 $!ThreeDView 
-  PSIAngle = 61.673
-  ThetaAngle = -61.3367
-  AlphaAngle = -0.360784
+  ThetaAngle = 240
   ViewerPosition
     {
-    X = 465.0656203214098
-    Y = -212.1656208674179
-    Z = 88.83977316521917
+    X = 346.819808747048
+    Y = 200.4239315823702
+    Z = 72.08143815011511
     }
-  ViewWidth = 106.691
+  ViewWidth = 118.928
 $!FieldLayers 
   ShowMesh = No
   ShowContour = Yes
@@ -2214,7 +2210,7 @@ $!ThreeDAxis
     GRSpacing = 20
     AxisLine
       {
-      Edge = 1
+      Edge = 2
       }
     }
 $!ThreeDAxis 
@@ -2238,7 +2234,7 @@ $!ThreeDAxis
     GRSpacing = 2
     AxisLine
       {
-      Edge = 4
+      Edge = 2
       }
     }
 $!IsoSurfaceAttributes  1
@@ -2526,16 +2522,14 @@ $!GlobalThreeD
   VectorLiftFraction = 0.7
   NearPlaneFraction = 0.1
 $!ThreeDView 
-  PSIAngle = 61.673
-  ThetaAngle = -61.3367
-  AlphaAngle = -0.360784
+  ThetaAngle = 240
   ViewerPosition
     {
-    X = 465.0656203214098
-    Y = -212.1656208674179
-    Z = 88.83977316521917
+    X = 346.819808747048
+    Y = 200.4239315823702
+    Z = 72.08143815011511
     }
-  ViewWidth = 106.691
+  ViewWidth = 118.928
 $!FieldLayers 
   ShowMesh = No
   ShowContour = Yes
@@ -2601,5 +2595,5 @@ $!AttachText
   Anchor = HeadLeft
   Text = '&(datasettitle)\n&(date)'
 $!FrameControl ActivateByNumber
-  Frame = 4
+  Frame = 2
 $!SetStyleBase Config

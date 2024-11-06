@@ -1,6 +1,6 @@
 #!MC 1410
 $!VarSet |LFDSFN1| = '"_posto.modflow.VolumeBudget.tecplot.dat"'
-$!VarSet |LFDSVL1| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_CLN STORAGE" "IN_CONSTANT HEAD" "IN_CLN CONST HEAD" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CLN STORAGE" "OUT_CONSTANT HEAD" "OUT_CLN CONST HEAD" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSVL1| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_CLN STORAGE" "IN_CONSTANT HEAD" "IN_CLN CONST HEAD" "IN_WELLS" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CLN STORAGE" "OUT_CONSTANT HEAD" "OUT_CLN CONST HEAD" "OUT_WELLS" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
 $!SetStyleBase Factory
 $!GlobalPaper 
   PaperSizeInfo
@@ -65,7 +65,7 @@ $!FrameName  = 'Frame 001'
 $!GlobalTime 
   SolutionTime = 0
 $!DeleteLineMaps 
-$!ActiveLineMaps  =  [3,5,7-9]
+$!ActiveLineMaps  =  [1,5]
 $!GlobalLinePlot 
   DataLabels
     {
@@ -73,6 +73,7 @@ $!GlobalLinePlot
     }
   Legend
     {
+    Show = Yes
     XYPos
       {
       X = 95
@@ -390,6 +391,58 @@ $!LineMap  [12]
     {
     Color = Purple
     }
+$!LineMap  [13]
+  Name = '&DV&'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 14
+    }
+  Lines
+    {
+    Color = Red
+    }
+  Symbols
+    {
+    Color = Red
+    FillColor = Red
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!LineMap  [14]
+  Name = '&DV&'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 15
+    }
+  Lines
+    {
+    Color = Green
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
 $!XYLineAxis 
   DepXToYRatio = 1
   ViewportPosition
@@ -406,9 +459,9 @@ $!XYLineAxis
 $!XYLineAxis 
   YDetail 1
     {
-    RangeMin = -4.9999999999999908E-005
-    RangeMax = 0.00025000000000000011
-    GRSpacing = 5E-005
+    RangeMin = -0.050000000000000044
+    RangeMax = 0.44999999999999918
+    GRSpacing = 0.05
     }
 $!FrameControl ActivateByNumber
   Frame = 1
