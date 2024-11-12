@@ -72,7 +72,7 @@ build modflow usg
         
         choose all cells
         cln initial depth
-        1.0d-4
+        1.0d-6
 
     ! -----------------------------------Stress periods, boundary conditions 
     ! stress period 1
@@ -81,10 +81,22 @@ build modflow usg
         TR
         
         duration
-        3600.0
+        242.313
         
-        number of timesteps
-        100
+		deltat
+		1.0d-3
+		
+		tminat
+		1.0d-6
+		
+        tmaxat 
+        5.0d0
+
+        tadjat 
+        1.100000e+00
+		
+		tcutat
+		2.0d0
     end stress period
 
     active domain 
@@ -95,13 +107,15 @@ build modflow usg
         cln well
         0.004     ! pumping rate
     
+        clear chosen cells
+        choose cell at xyz
+        100.  0.5 0.0
+        cln constant head
+		1.000001
     ! -----------------------------------Output Control
     generate output control file
-        60. 
-        300. 
-        3600. 
+	  242.313
     end generate output control file
-
     ! -----------------------------------Solver paramters
     sms database
     SMS.csv

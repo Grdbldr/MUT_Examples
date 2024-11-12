@@ -41,13 +41,17 @@ $!ReadDataSet  '|LFDSFN1|'
   InitialPlotType = XYLine
   IncludeText = No
   IncludeGeom = No
-  ResetStyle = No
   AssignStrandIDs = Yes
   VarLoadMode = ByName
   VarNameList = '|LFDSVL1|'
 $!RemoveVar |LFDSVL1|
 $!RemoveVar |LFDSFN1|
+$!AlterData 
+  Equation = '{t_normal}=V1*0.9905/100.0'
+$!AlterData 
+  Equation = '{Q_normal}=V11/.4'
 $!FrameLayout 
+  ShowBorder = No
   ShowHeader = No
   HeaderColor = Red
   XYPos
@@ -65,7 +69,7 @@ $!FrameName  = 'Frame 001'
 $!GlobalTime 
   SolutionTime = 0
 $!DeleteLineMaps 
-$!ActiveLineMaps  =  [1,5]
+$!ActiveLineMaps  =  [10]
 $!GlobalLinePlot 
   DataLabels
     {
@@ -73,7 +77,6 @@ $!GlobalLinePlot
     }
   Legend
     {
-    Show = Yes
     XYPos
       {
       X = 95
@@ -194,6 +197,7 @@ $!LineMap  [5]
   Lines
     {
     Color = Custom3
+    LineThickness = 0.4
     }
   Symbols
     {
@@ -324,6 +328,7 @@ $!LineMap  [10]
   Lines
     {
     Color = Custom1
+    LineThickness = 0.4
     }
   Symbols
     {
@@ -445,23 +450,20 @@ $!LineMap  [14]
     }
 $!XYLineAxis 
   DepXToYRatio = 1
-  ViewportPosition
-    {
-    Y2 = 88
-    }
 $!XYLineAxis 
   XDetail 1
     {
-    RangeMin = -1000
-    RangeMax = 5000
-    GRSpacing = 1000
+    RangeMin = 0
+    RangeMax = 250
+    GRSpacing = 50
     }
 $!XYLineAxis 
   YDetail 1
     {
-    RangeMin = -0.050000000000000044
-    RangeMax = 0.44999999999999918
-    GRSpacing = 0.05
+    RangeMin = -0.10000000000000001
+    RangeMax = 0.59999999999999998
+    AutoGrid = No
+    GRSpacing = 0.2
     }
 $!FrameControl ActivateByNumber
   Frame = 1

@@ -98,7 +98,7 @@ build modflow usg
         choose zone number
         1
         chosen zones use swf material number
-        3
+        7
         
         clear chosen zones
         choose zone number
@@ -160,8 +160,6 @@ build modflow usg
     ! -----------------------------------Output Control
     generate output control file
         1e-4
-        1.
-        10.
         60.
         300.0
         600.0

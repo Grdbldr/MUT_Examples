@@ -109,17 +109,11 @@ build modflow usg
         4.000000e-03  
         4
         
-        clear chosen nodes
-        choose node at xyz
-        100.0  0.0  0.0
-        choose node at xyz
-        100.0  1.0  0.0
-        flag chosen nodes as outer boundary
-        
         clear chosen cells
         choose cell at xyz
         100.  0.5 0.0
-        swf critical depth
+        swf constant head
+		1.000001
     
     ! -----------------------------------Output Control
     generate output control file

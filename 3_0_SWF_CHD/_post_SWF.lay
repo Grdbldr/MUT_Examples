@@ -242,7 +242,7 @@ $!ThreeDAxis
 $!PlotType  = Cartesian3D
 $!FrameName  = 'Frame 001'
 $!GlobalTime 
-  SolutionTime = 3600
+  SolutionTime = 242.31299999999999
 $!ActiveFieldMaps  =  [1]
 $!GlobalRGB 
   RedChannelVar = 4
@@ -253,6 +253,7 @@ $!GlobalRGB
 $!GlobalContour  1
   Var = 9
   ColorMapName = 'Sequential - Viridis'
+  DefNumLevels = 13
   Legend
     {
     Show = Yes
@@ -277,28 +278,24 @@ $!GlobalContour  1
 $!ContourLevels New
   ContourGroup = 1
   RawData
-18
-0.0005
-0.001
-0.0015
-0.002
-0.0025
-0.003
-0.0035
-0.004
-0.0045
-0.005
-0.0055
-0.006
-0.0065
-0.007
-0.0075
-0.008
-0.0085
-0.009
+13
+0.1
+0.12
+0.14
+0.16
+0.18
+0.2
+0.22
+0.24
+0.26
+0.28
+0.3
+0.32
+0.34
 $!GlobalContour  2
   Var = 5
   ColorMapName = 'Sequential - Viridis'
+  DefNumLevels = 1
   Legend
     {
     Show = Yes
@@ -323,6 +320,7 @@ $!ContourLevels New
 $!GlobalContour  3
   Var = 6
   ColorMapName = 'Sequential - Viridis'
+  DefNumLevels = 1
   Legend
     {
     Show = Yes
@@ -347,6 +345,7 @@ $!ContourLevels New
 $!GlobalContour  4
   Var = 7
   ColorMapName = 'Sequential - Viridis'
+  DefNumLevels = 19
   Legend
     {
     Show = Yes
@@ -389,6 +388,7 @@ $!ContourLevels New
 $!GlobalContour  5
   Var = 8
   ColorMapName = 'Sequential - Viridis'
+  DefNumLevels = 19
   Legend
     {
     Show = Yes
@@ -431,6 +431,7 @@ $!ContourLevels New
 $!GlobalContour  6
   Var = 9
   ColorMapName = 'Sequential - Viridis'
+  DefNumLevels = 18
   Legend
     {
     Show = Yes
@@ -472,6 +473,7 @@ $!ContourLevels New
 $!GlobalContour  7
   Var = 10
   ColorMapName = 'Sequential - Viridis'
+  DefNumLevels = 11
   Legend
     {
     Show = Yes
@@ -506,6 +508,7 @@ $!ContourLevels New
 $!GlobalContour  8
   Var = 11
   ColorMapName = 'Sequential - Viridis'
+  DefNumLevels = 1
   Legend
     {
     Show = Yes
@@ -751,6 +754,18 @@ $!SliceAttributes  1
     I = 1
     J = 1
     K = 1
+    }
+  StartPosition
+    {
+    X = 5.05
+    Y = 0.05
+    Z = 1.05
+    }
+  EndPosition
+    {
+    X = 95.95
+    Y = 0.95
+    Z = 1.95
     }
   EdgeLayer
     {

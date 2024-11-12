@@ -1,7 +1,7 @@
-Material ID,Material name,Porosity,Kh (Kx),Kv (Kz),Ky,Specific storage,Specific Yield,Unsaturated Function Type,Alpha,Beta,Sr,Brooks-Corey Exponent,Length Unit,Time Unit,Notes
+﻿Material ID,Material name,Porosity,Kh (Kx),Kv (Kz),Ky,Specific storage,Specific Yield,Unsaturated Function Type,Alpha,Beta,Sr,Brooks-Corey Exponent,Length Unit,Time Unit,Notes
 1,1D Column,0.3,10,10,0,0.0000001,0.43,Van Genuchten,0.036,1.56,0.1814,6.5714,CENTIMETERS,DAYS,Rob copied these properties from the prototype VSF column  LPF file
 2,1D Column Brooks,0.3,10,10,0,0.0000001,0.43,Brooks-Corey,0.036,1.56,0.1814,6.5714,CENTIMETERS,DAYS,-
-3,2D Hillslope,0.1,31.536,31.536,31.536,0.0000001,0.1,Van Genuchten,3.34,1.982,0.2771,6.5714,METERS,YEARS,-
+3,2D Hillslope,0.1,31.536,31.536,31.536,0.0000001,0.1,Van Genuchten,0.0334,1.982,0.2771,6.5714,METERS,YEARS,-
 4,2D Hillslope 100 m length,0.3,0.000147,0.000147,0,0.0001,0.3,Van Genuchten,1,5,0.3,1,METERS,SECONDS,-
 5,3D Abduls Problem,0.34,0.00001,0.00001,0,0.00000012,0.34,Van Genuchten,1.9,6,0.18,1,METERS,SECONDS,Properties from Joel Vanderkwaak's PhD thesis.
 6,Borden sand,0.34,0.00001,0.00001,0,0.00000012,0.34,Van Genuchten,1.9,6,0.18,1,METERS,SECONDS,Properties from Joel Vanderkwaak's PhD thesis.
