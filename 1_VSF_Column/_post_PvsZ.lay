@@ -72,6 +72,9 @@ $!RenameDataSetVar
 $!RenameDataSetVar 
   Var = 3
   Name = 'Z[ &(AUXZONE[1]:TimeUnits)]'
+$!RenameDataSetVar 
+  Var = 3
+  Name = 'Z[ &(AUXZONE[1]:LengthUnits)]'
 $!FrameLayout 
   ShowHeader = No
   HeaderColor = Red
@@ -544,5 +547,5 @@ $!Linking
     LinkAxisPosition = Yes
     }
 $!FrameControl ActivateByNumber
-  Frame = 1
+  Frame = 2
 $!SetStyleBase Config
