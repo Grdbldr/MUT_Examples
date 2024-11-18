@@ -9,8 +9,8 @@ build modflow usg
 
     ! -----------------------------------Grid definition
     generate uniform rectangles
-    1000.0, 1000   !  Mesh length in X-direction and number of rectangular elements
-    1.0, 1   !  Mesh length in Y-direction and number of rectangular elements
+    1000.0, 1000, 0.0   !  Mesh length in X, nRectElements in X, X Offset
+        1.0,   1, 0.0   !  Mesh length in Y, nRectElements in Y, Y Offset
     
     
     generate swf domain

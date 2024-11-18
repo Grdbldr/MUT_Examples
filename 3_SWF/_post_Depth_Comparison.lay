@@ -59,15 +59,21 @@ $!ReadDataSet  '|LFDSFN2|'
   VarNameList = '|LFDSVL2|'
 $!RemoveVar |LFDSVL2|
 $!RemoveVar |LFDSFN2|
+$!RenameDataSetZone 
+  Zone = 1
+  Name = 'Modflow'
+$!RenameDataSetZone 
+  Zone = 2
+  Name = 'HGS'
 $!FrameLayout 
   ShowHeader = No
   HeaderColor = Red
   XYPos
     {
-    X = 1
+    X = -1.3268
     Y = 0.25
     }
-  Width = 9
+  Width = 13.629
   Height = 8
 $!ThreeDAxis 
   AspectRatioLimit = 25
@@ -85,13 +91,19 @@ $!GlobalLinePlot
     }
   Legend
     {
+    Show = Yes
+    Box
+      {
+      BoxType = Filled
+      }
     XYPos
       {
-      X = 95
+      X = 84.382
+      Y = 85.344
       }
     }
 $!LineMap  [1]
-  Name = 'Map 0'
+  Name = '&ZN&'
   Assign
     {
     Zone = 1
@@ -126,7 +138,7 @@ $!LineMap  [1]
       }
     }
 $!LineMap  [2]
-  Name = 'Map 0'
+  Name = '&ZN&'
   Assign
     {
     Zone = 2
@@ -167,12 +179,26 @@ $!LineMap  [2]
     }
 $!XYLineAxis 
   DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
 $!XYLineAxis 
   XDetail 1
     {
     RangeMin = 0
     RangeMax = 101.01009999999999
     GRSpacing = 20
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     }
 $!XYLineAxis 
   YDetail 1
@@ -180,9 +206,53 @@ $!XYLineAxis
     RangeMin = -0.10000000000000001
     RangeMax = 0.59999999999999998
     GRSpacing = 0.1
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
+    Title
+      {
+      TitleMode = UseText
+      Text = 'Surface water depth [&(AUXZONE[1]:LengthUnits)]'
+      }
     }
 $!LinePlotLayers 
   ShowSymbols = Yes
+$!AttachText 
+  AnchorPos
+    {
+    X = 40.73976321544379
+    Y = 91.983556012333
+    }
+  TextShape
+    {
+    IsBold = No
+    Height = 26
+    }
+  Text = '1D Surface Flow'
+$!AttachText 
+  AnchorPos
+    {
+    X = 1
+    Y = 1
+    }
+  TextShape
+    {
+    IsBold = No
+    Height = 9
+    }
+  Box
+    {
+    BoxType = Filled
+    Margin = 40
+    }
+  Text = '&(datasetfname)'
 $!FrameControl ActivateByNumber
   Frame = 1
 $!SetStyleBase Config

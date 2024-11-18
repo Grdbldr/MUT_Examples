@@ -2459,16 +2459,18 @@ $!Linking
 $!AttachText 
   AnchorPos
     {
-    X = 0.7409914992853345
-    Y = 1.13052415210686
+    X = 1
+    Y = 1
     }
   TextShape
     {
     IsBold = No
+    Height = 9
     }
   Box
     {
     BoxType = Filled
+    Margin = 40
     }
   Text = '&(datasetfname)'
 $!AttachText 

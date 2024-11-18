@@ -61,15 +61,21 @@ $!RemoveVar |LFDSVL2|
 $!RemoveVar |LFDSFN2|
 $!AlterData 
   Equation = '{Qout_HGS}=-V19'
+$!RenameDataSetZone 
+  Zone = 1
+  Name = 'Modflow'
+$!RenameDataSetZone 
+  Zone = 2
+  Name = 'HGS'
 $!FrameLayout 
   ShowHeader = No
   HeaderColor = Red
   XYPos
     {
-    X = 1
+    X = -1.3268
     Y = 0.25
     }
-  Width = 9
+  Width = 13.629
   Height = 8
 $!ThreeDAxis 
   AspectRatioLimit = 25
@@ -79,7 +85,7 @@ $!FrameName  = 'Frame 001'
 $!GlobalTime 
   SolutionTime = 0
 $!DeleteLineMaps 
-$!ActiveLineMaps  =  [13,17]
+$!ActiveLineMaps  =  [1-2]
 $!GlobalLinePlot 
   DataLabels
     {
@@ -88,326 +94,18 @@ $!GlobalLinePlot
   Legend
     {
     Show = Yes
+    Box
+      {
+      BoxType = Filled
+      }
     XYPos
       {
-      X = 92.259
-      Y = 86.372
+      X = 82.607
+      Y = 84.419
       }
     }
 $!LineMap  [1]
-  Name = '&DV&'
-  Assign
-    {
-    Zone = 1
-    XAxisVar = 1
-    YAxisVar = 2
-    }
-  Lines
-    {
-    Color = Red
-    }
-  Symbols
-    {
-    Color = Red
-    FillColor = Red
-    }
-  BarCharts
-    {
-    Color = Red
-    FillColor = Red
-    }
-  ErrorBars
-    {
-    Color = Red
-    }
-$!LineMap  [2]
-  Name = '&DV&'
-  Assign
-    {
-    Zone = 1
-    XAxisVar = 1
-    YAxisVar = 3
-    }
-  Lines
-    {
-    Color = Green
-    }
-  Symbols
-    {
-    Color = Green
-    FillColor = Green
-    }
-  BarCharts
-    {
-    Color = Green
-    FillColor = Green
-    }
-  ErrorBars
-    {
-    Color = Green
-    }
-$!LineMap  [3]
-  Name = '&DV&'
-  Assign
-    {
-    Zone = 1
-    XAxisVar = 1
-    YAxisVar = 4
-    }
-  Lines
-    {
-    Color = Blue
-    }
-  Symbols
-    {
-    Color = Blue
-    FillColor = Blue
-    }
-  BarCharts
-    {
-    Color = Blue
-    FillColor = Blue
-    }
-  ErrorBars
-    {
-    Color = Blue
-    }
-$!LineMap  [4]
-  Name = '&DV&'
-  Assign
-    {
-    Zone = 1
-    XAxisVar = 1
-    YAxisVar = 5
-    }
-  Lines
-    {
-    Color = Custom1
-    }
-  Symbols
-    {
-    Color = Custom1
-    FillColor = Custom1
-    }
-  BarCharts
-    {
-    Color = Custom1
-    FillColor = Custom1
-    }
-  ErrorBars
-    {
-    Color = Custom1
-    }
-$!LineMap  [5]
-  Name = '&DV&'
-  Assign
-    {
-    Zone = 1
-    XAxisVar = 1
-    YAxisVar = 6
-    }
-  Lines
-    {
-    Color = Custom3
-    }
-  Symbols
-    {
-    Color = Custom3
-    FillColor = Custom3
-    }
-  BarCharts
-    {
-    Color = Custom3
-    FillColor = Custom3
-    }
-  ErrorBars
-    {
-    Color = Custom3
-    }
-$!LineMap  [6]
-  Name = '&DV&'
-  Assign
-    {
-    Zone = 1
-    XAxisVar = 1
-    YAxisVar = 7
-    }
-  Lines
-    {
-    Color = Purple
-    }
-  Symbols
-    {
-    Color = Purple
-    FillColor = Purple
-    }
-  BarCharts
-    {
-    Color = Purple
-    FillColor = Purple
-    }
-  ErrorBars
-    {
-    Color = Purple
-    }
-$!LineMap  [7]
-  Name = '&DV&'
-  Assign
-    {
-    Zone = 1
-    XAxisVar = 1
-    YAxisVar = 8
-    }
-  Lines
-    {
-    Color = Red
-    }
-  Symbols
-    {
-    Color = Red
-    FillColor = Red
-    }
-  BarCharts
-    {
-    Color = Red
-    FillColor = Red
-    }
-  ErrorBars
-    {
-    Color = Red
-    }
-$!LineMap  [8]
-  Name = '&DV&'
-  Assign
-    {
-    Zone = 1
-    XAxisVar = 1
-    YAxisVar = 9
-    }
-  Lines
-    {
-    Color = Green
-    }
-  Symbols
-    {
-    Color = Green
-    FillColor = Green
-    }
-  BarCharts
-    {
-    Color = Green
-    FillColor = Green
-    }
-  ErrorBars
-    {
-    Color = Green
-    }
-$!LineMap  [9]
-  Name = '&DV&'
-  Assign
-    {
-    Zone = 1
-    XAxisVar = 1
-    YAxisVar = 10
-    }
-  Lines
-    {
-    Color = Blue
-    }
-  Symbols
-    {
-    Color = Blue
-    FillColor = Blue
-    }
-  BarCharts
-    {
-    Color = Blue
-    FillColor = Blue
-    }
-  ErrorBars
-    {
-    Color = Blue
-    }
-$!LineMap  [10]
-  Name = '&DV&'
-  Assign
-    {
-    Zone = 1
-    XAxisVar = 1
-    YAxisVar = 11
-    }
-  Lines
-    {
-    Color = Custom1
-    }
-  Symbols
-    {
-    Color = Custom1
-    FillColor = Custom1
-    }
-  BarCharts
-    {
-    Color = Custom1
-    FillColor = Custom1
-    }
-  ErrorBars
-    {
-    Color = Custom1
-    }
-$!LineMap  [11]
-  Name = '&DV&'
-  Assign
-    {
-    Zone = 1
-    XAxisVar = 1
-    YAxisVar = 12
-    }
-  Lines
-    {
-    Color = Custom3
-    }
-  Symbols
-    {
-    Color = Custom3
-    FillColor = Custom3
-    }
-  BarCharts
-    {
-    Color = Custom3
-    FillColor = Custom3
-    }
-  ErrorBars
-    {
-    Color = Custom3
-    }
-$!LineMap  [12]
-  Name = '&DV&'
-  Assign
-    {
-    Zone = 1
-    XAxisVar = 1
-    YAxisVar = 13
-    }
-  Lines
-    {
-    Color = Purple
-    }
-  Symbols
-    {
-    Color = Purple
-    FillColor = Purple
-    }
-  BarCharts
-    {
-    Color = Purple
-    FillColor = Purple
-    }
-  ErrorBars
-    {
-    Color = Purple
-    }
-$!LineMap  [13]
-  Name = '&DV&'
+  Name = '&ZN&'
   Assign
     {
     Zone = 1
@@ -434,86 +132,8 @@ $!LineMap  [13]
     {
     Color = Red
     }
-$!LineMap  [14]
-  Name = '&DV&'
-  Assign
-    {
-    Zone = 1
-    XAxisVar = 1
-    YAxisVar = 15
-    }
-  Lines
-    {
-    Color = Green
-    }
-  Symbols
-    {
-    Color = Green
-    FillColor = Green
-    }
-  BarCharts
-    {
-    Color = Green
-    FillColor = Green
-    }
-  ErrorBars
-    {
-    Color = Green
-    }
-$!LineMap  [15]
-  Name = '&DV&'
-  Assign
-    {
-    Zone = 1
-    XAxisVar = 1
-    YAxisVar = 16
-    }
-  Lines
-    {
-    Color = Blue
-    }
-  Symbols
-    {
-    Color = Blue
-    FillColor = Blue
-    }
-  BarCharts
-    {
-    Color = Blue
-    FillColor = Blue
-    }
-  ErrorBars
-    {
-    Color = Blue
-    }
-$!LineMap  [16]
-  Name = '&DV&'
-  Assign
-    {
-    Zone = 1
-    XAxisVar = 1
-    YAxisVar = 17
-    }
-  Lines
-    {
-    Color = Custom1
-    }
-  Symbols
-    {
-    Color = Custom1
-    FillColor = Custom1
-    }
-  BarCharts
-    {
-    Color = Custom1
-    FillColor = Custom1
-    }
-  ErrorBars
-    {
-    Color = Custom1
-    }
-$!LineMap  [17]
-  Name = '&DV&'
+$!LineMap  [2]
+  Name = '&ZN&'
   Assign
     {
     Zone = 2
@@ -546,12 +166,31 @@ $!LineMap  [17]
     }
 $!XYLineAxis 
   DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
 $!XYLineAxis 
   XDetail 1
     {
     RangeMin = 0
     RangeMax = 250
     GRSpacing = 50
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
+    Title
+      {
+      TitleMode = UseText
+      Text = 'Time[&(AUXZONE[1]:TimeUnits)]'
+      }
     }
 $!XYLineAxis 
   YDetail 1
@@ -559,9 +198,53 @@ $!XYLineAxis
     RangeMin = -0.10000000000000001
     RangeMax = 0.59999999999999998
     GRSpacing = 0.2
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
+    Title
+      {
+      TitleMode = UseText
+      Text = 'Outflow[&(AUXZONE[1]:LengthUnits)<sup>3</sup>/&(AUXZONE[1]:TimeUnits)]'
+      }
     }
 $!LinePlotLayers 
   ShowSymbols = Yes
+$!AttachText 
+  AnchorPos
+    {
+    X = 40.80009049091321
+    Y = 91.46968139773897
+    }
+  TextShape
+    {
+    IsBold = No
+    Height = 26
+    }
+  Text = '1D Surface Flow'
+$!AttachText 
+  AnchorPos
+    {
+    X = 1
+    Y = 1
+    }
+  TextShape
+    {
+    IsBold = No
+    Height = 9
+    }
+  Box
+    {
+    BoxType = Filled
+    Margin = 40
+    }
+  Text = '&(datasetfname)'
 $!FrameControl ActivateByNumber
   Frame = 1
 $!SetStyleBase Config

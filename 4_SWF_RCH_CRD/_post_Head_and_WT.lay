@@ -235,7 +235,7 @@ $!ThreeDAxis
   BoxAspectRatioLimit = 25
 $!FrameName  = '-------------------------------------'
 $!GlobalTime 
-  SolutionTime = 100000
+  SolutionTime = 1000
 $!SketchAxis 
   DepXToYRatio = 1
 $!SketchAxis 
@@ -292,7 +292,7 @@ $!ThreeDAxis
 $!PlotType  = Cartesian3D
 $!FrameName  = 'Axes'
 $!GlobalTime 
-  SolutionTime = 100000
+  SolutionTime = 1000
 $!ActiveFieldMaps  =  [1]
 $!GlobalRGB 
   RedChannelVar = 4
@@ -1046,7 +1046,7 @@ $!ThreeDAxis
 $!PlotType  = Cartesian3D
 $!FrameName  = 'GWF'
 $!GlobalTime 
-  SolutionTime = 100000
+  SolutionTime = 1000
 $!ActiveFieldMaps  =  [1]
 $!GlobalRGB 
   RedChannelVar = 4
@@ -1803,7 +1803,7 @@ $!ThreeDAxis
 $!PlotType  = Cartesian3D
 $!FrameName  = 'SWF'
 $!GlobalTime 
-  SolutionTime = 100000
+  SolutionTime = 1000
 $!ActiveFieldMaps  =  [1]
 $!GlobalRGB 
   RedChannelVar = 4
@@ -2133,6 +2133,7 @@ $!Blanking
       Include = Yes
       ValueCutoff = 7.7E-006
       VarA = 9
+      VarB = 1
       }
     }
 $!FieldMap  [1]
@@ -2622,7 +2623,7 @@ $!ThreeDAxis
 $!PlotType  = Cartesian3D
 $!FrameName  = 'SWF Cells SWBC'
 $!GlobalTime 
-  SolutionTime = 100000
+  SolutionTime = 1000
 $!ActiveFieldMaps  =  [1]
 $!GlobalRGB 
   RangeMin = 0
@@ -2776,9 +2777,14 @@ $!GlobalScatter
   RelativeSize = 23.36
   Legend
     {
+    TextShape
+      {
+      Height = 2
+      }
     XYPos
       {
-      X = 95
+      X = 97.041
+      Y = 13.196
       }
     }
   RefScatSymbol
@@ -3173,5 +3179,5 @@ $!Linking
     Link3DView = Yes
     }
 $!FrameControl ActivateByNumber
-  Frame = 3
+  Frame = 5
 $!SetStyleBase Config
