@@ -7,6 +7,8 @@ $!VarSet |LFDSFN3| = '"_buildo.Modflow.GWF_CELLS.tecplot.dat"'
 $!VarSet |LFDSVL3| = '"X" "Y" "Z" "CHD"'
 $!VarSet |LFDSFN4| = '"_buildo.Modflow.CLN_CELLS.tecplot.dat"'
 $!VarSet |LFDSVL4| = '"X" "Y" "Z"'
+$!VarSet |LFDSFN5| = '"_buildo.Modflow.CLN_CHD.tecplot.dat"'
+$!VarSet |LFDSVL5| = '"X" "Y" "Z" "CHD"'
 $!SetStyleBase Factory
 $!CreateColorMap 
   Name = 'Sequential - Viridis'
@@ -3055,6 +3057,17 @@ $!ReadDataSet  '|LFDSFN4|'
   VarNameList = '|LFDSVL4|'
 $!RemoveVar |LFDSVL4|
 $!RemoveVar |LFDSFN4|
+$!ReadDataSet  '|LFDSFN5|'
+  InitialPlotType = Cartesian3D
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL5|'
+$!RemoveVar |LFDSVL5|
+$!RemoveVar |LFDSFN5|
 $!FrameLayout 
   ShowHeader = No
   IsTransparent = Yes
@@ -3073,7 +3086,7 @@ $!PlotType  = Cartesian3D
 $!FrameName  = 'CLN Cells'
 $!GlobalTime 
   SolutionTime = 0
-$!ActiveFieldMaps  =  [1]
+$!ActiveFieldMaps  =  [1-2]
 $!GlobalRGB 
   RangeMin = 0
   RangeMax = 1
@@ -3298,7 +3311,7 @@ $!FieldMap  [1]
       GeomShape = Sphere
       }
     Color = Red
-    FrameSize = 1
+    FrameSize = 0.5
     }
   Shade
     {
@@ -3317,6 +3330,65 @@ $!FieldMap  [1]
   Surfaces
     {
     SurfacesToPlot = KPlanes
+    IRange
+      {
+      Max = 1
+      }
+    }
+  VolumeMode
+    {
+    VolumeObjectsToPlot
+      {
+      ShowIsosurfaces = No
+      ShowSlices = No
+      ShowStreamtraces = No
+      }
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!FieldMap  [2]
+  Mesh
+    {
+    Color = Black
+    }
+  Contour
+    {
+    ContourType = Flood
+    Color = Black
+    UseLightingEffect = Yes
+    }
+  Vector
+    {
+    Color = Black
+    }
+  Scatter
+    {
+    SymbolShape
+      {
+      GeomShape = Sphere
+      }
+    Color = Green
+    FrameSize = 1
+    }
+  Shade
+    {
+    Color = Custom2
+    }
+  EdgeLayer
+    {
+    Show = No
+    Color = Black
+    LineThickness = 0.1
+    }
+  Points
+    {
+    PointsToPlot = SurfaceNodes
+    }
+  Surfaces
+    {
+    SurfacesToPlot = None
     IRange
       {
       Max = 1
