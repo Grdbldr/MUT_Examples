@@ -488,7 +488,7 @@ $!AttachText
     Margin = 40
     }
   Anchor = Center
-  Text = '2D Surface\Subsurface Flow'
+  Text = '2D Surface\Subsurface Flow \n&(date)'
 $!FrameControl ActivateByNumber
   Frame = 1
 $!SetStyleBase Config

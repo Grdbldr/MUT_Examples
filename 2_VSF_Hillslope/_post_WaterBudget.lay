@@ -47,15 +47,14 @@ $!ReadDataSet  '|LFDSFN1|'
 $!RemoveVar |LFDSVL1|
 $!RemoveVar |LFDSFN1|
 $!FrameLayout 
-  ShowBorder = No
   ShowHeader = No
   HeaderColor = Red
   XYPos
     {
-    X = 1
+    X = -1.3268
     Y = 0.25
     }
-  Width = 9
+  Width = 13.629
   Height = 8
 $!ThreeDAxis 
   AspectRatioLimit = 25
@@ -76,12 +75,12 @@ $!GlobalLinePlot
     Show = Yes
     Box
       {
-      BoxType = None
+      BoxType = Filled
       }
     XYPos
       {
-      X = 98.106
-      Y = 62.22
+      X = 85
+      Y = 60
       }
     }
 $!LineMap  [1]
@@ -401,6 +400,10 @@ $!LineMap  [12]
     }
 $!XYLineAxis 
   DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
 $!XYLineAxis 
   XDetail 1
     {
@@ -408,6 +411,21 @@ $!XYLineAxis
     RangeMin = 0.0010000000474974513
     RangeMax = 1000.0999998999999
     GRSpacing = 200
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
+    Title
+      {
+      TitleMode = UseText
+      Text = 'Time[&(AUXZONE[1]:TimeUnits)]'
+      }
     }
 $!XYLineAxis 
   YDetail 1
@@ -415,7 +433,56 @@ $!XYLineAxis
     RangeMin = -10
     RangeMax = 510
     GRSpacing = 100
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
+    Title
+      {
+      TitleMode = UseText
+      Text = 'Volumetric Flowrate[&(AUXZONE[1]:LengthUnits)<sup>3</sup>/&(AUXZONE[1]:TimeUnits)]'
+      }
     }
+$!AttachText 
+  AnchorPos
+    {
+    X = 1
+    Y = 1
+    }
+  TextShape
+    {
+    IsBold = No
+    Height = 9
+    }
+  Box
+    {
+    BoxType = Filled
+    Margin = 40
+    }
+  Text = '&(datasetfname)'
+$!AttachText 
+  AnchorPos
+    {
+    X = 50.5731091169595
+    Y = 89.92805755395685
+    }
+  TextShape
+    {
+    IsBold = No
+    Height = 26
+    }
+  Box
+    {
+    Margin = 40
+    }
+  Anchor = Center
+  Text = '2D Surface\Subsurface Flow'
 $!FrameControl ActivateByNumber
   Frame = 1
 $!SetStyleBase Config
