@@ -5,15 +5,15 @@ build modflow usg
 
     ! -----------------------------------Grid definition
     generate uniform rectangles
-    101.0, 101, -0.5   !  Mesh length in X, nRectElements in X, X Offset
-    1.0, 1, -0.5   !  Mesh length in Y, nRectElements in Y, Y Offset
+    101.0, 101   !  Mesh length in X-direction and number of rectangular elements
+    1.0, 1   !  Mesh length in Y-direction and number of rectangular elements
     
     
     generate swf domain
         top elevation
             elevation from xz pairs 
-                 -100.0,  3.0
-                  200.0,  0.0
+                   0.0, 2.0
+                 101.0, 1.0
             end elevation from xz pairs
         end top elevation
     end generate swf domain
@@ -22,8 +22,8 @@ build modflow usg
 
         top elevation
             elevation from xz pairs 
-                 -100.0,  3.0
-                  200.0,  0.0
+                   0.0, 2.0
+                 101.0, 1.0
             end elevation from xz pairs
         end top elevation
     
@@ -35,8 +35,8 @@ build modflow usg
             1
             
             elevation from xz pairs 
-                 -100.0,  2.0
-                  200.0, -1.0
+               0.0, 1.0
+             101.0, 0.0
             end elevation from xz pairs
         end new layer
         
@@ -64,6 +64,7 @@ build modflow usg
 
     active domain 
     swf
+    
         choose all zones
         
         chosen zones use swf material number
@@ -71,7 +72,7 @@ build modflow usg
         
         choose all cells
         swf initial depth
-        1.0d-6
+        1.0d-4
 
         
 
@@ -82,48 +83,32 @@ build modflow usg
         TR
         
         duration
-        242.313
+        3600.0
         
-		deltat
-		1.0d-3
-		
-		tminat
-		1.0d-6
-		
-        tmaxat 
-        5.0d0
-
-        tadjat 
-        1.100000e+00
-		
-		tcutat
-		2.0d0
-
+        number of timesteps
+        100
     end stress period
 
     active domain 
-    swf
-        clear chosen cells
-        choose all cells
-        swf recharge
-        4.000000e-03  
-        4
-        
-        clear chosen nodes
-        choose node at xyz
-        100.0  0.0  0.0
-        choose node at xyz
-        100.0  1.0  0.0
-        flag chosen nodes as outer boundary
-        
+    gwf
+
         clear chosen cells
         choose cell at xyz
-        100.  0.0 1.0
-        swf critical depth
+        0.5, 0.5, 1.5
+        gwf constant head
+        2.05     ! head
+
+        clear chosen cells
+        choose cell at xyz
+        100.5, 0.5,0.5
+        gwf constant head
+        1.01     ! head
     
     ! -----------------------------------Output Control
     generate output control file
-	  242.313
+        60. 
+        300. 
+        3600. 
     end generate output control file
 
     ! -----------------------------------Solver paramters

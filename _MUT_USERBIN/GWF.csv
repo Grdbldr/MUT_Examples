@@ -1,4 +1,4 @@
-﻿Material ID,Material name,Porosity,Kh (Kx),Kv (Kz),Ky,Specific storage,Specific Yield,Unsaturated Function Type,Alpha,Beta,Sr,Brooks-Corey Exponent,Length Unit,Time Unit,Notes
+Material ID,Material name,Porosity,Kh (Kx),Kv (Kz),Ky,Specific storage,Specific Yield,Unsaturated Function Type,Alpha,Beta,Sr,Brooks-Corey Exponent,Length Unit,Time Unit,Notes
 1,1D Column,0.3,10,10,0,0.0000001,0.43,Van Genuchten,0.036,1.56,0.1814,6.5714,CENTIMETERS,DAYS,Rob copied these properties from the prototype VSF column  LPF file
 2,1D Column Brooks,0.3,10,10,0,0.0000001,0.43,Brooks-Corey,0.036,1.56,0.1814,6.5714,CENTIMETERS,DAYS,-
 3,2D Hillslope,0.1,31.536,31.536,31.536,0.0000001,0.1,Van Genuchten,0.0334,1.982,0.2771,6.5714,METERS,YEARS,-
@@ -9,3 +9,6 @@
 8,Clay,0.5,0.00000001,0.00000001,0,0.0001,0.5,Van Genuchten,1,5,0.5,1,METERS,SECONDS,Made up for illustrative purposes by Rob McLaren.  Could be formalized with values from eg. Salinity lab tables https://www.ars.usda.gov/pacific-west-area/riverside-ca/agricultural-water-efficiency-and-salinity-research-unit/docs/model/rosetta-class-avera
 9,Silt,0.4,0.000001,0.000001,0,0.0001,0.4,Van Genuchten,1,5,0.5,1,METERS,SECONDS,Made up for illustrative purposes by Rob McLaren.  Could be formalized with values from eg. Salinity lab tables https://www.ars.usda.gov/pacific-west-area/riverside-ca/agricultural-water-efficiency-and-salinity-research-unit/docs/model/rosetta-class-avera
 10,2D Hillslope seconds,0.1,31.536,31.536,0.00001,0.00001,0.1,Van Genuchten,0.0334,1.982,0.2771,1,METERS,SECONDS,Rob copied these properties from the prototype VSF Hillslope LPF file
+11,Superslab soil,0.1,10,10,10,1.00E-05,0.1,Van Genuchten,6,2,0.2,1,METERS,HOURS,Copied from super_slab_case.mprops
+12,Superslab slab1,0.1,0.025,0.025,0.025,0.00001,0.1,Van Genuchten,1,3,0.3,1,METERS,HOURS,Copied from super_slab_case.mprops
+13,Superslab slab2,0.1,0.001,0.001,0.001,0.00001,0.1,Van Genuchten,1,3,0.3,1,METERS,HOURS,Copied from super_slab_case.mprops

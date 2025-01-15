@@ -1,0 +1,186 @@
+! Examples\7_SuperSlab
+!   Super_slab_case
+build modflow usg
+
+    units of time
+    hours
+
+
+    ! -----------------------------------Grid definition
+    generate uniform rectangles
+    100.0, 100, 0.0   !  Mesh length in X, nRectElements in X, X Offset
+      1.0,   1, 0.0   !  Mesh length in Y, nRectElements in Y, Y Offset
+    
+    
+    generate swf domain
+        top elevation
+            elevation from bilinear function in xy
+                0.0 100.0 0.0 1.0           
+                5.0   0.1 0.0 0.0 0.0          
+        end top elevation
+    end generate swf domain
+
+    generate layered gwf domain
+
+        top elevation
+            elevation from bilinear function in xy
+                0.0 100.0 0.0 1.0           
+                5.0   0.1 0.0 0.0 0.0          
+        end top elevation
+    
+        new layer
+            layer name
+            Top layer
+    
+            uniform sublayering
+            100
+    
+            elevation from bilinear function in xy
+                0.0 100.0 0.0 1.0           
+                0.0   0.1 0.0 0.0 0.0          
+        end new layer
+    
+    end generate layered gwf domain
+    
+    ! -----------------------------------Static properties 
+    gwf materials database
+    GWF.csv
+
+    active domain 
+    gwf
+    
+        choose all cells
+        
+        chosen cells use gwf material number
+        11
+        
+        clear chosen zones
+        clear chosen cells
+        choose cells by xyz layer range
+        40.0  60.0
+        -1e30 1e30
+        -1e30 1e30
+        1   5  
+        
+        new zone
+        
+        choose zone number
+        2
+ 
+        chosen cells use gwf material number
+        12
+        
+        clear chosen zones
+        clear chosen cells
+        choose cells by xyz layer range
+        8.0  50.0
+        -1e30 1e30
+        5.8 6.2
+        0 1000
+        
+        new zone
+
+        choose zone number
+        3
+
+        chosen cells use gwf material number
+        13
+
+       
+        choose all zones
+        gwf initial head
+        0.0 
+
+    swf materials database
+    SWF.csv
+
+    active domain 
+    swf
+    
+        choose all zones
+        
+        chosen zones use swf material number
+        9
+        
+        choose all cells
+        swf initial depth
+        0.0
+
+    ! -----------------------------------Stress periods, boundary conditions 
+    ! stress period 1
+    stress period
+        type
+        TR
+        
+        duration
+        3.0 
+
+    end
+
+                
+    active domain 
+    swf
+        clear chosen cells
+        choose all cells
+        swf recharge
+        0.05  
+        4
+        
+        clear chosen nodes
+        choose node at xyz
+        0.0  0.0  5.0
+        choose node at xyz
+        0.0  1.0  5.0
+        flag chosen nodes as outer boundary
+        
+        clear chosen cells
+        choose cell at xyz
+        0.5  0.5 5.025
+        swf critical depth
+
+    ! stress period 2
+    stress period
+        type
+        TR
+        
+        duration
+        12.0 
+
+    end
+
+                
+    active domain 
+    swf
+        clear chosen cells
+        choose all cells
+        swf recharge
+        0.0  
+        4
+
+    ! -----------------------------------Output Control
+    generate output control file
+        0.0001
+        0.25
+        0.5
+        0.75
+        1.0
+        2.0
+        3.0
+        4.0
+        5.0
+        6.0
+        7.0
+        8.0
+        9.0
+        10.0
+        11.0
+        12.0
+    end generate output control file
+
+    ! -----------------------------------Solver paramters
+    sms database
+    SMS.csv
+    sms parameter set number
+    2
+
+end build modflow usg

@@ -274,46 +274,12 @@ $!XYLineAxis
     Title
       {
       TitleMode = UseText
-      Text = 'Outflow[&(AUXZONE[1]:LengthUnits)<sup>3</sup>/&(AUXZONE[1]:TimeUnits)]'
+      Text = 'Discharge[m<sup>3</sup>/second]'
       Offset = 10
       }
     }
 $!LinePlotLayers 
   ShowSymbols = Yes
-$!AttachText 
-  AnchorPos
-    {
-    X = 1
-    Y = 1
-    }
-  TextShape
-    {
-    IsBold = No
-    Height = 9
-    }
-  Box
-    {
-    BoxType = Filled
-    Margin = 40
-    }
-  Text = '&(datasetfname)'
-$!AttachText 
-  AnchorPos
-    {
-    X = 50.58447111586308
-    Y = 89.31140801644398
-    }
-  TextShape
-    {
-    IsBold = No
-    Height = 26
-    }
-  Box
-    {
-    Margin = 40
-    }
-  Anchor = Center
-  Text = '3D Surface/subsurface Flow: Field Study of Abdul'
 $!FrameControl ActivateByNumber
   Frame = 1
 $!SetStyleBase Config

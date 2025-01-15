@@ -1,12 +1,12 @@
 #!MC 1410
-$!VarSet |LFDSFN1| = '"_buildo.Modflow.SWF_CELLS.tecplot.dat"'
+$!VarSet |LFDSFN1| = '"_buildo.Modflow.GWF_CELLS.tecplot.dat"'
 $!VarSet |LFDSVL1| = '"X" "Y" "Z"'
-$!VarSet |LFDSFN2| = '"_buildo.Modflow.SWF_RCH.tecplot.dat"'
-$!VarSet |LFDSVL2| = '"X" "Y" "Z" "RCH"'
-$!VarSet |LFDSFN3| = '"_buildo.Modflow.SWF_SWBC.tecplot.dat"'
-$!VarSet |LFDSVL3| = '"X" "Y" "Z" "RCH" "SWBC"'
-$!VarSet |LFDSFN4| = '"_buildo.Modflow.GWF_CELLS.tecplot.dat"'
-$!VarSet |LFDSVL4| = '"X" "Y" "Z"'
+$!VarSet |LFDSFN2| = '"_buildo.Modflow.SWF_CELLS.tecplot.dat"'
+$!VarSet |LFDSVL2| = '"X" "Y" "Z"'
+$!VarSet |LFDSFN3| = '"_buildo.Modflow.SWF_RCH.tecplot.dat"'
+$!VarSet |LFDSVL3| = '"X" "Y" "Z" "RCH"'
+$!VarSet |LFDSFN4| = '"_buildo.Modflow.SWF_SWBC.tecplot.dat"'
+$!VarSet |LFDSVL4| = '"X" "Y" "Z" "RCH" "SWBC"'
 $!VarSet |LFDSFN5| = '"_buildo.Modflow.GWF.tecplot.dat"'
 $!VarSet |LFDSVL5| = '"X" "Y" "Z" "GWF Layer" "GWF Zone" "GWF Cell Top" "GWF Cell Bottom" "GWF Kh" "GWF Kv" "GWF Ss" "GWF Sy" "GWF Alpha" "GWF Beta" "GWF Sr" "GWF Brooks" "GWF Initial head"'
 $!VarSet |LFDSFN6| = '"_buildo.Modflow.SWF.tecplot.dat"'
@@ -232,37 +232,16 @@ $!ReadDataSet  '|LFDSFN1|'
   InitialPlotType = Cartesian3D
   IncludeText = No
   IncludeGeom = No
+  ResetStyle = No
   AssignStrandIDs = Yes
   VarLoadMode = ByName
   VarNameList = '|LFDSVL1|'
 $!RemoveVar |LFDSVL1|
 $!RemoveVar |LFDSFN1|
-$!ReadDataSet  '|LFDSFN2|'
-  InitialPlotType = Cartesian3D
-  IncludeText = No
-  IncludeGeom = No
-  ReadDataOption = Append
-  ResetStyle = No
-  AssignStrandIDs = Yes
-  VarLoadMode = ByName
-  VarNameList = '|LFDSVL2|'
-$!RemoveVar |LFDSVL2|
-$!RemoveVar |LFDSFN2|
-$!ReadDataSet  '|LFDSFN3|'
-  InitialPlotType = Cartesian3D
-  IncludeText = No
-  IncludeGeom = No
-  ReadDataOption = Append
-  ResetStyle = No
-  AssignStrandIDs = Yes
-  VarLoadMode = ByName
-  VarNameList = '|LFDSVL3|'
-$!RemoveVar |LFDSVL3|
-$!RemoveVar |LFDSFN3|
 $!FrameLayout 
   ShowHeader = No
   IsTransparent = Yes
-  HeaderColor = Red
+  HeaderColor = Blue
   XYPos
     {
     X = -1.335
@@ -274,10 +253,10 @@ $!ThreeDAxis
   AspectRatioLimit = 25
   BoxAspectRatioLimit = 25
 $!PlotType  = Cartesian3D
-$!FrameName  = 'SWF Cells'
+$!FrameName  = 'GWF cells'
 $!GlobalTime 
   SolutionTime = 0
-$!ActiveFieldMaps  =  [1-3]
+$!ActiveFieldMaps  =  [1]
 $!GlobalRGB 
   RangeMin = 0
   RangeMax = 1
@@ -427,18 +406,12 @@ $!GlobalContour  8
     }
 $!GlobalScatter 
   Var = 3
-  RelativeSize = 0.2793
+  RelativeSize = 0.2824
   Legend
     {
-    Show = Yes
-    Box
-      {
-      BoxType = Filled
-      }
     XYPos
       {
-      X = 97.287
-      Y = 22.343
+      X = 95
       }
     }
   RefScatSymbol
@@ -463,130 +436,11 @@ $!FieldMap  [1]
     }
   Scatter
     {
-    Show = No
     SymbolShape
       {
       GeomShape = Sphere
       }
-    Color = Black
-    FrameSize = 0.5
-    }
-  Shade
-    {
-    Color = Custom2
-    }
-  EdgeLayer
-    {
-    Show = No
-    Color = Black
-    LineThickness = 0.1
-    }
-  Points
-    {
-    PointsToPlot = SurfaceNodes
-    }
-  Surfaces
-    {
-    SurfacesToPlot = KPlanes
-    IRange
-      {
-      Max = 1
-      }
-    }
-  VolumeMode
-    {
-    VolumeObjectsToPlot
-      {
-      ShowIsosurfaces = No
-      ShowSlices = No
-      ShowStreamtraces = No
-      }
-    }
-  Effects
-    {
-    LightingEffect = Gouraud
-    }
-$!FieldMap  [2]
-  Mesh
-    {
-    Color = Black
-    }
-  Contour
-    {
-    ContourType = Flood
-    Color = Black
-    UseLightingEffect = Yes
-    }
-  Vector
-    {
-    Color = Black
-    }
-  Scatter
-    {
-    SymbolShape
-      {
-      GeomShape = Sphere
-      }
-    Color = Custom6
-    FrameSize = 0.5
-    }
-  Shade
-    {
-    Color = Custom2
-    }
-  EdgeLayer
-    {
-    Show = No
-    Color = Black
-    LineThickness = 0.1
-    }
-  Points
-    {
-    PointsToPlot = SurfaceNodes
-    }
-  Surfaces
-    {
-    SurfacesToPlot = KPlanes
-    IRange
-      {
-      Max = 1
-      }
-    }
-  VolumeMode
-    {
-    VolumeObjectsToPlot
-      {
-      ShowIsosurfaces = No
-      ShowSlices = No
-      ShowStreamtraces = No
-      }
-    }
-  Effects
-    {
-    LightingEffect = Gouraud
-    }
-$!FieldMap  [3]
-  Mesh
-    {
-    Color = Black
-    }
-  Contour
-    {
-    ContourType = Flood
-    Color = Black
-    UseLightingEffect = Yes
-    }
-  Vector
-    {
-    Color = Black
-    }
-  Scatter
-    {
-    SymbolShape
-      {
-      GeomShape = Sphere
-      }
-    Color = Custom3
+    Color = Custom1
     FrameSize = 0.5
     }
   Shade
@@ -952,10 +806,31 @@ $!Linking
     }
 ### Frame Number 2 ###
 $!CreateNewFrame 
+$!ReadDataSet  '|LFDSFN2|'
+  InitialPlotType = Cartesian3D
+  IncludeText = No
+  IncludeGeom = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL2|'
+$!RemoveVar |LFDSVL2|
+$!RemoveVar |LFDSFN2|
+$!ReadDataSet  '|LFDSFN3|'
+  InitialPlotType = Cartesian3D
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL3|'
+$!RemoveVar |LFDSVL3|
+$!RemoveVar |LFDSFN3|
 $!ReadDataSet  '|LFDSFN4|'
   InitialPlotType = Cartesian3D
   IncludeText = No
   IncludeGeom = No
+  ReadDataOption = Append
   ResetStyle = No
   AssignStrandIDs = Yes
   VarLoadMode = ByName
@@ -965,7 +840,7 @@ $!RemoveVar |LFDSFN4|
 $!FrameLayout 
   ShowHeader = No
   IsTransparent = Yes
-  HeaderColor = Blue
+  HeaderColor = Red
   XYPos
     {
     X = -1.335
@@ -977,10 +852,10 @@ $!ThreeDAxis
   AspectRatioLimit = 25
   BoxAspectRatioLimit = 25
 $!PlotType  = Cartesian3D
-$!FrameName  = 'GWF cells'
+$!FrameName  = 'SWF Cells'
 $!GlobalTime 
   SolutionTime = 0
-$!ActiveFieldMaps  =  [1]
+$!ActiveFieldMaps  =  [1-3]
 $!GlobalRGB 
   RangeMin = 0
   RangeMax = 1
@@ -1130,12 +1005,18 @@ $!GlobalContour  8
     }
 $!GlobalScatter 
   Var = 3
-  RelativeSize = 0.2824
+  RelativeSize = 0.2793
   Legend
     {
+    Show = Yes
+    Box
+      {
+      BoxType = Filled
+      }
     XYPos
       {
-      X = 95
+      X = 97.287
+      Y = 22.343
       }
     }
   RefScatSymbol
@@ -1160,11 +1041,131 @@ $!FieldMap  [1]
     }
   Scatter
     {
+    Show = No
     SymbolShape
       {
       GeomShape = Sphere
       }
-    Color = Custom1
+    Color = Black
+    FrameSize = 0.5
+    }
+  Shade
+    {
+    Color = Custom2
+    }
+  EdgeLayer
+    {
+    Show = No
+    Color = Black
+    LineThickness = 0.1
+    }
+  Points
+    {
+    PointsToPlot = SurfaceNodes
+    }
+  Surfaces
+    {
+    SurfacesToPlot = KPlanes
+    IRange
+      {
+      Max = 1
+      }
+    }
+  VolumeMode
+    {
+    VolumeObjectsToPlot
+      {
+      ShowIsosurfaces = No
+      ShowSlices = No
+      ShowStreamtraces = No
+      }
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!FieldMap  [2]
+  Mesh
+    {
+    Color = Black
+    }
+  Contour
+    {
+    ContourType = Flood
+    Color = Black
+    UseLightingEffect = Yes
+    }
+  Vector
+    {
+    Color = Black
+    }
+  Scatter
+    {
+    Show = No
+    SymbolShape
+      {
+      GeomShape = Sphere
+      }
+    Color = Custom6
+    FrameSize = 0.5
+    }
+  Shade
+    {
+    Color = Custom2
+    }
+  EdgeLayer
+    {
+    Show = No
+    Color = Black
+    LineThickness = 0.1
+    }
+  Points
+    {
+    PointsToPlot = SurfaceNodes
+    }
+  Surfaces
+    {
+    SurfacesToPlot = KPlanes
+    IRange
+      {
+      Max = 1
+      }
+    }
+  VolumeMode
+    {
+    VolumeObjectsToPlot
+      {
+      ShowIsosurfaces = No
+      ShowSlices = No
+      ShowStreamtraces = No
+      }
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!FieldMap  [3]
+  Mesh
+    {
+    Color = Black
+    }
+  Contour
+    {
+    ContourType = Flood
+    Color = Black
+    UseLightingEffect = Yes
+    }
+  Vector
+    {
+    Color = Black
+    }
+  Scatter
+    {
+    SymbolShape
+      {
+      GeomShape = Sphere
+      }
+    Color = Custom3
     FrameSize = 0.5
     }
   Shade
@@ -3182,18 +3183,17 @@ $!Linking
 $!AttachText 
   AnchorPos
     {
-    X = 1
-    Y = 1
+    X = 3.629357007524038
+    Y = 2.363823227132578
     }
   TextShape
     {
     IsBold = No
-    Height = 9
+    Height = 11
     }
   Box
     {
     BoxType = Filled
-    Margin = 40
     }
   Text = '&(datasetfname)'
 $!AttachText 
@@ -3989,18 +3989,17 @@ $!Linking
 $!AttachText 
   AnchorPos
     {
-    X = 1
-    Y = 1
+    X = 3.629357007524038
+    Y = 2.261048304213764
     }
   TextShape
     {
     IsBold = No
-    Height = 9
+    Height = 11
     }
   Box
     {
     BoxType = Filled
-    Margin = 40
     }
   Text = '&(datasetfname)'
 $!AttachText 
@@ -4019,5 +4018,5 @@ $!AttachText
     }
   Text = '&(datasettitle)\n&(date)'
 $!FrameControl ActivateByNumber
-  Frame = 1
+  Frame = 6
 $!SetStyleBase Config

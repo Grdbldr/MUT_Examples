@@ -5,16 +5,16 @@ build modflow usg
 
     ! -----------------------------------Grid definition
     generate uniform rectangles
-    101.0, 101, -0.5   !  Mesh length in X, nRectElements in X, X Offset
-    1.0, 1, -0.5   !  Mesh length in Y, nRectElements in Y, Y Offset
+    101.0, 101   !  Mesh length in X-direction and number of rectangular elements
+    1.0, 1   !  Mesh length in Y-direction and number of rectangular elements
     
     
     generate layered gwf domain
 
         top elevation
             elevation from xz pairs 
-                 -100.0,  3.0
-                  200.0,  0.0
+                   0.0, 2.0
+                 101.0, 1.0
             end elevation from xz pairs
         end top elevation
     
@@ -26,8 +26,8 @@ build modflow usg
             1
             
             elevation from xz pairs 
-                 -100.0,  2.0
-                  200.0, -1.0
+               0.0, 1.0
+             101.0, 0.0
             end elevation from xz pairs
         end new layer
         
@@ -35,8 +35,8 @@ build modflow usg
     
     generate cln domain
         cln from xyz pair
-              -.5    0.0     2.005
-            100.5    0.0     0.995
+              0.0    0.5     2.0
+            101.0    0.5     1.0
             101  ! number of new CLN cells
 
     end generate cln domain
@@ -72,7 +72,7 @@ build modflow usg
         
         choose all cells
         cln initial depth
-        1.0d-6
+        1.0d-4
 
     ! -----------------------------------Stress periods, boundary conditions 
     ! stress period 1
@@ -81,22 +81,10 @@ build modflow usg
         TR
         
         duration
-        242.313
+        3600.0
         
-		deltat
-		1.0d-3
-		
-		tminat
-		1.0d-6
-		
-        tmaxat 
-        5.0d0
-
-        tadjat 
-        1.100000e+00
-		
-		tcutat
-		2.0d0
+        number of timesteps
+        100
     end stress period
 
     active domain 
@@ -107,15 +95,13 @@ build modflow usg
         cln well
         0.004     ! pumping rate
     
-        clear chosen cells
-        choose cell at xyz
-        100.  0.0 1.0
-        cln constant head
-		1.000001
     ! -----------------------------------Output Control
     generate output control file
-	  242.313
+        60. 
+        300. 
+        3600. 
     end generate output control file
+
     ! -----------------------------------Solver paramters
     sms database
     SMS.csv

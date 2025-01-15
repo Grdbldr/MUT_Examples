@@ -1,4 +1,4 @@
-﻿SWF ID,Material Name,Manning's coefficient,Depression storage height,Obstruction storage height,SWF Depth for smoothing (SWFH1),SWF Depth for smoothing (SWFH2),Length Unit,Time Unit,Notes
+SWF ID,Material Name,Manning's coefficient,Depression storage height,Obstruction storage height,SWF Depth for smoothing (SWFH1),SWF Depth for smoothing (SWFH2),Length Unit,Time Unit,Notes
 1,2D Hillslope,1.70E-09,0.000001,0.000001,0.000001,0.000001,METERS,YEARS,
 2,2D Hillslope 100 m length,0.0548,0.1,0,0.000001,0.000001,METERS,SECONDS,
 3,Streambed,0.03,0.1,0,0.000001,0.000001,METERS,SECONDS,Abdul example
@@ -7,3 +7,6 @@
 6,Panday channel,0.15,0.01,0,0.000001,0.000001,METERS,SECONDS,Panday example
 7,Streambed_Calib_USG_V1,0.01,0.1,0,0.00375334,0.00126394,METERS,SECONDS,Abdul example calibrated for USG Prism Cell
 8,Streambed_Calib_USG_V2,0.02,0.1,0,0.0119106,0.0249907,METERS,SECONDS,Abdul example calibrated for USG Hexahedra
+9,Slope,1.00E-06,0.001,0.001,0.000001,0.000001,METERS,HOURS,Copied from super_slab_case.oprops
+10,Digiammarco Slope,0.015,0.001,0.001,0.000001,0.000001,METERS,SECONDS,Copied from digiam.oprops
+11,Digiammarco Channel,0.15,0.15,0.001,0.000001,0.000001,METERS,SECONDS,Copied from digiam.oprops

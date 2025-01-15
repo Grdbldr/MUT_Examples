@@ -1004,7 +1004,7 @@ $!ThreeDView
     Y = 200.4239315823702
     Z = 72.08143815011511
     }
-  ViewWidth = 121.488
+  ViewWidth = 118.928
 $!FieldLayers 
   ShowMesh = No
   ShowEdge = No
@@ -1727,7 +1727,7 @@ $!ThreeDView
     Y = 200.4239315823702
     Z = 72.08143815011511
     }
-  ViewWidth = 121.488
+  ViewWidth = 118.928
 $!FieldLayers 
   ShowMesh = No
   ShowContour = Yes
@@ -1744,13 +1744,13 @@ $!Linking
 $!AttachText 
   AnchorPos
     {
-    X = 1
-    Y = 1
+    X = 2.305724817573159
+    Y = 1.952723535457324
     }
   TextShape
     {
     IsBold = No
-    Height = 9
+    Height = 11
     }
   Box
     {
@@ -1774,23 +1774,6 @@ $!AttachText
     }
   Anchor = HeadLeft
   Text = '&(datasettitle)\n&(date)'
-$!AttachText 
-  AnchorPos
-    {
-    X = 50
-    Y = 98
-    }
-  TextShape
-    {
-    IsBold = No
-    Height = 20
-    }
-  Box
-    {
-    BoxType = Filled
-    }
-  Anchor = HeadCenter
-  Text = 'Elapsed time: &(solutiontime) &(AUXZONE[1]:TimeUnits)'
 ### Frame Number 4 ###
 $!CreateNewFrame 
 $!ReadDataSet  '|LFDSFN2|'
@@ -2546,7 +2529,7 @@ $!ThreeDView
     Y = 200.4239315823702
     Z = 72.08143815011511
     }
-  ViewWidth = 121.488
+  ViewWidth = 118.928
 $!FieldLayers 
   ShowMesh = No
   ShowContour = Yes
@@ -2564,8 +2547,8 @@ $!Linking
 $!AttachText 
   AnchorPos
     {
-    X = 50
-    Y = 98
+    X = 25.59062463591352
+    Y = 98.25250844979402
     }
   TextShape
     {
@@ -2576,18 +2559,18 @@ $!AttachText
     {
     BoxType = Filled
     }
-  Anchor = HeadCenter
+  Anchor = HeadLeft
   Text = 'Elapsed time: &(solutiontime) &(AUXZONE[1]:TimeUnits)'
 $!AttachText 
   AnchorPos
     {
-    X = 1
-    Y = 1
+    X = 2.305724817573159
+    Y = 1.952723535457324
     }
   TextShape
     {
     IsBold = No
-    Height = 9
+    Height = 11
     }
   Box
     {
@@ -2612,5 +2595,5 @@ $!AttachText
   Anchor = HeadLeft
   Text = '&(datasettitle)\n&(date)'
 $!FrameControl ActivateByNumber
-  Frame = 3
+  Frame = 2
 $!SetStyleBase Config

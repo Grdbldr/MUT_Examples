@@ -233,7 +233,7 @@ $!ThreeDAxis
   BoxAspectRatioLimit = 25
 $!FrameName  = '-------------------------------------'
 $!GlobalTime 
-  SolutionTime = 242.31299999999999
+  SolutionTime = 300
 $!SketchAxis 
   DepXToYRatio = 1
 $!SketchAxis 
@@ -285,7 +285,7 @@ $!ThreeDAxis
 $!PlotType  = Cartesian3D
 $!FrameName  = 'Axes'
 $!GlobalTime 
-  SolutionTime = 242.31299999999999
+  SolutionTime = 300
 $!ActiveFieldMaps  =  [1]
 $!GlobalRGB 
   RedChannelVar = 4
@@ -650,8 +650,8 @@ $!ThreeDAxis
 $!ThreeDAxis 
   XDetail
     {
-    RangeMin = -5.5500000000000007
-    RangeMax = 105.55
+    RangeMin = -5.0500000000000007
+    RangeMax = 106.05
     GRSpacing = 20
     TickLabel
       {
@@ -676,9 +676,9 @@ $!ThreeDAxis
 $!ThreeDAxis 
   YDetail
     {
-    RangeMin = -0.55000000000000004
-    RangeMax = 0.55000000000000004
-    GRSpacing = 0.5
+    RangeMin = -0.050000000000000003
+    RangeMax = 1.05
+    GRSpacing = 0.2
     TickLabel
       {
       TextShape
@@ -702,8 +702,8 @@ $!ThreeDAxis
 $!ThreeDAxis 
   ZDetail
     {
-    RangeMin = -0.1055
-    RangeMax = 2.1054999999999997
+    RangeMin = -0.10000000000000001
+    RangeMax = 2.1000000000000001
     GRSpacing = 0.5
     TickLabel
       {
@@ -966,8 +966,8 @@ $!GlobalThreeD
     }
   RotateOrigin
     {
-    X = 50
-    Y = 0
+    X = 50.5
+    Y = 0.5
     Z = 1
     }
   LightSource
@@ -994,9 +994,9 @@ $!ThreeDView
   AlphaAngle = 0.64029
   ViewerPosition
     {
-    X = 593.9360330423333
-    Y = 8.397602801557927
-    Z = 11.23449736656178
+    X = 605.8887816835925
+    Y = 8.560889076237155
+    Z = 11.45494835062219
     }
   ViewWidth = 234.763
 $!FieldLayers 
@@ -1030,7 +1030,7 @@ $!ThreeDAxis
 $!PlotType  = Cartesian3D
 $!FrameName  = 'GWF'
 $!GlobalTime 
-  SolutionTime = 242.31299999999999
+  SolutionTime = 300
 $!ActiveFieldMaps  =  [1]
 $!GlobalRGB 
   RedChannelVar = 4
@@ -1394,8 +1394,8 @@ $!ThreeDAxis
   XDetail
     {
     ShowAxis = No
-    RangeMin = -5.5500000000000007
-    RangeMax = 105.55
+    RangeMin = -5.0500000000000007
+    RangeMax = 106.05
     GRSpacing = 20
     AxisLine
       {
@@ -1406,8 +1406,8 @@ $!ThreeDAxis
   YDetail
     {
     ShowAxis = No
-    RangeMin = -0.55000000000000004
-    RangeMax = 0.55000000000000004
+    RangeMin = -0.050000000000000003
+    RangeMax = 1.05
     GRSpacing = 0.2
     AxisLine
       {
@@ -1418,8 +1418,8 @@ $!ThreeDAxis
   ZDetail
     {
     ShowAxis = No
-    RangeMin = -0.1055
-    RangeMax = 2.1054999999999997
+    RangeMin = -0.10000000000000001
+    RangeMax = 2.1000000000000001
     GRSpacing = 0.5
     AxisLine
       {
@@ -1670,8 +1670,8 @@ $!GlobalThreeD
     }
   RotateOrigin
     {
-    X = 50
-    Y = 0
+    X = 50.5
+    Y = 0.5
     Z = 1
     }
   LightSource
@@ -1698,9 +1698,9 @@ $!ThreeDView
   AlphaAngle = 0.64029
   ViewerPosition
     {
-    X = 593.9360330423333
-    Y = 8.397602801557927
-    Z = 11.23449736656178
+    X = 605.8887816835925
+    Y = 8.560889076237155
+    Z = 11.45494835062219
     }
   ViewWidth = 234.763
 $!FieldLayers 
@@ -1750,18 +1750,16 @@ $!AttachText
 $!AttachText 
   AnchorPos
     {
-    X = 1
-    Y = 1
+    X = 1.104238431189075
+    Y = 1.4388489208633
     }
   TextShape
     {
     IsBold = No
-    Height = 9
     }
   Box
     {
     BoxType = Filled
-    Margin = 40
     }
   Text = '&(datasetfname)'
 ### Frame Number 4 ###
@@ -1793,7 +1791,7 @@ $!ThreeDAxis
 $!PlotType  = Cartesian3D
 $!FrameName  = 'CLN'
 $!GlobalTime 
-  SolutionTime = 242.31299999999999
+  SolutionTime = 300
 $!ActiveFieldMaps  =  [1]
 $!GlobalRGB 
   RedChannelVar = 4
@@ -2194,8 +2192,8 @@ $!ThreeDAxis
   XDetail
     {
     ShowAxis = No
-    RangeMin = -5.5500000000000007
-    RangeMax = 105.55
+    RangeMin = -5.0500000000000007
+    RangeMax = 106.05
     GRSpacing = 20
     AxisLine
       {
@@ -2206,8 +2204,8 @@ $!ThreeDAxis
   YDetail
     {
     ShowAxis = No
-    RangeMin = -0.55000000000000004
-    RangeMax = 0.55000000000000004
+    RangeMin = -0.050000000000000003
+    RangeMax = 1.05
     GRSpacing = 0.2
     AxisLine
       {
@@ -2218,8 +2216,8 @@ $!ThreeDAxis
   ZDetail
     {
     ShowAxis = No
-    RangeMin = -0.1055
-    RangeMax = 2.1054999999999997
+    RangeMin = -0.10000000000000001
+    RangeMax = 2.1000000000000001
     GRSpacing = 0.5
     AxisLine
       {
@@ -2470,8 +2468,8 @@ $!GlobalThreeD
     }
   RotateOrigin
     {
-    X = 50
-    Y = 0
+    X = 50.5
+    Y = 0.5
     Z = 1
     }
   LightSource
@@ -2498,9 +2496,9 @@ $!ThreeDView
   AlphaAngle = 0.64029
   ViewerPosition
     {
-    X = 593.9360330423333
-    Y = 8.397602801557927
-    Z = 11.23449736656178
+    X = 605.8887816835925
+    Y = 8.560889076237155
+    Z = 11.45494835062219
     }
   ViewWidth = 234.763
 $!FieldLayers 
@@ -2548,20 +2546,18 @@ $!AttachText
 $!AttachText 
   AnchorPos
     {
-    X = 1
-    Y = 1
+    X = 1.104238431189075
+    Y = 1.4388489208633
     }
   TextShape
     {
     IsBold = No
-    Height = 9
     }
   Box
     {
     BoxType = Filled
-    Margin = 40
     }
   Text = '&(datasetfname)'
 $!FrameControl ActivateByNumber
-  Frame = 3
+  Frame = 4
 $!SetStyleBase Config

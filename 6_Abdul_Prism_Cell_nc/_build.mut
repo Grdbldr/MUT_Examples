@@ -90,7 +90,7 @@ build modflow usg
         choose zone number
         1
         chosen zones use swf material number
-        7
+        3
         
         clear chosen zones
         choose zone number

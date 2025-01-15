@@ -4,8 +4,8 @@ build modflow usg
 
     ! -----------------------------------Grid definition
     generate uniform rectangles
-    16.52826, 23, 0.0   !  Mesh length in X, nRectElements in X, X Offset 
-    80.01   , 70, 0.0   !  Mesh length in Y, nRectElements in Y, Y Offset 
+    16.52826, 23   !  Mesh length in X-direction and number of rectangular elements
+    80.01, 70   !  Mesh length in Y-direction and number of rectangular elements
     
     
     generate swf domain
@@ -78,7 +78,7 @@ build modflow usg
         choose zone number
         1
         chosen zones use swf material number
-        8
+        3
         
 !         clear chosen zones
 !         choose zone number
