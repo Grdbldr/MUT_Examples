@@ -9,6 +9,13 @@ Material ID,Material name,Porosity,Kh (Kx),Kv (Kz),Ky,Specific storage,Specific 
 8,Clay,0.5,0.00000001,0.00000001,0,0.0001,0.5,Van Genuchten,1,5,0.5,1,METERS,SECONDS,Made up for illustrative purposes by Rob McLaren.  Could be formalized with values from eg. Salinity lab tables https://www.ars.usda.gov/pacific-west-area/riverside-ca/agricultural-water-efficiency-and-salinity-research-unit/docs/model/rosetta-class-avera
 9,Silt,0.4,0.000001,0.000001,0,0.0001,0.4,Van Genuchten,1,5,0.5,1,METERS,SECONDS,Made up for illustrative purposes by Rob McLaren.  Could be formalized with values from eg. Salinity lab tables https://www.ars.usda.gov/pacific-west-area/riverside-ca/agricultural-water-efficiency-and-salinity-research-unit/docs/model/rosetta-class-avera
 10,2D Hillslope seconds,0.1,31.536,31.536,0.00001,0.00001,0.1,Van Genuchten,0.0334,1.982,0.2771,1,METERS,SECONDS,Rob copied these properties from the prototype VSF Hillslope LPF file
-11,Superslab soil,0.1,10,10,10,1.00E-05,0.1,Van Genuchten,6,2,0.2,1,METERS,HOURS,Copied from super_slab_case.mprops
-12,Superslab slab1,0.1,0.025,0.025,0.025,0.00001,0.1,Van Genuchten,1,3,0.3,1,METERS,HOURS,Copied from super_slab_case.mprops
-13,Superslab slab2,0.1,0.001,0.001,0.001,0.00001,0.1,Van Genuchten,1,3,0.3,1,METERS,HOURS,Copied from super_slab_case.mprops
+11,Superslab Soil,0.1,10,10,10,1.00E-05,0.1,Van Genuchten,6,2,0.2,1,METERS,HOURS,Copied from super_slab_case.mprops
+12,Superslab Slab 1,0.1,0.025,0.025,0.025,0.00001,0.1,Van Genuchten,1,3,0.3,1,METERS,HOURS,Copied from super_slab_case.mprops
+13,Superslab Slab 2,0.1,0.001,0.001,0.001,0.00001,0.1,Van Genuchten,1,3,0.3,1,METERS,HOURS,Copied from super_slab_case.mprops
+14,Smith-Woolhiser Layer 1,0.3946,0.184,0.184,0.184,0,0.3946,Van Genuchten,0.07,3.9265,0.05068,1,CENTIMETERS,MINUTES,Copied from smith.mprops
+15,Smith-Woolhiser Layer 2,0.4387,0.1452,0.1452,0.1452,0,0.4387,Van Genuchten,0.056,4.1371,0.05699,1,CENTIMETERS,MINUTES,Copied from smith.mprops
+16,Smith-Woolhiser Layer 3,0.4764,0.1296,0.1296,0.1296,0,0.4764,Van Genuchten,0.05248,0.0443,4.3565,1,CENTIMETERS,MINUTES,Copied from smith.mprops
+17,Forsyth Zone 1,0.368,701.353,701.353,701.353,1.00E-04,0.368,Van Genuchten,0.0334,1.982,0.2771,1,CENTIMETERS,DAYS,Copied from forsyth.mprops
+18,Forsyth Zone 2,0.351,417.2073,417.2073,417.2073,0.00E+00,0.368,Van Genuchten,0.0363,1.632,0.2806,1,CENTIMETERS,DAYS,Copied from forsyth.mprops
+19,Forsyth Zone 3,0.325,368.1948,368.1948,368.1948,0.00E+00,0.325,Van Genuchten,0.0345,1.573,0.2643,1,CENTIMETERS,DAYS,Copied from forsyth.mprops
+20,Forsyth Zone 4,0.325,3681.948,3681.948,3681.948,0.00E+00,0.325,Van Genuchten,0.0345,1.573,0.2643,1,CENTIMETERS,DAYS,Copied from forsyth.mprops

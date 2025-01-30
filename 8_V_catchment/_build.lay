@@ -251,7 +251,7 @@ $!SketchAxis
   YDetail
     {
     RangeMin = 0
-    RangeMax = 1.0001
+    RangeMax = 1.000094042750632
     GRSpacing = 0.2
     }
 ### Frame Number 2 ###
@@ -395,6 +395,7 @@ $!ContourLevels New
 $!GlobalContour  3
   Var = 6
   ColorMapName = 'Sequential - Viridis'
+  DefNumLevels = 1
   Legend
     {
     Show = Yes
@@ -419,6 +420,7 @@ $!ContourLevels New
 $!GlobalContour  4
   Var = 7
   ColorMapName = 'Sequential - Viridis'
+  DefNumLevels = 1
   Legend
     {
     Show = Yes
@@ -443,6 +445,7 @@ $!ContourLevels New
 $!GlobalContour  5
   Var = 8
   ColorMapName = 'Sequential - Viridis'
+  DefNumLevels = 1
   Legend
     {
     Show = Yes
@@ -966,11 +969,11 @@ $!ThreeDView
   AlphaAngle = 1.09975
   ViewerPosition
     {
-    X = 2171.998596576786
-    Y = -6754.423611993531
-    Z = 445.2602579904963
+    X = 2285.728949352437
+    Y = -6763.412905989227
+    Z = 405.0420674052663
     }
-  ViewWidth = 2595.14
+  ViewWidth = 2675.24
 $!FieldLayers 
   ShowMesh = No
   ShowEdge = No
@@ -1174,11 +1177,22 @@ $!GlobalContour  8
     }
 $!GlobalScatter 
   Var = 4
+  RelativeSize = 0.01038
   Legend
     {
+    Show = Yes
+    TextShape
+      {
+      Height = 2
+      }
+    Box
+      {
+      BoxType = None
+      }
     XYPos
       {
-      X = 95
+      X = 97.292
+      Y = 62.939
       }
     }
   RefScatSymbol
@@ -1226,7 +1240,7 @@ $!FieldMap  [1]
     }
   Surfaces
     {
-    SurfacesToPlot = None
+    SurfacesToPlot = KPlanes
     IRange
       {
       Max = 1
@@ -1285,7 +1299,7 @@ $!FieldMap  [2]
     }
   Surfaces
     {
-    SurfacesToPlot = None
+    SurfacesToPlot = KPlanes
     IRange
       {
       Max = 1
@@ -1613,11 +1627,11 @@ $!ThreeDView
   AlphaAngle = 1.09975
   ViewerPosition
     {
-    X = 2171.998596576786
-    Y = -6754.423611993531
-    Z = 445.2602579904963
+    X = 2285.728949352437
+    Y = -6763.412905989227
+    Z = 405.0420674052663
     }
-  ViewWidth = 2595.14
+  ViewWidth = 2675.24
 $!FieldLayers 
   ShowMesh = No
   ShowScatter = Yes
@@ -1715,6 +1729,7 @@ $!ContourLevels New
 $!GlobalContour  2
   Var = 5
   ColorMapName = 'Sequential - Viridis'
+  DefNumLevels = 11
   Legend
     {
     Show = Yes
@@ -1749,6 +1764,7 @@ $!ContourLevels New
 $!GlobalContour  3
   Var = 6
   ColorMapName = 'Sequential - Viridis'
+  DefNumLevels = 1
   Legend
     {
     Show = Yes
@@ -1773,6 +1789,7 @@ $!ContourLevels New
 $!GlobalContour  4
   Var = 7
   ColorMapName = 'Sequential - Viridis'
+  DefNumLevels = 1
   Legend
     {
     Show = Yes
@@ -1797,6 +1814,7 @@ $!ContourLevels New
 $!GlobalContour  5
   Var = 8
   ColorMapName = 'Sequential - Viridis'
+  DefNumLevels = 1
   Legend
     {
     Show = Yes
@@ -1821,6 +1839,7 @@ $!ContourLevels New
 $!GlobalContour  6
   Var = 4
   ColorMapName = 'Sequential - Viridis'
+  DefNumLevels = 19
   Legend
     {
     Show = Yes
@@ -1863,6 +1882,7 @@ $!ContourLevels New
 $!GlobalContour  7
   Var = 4
   ColorMapName = 'Sequential - Viridis'
+  DefNumLevels = 19
   Legend
     {
     Show = Yes
@@ -1905,6 +1925,7 @@ $!ContourLevels New
 $!GlobalContour  8
   Var = 4
   ColorMapName = 'Sequential - Viridis'
+  DefNumLevels = 19
   Legend
     {
     Show = Yes
@@ -2171,6 +2192,18 @@ $!SliceAttributes  1
     J = 1
     K = 1
     }
+  StartPosition
+    {
+    X = 81
+    Y = 50
+    Z = 4
+    }
+  EndPosition
+    {
+    X = 1539
+    Y = 950
+    Z = 58
+    }
   EdgeLayer
     {
     Show = No
@@ -2325,11 +2358,11 @@ $!ThreeDView
   AlphaAngle = 1.09975
   ViewerPosition
     {
-    X = 2171.998596576786
-    Y = -6754.423611993531
-    Z = 445.2602579904963
+    X = 2285.728949352437
+    Y = -6763.412905989227
+    Z = 405.0420674052663
     }
-  ViewWidth = 2595.14
+  ViewWidth = 2675.24
 $!FieldLayers 
   ShowContour = Yes
   ShowShade = Yes
