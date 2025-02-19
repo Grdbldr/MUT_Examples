@@ -1,5 +1,6 @@
 ! This example builds a modflow project of the Abdul Field Experiment
 ! The SWF mesh and top of the GWF mesh are defined by a 2D Grid Builder triangular mesh
+! Sample observation points in GWF and SWF domains
 build modflow usg
 
     ! -----------------------------------Grid definition
@@ -98,7 +99,7 @@ build modflow usg
         choose zone number
         1
         chosen zones use swf material number
-        3
+        7
         
         clear chosen zones
         choose zone number
@@ -110,6 +111,23 @@ build modflow usg
 
         swf initial depth
         1.0d-4
+
+    ! -----------------------------------Observation points 
+    active domain 
+    gwf
+        observation point
+        Outlet 
+        69.651031494140625   3.1029424667358398   2.941847562789917     
+        
+        observation point
+        Hilltop
+        15.270270347595215   0.45934233069419861   4.0170412063598633  
+
+    active domain 
+    swf
+        observation point
+        Outlet 
+        69.651031494140625   3.1029424667358398   2.9918475151062012        
 
     ! -----------------------------------Stress periods, boundary conditions 
     ! stress period 1
@@ -160,8 +178,6 @@ build modflow usg
     ! -----------------------------------Output Control
     generate output control file
         1e-4
-        1.
-        10.
         60.
         300.0
         600.0

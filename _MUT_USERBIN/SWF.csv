@@ -10,3 +10,4 @@ SWF ID,Material Name,Manning's coefficient,Depression storage height,Obstruction
 9,Slope,1.00E-06,0.001,0.001,0.000001,0.000001,METERS,HOURS,Copied from super_slab_case.oprops
 10,Digiammarco Slope,0.015,0.001,0.001,0.000001,0.000001,METERS,SECONDS,Copied from digiam.oprops
 11,Digiammarco Channel,0.15,0.15,0.001,0.000001,0.000001,METERS,SECONDS,Copied from digiam.oprops
+12,Smith-Woolhiser Overland,0.000122,1.00E-02,0,0.0001,0.0001,CENTIMETERS,MINUTES,

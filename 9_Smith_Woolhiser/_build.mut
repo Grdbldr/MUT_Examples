@@ -1,0 +1,232 @@
+! Examples\9_Smith_Woolhiser
+!   *** HGS sets viscosity:
+!         reference fluid viscosity
+!         ! kinematic viscosity = 1.94e-6 m*m/s = dynamic viscosity/rho
+!         ! rearrange:  dynamic viscosity = 1.94e-6 m*m/s * 1000 kg/m*m*m = 1.94e-3 kg/m*s * 1/100 m/cm  * 60/1 s/min
+!         !                               = 1.164e-3 kg/cm*min
+!         1.16400E-03 
+!  Modflow is using the default value for viscosity. Young-Jin?
+
+build modflow usg
+
+    units of time
+    minutes
+
+    units of length
+    centimeters
+
+
+    ! -----------------------------------Grid definition
+    generate uniform rectangles
+    1220.0,  100,  0.0   !  Mesh length in X, nRectElements in X, X Offset
+       5.1,    1,   0.0   !  Mesh length in Y, nRectElements in Y, Y Offset
+    
+    generate swf domain
+        top elevation
+            elevation from xz pairs 
+                ! slope 0.01 * 1220 = 12.2 metres higher at upper end
+                0.0      134.2          
+                1220.0   122.0
+            end elevation from xz pairs
+        end top elevation
+    end generate swf domain
+
+    
+    generate layered gwf domain
+
+        top elevation
+            elevation from xz pairs 
+                0.0      134.2          
+                1220.0   122.0
+            end elevation from xz pairs
+        end top elevation
+    
+        new layer
+            layer name
+            Smith's Layer 1
+    
+            uniform sublayering
+            5
+    
+            elevation from xz pairs 
+                   0.0   126.55
+                1220.0   114.35
+            end elevation from xz pairs
+        end new layer
+    
+        new layer
+            layer name
+            Smith's Layer 2
+    
+            uniform sublayering
+            15
+    
+            elevation from xz pairs
+                   0.0   103.6
+                1220.0    91.4
+            end elevation from xz pairs
+        end new layer
+   
+        new layer
+            layer name
+            Smith's Layer 3
+    
+            uniform sublayering
+            20
+    
+            elevation from xz pairs
+                   0.0       12.2 
+                1220.0        0.0
+            end elevation from xz pairs
+        end new layer
+   
+    end generate layered gwf domain 
+    
+    ! -----------------------------------Modflow parameters 
+
+    gwf materials database
+    GWF.csv
+
+    active domain 
+    gwf
+    
+        clear chosen zones
+        choose zone number
+        1
+        clear chosen cells
+        choose cells by chosen zones
+        chosen cells use gwf material number
+        14
+        
+        clear chosen zones
+        choose zone number
+        2
+        clear chosen cells
+        choose cells by chosen zones
+        chosen cells use gwf material number
+        15
+
+        clear chosen zones
+        choose zone number
+        3
+        clear chosen cells
+        choose cells by chosen zones
+        chosen cells use gwf material number
+        16
+        
+        gwf initial head from depth-saturation table
+            0.0                0.156997082747331
+            0.14166834633879   0.156997082747331
+            1.13525629270851   0.155244035878502
+            1.49148822991857   0.158888262072833
+            1.83262585038138   0.166751704850246
+            2.18214415072494   0.175544640554267
+            2.83854991505659   0.188702412152062
+            4.39990240220899   0.193811066992744
+            6.88387226813327   0.193811066992744
+            7.79477488099587   0.195637859373672
+            8.16134248489432   0.21751482116339
+            8.39283413982854   0.234206387858719
+            9.01298929606835   0.249908566795278
+            9.53825939492401   0.256675185458733
+            9.82153546785563   0.259283231056668
+            10.3315445456626   0.262472256526571
+            11.2925948433813   0.263679886080029
+            12.8300176858109   0.264312899587437
+            15.6132520826672   0.262179894877083
+            17.3875162726131   0.255167707401766
+            19.5166333005482   0.234131144975816
+            20.7771148335003   0.222461385614534
+            22.7103088424508   0.201737399343927
+            26.7556311955275   0.15875012961616
+            30.347411764171    0.122165617446466
+            30.6396595595066   0.148043928367278
+            30.9305585654943   0.16583755997438
+            31.2398556643848   0.18060949729893
+            31.7263442807543   0.187784898191887
+            32.4826210765764   0.190684931096611
+            34.349481928496    0.183292785779769
+            36.7624812268224   0.178033645173281
+            38.3238337139748   0.18153973891094
+            40.4529507419099   0.187713024393293
+            43.1498323106277   0.193811066992744
+            45.7047727441498   0.195564113861573
+            49.96300680002     0.197317160730402
+            1000.              0.197317160730402 
+        end initial head from depth-saturation table
+
+    swf materials database
+    SWF.csv
+    
+    active domain 
+    swf
+    
+        choose all zones
+        chosen zones use swf material number
+        12
+
+        choose all cells
+
+        swf initial depth
+        1.0d-4
+
+        swf to gwf connection length
+        1.35
+
+    ! -----------------------------------Stress periods, boundary conditions 
+    ! stress period 1
+    stress period
+        type
+        TR
+        
+        duration
+        15.0d0
+    end stress period
+
+    active domain 
+    swf
+        choose all cells
+        swf recharge
+        0.41667
+        4
+        
+        clear chosen cells
+        choose cell at xyz
+        1213.9000244140625   2.5499999523162842   122.06099700927734       
+        swf critical depth with sidelength1
+           
+        
+    ! stress period 2
+    stress period
+        type
+        TR
+        
+        duration
+        1.0d0
+        
+    end stress period
+
+    active domain 
+    swf
+        choose all cells
+        swf recharge
+        0.0d0
+        4
+        
+    ! -----------------------------------Output Control
+    generate output control file
+        0.1
+        6.0
+        8.5
+        10.3
+        15.0
+        16.0
+    end generate output control file
+      
+    ! -----------------------------------Solver paramters
+    sms database
+    SMS.csv
+    sms parameter set number
+    1
+
+end build modflow usg

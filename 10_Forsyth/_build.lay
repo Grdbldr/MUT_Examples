@@ -531,7 +531,7 @@ $!ThreeDAxis
     GRSpacing = 200
     AxisLine
       {
-      Edge = 2
+      Edge = 1
       }
     }
 $!ThreeDAxis 
@@ -539,10 +539,10 @@ $!ThreeDAxis
     {
     RangeMin = -0.050000000000000003
     RangeMax = 1.05
-    GRSpacing = 0.5
+    GRSpacing = 0.2
     AxisLine
       {
-      Edge = 3
+      Edge = 1
       }
     }
 $!ThreeDAxis 
@@ -817,13 +817,14 @@ $!GlobalThreeD
   VectorLiftFraction = 0.7
   NearPlaneFraction = 0.1
 $!ThreeDView 
-  PSIAngle = 90
-  ThetaAngle = 0
+  PSIAngle = 68.1332
+  ThetaAngle = 48.3796
+  AlphaAngle = -10.8187
   ViewerPosition
     {
-    X = 519.0194910672176
-    Y = -14.09807621135334
-    Z = 338.2074975944248
+    X = -3566.045456805682
+    Y = -8.695204589578431
+    Z = 3904.813331230486
     }
   ViewWidth = 1220.72
 $!FieldLayers 
@@ -902,7 +903,7 @@ $!ContourLevels New
 $!GlobalContour  2
   Var = 5
   ColorMapName = 'Sequential - Viridis'
-  DefNumLevels = 5
+  DefNumLevels = 4
   Labels
     {
     NumFormat
@@ -1291,7 +1292,7 @@ $!ThreeDAxis
     GRSpacing = 200
     AxisLine
       {
-      Edge = 2
+      Edge = 1
       }
     }
 $!ThreeDAxis 
@@ -1300,10 +1301,10 @@ $!ThreeDAxis
     ShowAxis = No
     RangeMin = -0.050000000000000003
     RangeMax = 1.05
-    GRSpacing = 0.5
+    GRSpacing = 0.2
     AxisLine
       {
-      Edge = 3
+      Edge = 1
       }
     }
 $!ThreeDAxis 
@@ -1588,13 +1589,14 @@ $!GlobalThreeD
   VectorLiftFraction = 0.7
   NearPlaneFraction = 0.1
 $!ThreeDView 
-  PSIAngle = 90
-  ThetaAngle = 0
+  PSIAngle = 68.1332
+  ThetaAngle = 48.3796
+  AlphaAngle = -10.8187
   ViewerPosition
     {
-    X = 519.0194910672176
-    Y = -14.09807621135334
-    Z = 338.2074975944248
+    X = -3566.045456805682
+    Y = -8.695204589578431
+    Z = 3904.813331230486
     }
   ViewWidth = 1220.72
 $!FieldLayers 
@@ -1880,7 +1882,7 @@ $!FieldMap  [1]
     }
   Surfaces
     {
-    SurfacesToPlot = None
+    SurfacesToPlot = KPlanes
     IRange
       {
       Max = 1
@@ -1927,7 +1929,7 @@ $!ThreeDAxis
     GRSpacing = 200
     AxisLine
       {
-      Edge = 2
+      Edge = 1
       }
     }
 $!ThreeDAxis 
@@ -1936,10 +1938,10 @@ $!ThreeDAxis
     ShowAxis = No
     RangeMin = -0.050000000000000003
     RangeMax = 1.05
-    GRSpacing = 0.5
+    GRSpacing = 0.2
     AxisLine
       {
-      Edge = 3
+      Edge = 1
       }
     }
 $!ThreeDAxis 
@@ -2206,13 +2208,14 @@ $!GlobalThreeD
   VectorLiftFraction = 0.7
   NearPlaneFraction = 0.1
 $!ThreeDView 
-  PSIAngle = 90
-  ThetaAngle = 0
+  PSIAngle = 68.1332
+  ThetaAngle = 48.3796
+  AlphaAngle = -10.8187
   ViewerPosition
     {
-    X = 519.0194910672176
-    Y = -14.09807621135334
-    Z = 338.2074975944248
+    X = -3566.045456805682
+    Y = -8.695204589578431
+    Z = 3904.813331230486
     }
   ViewWidth = 1220.72
 $!FieldLayers 

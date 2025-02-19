@@ -652,7 +652,7 @@ $!ThreeDAxis
     GRSpacing = 20
     AxisLine
       {
-      Edge = 1
+      Edge = 2
       }
     }
 $!ThreeDAxis 
@@ -676,7 +676,7 @@ $!ThreeDAxis
     GRSpacing = 2
     AxisLine
       {
-      Edge = 4
+      Edge = 2
       }
     }
 $!IsoSurfaceAttributes  1
@@ -964,16 +964,14 @@ $!GlobalThreeD
   VectorLiftFraction = 0.7
   NearPlaneFraction = 0.1
 $!ThreeDView 
-  PSIAngle = 61.673
-  ThetaAngle = -61.3367
-  AlphaAngle = -0.360784
+  ThetaAngle = 240
   ViewerPosition
     {
-    X = 464.5524309905557
-    Y = -216.832583349169
-    Z = 87.73396712315416
+    X = 346.819808747048
+    Y = 200.4239315823702
+    Z = 72.08143815011511
     }
-  ViewWidth = 115.149
+  ViewWidth = 121.488
 $!FieldLayers 
   ShowMesh = No
   ShowContour = Yes
@@ -991,8 +989,8 @@ $!Linking
 $!AttachText 
   AnchorPos
     {
-    X = 25.59062463591352
-    Y = 98.25250844979402
+    X = 50
+    Y = 98
     }
   TextShape
     {
@@ -1003,18 +1001,18 @@ $!AttachText
     {
     BoxType = Filled
     }
-  Anchor = HeadLeft
+  Anchor = HeadCenter
   Text = 'Elapsed time: &(solutiontime) &(AUXZONE[1]:TimeUnits)'
 $!AttachText 
   AnchorPos
     {
-    X = 2.305724817573159
-    Y = 1.952723535457324
+    X = 1
+    Y = 1
     }
   TextShape
     {
     IsBold = No
-    Height = 11
+    Height = 9
     }
   Box
     {
@@ -1488,7 +1486,7 @@ $!ThreeDAxis
       }
     AxisLine
       {
-      Edge = 1
+      Edge = 2
       }
     }
 $!ThreeDAxis 
@@ -1545,11 +1543,11 @@ $!ThreeDAxis
         {
         Height = 8.6
         }
-      Offset = 20
+      Offset = 40
       }
     AxisLine
       {
-      Edge = 4
+      Edge = 2
       }
     }
 $!IsoSurfaceAttributes  1
@@ -1819,16 +1817,14 @@ $!GlobalThreeD
   VectorLiftFraction = 0.7
   NearPlaneFraction = 0.1
 $!ThreeDView 
-  PSIAngle = 61.673
-  ThetaAngle = -61.3367
-  AlphaAngle = -0.360784
+  ThetaAngle = 240
   ViewerPosition
     {
-    X = 464.5524309905557
-    Y = -216.832583349169
-    Z = 87.73396712315416
+    X = 346.819808747048
+    Y = 200.4239315823702
+    Z = 72.08143815011511
     }
-  ViewWidth = 115.149
+  ViewWidth = 121.488
 $!FieldLayers 
   ShowMesh = No
   ShowEdge = No
@@ -2103,11 +2099,6 @@ $!GlobalContour  7
       X = 95
       }
     }
-  ColorCutoff
-    {
-    RangeMin = -4.42379393917E-006
-    RangeMax = -1.47459797972E-006
-    }
   ColorMapFilter
     {
     ContinuousColor
@@ -2244,7 +2235,7 @@ $!ThreeDAxis
     GRSpacing = 20
     AxisLine
       {
-      Edge = 1
+      Edge = 2
       }
     }
 $!ThreeDAxis 
@@ -2268,7 +2259,7 @@ $!ThreeDAxis
     GRSpacing = 2
     AxisLine
       {
-      Edge = 4
+      Edge = 2
       }
     }
 $!IsoSurfaceAttributes  1
@@ -2358,9 +2349,6 @@ $!IsoSurfaceAttributes  6
 $!IsoSurfaceAttributes  7
   DefinitionContourGroup = 7
   IsoSurfaceSelection = OneSpecificValue
-  Isovalue1 = -4.42379393917E-006
-  Isovalue2 = -2.94919595945E-006
-  Isovalue3 = -1.47459797972E-006
   Contour
     {
     LineContourGroup = 7
@@ -2383,10 +2371,9 @@ $!IsoSurfaceAttributes  8
     LightingEffect = Gouraud
     }
 $!SliceAttributes  1
-  ShowPrimarySlice = No
   PrimaryPosition
     {
-    X = 18.7390585348
+    X = 0
     Y = 0
     Z = 0
     I = 1
@@ -2798,16 +2785,14 @@ $!GlobalThreeD
   VectorLiftFraction = 0.7
   NearPlaneFraction = 0.1
 $!ThreeDView 
-  PSIAngle = 61.673
-  ThetaAngle = -61.3367
-  AlphaAngle = -0.360784
+  ThetaAngle = 240
   ViewerPosition
     {
-    X = 464.5524309905557
-    Y = -216.832583349169
-    Z = 87.73396712315416
+    X = 346.819808747048
+    Y = 200.4239315823702
+    Z = 72.08143815011511
     }
-  ViewWidth = 115.149
+  ViewWidth = 121.488
 $!FieldLayers 
   ShowMesh = No
   ShowShade = Yes
@@ -2827,13 +2812,13 @@ $!Linking
 $!AttachText 
   AnchorPos
     {
-    X = 2.305724817573159
-    Y = 1.952723535457324
+    X = 1
+    Y = 1
     }
   TextShape
     {
     IsBold = No
-    Height = 11
+    Height = 9
     }
   Box
     {
@@ -2857,6 +2842,23 @@ $!AttachText
     }
   Anchor = HeadLeft
   Text = '&(datasettitle)\n&(date)'
+$!AttachText 
+  AnchorPos
+    {
+    X = 50
+    Y = 98
+    }
+  TextShape
+    {
+    IsBold = No
+    Height = 20
+    }
+  Box
+    {
+    BoxType = Filled
+    }
+  Anchor = HeadCenter
+  Text = 'Elapsed time: &(solutiontime) &(AUXZONE[1]:TimeUnits)'
 $!FrameControl ActivateByNumber
   Frame = 4
 $!SetStyleBase Config

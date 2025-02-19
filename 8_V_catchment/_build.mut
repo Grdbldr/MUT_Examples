@@ -108,6 +108,18 @@ build modflow usg
 
         chosen zones use swf material number
         11
+        
+    ! -----------------------------------Observation points 
+    active domain 
+    swf
+        observation point
+        Outlet_1 
+        805  5  1.1000000238418579        
+
+        observation point
+        Outlet_2 
+        815  5  1.1000000238418579  
+      
 
     ! -----------------------------------Stress periods, boundary conditions 
     ! stress period 1

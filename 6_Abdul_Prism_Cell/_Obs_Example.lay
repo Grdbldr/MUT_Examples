@@ -1,0 +1,529 @@
+#!MC 1410
+$!VarSet |LFDSFN1| = '"Modflow.SWF.OBS.tecplot.dat"'
+$!VarSet |LFDSVL1| = '"TOTAL TIME" "Outlet Head" "Outlet Depth"'
+$!VarSet |LFDSFN2| = '"Modflow.GWF.OBS.tecplot.dat"'
+$!VarSet |LFDSVL2| = '"TOTAL TIME" "Outlet Head" "Outlet Depth" "Outlet Saturation" "Hilltop Head" "Hilltop Saturation"'
+$!SetStyleBase Factory
+$!GlobalPaper 
+  PaperSizeInfo
+    {
+    Letter
+      {
+      Width = 8.5
+      Height = 11
+      LeftHardClipOffset = 0.125
+      RightHardClipOffset = 0.125
+      TopHardClipOffset = 0.125
+      BottomHardClipOffset = 0.125
+      }
+    }
+$!Page 
+  Name = 'Untitled'
+  PaperAttributes
+    {
+    BackgroundColor = White
+    IsTransparent = Yes
+    OrientPortrait = No
+    ShowGrid = Yes
+    ShowRuler = No
+    ShowPaper = No
+    PaperSize = Letter
+    RulerSpacing = OneInch
+    PaperGridSpacing = HalfInch
+    RegionInWorkArea
+      {
+      X1 = 1
+      Y1 = 0.25
+      X2 = 10
+      Y2 = 8.25
+      }
+    }
+### Frame Number 1 ###
+$!ReadDataSet  '|LFDSFN1|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL1|'
+$!RemoveVar |LFDSVL1|
+$!RemoveVar |LFDSFN1|
+$!ReadDataSet  '|LFDSFN2|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL2|'
+$!RemoveVar |LFDSVL2|
+$!RemoveVar |LFDSFN2|
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Red
+  XYPos
+    {
+    X = -1.3515
+    Y = 0.25
+    }
+  Width = 13.662
+  Height = 8
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = 'Depth'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    Box
+      {
+      BoxType = Filled
+      }
+    XYPos
+      {
+      X = 85.13
+      Y = 78.973
+      }
+    }
+$!Blanking 
+  Value
+    {
+    Include = Yes
+    Constraint 1
+      {
+      Include = Yes
+      ValueCutoff = 8
+      VarA = 1
+      }
+    }
+$!LineMap  [1]
+  Name = '&ZN&: &DV&'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 3
+    }
+  Lines
+    {
+    Color = Red
+    }
+  Symbols
+    {
+    Color = Red
+    FillColor = Red
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!LineMap  [2]
+  Name = '&ZN&: &DV&'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 6
+    YAxis = 2
+    }
+  Lines
+    {
+    Color = Green
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = -2000
+    RangeMax = 8000
+    GRSpacing = 2000
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = -0.00050000000000000044
+    RangeMax = 0.005499999999999991
+    GRSpacing = 0.0005
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
+    Title
+      {
+      Offset = 10
+      }
+    }
+$!XYLineAxis 
+  YDetail 2
+    {
+    RangeMin = 0.058300395256916944
+    RangeMax = 0.66264822134387247
+    GRSpacing = 0.05
+    AxisLine
+      {
+      AxisAlignment = WithGridMax
+      }
+    }
+### Frame Number 2 ###
+$!CreateNewFrame 
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Red
+  XYPos
+    {
+    X = -1.3515
+    Y = 0.25
+    }
+  Width = 13.662
+  Height = 8
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = 'Head'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-2]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    Box
+      {
+      BoxType = Filled
+      }
+    XYPos
+      {
+      X = 83.686
+      Y = 77.225
+      }
+    }
+$!Blanking 
+  Value
+    {
+    Include = Yes
+    Constraint 1
+      {
+      Include = Yes
+      ValueCutoff = 8
+      VarA = 1
+      }
+    }
+$!LineMap  [1]
+  Name = '&ZN&: &DV&'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 2
+    }
+  Lines
+    {
+    Color = Red
+    }
+  Symbols
+    {
+    Color = Red
+    FillColor = Red
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!LineMap  [2]
+  Name = '&ZN&: &DV&'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 2
+    }
+  Lines
+    {
+    Color = Green
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
+  ViewportPosition
+    {
+    Y2 = 88
+    }
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = -2000
+    RangeMax = 8000
+    GRSpacing = 2000
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = 2.9914999999999967
+    RangeMax = 2.9969999999999968
+    GRSpacing = 0.0005
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
+    Title
+      {
+      Offset = 10
+      }
+    }
+### Frame Number 3 ###
+$!CreateNewFrame 
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Red
+  XYPos
+    {
+    X = -1.3515
+    Y = 0.25
+    }
+  Width = 13.662
+  Height = 8
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = 'Hilltop'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-2]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    Box
+      {
+      BoxType = Filled
+      }
+    XYPos
+      {
+      X = 64.428
+      Y = 41.768
+      }
+    }
+$!Blanking 
+  Value
+    {
+    Include = Yes
+    Constraint 1
+      {
+      Include = Yes
+      ValueCutoff = 8
+      VarA = 1
+      }
+    }
+$!LineMap  [1]
+  Name = '&ZN&: &DV&'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 5
+    }
+  Lines
+    {
+    Color = Red
+    }
+  Symbols
+    {
+    Color = Red
+    FillColor = Red
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!LineMap  [2]
+  Name = '&ZN&: &DV&'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 6
+    YAxis = 2
+    }
+  Lines
+    {
+    Color = Green
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = -822.45020493287473
+    RangeMax = 11264.506316806261
+    GRSpacing = 2000
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = 2.653280632411068
+    RangeMax = 3.6202371541502032
+    GRSpacing = 0.1
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
+    Title
+      {
+      Offset = 10
+      }
+    }
+$!XYLineAxis 
+  YDetail 2
+    {
+    RangeMin = 0.058300395256916944
+    RangeMax = 0.66264822134387247
+    GRSpacing = 0.05
+    AxisLine
+      {
+      AxisAlignment = WithGridMax
+      }
+    }
+$!FrameControl ActivateByNumber
+  Frame = 1
+$!SetStyleBase Config

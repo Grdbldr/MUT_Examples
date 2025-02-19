@@ -33,7 +33,7 @@ $!Page
       X1 = 1
       Y1 = 0.25
       X2 = 10
-      Y2 = 6.25
+      Y2 = 8.25
       }
     }
 ### Frame Number 1 ###
@@ -48,25 +48,24 @@ $!ReadDataSet  '|LFDSFN1|'
 $!RemoveVar |LFDSVL1|
 $!RemoveVar |LFDSFN1|
 $!FrameLayout 
-  ShowBorder = No
   ShowHeader = No
   HeaderColor = Red
   XYPos
     {
-    X = 0.32169
+    X = -1.3022
     Y = 0.25
     }
-  Width = 10.295
-  Height = 6
+  Width = 13.621
+  Height = 8
 $!ThreeDAxis 
   AspectRatioLimit = 25
   BoxAspectRatioLimit = 25
 $!PlotType  = XYLine
-$!FrameName  = 'Overall fluid balance'
+$!FrameName  = 'Frame 001'
 $!GlobalTime 
   SolutionTime = 0
 $!DeleteLineMaps 
-$!ActiveLineMaps  =  [5,8,13,15]
+$!ActiveLineMaps  =  [1,5]
 $!GlobalLinePlot 
   DataLabels
     {
@@ -74,19 +73,9 @@ $!GlobalLinePlot
     }
   Legend
     {
-    Show = Yes
-    TextShape
-      {
-      Height = 2
-      }
-    Box
-      {
-      BoxType = Filled
-      }
     XYPos
       {
-      X = 85.476
-      Y = 69.414
+      X = 95
       }
     }
 $!LineMap  [1]
@@ -203,8 +192,7 @@ $!LineMap  [5]
     }
   Lines
     {
-    Color = Black
-    LineThickness = 0.4
+    Color = Custom3
     }
   Symbols
     {
@@ -282,8 +270,7 @@ $!LineMap  [8]
     }
   Lines
     {
-    Color = Blue
-    LineThickness = 0.4
+    Color = Green
     }
   Symbols
     {
@@ -414,7 +401,6 @@ $!LineMap  [13]
   Lines
     {
     Color = Red
-    LineThickness = 0.4
     }
   Symbols
     {
@@ -466,9 +452,7 @@ $!LineMap  [15]
     }
   Lines
     {
-    Color = Purple
-    LinePattern = Dashed
-    LineThickness = 0.4
+    Color = Blue
     }
   Symbols
     {
@@ -512,103 +496,20 @@ $!LineMap  [16]
     }
 $!XYLineAxis 
   DepXToYRatio = 1
-  GridArea
-    {
-    DrawBorder = Yes
-    }
-  ViewportPosition
-    {
-    X1 = 12.88
-    Y1 = 11.206
-    X2 = 87.88
-    Y2 = 85.225
-    }
-  ViewportTopSnapTarget = 85.2250770812
 $!XYLineAxis 
   XDetail 1
     {
-    RangeMin = -5
-    RangeMax = 20
+    RangeMin = -2.3638980071602864
+    RangeMax = 17.366397907207784
     GRSpacing = 5
-    Gridlines
-      {
-      Show = Yes
-      }
-    MinorGridlines
-      {
-      Show = Yes
-      Color = Custom2
-      LinePattern = Solid
-      }
-    Title
-      {
-      TitleMode = UseText
-      Text = 'Time (&(AUXZONE[1]:TimeUnits))'
-      TextShape
-        {
-        Height = 2.6
-        }
-      }
     }
 $!XYLineAxis 
   YDetail 1
     {
-    RangeMin = -1
-    RangeMax = 6
-    GRSpacing = 1
-    Gridlines
-      {
-      Show = Yes
-      }
-    MinorGridlines
-      {
-      Show = Yes
-      Color = Custom2
-      LinePattern = Solid
-      }
-    Title
-      {
-      TitleMode = UseText
-      Text = 'Volumetric Flowrate  (&(AUXZONE[1]:LengthUnits)<sup>3</sup>/&(AUXZONE[1]:TimeUnits))'
-      TextShape
-        {
-        Height = 2.6
-        }
-      }
+    RangeMin = -0.78835189253125959
+    RangeMax = 5.7888518925312624
+    GRSpacing = 0.5
     }
-$!AttachText 
-  AnchorPos
-    {
-    X = 1.901766996106618
-    Y = 2.055498458376115
-    }
-  TextShape
-    {
-    IsBold = No
-    Height = 8
-    }
-  Box
-    {
-    BoxType = Hollow
-    Margin = 40
-    }
-  Text = '&(datasetfname)'
-$!AttachText 
-  AnchorPos
-    {
-    X = 49.88020365378856
-    Y = 86.53648509763612
-    }
-  TextShape
-    {
-    IsBold = No
-    }
-  Box
-    {
-    Margin = 40
-    }
-  Anchor = Center
-  Text = '&(datasettitle),   &(date)\n&(zonename[1])'
 $!FrameControl ActivateByNumber
   Frame = 1
 $!SetStyleBase Config
