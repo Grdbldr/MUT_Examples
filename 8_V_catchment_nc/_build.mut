@@ -1,0 +1,192 @@
+! Examples\8_V_catchment
+!  Overland flow example 2
+!  digiam, Friday, April 11, 2003 at 14:20
+
+build modflow usg
+
+    ! -----------------------------------Grid definition
+    generate uniform rectangles
+    1620 162 0.0   !  Mesh length in X, nRectElements in X, X Offset
+    1000 100 0.0   !  Mesh length in Y, nRectElements in Y, Y Offset
+    
+    
+    generate swf domain
+        top elevation
+            elevation from bilinear function in xy
+            0.0 800.0 0.0 1000.0
+            41.0 -0.05 0.0 0.02 0.0
+    
+            elevation from bilinear function in xy
+            800.01 819.99 0.0 1000.0
+            1.0 0.0 0.0 0.02 0.0
+    
+            elevation from bilinear function in xy
+            820.0  1620.01 0.0 1000.0
+            1.0 0.05 0.0 0.02 0.0
+        end top elevation
+    end generate swf domain
+
+    generate layered gwf domain
+
+        top elevation
+            elevation from bilinear function in xy
+            0.0 800.0 0.0 1000.0
+            41.0 -0.05 0.0 0.02 0.0
+    
+            elevation from bilinear function in xy
+            800.01 819.99 0.0 1000.0
+            1.0 0.0 0.0 0.02 0.0
+    
+            elevation from bilinear function in xy
+            820.0  1620.01 0.0 1000.0
+            1.0 0.05 0.0 0.02 0.0
+        end top elevation
+    
+        new layer
+            layer name
+            Top layer
+    
+            uniform sublayering
+            1
+    
+            elevation from bilinear function in xy
+            0.0 800.0 0.0 1000.0
+            40.0 -0.05 0.0 0.02 0.0
+    
+            elevation from bilinear function in xy
+            800.01 819.99 0.0 1000.0
+            0.0 0.0 0.0 0.02 0.0
+    
+            elevation from bilinear function in xy
+            820.0  1620.01 0.0 1000.0
+            -0.0 0.05 0.0 0.02 0.0
+        end new layer
+    
+    end generate layered gwf domain
+    
+    ! -----------------------------------Static properties 
+    gwf materials database
+    GWF.csv
+
+    active domain 
+    gwf
+    
+        choose all cells
+        
+        flag chosen cells inactive
+
+    swf materials database
+    SWF.csv
+
+    active domain 
+    swf
+
+        ! slope
+    
+        choose all zones
+        
+        chosen zones use swf material number
+        10
+        
+        choose all cells
+        swf initial depth
+        0.0
+        
+        ! channel
+        clear chosen zones
+        clear chosen cells
+        choose cells by xyz layer range
+        800.0  820.0     
+        0.0 1000.0      
+        -1e30 1e30
+        1   1
+        
+        new zone
+        
+        choose zone number
+        2
+
+        chosen zones use swf material number
+        11
+        
+    ! -----------------------------------Observation points 
+    active domain 
+    swf
+        observation point
+        Outlet_1 
+        805  5  1.1000000238418579        
+
+        observation point
+        Outlet_2 
+        815  5  1.1000000238418579  
+      
+
+    ! -----------------------------------Stress periods, boundary conditions 
+    ! stress period 1
+    stress period
+        type
+        TR
+        
+        duration
+        5400.0 
+
+    end
+
+                
+    active domain 
+    swf
+        clear chosen cells
+        choose all cells
+        swf recharge
+        3.e-6  
+        4
+        
+        clear chosen cells
+        choose cell at xyz
+        805  5  1.1000000238418579        
+        choose cell at xyz
+        815  5  1.1000000238418579  
+        swf critical depth
+
+    ! stress period 2
+    stress period
+        type
+        TR
+        
+        duration
+        5400.
+
+    end
+
+                
+    active domain 
+    swf
+        clear chosen cells
+        choose all cells
+        swf recharge
+        0.0  
+        4
+
+    ! -----------------------------------Output Control
+    generate output control file
+        0.001
+        180
+        360
+        540
+        720
+        900
+        1080
+        1260
+        1440
+        1620
+        1800
+        10800
+    end generate output control file
+
+    ! -----------------------------------Solver paramters
+    sms database
+    SMS.csv
+    sms parameter set number
+    2
+
+end build modflow usg

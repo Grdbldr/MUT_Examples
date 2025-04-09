@@ -126,13 +126,6 @@ build modflow usg
         0.05  
         4
         
-        clear chosen nodes
-        choose node at xyz
-        0.0  0.0  5.0
-        choose node at xyz
-        0.0  1.0  5.0
-        flag chosen nodes as outer boundary
-        
         clear chosen cells
         choose cell at xyz
         0.5  0.5 5.025

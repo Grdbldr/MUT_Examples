@@ -235,7 +235,7 @@ $!ThreeDAxis
   BoxAspectRatioLimit = 25
 $!FrameName  = '-------------------------------------'
 $!GlobalTime 
-  SolutionTime = 1000
+  SolutionTime = 100000
 $!SketchAxis 
   DepXToYRatio = 1
 $!SketchAxis 
@@ -292,7 +292,7 @@ $!ThreeDAxis
 $!PlotType  = Cartesian3D
 $!FrameName  = 'Axes'
 $!GlobalTime 
-  SolutionTime = 1000
+  SolutionTime = 100000
 $!ActiveFieldMaps  =  [1]
 $!GlobalRGB 
   RedChannelVar = 4
@@ -1046,7 +1046,7 @@ $!ThreeDAxis
 $!PlotType  = Cartesian3D
 $!FrameName  = 'GWF'
 $!GlobalTime 
-  SolutionTime = 1000
+  SolutionTime = 100000
 $!ActiveFieldMaps  =  [1]
 $!GlobalRGB 
   RedChannelVar = 4
@@ -1803,7 +1803,7 @@ $!ThreeDAxis
 $!PlotType  = Cartesian3D
 $!FrameName  = 'SWF'
 $!GlobalTime 
-  SolutionTime = 1000
+  SolutionTime = 100000
 $!ActiveFieldMaps  =  [1]
 $!GlobalRGB 
   RedChannelVar = 4
@@ -2623,7 +2623,7 @@ $!ThreeDAxis
 $!PlotType  = Cartesian3D
 $!FrameName  = 'SWF Cells SWBC'
 $!GlobalTime 
-  SolutionTime = 1000
+  SolutionTime = 100000
 $!ActiveFieldMaps  =  [1]
 $!GlobalRGB 
   RangeMin = 0
@@ -3179,5 +3179,5 @@ $!Linking
     Link3DView = Yes
     }
 $!FrameControl ActivateByNumber
-  Frame = 5
+  Frame = 4
 $!SetStyleBase Config

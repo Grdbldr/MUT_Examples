@@ -8,12 +8,6 @@ build modflow usg
     2d mesh from gb
     ./gb/grid
     
-    ! Required later for building Modflow project
-    clear chosen nodes
-    choose gb nodes
-    ./gb/grid.nchos.Outer boundary nodes
-    flag chosen nodes as outer boundary
-
     generate swf domain
         top elevation
             elevation from gb file
@@ -120,12 +114,6 @@ build modflow usg
         5.56d-6
         4
         
-        ! Required for building Modflow project
-        clear chosen nodes
-        choose gb nodes
-        ./gb/grid.nchos.Outer boundary nodes
-        flag chosen nodes as outer boundary
-
         clear chosen cells
         clear chosen nodes
         choose cells from gb nodes
