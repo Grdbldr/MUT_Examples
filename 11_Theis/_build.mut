@@ -1,0 +1,108 @@
+! Examples\11_Theis:
+!   Pumping from 2D planar aquifer
+build modflow usg
+
+    nodal control volumes
+    saturated flow
+
+    ! -----------------------------------Grid definition
+    2d mesh from gb
+    ./gb/tgrid
+    
+    
+    generate layered gwf domain
+
+        top elevation
+            elevation constant 
+            1.0
+        end top elevation
+    
+        new layer
+            layer name
+            Theis aquifer
+    
+            uniform sublayering
+            1
+    
+            elevation constant 
+            0.0
+        end new layer
+    
+    end generate layered gwf domain
+    
+
+    ! -----------------------------------Static properties 
+    gwf materials database
+    GWF.csv
+
+    active domain 
+    gwf
+
+        choose all cells
+        
+        chosen cells use gwf material number
+        1
+        
+        gwf kh
+        .0023
+
+        gwf ss
+        7.5e-4
+        
+        gwf initial head 
+        0.0 
+        
+        observation point
+        Pumping_from_cell
+        5055. 5000. 0.
+
+    
+
+    ! -----------------------------------Stress periods, boundary conditions 
+    ! stress period 1
+    stress period
+        type
+        TR
+        
+        duration
+         70000000.0
+         
+        deltat
+        1.000000e-05
+
+        tmaxat 
+        1.000000e+05
+
+        tadjat 
+        1.500000e+00
+
+    end
+
+    active domain 
+    gwf
+        clear chosen cells
+        
+        choose cell at xyz
+        5000.  5000.  0.5
+
+        
+        gwf well
+        -4.0e-3  
+    
+                
+    ! -----------------------------------Output Control
+    generate output control file
+        100.  
+        1000.
+        10000.
+        100000.
+        70000000.0
+    end generate output control file 
+      
+    ! -----------------------------------Solver parameters 
+    sms database
+    SMS.csv
+    sms parameter set number
+    1
+
+end build modflow usg
