@@ -1,0 +1,19 @@
+mut debug
+batch directory list
+    1_VSF_Column                          
+    1_VSF_Column_Brooks                   
+    2_VSF_Hillslope                       
+    3_0_SWF_CHD                           
+    3_1_CLN_for_SWF                       
+    3_SWF                                 
+    4_SWF_RCH_CRD                         
+    6_Abdul_MODHMS                        
+    6_Abdul_Prism_Cell                    
+    6_Abdul_Prism_Cell_nc                 
+    7_SuperSlab                           
+    8_V_catchment                         
+    8_V_catchment_nc                      
+    9_Smith_Woolhiser                     
+    10_Forsyth                            
+    11_Theis                              
+end
