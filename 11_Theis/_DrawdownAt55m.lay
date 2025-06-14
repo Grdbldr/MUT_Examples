@@ -135,16 +135,17 @@ $!XYLineAxis
 $!XYLineAxis 
   XDetail 1
     {
-    RangeMin = -594679.18630975985
-    RangeMax = 3423535.0446096598
-    GRSpacing = 1000000
+    RangeMin = -50000000
+    RangeMax = 100000000
+    GRSpacing = 50000000
     }
 $!XYLineAxis 
   YDetail 1
     {
-    RangeMin = -0.0013712503869645315
-    RangeMax = 0.0011620458054507632
-    GRSpacing = 0.0005
+    RangeMin = -0.020000000000000004
+    RangeMax = 0.0049999999999999845
+    IsReversed = Yes
+    GRSpacing = 0.005
     }
 $!FrameControl ActivateByNumber
   Frame = 1

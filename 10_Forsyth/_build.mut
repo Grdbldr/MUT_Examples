@@ -122,6 +122,12 @@ build modflow usg
                0.0   -734.0
         end gwf initial head function of z
 
+    ! -----------------------------------Observation points 
+    active domain 
+    gwf
+        observation point
+        Outlet 
+        140.  0.0  556.66668701171875
 
     ! -----------------------------------Stress periods, boundary conditions 
     ! stress period 1

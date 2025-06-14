@@ -1,0 +1,397 @@
+#!MC 1410
+$!VarSet |LFDSFN1| = '"data\theis_profile.dat"'
+$!VarSet |LFDSVL1| = '"Time(s)" "Drawdown(m)"'
+$!VarSet |LFDSFN2| = '"Modflow.GWF.OBS.tecplot.dat"'
+$!VarSet |LFDSVL2| = '"TOTAL TIME" "Pumping_from_cell Head" "Pumping_from_cell Saturation"'
+$!SetStyleBase Factory
+$!GlobalPaper 
+  PaperSizeInfo
+    {
+    Letter
+      {
+      Width = 8.5
+      Height = 11
+      LeftHardClipOffset = 0.125
+      RightHardClipOffset = 0.125
+      TopHardClipOffset = 0.125
+      BottomHardClipOffset = 0.125
+      }
+    }
+$!Page 
+  Name = 'Untitled'
+  PaperAttributes
+    {
+    BackgroundColor = White
+    IsTransparent = Yes
+    OrientPortrait = No
+    ShowGrid = Yes
+    ShowRuler = No
+    ShowPaper = No
+    PaperSize = Letter
+    RulerSpacing = OneInch
+    PaperGridSpacing = HalfInch
+    RegionInWorkArea
+      {
+      X1 = 1
+      Y1 = 0.25
+      X2 = 10
+      Y2 = 8.25
+      }
+    }
+### Frame Number 1 ###
+$!ReadDataSet  '|LFDSFN1|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL1|'
+$!RemoveVar |LFDSVL1|
+$!RemoveVar |LFDSFN1|
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Red
+  XYPos
+    {
+    X = 1
+    Y = 0.25
+    }
+  Width = 9
+  Height = 8
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = 'Theis'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    Box
+      {
+      BoxType = None
+      }
+    XYPos
+      {
+      X = 94.269
+      Y = 92.95
+      }
+    }
+$!LineMap  [1]
+  Name = '&ZN&'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 2
+    }
+  Lines
+    {
+    Color = Black
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Red
+    FillColor = Red
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+  ViewportPosition
+    {
+    Y2 = 88
+    }
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = -33738723.307068646
+    RangeMax = 116261276.69293135
+    GRSpacing = 50000000
+    }
+$!XYLineAxis 
+  XDetail 2
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!XYLineAxis 
+  XDetail 3
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!XYLineAxis 
+  XDetail 4
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!XYLineAxis 
+  XDetail 5
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = -0.31981020007741506
+    RangeMax = 2.1801897999225885
+    GRSpacing = 0.5
+    }
+$!XYLineAxis 
+  YDetail 2
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!XYLineAxis 
+  YDetail 3
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!XYLineAxis 
+  YDetail 4
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!XYLineAxis 
+  YDetail 5
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!Linking 
+  BetweenFrames
+    {
+    LinkXAxisRange = Yes
+    LinkYAxisRange = Yes
+    }
+### Frame Number 2 ###
+$!CreateNewFrame 
+$!ReadDataSet  '|LFDSFN2|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL2|'
+$!RemoveVar |LFDSVL2|
+$!RemoveVar |LFDSFN2|
+$!RenameDataSetVar 
+  Var = 2
+  Name = 'Pumping_from_cell Head'
+$!AlterData 
+  Equation = '{drawdown}=abs({Pumping_from_cell Head})'
+$!FrameLayout 
+  ShowHeader = No
+  IsTransparent = Yes
+  HeaderColor = Red
+  XYPos
+    {
+    X = 1
+    Y = 0.25
+    }
+  Width = 9
+  Height = 8
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = 'Modflow'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    Box
+      {
+      BoxType = None
+      }
+    XYPos
+      {
+      X = 81.388
+      Y = 85.036
+      }
+    }
+$!LineMap  [1]
+  Name = '&DV&'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 4
+    }
+  Lines
+    {
+    Color = Blue
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Red
+    FillColor = Red
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!LineMap  [2]
+  Name = '&DV&'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 3
+    }
+  Lines
+    {
+    Color = Green
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+  ViewportPosition
+    {
+    Y2 = 88
+    }
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = -33738723.307068646
+    RangeMax = 116261276.69293135
+    GRSpacing = 50000000
+    Title
+      {
+      TitleMode = UseText
+      }
+    }
+$!XYLineAxis 
+  XDetail 2
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!XYLineAxis 
+  XDetail 3
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!XYLineAxis 
+  XDetail 4
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!XYLineAxis 
+  XDetail 5
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = -0.31981020007741506
+    RangeMax = 2.1801897999225885
+    GRSpacing = 0.5
+    Title
+      {
+      TitleMode = UseText
+      }
+    }
+$!XYLineAxis 
+  YDetail 2
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!XYLineAxis 
+  YDetail 3
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!XYLineAxis 
+  YDetail 4
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!XYLineAxis 
+  YDetail 5
+    {
+    RangeMin = 0
+    RangeMax = 1
+    GRSpacing = 0.1
+    }
+$!Linking 
+  BetweenFrames
+    {
+    LinkXAxisRange = Yes
+    LinkYAxisRange = Yes
+    }
+$!FrameControl ActivateByNumber
+  Frame = 2
+$!SetStyleBase Config

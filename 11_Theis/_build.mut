@@ -83,11 +83,13 @@ build modflow usg
         clear chosen cells
         
         choose cell at xyz
-        5000.  5000.  0.5
+        5000.  5000.  0.0
+        choose cell at xyz
+        5000.  5000.  1.0
 
         
         gwf well
-        -4.0e-3  
+        -2.0e-3  
     
                 
     ! -----------------------------------Output Control

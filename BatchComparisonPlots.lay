@@ -1,0 +1,2512 @@
+#!MC 1410
+$!VarSet |LFDSFN1| = '"10_Forsyth\Modflow.GWF.OBS.tecplot.dat"'
+$!VarSet |LFDSVL1| = '"TOTAL TIME" "Outlet Head" "Outlet Saturation"'
+$!VarSet |LFDSFN2| = '"..\Examples - 1\10_Forsyth\Modflow.GWF.OBS.tecplot.dat"'
+$!VarSet |LFDSVL2| = '"TOTAL TIME" "Outlet Head" "Outlet Saturation"'
+$!VarSet |LFDSFN3| = '"10_Forsyth\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL3| = '"TOTAL TIME(DAYS)" "IN_STORAGE" "IN_CONSTANT HEAD" "IN_WELLS" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CONSTANT HEAD" "OUT_WELLS" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN4| = '"..\Examples - 1\10_Forsyth\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL4| = '"TOTAL TIME(DAYS)" "IN_STORAGE" "IN_CONSTANT HEAD" "IN_WELLS" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CONSTANT HEAD" "OUT_WELLS" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN5| = '"9_Smith_Woolhiser\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL5| = '"TOTAL TIME(MINUTES)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN6| = '"..\Examples - 1\9_Smith_Woolhiser\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL6| = '"TOTAL TIME(MINUTES)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN7| = '"8_V_catchment_nc\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL7| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN8| = '"..\Examples - 1\8_V_catchment_nc\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL8| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN9| = '"8_V_catchment\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL9| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN10| = '"..\Examples - 1\8_V_catchment\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL10| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN11| = '"7_SuperSlab\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL11| = '"TOTAL TIME(HOURS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN12| = '"..\Examples - 1\7_SuperSlab\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL12| = '"TOTAL TIME(HOURS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN13| = '"6_Abdul_MODHMS\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL13| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN14| = '"..\Examples - 1\6_Abdul_MODHMS\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL14| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN15| = '"6_Abdul_Prism_Cell_nc\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL15| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN16| = '"..\Examples - 1\6_Abdul_Prism_Cell_nc\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL16| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN17| = '"6_Abdul_Prism_Cell\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL17| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN18| = '"..\Examples - 1\6_Abdul_Prism_Cell\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL18| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN19| = '"4_SWF_RCH_CRD\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL19| = '"TOTAL TIME(YEARS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN20| = '"..\Examples - 1\4_SWF_RCH_CRD\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL20| = '"TOTAL TIME(YEARS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN21| = '"3_SWF\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL21| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN22| = '"..\Examples - 1\3_SWF\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL22| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN23| = '"3_1_CLN_for_SWF\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL23| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_CLN STORAGE" "IN_CONSTANT HEAD" "IN_CLN CONST HEAD" "IN_WELLS" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CLN STORAGE" "OUT_CONSTANT HEAD" "OUT_CLN CONST HEAD" "OUT_WELLS" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN24| = '"..\Examples - 1\3_1_CLN_for_SWF\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL24| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_CLN STORAGE" "IN_CONSTANT HEAD" "IN_CLN CONST HEAD" "IN_WELLS" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CLN STORAGE" "OUT_CONSTANT HEAD" "OUT_CLN CONST HEAD" "OUT_WELLS" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN25| = '"3_0_SWF_CHD\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL25| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN26| = '"..\Examples - 1\3_0_SWF_CHD\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL26| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN27| = '"2_VSF_Hillslope\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL27| = '"TOTAL TIME(YEARS)" "IN_STORAGE" "IN_CONSTANT HEAD" "IN_DRAINS" "IN_RECHARGE" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CONSTANT HEAD" "OUT_DRAINS" "OUT_RECHARGE" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN28| = '"..\Examples - 1\2_VSF_Hillslope\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL28| = '"TOTAL TIME(YEARS)" "IN_STORAGE" "IN_CONSTANT HEAD" "IN_DRAINS" "IN_RECHARGE" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CONSTANT HEAD" "OUT_DRAINS" "OUT_RECHARGE" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN29| = '"1_VSF_Column_Brooks\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL29| = '"TOTAL TIME(DAYS)" "IN_STORAGE" "IN_CONSTANT HEAD" "IN_RECHARGE" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CONSTANT HEAD" "OUT_RECHARGE" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN30| = '"..\Examples - 1\1_VSF_Column_Brooks\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL30| = '"TOTAL TIME(DAYS)" "IN_STORAGE" "IN_CONSTANT HEAD" "IN_RECHARGE" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CONSTANT HEAD" "OUT_RECHARGE" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN31| = '"1_VSF_Column\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL31| = '"TOTAL TIME(DAYS)" "IN_STORAGE" "IN_CONSTANT HEAD" "IN_RECHARGE" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CONSTANT HEAD" "OUT_RECHARGE" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN32| = '"..\Examples - 1\1_VSF_Column\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL32| = '"TOTAL TIME(DAYS)" "IN_STORAGE" "IN_CONSTANT HEAD" "IN_RECHARGE" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CONSTANT HEAD" "OUT_RECHARGE" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!SetStyleBase Factory
+$!GlobalPaper 
+  PaperSizeInfo
+    {
+    Letter
+      {
+      Width = 8.5
+      Height = 11
+      LeftHardClipOffset = 0.125
+      RightHardClipOffset = 0.125
+      TopHardClipOffset = 0.125
+      BottomHardClipOffset = 0.125
+      }
+    }
+$!Page 
+  Name = 'VSF_Column'
+  PaperAttributes
+    {
+    BackgroundColor = White
+    IsTransparent = Yes
+    OrientPortrait = No
+    ShowGrid = Yes
+    ShowRuler = No
+    ShowPaper = No
+    PaperSize = Letter
+    RulerSpacing = OneInch
+    PaperGridSpacing = HalfInch
+    RegionInWorkArea
+      {
+      X1 = 1
+      Y1 = 0.25
+      X2 = 10
+      Y2 = 8.25
+      }
+    }
+### Frame Number 1 ###
+$!ReadDataSet  '|LFDSFN1|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL1|'
+$!RemoveVar |LFDSVL1|
+$!RemoveVar |LFDSFN1|
+$!ReadDataSet  '|LFDSFN2|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL2|'
+$!RemoveVar |LFDSVL2|
+$!RemoveVar |LFDSFN2|
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Green
+  XYPos
+    {
+    X = -1.2831
+    Y = 0.25822
+    }
+  Width = 13.599
+  Height = 7.9836
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = '10_Forsyth (Observation point)'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-4]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 82.666
+      Y = 39.217
+      }
+    }
+$!LineMap  [1]
+  Name = 'Current &DV&'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 3
+    }
+  Lines
+    {
+    Color = Black
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Red
+    FillColor = Red
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!LineMap  [2]
+  Name = 'Previous&DV&'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 3
+    }
+  Lines
+    {
+    Color = Black
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Red
+    FillColor = Red
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!LineMap  [3]
+  Name = 'Current &DV&'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 2
+    YAxis = 2
+    }
+  Lines
+    {
+    Color = Blue
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Red
+    FillColor = Red
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!LineMap  [4]
+  Name = 'Previous &DV&'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 2
+    YAxis = 2
+    }
+  Lines
+    {
+    Color = Blue
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Red
+    FillColor = Red
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = -50
+    RangeMax = 350
+    GRSpacing = 50
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = 0.29999999999999943
+    RangeMax = 0.5999999999999992
+    GRSpacing = 0.05
+    Title
+      {
+      Offset = 8
+      }
+    }
+$!XYLineAxis 
+  YDetail 2
+    {
+    RangeMin = -1200
+    RangeMax = 600
+    GRSpacing = 200
+    AxisLine
+      {
+      AxisAlignment = WithGridMax
+      }
+    }
+$!AttachText 
+  AnchorPos
+    {
+    X = 2.305935413536289
+    Y = 97.73895169578623
+    }
+  TextShape
+    {
+    IsBold = No
+    }
+  Anchor = HeadLeft
+  Text = '&(datasetfname)'
+### Frame Number 2 ###
+$!CreateNewFrame 
+$!ReadDataSet  '|LFDSFN3|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL3|'
+$!RemoveVar |LFDSVL3|
+$!RemoveVar |LFDSFN3|
+$!ReadDataSet  '|LFDSFN4|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL4|'
+$!RemoveVar |LFDSVL4|
+$!RemoveVar |LFDSFN4|
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Green
+  XYPos
+    {
+    X = -1.2831
+    Y = 0.25822
+    }
+  Width = 13.599
+  Height = 7.9836
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = '10_Forsyth (IN-OUT)'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-2]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 94.274
+      Y = 92.152
+      }
+    }
+$!LineMap  [1]
+  Name = 'Current'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 10
+    }
+  Lines
+    {
+    Color = Black
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Red
+    FillColor = Red
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!LineMap  [2]
+  Name = 'Previous'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 10
+    }
+  Lines
+    {
+    Color = Custom20
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Red
+    FillColor = Red
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = -50
+    RangeMax = 350
+    GRSpacing = 50
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = -9.9999999999999991E-006
+    RangeMax = 5.9999999999999908E-006
+    GRSpacing = 5E-006
+    Title
+      {
+      Offset = 8
+      }
+    }
+$!AttachText 
+  AnchorPos
+    {
+    X = 2.305935413536289
+    Y = 97.73895169578623
+    }
+  TextShape
+    {
+    IsBold = No
+    }
+  Anchor = HeadLeft
+  Text = '&(datasetfname)'
+### Frame Number 3 ###
+$!CreateNewFrame 
+$!ReadDataSet  '|LFDSFN5|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL5|'
+$!RemoveVar |LFDSVL5|
+$!RemoveVar |LFDSFN5|
+$!ReadDataSet  '|LFDSFN6|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL6|'
+$!RemoveVar |LFDSVL6|
+$!RemoveVar |LFDSFN6|
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Green
+  XYPos
+    {
+    X = -1.2831
+    Y = 0.25822
+    }
+  Width = 13.599
+  Height = 7.9836
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = '9_Smith_Woolhiser'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-2]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+$!LineMap  [1]
+  Name = 'Current'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 14
+    }
+  Lines
+    {
+    Color = Black
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!LineMap  [2]
+  Name = 'Previous'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 14
+    }
+  Lines
+    {
+    Color = Custom20
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = -5
+    RangeMax = 20
+    GRSpacing = 5
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = -100
+    RangeMax = 800
+    GRSpacing = 100
+    Title
+      {
+      Offset = 8
+      }
+    }
+$!Linking 
+  BetweenFrames
+    {
+    LinkFrameSizeAndPosition = Yes
+    }
+$!AttachText 
+  AnchorPos
+    {
+    X = 2.305935413536289
+    Y = 97.73895169578623
+    }
+  TextShape
+    {
+    IsBold = No
+    }
+  Anchor = HeadLeft
+  Text = '&(datasetfname)'
+### Frame Number 4 ###
+$!CreateNewFrame 
+$!ReadDataSet  '|LFDSFN7|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL7|'
+$!RemoveVar |LFDSVL7|
+$!RemoveVar |LFDSFN7|
+$!ReadDataSet  '|LFDSFN8|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL8|'
+$!RemoveVar |LFDSVL8|
+$!RemoveVar |LFDSFN8|
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Green
+  XYPos
+    {
+    X = -1.2831
+    Y = 0.25822
+    }
+  Width = 13.599
+  Height = 7.9836
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = '8_V_catchment_nc'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-2]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+$!LineMap  [1]
+  Name = 'Current'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 14
+    }
+  Lines
+    {
+    Color = Black
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!LineMap  [2]
+  Name = 'Previous'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 14
+    }
+  Lines
+    {
+    Color = Custom20
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = -2000
+    RangeMax = 12000
+    GRSpacing = 2000
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = -0.5
+    RangeMax = 5.5
+    GRSpacing = 0.5
+    Title
+      {
+      Offset = 8
+      }
+    }
+$!Linking 
+  BetweenFrames
+    {
+    LinkFrameSizeAndPosition = Yes
+    }
+$!AttachText 
+  AnchorPos
+    {
+    X = 2.305935413536289
+    Y = 97.73895169578623
+    }
+  TextShape
+    {
+    IsBold = No
+    }
+  Anchor = HeadLeft
+  Text = '&(datasetfname)'
+### Frame Number 5 ###
+$!CreateNewFrame 
+$!ReadDataSet  '|LFDSFN9|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL9|'
+$!RemoveVar |LFDSVL9|
+$!RemoveVar |LFDSFN9|
+$!ReadDataSet  '|LFDSFN10|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL10|'
+$!RemoveVar |LFDSVL10|
+$!RemoveVar |LFDSFN10|
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Green
+  XYPos
+    {
+    X = -1.2831
+    Y = 0.25822
+    }
+  Width = 13.599
+  Height = 7.9836
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = '8_V_catchment'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-2]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+$!LineMap  [1]
+  Name = 'Current'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 14
+    }
+  Lines
+    {
+    Color = Black
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!LineMap  [2]
+  Name = 'Previous'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 14
+    }
+  Lines
+    {
+    Color = Custom20
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = -2000
+    RangeMax = 12000
+    GRSpacing = 2000
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = -0.5
+    RangeMax = 5.5
+    GRSpacing = 0.5
+    Title
+      {
+      Offset = 8
+      }
+    }
+$!Linking 
+  BetweenFrames
+    {
+    LinkFrameSizeAndPosition = Yes
+    }
+$!AttachText 
+  AnchorPos
+    {
+    X = 2.305935413536289
+    Y = 97.73895169578623
+    }
+  TextShape
+    {
+    IsBold = No
+    }
+  Anchor = HeadLeft
+  Text = '&(datasetfname)'
+### Frame Number 6 ###
+$!CreateNewFrame 
+$!ReadDataSet  '|LFDSFN11|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL11|'
+$!RemoveVar |LFDSVL11|
+$!RemoveVar |LFDSFN11|
+$!ReadDataSet  '|LFDSFN12|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL12|'
+$!RemoveVar |LFDSVL12|
+$!RemoveVar |LFDSFN12|
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Green
+  XYPos
+    {
+    X = -1.2831
+    Y = 0.25822
+    }
+  Width = 13.599
+  Height = 7.9836
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = '7_Superslab'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-2]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+$!LineMap  [1]
+  Name = 'Current'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 14
+    }
+  Lines
+    {
+    Color = Black
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!LineMap  [2]
+  Name = 'Previous'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 14
+    }
+  Lines
+    {
+    Color = Custom20
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = -5
+    RangeMax = 20
+    GRSpacing = 5
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = -5.000000000000003E-007
+    RangeMax = 4.4999999999999976E-006
+    GRSpacing = 5E-007
+    Title
+      {
+      Offset = 8
+      }
+    }
+$!Linking 
+  BetweenFrames
+    {
+    LinkFrameSizeAndPosition = Yes
+    }
+$!AttachText 
+  AnchorPos
+    {
+    X = 2.305935413536289
+    Y = 97.73895169578623
+    }
+  TextShape
+    {
+    IsBold = No
+    }
+  Anchor = HeadLeft
+  Text = '&(datasetfname)'
+### Frame Number 7 ###
+$!CreateNewFrame 
+$!ReadDataSet  '|LFDSFN13|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL13|'
+$!RemoveVar |LFDSVL13|
+$!RemoveVar |LFDSFN13|
+$!ReadDataSet  '|LFDSFN14|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL14|'
+$!RemoveVar |LFDSVL14|
+$!RemoveVar |LFDSFN14|
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Green
+  XYPos
+    {
+    X = -1.2831
+    Y = 0.25822
+    }
+  Width = 13.599
+  Height = 7.9836
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = '6_Abdul_MODHMS'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-2]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+$!LineMap  [1]
+  Name = 'Current'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 14
+    }
+  Lines
+    {
+    Color = Black
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!LineMap  [2]
+  Name = 'Previous'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 14
+    }
+  Lines
+    {
+    Color = Custom20
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = -1000
+    RangeMax = 7000
+    GRSpacing = 1000
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = -0.00019999999999999963
+    RangeMax = 0.0014000000000000006
+    GRSpacing = 0.0002
+    Title
+      {
+      Offset = 8
+      }
+    }
+$!Linking 
+  BetweenFrames
+    {
+    LinkFrameSizeAndPosition = Yes
+    }
+$!AttachText 
+  AnchorPos
+    {
+    X = 2.305935413536289
+    Y = 97.73895169578623
+    }
+  TextShape
+    {
+    IsBold = No
+    }
+  Anchor = HeadLeft
+  Text = '&(datasetfname)'
+### Frame Number 8 ###
+$!CreateNewFrame 
+$!ReadDataSet  '|LFDSFN15|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL15|'
+$!RemoveVar |LFDSVL15|
+$!RemoveVar |LFDSFN15|
+$!ReadDataSet  '|LFDSFN16|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL16|'
+$!RemoveVar |LFDSVL16|
+$!RemoveVar |LFDSFN16|
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Green
+  XYPos
+    {
+    X = -1.2831
+    Y = 0.25822
+    }
+  Width = 13.599
+  Height = 7.9836
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = '6_Abdul_Prism_Cell_nc'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-2]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+$!LineMap  [1]
+  Name = 'Current'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 14
+    }
+  Lines
+    {
+    Color = Black
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!LineMap  [2]
+  Name = 'Previous'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 14
+    }
+  Lines
+    {
+    Color = Custom20
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = -1000
+    RangeMax = 7000
+    GRSpacing = 1000
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = -0.00019999999999999963
+    RangeMax = 0.0014000000000000006
+    GRSpacing = 0.0002
+    Title
+      {
+      Offset = 8
+      }
+    }
+$!Linking 
+  BetweenFrames
+    {
+    LinkFrameSizeAndPosition = Yes
+    }
+$!AttachText 
+  AnchorPos
+    {
+    X = 2.305935413536289
+    Y = 97.73895169578623
+    }
+  TextShape
+    {
+    IsBold = No
+    }
+  Anchor = HeadLeft
+  Text = '&(datasetfname)'
+### Frame Number 9 ###
+$!CreateNewFrame 
+$!ReadDataSet  '|LFDSFN17|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL17|'
+$!RemoveVar |LFDSVL17|
+$!RemoveVar |LFDSFN17|
+$!ReadDataSet  '|LFDSFN18|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL18|'
+$!RemoveVar |LFDSVL18|
+$!RemoveVar |LFDSFN18|
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Green
+  XYPos
+    {
+    X = -1.2831
+    Y = 0.25822
+    }
+  Width = 13.599
+  Height = 7.9836
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = '6_Abdul_Prism_Cell'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-2]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+$!LineMap  [1]
+  Name = 'Current'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 14
+    }
+  Lines
+    {
+    Color = Black
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!LineMap  [2]
+  Name = 'Previous'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 14
+    }
+  Lines
+    {
+    Color = Custom20
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = -1000
+    RangeMax = 7000
+    GRSpacing = 1000
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = -0.00019999999999999963
+    RangeMax = 0.0014000000000000006
+    GRSpacing = 0.0002
+    Title
+      {
+      Offset = 8
+      }
+    }
+$!Linking 
+  BetweenFrames
+    {
+    LinkFrameSizeAndPosition = Yes
+    }
+$!AttachText 
+  AnchorPos
+    {
+    X = 2.305935413536289
+    Y = 97.73895169578623
+    }
+  TextShape
+    {
+    IsBold = No
+    }
+  Anchor = HeadLeft
+  Text = '&(datasetfname)'
+### Frame Number 10 ###
+$!CreateNewFrame 
+$!ReadDataSet  '|LFDSFN19|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL19|'
+$!RemoveVar |LFDSVL19|
+$!RemoveVar |LFDSFN19|
+$!ReadDataSet  '|LFDSFN20|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL20|'
+$!RemoveVar |LFDSVL20|
+$!RemoveVar |LFDSFN20|
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Red
+  XYPos
+    {
+    X = -1.2831
+    Y = 0.25822
+    }
+  Width = 13.599
+  Height = 7.9836
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = '4_SWF_RCH_CRD'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-2]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 94.635
+      Y = 96.65
+      }
+    }
+$!LineMap  [1]
+  Name = 'Current'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 14
+    }
+  Lines
+    {
+    Color = Black
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  BarCharts
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  ErrorBars
+    {
+    Color = Purple
+    }
+$!LineMap  [2]
+  Name = 'Previous'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 14
+    }
+  Lines
+    {
+    Color = Custom13
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  BarCharts
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  ErrorBars
+    {
+    Color = Purple
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+  ViewportPosition
+    {
+    Y2 = 88
+    }
+$!XYLineAxis 
+  XDetail 1
+    {
+    CoordScale = Log
+    RangeMin = 0.0010000000474974513
+    RangeMax = 120000
+    GRSpacing = 20000
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = -50
+    RangeMax = 550
+    GRSpacing = 50
+    }
+$!Linking 
+  BetweenFrames
+    {
+    LinkFrameSizeAndPosition = Yes
+    }
+$!AttachText 
+  AnchorPos
+    {
+    X = 2.305935413536289
+    Y = 97.73895169578623
+    }
+  TextShape
+    {
+    IsBold = No
+    }
+  Anchor = HeadLeft
+  Text = '&(datasetfname)'
+### Frame Number 11 ###
+$!CreateNewFrame 
+$!ReadDataSet  '|LFDSFN21|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL21|'
+$!RemoveVar |LFDSVL21|
+$!RemoveVar |LFDSFN21|
+$!ReadDataSet  '|LFDSFN22|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL22|'
+$!RemoveVar |LFDSVL22|
+$!RemoveVar |LFDSFN22|
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Red
+  XYPos
+    {
+    X = -1.2831
+    Y = 0.25822
+    }
+  Width = 13.599
+  Height = 7.9836
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = '3_SWF'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-2]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 94.635
+      Y = 96.65
+      }
+    }
+$!LineMap  [1]
+  Name = 'Current'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 14
+    }
+  Lines
+    {
+    Color = Black
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  BarCharts
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  ErrorBars
+    {
+    Color = Purple
+    }
+$!LineMap  [2]
+  Name = 'Previous'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 14
+    }
+  Lines
+    {
+    Color = Custom13
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  BarCharts
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  ErrorBars
+    {
+    Color = Purple
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = -38.313670678060163
+    RangeMax = 238.82194612885158
+    GRSpacing = 50
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = -0.084456064675606096
+    RangeMax = 0.48325909358500979
+    GRSpacing = 0.05
+    }
+$!Linking 
+  BetweenFrames
+    {
+    LinkFrameSizeAndPosition = Yes
+    }
+$!AttachText 
+  AnchorPos
+    {
+    X = 2.305935413536289
+    Y = 97.73895169578623
+    }
+  TextShape
+    {
+    IsBold = No
+    }
+  Anchor = HeadLeft
+  Text = '&(datasetfname)'
+### Frame Number 12 ###
+$!CreateNewFrame 
+$!ReadDataSet  '|LFDSFN23|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL23|'
+$!RemoveVar |LFDSVL23|
+$!RemoveVar |LFDSFN23|
+$!ReadDataSet  '|LFDSFN24|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL24|'
+$!RemoveVar |LFDSVL24|
+$!RemoveVar |LFDSFN24|
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Red
+  XYPos
+    {
+    X = -1.2831
+    Y = 0.25822
+    }
+  Width = 13.599
+  Height = 7.9836
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = '3_1_CLN_for_SWF'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-2]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 94.635
+      Y = 96.65
+      }
+    }
+$!LineMap  [1]
+  Name = 'Current'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 11
+    }
+  Lines
+    {
+    Color = Black
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  BarCharts
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  ErrorBars
+    {
+    Color = Purple
+    }
+$!LineMap  [2]
+  Name = 'Previous'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 11
+    }
+  Lines
+    {
+    Color = Custom13
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  BarCharts
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  ErrorBars
+    {
+    Color = Purple
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = -38.313670678060163
+    RangeMax = 238.82194612885158
+    GRSpacing = 50
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = -0.084456064675606096
+    RangeMax = 0.48325909358500979
+    GRSpacing = 0.05
+    }
+$!Linking 
+  BetweenFrames
+    {
+    LinkFrameSizeAndPosition = Yes
+    }
+$!AttachText 
+  AnchorPos
+    {
+    X = 2.305935413536289
+    Y = 97.73895169578623
+    }
+  TextShape
+    {
+    IsBold = No
+    }
+  Anchor = HeadLeft
+  Text = '&(datasetfname)'
+### Frame Number 13 ###
+$!CreateNewFrame 
+$!ReadDataSet  '|LFDSFN25|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL25|'
+$!RemoveVar |LFDSVL25|
+$!RemoveVar |LFDSFN25|
+$!ReadDataSet  '|LFDSFN26|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL26|'
+$!RemoveVar |LFDSVL26|
+$!RemoveVar |LFDSFN26|
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Red
+  XYPos
+    {
+    X = -1.2831
+    Y = 0.25822
+    }
+  Width = 13.599
+  Height = 7.9836
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = '3_0_SWF_CHD'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-2]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 94.635
+      Y = 96.65
+      }
+    }
+$!LineMap  [1]
+  Name = 'Current'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 11
+    }
+  Lines
+    {
+    Color = Black
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  BarCharts
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  ErrorBars
+    {
+    Color = Purple
+    }
+$!LineMap  [2]
+  Name = 'Previous'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 11
+    }
+  Lines
+    {
+    Color = Custom20
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  BarCharts
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  ErrorBars
+    {
+    Color = Purple
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = -50
+    RangeMax = 300
+    GRSpacing = 50
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = -0.050000000000000044
+    RangeMax = 0.44999999999999918
+    GRSpacing = 0.05
+    }
+$!Linking 
+  BetweenFrames
+    {
+    LinkFrameSizeAndPosition = Yes
+    }
+$!AttachText 
+  AnchorPos
+    {
+    X = 2.305935413536289
+    Y = 97.73895169578623
+    }
+  TextShape
+    {
+    IsBold = No
+    }
+  Anchor = HeadLeft
+  Text = '&(datasetfname)'
+### Frame Number 14 ###
+$!CreateNewFrame 
+$!ReadDataSet  '|LFDSFN27|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL27|'
+$!RemoveVar |LFDSVL27|
+$!RemoveVar |LFDSFN27|
+$!ReadDataSet  '|LFDSFN28|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL28|'
+$!RemoveVar |LFDSVL28|
+$!RemoveVar |LFDSFN28|
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Green
+  XYPos
+    {
+    X = -1.2831
+    Y = 0.25822
+    }
+  Width = 13.599
+  Height = 7.9836
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = '2_VSF_Hillslope'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-2]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+$!LineMap  [1]
+  Name = 'Current'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 9
+    }
+  Lines
+    {
+    Color = Black
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!LineMap  [2]
+  Name = 'Previous'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 9
+    }
+  Lines
+    {
+    Color = Custom20
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Green
+    FillColor = Green
+    }
+  BarCharts
+    {
+    Color = Green
+    FillColor = Green
+    }
+  ErrorBars
+    {
+    Color = Green
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+$!XYLineAxis 
+  XDetail 1
+    {
+    CoordScale = Log
+    RangeMin = 0.0010000000474974513
+    RangeMax = 1200
+    GRSpacing = 200
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = -50
+    RangeMax = 550
+    GRSpacing = 50
+    }
+$!Linking 
+  BetweenFrames
+    {
+    LinkFrameSizeAndPosition = Yes
+    }
+$!AttachText 
+  AnchorPos
+    {
+    X = 2.305935413536289
+    Y = 97.73895169578623
+    }
+  TextShape
+    {
+    IsBold = No
+    }
+  Anchor = HeadLeft
+  Text = '&(datasetfname)'
+### Frame Number 15 ###
+$!CreateNewFrame 
+$!ReadDataSet  '|LFDSFN29|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL29|'
+$!RemoveVar |LFDSVL29|
+$!RemoveVar |LFDSFN29|
+$!ReadDataSet  '|LFDSFN30|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL30|'
+$!RemoveVar |LFDSVL30|
+$!RemoveVar |LFDSFN30|
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Red
+  XYPos
+    {
+    X = -1.2831
+    Y = 0.25822
+    }
+  Width = 13.599
+  Height = 7.9836
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = '1_VSF_Column_Brooks'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-2]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 94.635
+      Y = 96.65
+      }
+    }
+$!LineMap  [1]
+  Name = 'Current'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 7
+    }
+  Lines
+    {
+    Color = Black
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  BarCharts
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  ErrorBars
+    {
+    Color = Purple
+    }
+$!LineMap  [2]
+  Name = 'Previous'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 7
+    }
+  Lines
+    {
+    Color = Custom20
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  BarCharts
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  ErrorBars
+    {
+    Color = Purple
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = -50
+    RangeMax = 250
+    GRSpacing = 50
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = 0
+    RangeMax = 0.54999999999999916
+    GRSpacing = 0.05
+    }
+$!Linking 
+  BetweenFrames
+    {
+    LinkFrameSizeAndPosition = Yes
+    }
+$!AttachText 
+  AnchorPos
+    {
+    X = 2.305935413536289
+    Y = 97.73895169578623
+    }
+  TextShape
+    {
+    IsBold = No
+    }
+  Anchor = HeadLeft
+  Text = '&(datasetfname)'
+$!AttachText 
+  AnchorPos
+    {
+    X = 2.305935413536289
+    Y = 97.73895169578623
+    }
+  TextShape
+    {
+    IsBold = No
+    }
+  Anchor = HeadLeft
+  Text = '&(datasetfname)'
+### Frame Number 16 ###
+$!CreateNewFrame 
+$!ReadDataSet  '|LFDSFN31|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL31|'
+$!RemoveVar |LFDSVL31|
+$!RemoveVar |LFDSFN31|
+$!RenameDataSetZone 
+  Zone = 1
+  Name = '1_VSF_Column'
+$!ReadDataSet  '|LFDSFN32|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL32|'
+$!RemoveVar |LFDSVL32|
+$!RemoveVar |LFDSFN32|
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Red
+  XYPos
+    {
+    X = -1.2831
+    Y = 0.25822
+    }
+  Width = 13.599
+  Height = 7.9836
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
+$!FrameName  = '1_VSF_Column'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-2]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 94.635
+      Y = 96.65
+      }
+    }
+$!LineMap  [1]
+  Name = 'Current'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 7
+    }
+  Lines
+    {
+    Color = Black
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  BarCharts
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  ErrorBars
+    {
+    Color = Purple
+    }
+$!LineMap  [2]
+  Name = 'Previous'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 7
+    }
+  Lines
+    {
+    Color = Custom20
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  BarCharts
+    {
+    Color = Purple
+    FillColor = Purple
+    }
+  ErrorBars
+    {
+    Color = Purple
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = -38.313670678060163
+    RangeMax = 238.82194612885158
+    GRSpacing = 50
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = -0.084456064675606096
+    RangeMax = 0.48325909358500979
+    GRSpacing = 0.05
+    }
+$!Linking 
+  BetweenFrames
+    {
+    LinkFrameSizeAndPosition = Yes
+    }
+$!AttachText 
+  AnchorPos
+    {
+    X = 2.305935413536289
+    Y = 97.73895169578623
+    }
+  TextShape
+    {
+    IsBold = No
+    }
+  Anchor = HeadLeft
+  Text = '&(datasetfname)'
+$!FrameControl ActivateByNumber
+  Frame = 12
+$!SetStyleBase Config
