@@ -1,0 +1,15 @@
+_buildo.*
+_posto.*
+fort.8
+debug.txt
+*.meshBIN
+modflow.*
+*.log
+*.synctex
+.vs
+*.tif
+*.xml
+!/QGIS/0_data/2_DEMs/Dem_all_5m clipped smoothed v1.tif.aux.xml
+!/QGIS/0_data/2_DEMs/Dem_all_5m clipped smoothed v1.tif
+!/1_data/2_DEMs/Dem_all_5m clipped smoothed v1.tif.aux.xml
+!/1_data/2_DEMs/Dem_all_5m clipped smoothed v1.tif
