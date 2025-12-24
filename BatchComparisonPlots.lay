@@ -1,67 +1,67 @@
 #!MC 1410
-$!VarSet |LFDSFN1| = '"10_Forsyth\Modflow.GWF.OBS.tecplot.dat"'
-$!VarSet |LFDSVL1| = '"TOTAL TIME" "Outlet Head" "Outlet Saturation"'
-$!VarSet |LFDSFN2| = '"..\Examples - 1\10_Forsyth\Modflow.GWF.OBS.tecplot.dat"'
-$!VarSet |LFDSVL2| = '"TOTAL TIME" "Outlet Head" "Outlet Saturation"'
-$!VarSet |LFDSFN3| = '"10_Forsyth\_posto.modflow.VolumeBudget.tecplot.dat"'
-$!VarSet |LFDSVL3| = '"TOTAL TIME(DAYS)" "IN_STORAGE" "IN_CONSTANT HEAD" "IN_WELLS" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CONSTANT HEAD" "OUT_WELLS" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
-$!VarSet |LFDSFN4| = '"..\Examples - 1\10_Forsyth\_posto.modflow.VolumeBudget.tecplot.dat"'
-$!VarSet |LFDSVL4| = '"TOTAL TIME(DAYS)" "IN_STORAGE" "IN_CONSTANT HEAD" "IN_WELLS" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CONSTANT HEAD" "OUT_WELLS" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN1| = '"10_Forsyth\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL1| = '"TOTAL TIME(DAYS)" "IN_STORAGE" "IN_CONSTANT HEAD" "IN_WELLS" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CONSTANT HEAD" "OUT_WELLS" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN2| = '"..\Examples - 1.49 beta\10_Forsyth\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSVL2| = '"TOTAL TIME(DAYS)" "IN_STORAGE" "IN_CONSTANT HEAD" "IN_WELLS" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CONSTANT HEAD" "OUT_WELLS" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
+$!VarSet |LFDSFN3| = '"10_Forsyth\Modflow.GWF.OBS.tecplot.dat"'
+$!VarSet |LFDSVL3| = '"TOTAL TIME" "Outlet Head" "Outlet Saturation"'
+$!VarSet |LFDSFN4| = '"..\Examples - 1.49 beta\10_Forsyth\Modflow.GWF.OBS.tecplot.dat"'
+$!VarSet |LFDSVL4| = '"TOTAL TIME" "Outlet Head" "Outlet Saturation"'
 $!VarSet |LFDSFN5| = '"9_Smith_Woolhiser\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL5| = '"TOTAL TIME(MINUTES)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
-$!VarSet |LFDSFN6| = '"..\Examples - 1\9_Smith_Woolhiser\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSFN6| = '"..\Examples - 1.49 beta\9_Smith_Woolhiser\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL6| = '"TOTAL TIME(MINUTES)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
 $!VarSet |LFDSFN7| = '"8_V_catchment_nc\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL7| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
-$!VarSet |LFDSFN8| = '"..\Examples - 1\8_V_catchment_nc\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSFN8| = '"..\Examples - 1.49 beta\8_V_catchment_nc\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL8| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
 $!VarSet |LFDSFN9| = '"8_V_catchment\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL9| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
-$!VarSet |LFDSFN10| = '"..\Examples - 1\8_V_catchment\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSFN10| = '"..\Examples - 1.49 beta\8_V_catchment\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL10| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
 $!VarSet |LFDSFN11| = '"7_SuperSlab\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL11| = '"TOTAL TIME(HOURS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
-$!VarSet |LFDSFN12| = '"..\Examples - 1\7_SuperSlab\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSFN12| = '"..\Examples - 1.49 beta\7_SuperSlab\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL12| = '"TOTAL TIME(HOURS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
 $!VarSet |LFDSFN13| = '"6_Abdul_MODHMS\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL13| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
-$!VarSet |LFDSFN14| = '"..\Examples - 1\6_Abdul_MODHMS\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSFN14| = '"..\Examples - 1.49 beta\6_Abdul_MODHMS\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL14| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
 $!VarSet |LFDSFN15| = '"6_Abdul_Prism_Cell_nc\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL15| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
-$!VarSet |LFDSFN16| = '"..\Examples - 1\6_Abdul_Prism_Cell_nc\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSFN16| = '"..\Examples - 1.49 beta\6_Abdul_Prism_Cell_nc\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL16| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
 $!VarSet |LFDSFN17| = '"6_Abdul_Prism_Cell\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL17| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
-$!VarSet |LFDSFN18| = '"..\Examples - 1\6_Abdul_Prism_Cell\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSFN18| = '"..\Examples - 1.49 beta\6_Abdul_Prism_Cell\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL18| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
 $!VarSet |LFDSFN19| = '"4_SWF_RCH_CRD\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL19| = '"TOTAL TIME(YEARS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
-$!VarSet |LFDSFN20| = '"..\Examples - 1\4_SWF_RCH_CRD\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSFN20| = '"..\Examples - 1.49 beta\4_SWF_RCH_CRD\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL20| = '"TOTAL TIME(YEARS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
 $!VarSet |LFDSFN21| = '"3_SWF\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL21| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
-$!VarSet |LFDSFN22| = '"..\Examples - 1\3_SWF\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSFN22| = '"..\Examples - 1.49 beta\3_SWF\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL22| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_SWBC" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "OUT_SWBC" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
 $!VarSet |LFDSFN23| = '"3_1_CLN_for_SWF\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL23| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_CLN STORAGE" "IN_CONSTANT HEAD" "IN_CLN CONST HEAD" "IN_WELLS" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CLN STORAGE" "OUT_CONSTANT HEAD" "OUT_CLN CONST HEAD" "OUT_WELLS" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
-$!VarSet |LFDSFN24| = '"..\Examples - 1\3_1_CLN_for_SWF\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSFN24| = '"..\Examples - 1.49 beta\3_1_CLN_for_SWF\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL24| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_CLN STORAGE" "IN_CONSTANT HEAD" "IN_CLN CONST HEAD" "IN_WELLS" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CLN STORAGE" "OUT_CONSTANT HEAD" "OUT_CLN CONST HEAD" "OUT_WELLS" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
 $!VarSet |LFDSFN25| = '"3_0_SWF_CHD\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL25| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
-$!VarSet |LFDSFN26| = '"..\Examples - 1\3_0_SWF_CHD\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSFN26| = '"..\Examples - 1.49 beta\3_0_SWF_CHD\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL26| = '"TOTAL TIME(SECONDS)" "IN_STORAGE" "IN_SWF STORAGE" "IN_CONSTANT HEAD" "IN_SWF CONST HEAD" "IN_RECHARGE" "IN_TOTAL IN" "OUT_STORAGE" "OUT_SWF STORAGE" "OUT_CONSTANT HEAD" "OUT_SWF CONST HEAD" "OUT_RECHARGE" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
 $!VarSet |LFDSFN27| = '"2_VSF_Hillslope\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL27| = '"TOTAL TIME(YEARS)" "IN_STORAGE" "IN_CONSTANT HEAD" "IN_DRAINS" "IN_RECHARGE" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CONSTANT HEAD" "OUT_DRAINS" "OUT_RECHARGE" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
-$!VarSet |LFDSFN28| = '"..\Examples - 1\2_VSF_Hillslope\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSFN28| = '"..\Examples - 1.49 beta\2_VSF_Hillslope\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL28| = '"TOTAL TIME(YEARS)" "IN_STORAGE" "IN_CONSTANT HEAD" "IN_DRAINS" "IN_RECHARGE" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CONSTANT HEAD" "OUT_DRAINS" "OUT_RECHARGE" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
 $!VarSet |LFDSFN29| = '"1_VSF_Column_Brooks\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL29| = '"TOTAL TIME(DAYS)" "IN_STORAGE" "IN_CONSTANT HEAD" "IN_RECHARGE" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CONSTANT HEAD" "OUT_RECHARGE" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
-$!VarSet |LFDSFN30| = '"..\Examples - 1\1_VSF_Column_Brooks\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSFN30| = '"..\Examples - 1.49 beta\1_VSF_Column_Brooks\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL30| = '"TOTAL TIME(DAYS)" "IN_STORAGE" "IN_CONSTANT HEAD" "IN_RECHARGE" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CONSTANT HEAD" "OUT_RECHARGE" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
 $!VarSet |LFDSFN31| = '"1_VSF_Column\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL31| = '"TOTAL TIME(DAYS)" "IN_STORAGE" "IN_CONSTANT HEAD" "IN_RECHARGE" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CONSTANT HEAD" "OUT_RECHARGE" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
-$!VarSet |LFDSFN32| = '"..\Examples - 1\1_VSF_Column\_posto.modflow.VolumeBudget.tecplot.dat"'
+$!VarSet |LFDSFN32| = '"..\Examples - 1.49 beta\1_VSF_Column\_posto.modflow.VolumeBudget.tecplot.dat"'
 $!VarSet |LFDSVL32| = '"TOTAL TIME(DAYS)" "IN_STORAGE" "IN_CONSTANT HEAD" "IN_RECHARGE" "IN_TOTAL IN" "OUT_STORAGE" "OUT_CONSTANT HEAD" "OUT_RECHARGE" "TOTAL OUT" "IN - OUT" "PERCENT DISCREPANCY"'
 $!SetStyleBase Factory
 $!GlobalPaper 
@@ -103,7 +103,6 @@ $!ReadDataSet  '|LFDSFN1|'
   InitialPlotType = XYLine
   IncludeText = No
   IncludeGeom = No
-  ResetStyle = No
   AssignStrandIDs = Yes
   VarLoadMode = ByName
   VarNameList = '|LFDSVL1|'
@@ -134,6 +133,201 @@ $!ThreeDAxis
   AspectRatioLimit = 25
   BoxAspectRatioLimit = 25
 $!PlotType  = XYLine
+$!FrameName  = '10_Forsyth (IN-OUT)'
+$!GlobalTime 
+  SolutionTime = 0
+$!DeleteLineMaps 
+$!ActiveLineMaps  =  [1-2]
+$!GlobalLinePlot 
+  DataLabels
+    {
+    DistanceSkip = 5
+    }
+  Legend
+    {
+    Show = Yes
+    TextShape
+      {
+      Height = 2
+      }
+    Box
+      {
+      BoxType = None
+      }
+    XYPos
+      {
+      X = 96.028
+      Y = 12.853
+      }
+    }
+$!LineMap  [1]
+  Name = '&(AUXZONE[1]:MUTVersion)'
+  Assign
+    {
+    Zone = 1
+    XAxisVar = 1
+    YAxisVar = 10
+    }
+  Lines
+    {
+    Color = Black
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Red
+    FillColor = Red
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!LineMap  [2]
+  Name = '&(AUXZONE[2]:MUTVersion)'
+  Assign
+    {
+    Zone = 2
+    XAxisVar = 1
+    YAxisVar = 10
+    }
+  Lines
+    {
+    Color = Custom20
+    LinePattern = Dashed
+    LineThickness = 0.4
+    }
+  Symbols
+    {
+    Color = Red
+    FillColor = Red
+    }
+  BarCharts
+    {
+    Color = Red
+    FillColor = Red
+    }
+  ErrorBars
+    {
+    Color = Red
+    }
+$!XYLineAxis 
+  DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
+  ViewportPosition
+    {
+    X1 = 12.879
+    Y1 = 25.521
+    Y2 = 85.116
+    }
+  ViewportTopSnapTarget = 85.1163907593
+$!XYLineAxis 
+  XDetail 1
+    {
+    RangeMin = -50
+    RangeMax = 350
+    GRSpacing = 50
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
+    }
+$!XYLineAxis 
+  YDetail 1
+    {
+    RangeMin = -9.9999999999999991E-006
+    RangeMax = 5.9999999999999908E-006
+    GRSpacing = 5E-006
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
+    Title
+      {
+      Offset = 8
+      }
+    }
+$!AttachText 
+  AnchorPos
+    {
+    X = 3.938363044278417
+    Y = 10.8187302984479
+    }
+  TextShape
+    {
+    IsBold = No
+    Height = 13
+    }
+  Anchor = HeadLeft
+  Text = '&(date)\n&(datasetfname)'
+$!AttachText 
+  AnchorPos
+    {
+    X = 25.87667069710026
+    Y = 93.61484027868643
+    }
+  TextShape
+    {
+    Height = 23
+    }
+  Anchor = HeadLeft
+  Text = 'Verification case: &(zonename[1])'
+### Frame Number 2 ###
+$!CreateNewFrame 
+$!ReadDataSet  '|LFDSFN3|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL3|'
+$!RemoveVar |LFDSVL3|
+$!RemoveVar |LFDSFN3|
+$!ReadDataSet  '|LFDSFN4|'
+  InitialPlotType = XYLine
+  IncludeText = No
+  IncludeGeom = No
+  ReadDataOption = Append
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL4|'
+$!RemoveVar |LFDSVL4|
+$!RemoveVar |LFDSFN4|
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Green
+  XYPos
+    {
+    X = -1.2831
+    Y = 0.25822
+    }
+  Width = 13.599
+  Height = 7.9836
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = XYLine
 $!FrameName  = '10_Forsyth (Observation point)'
 $!GlobalTime 
   SolutionTime = 0
@@ -147,10 +341,19 @@ $!GlobalLinePlot
   Legend
     {
     Show = Yes
+    TextShape
+      {
+      Height = 2
+      }
+    Box
+      {
+      BoxType = None
+      Margin = 4
+      }
     XYPos
       {
-      X = 82.666
-      Y = 39.217
+      X = 96.451
+      Y = 17.281
       }
     }
 $!LineMap  [1]
@@ -181,7 +384,7 @@ $!LineMap  [1]
     Color = Red
     }
 $!LineMap  [2]
-  Name = 'Previous&DV&'
+  Name = 'Previous &DV&'
   Assign
     {
     Zone = 2
@@ -190,7 +393,7 @@ $!LineMap  [2]
     }
   Lines
     {
-    Color = Black
+    Color = Custom2
     LinePattern = Dashed
     LineThickness = 0.4
     }
@@ -247,7 +450,7 @@ $!LineMap  [4]
     }
   Lines
     {
-    Color = Blue
+    Color = Custom37
     LinePattern = Dashed
     LineThickness = 0.4
     }
@@ -267,12 +470,34 @@ $!LineMap  [4]
     }
 $!XYLineAxis 
   DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
+  ViewportPosition
+    {
+    X1 = 12.94
+    Y1 = 25.624
+    X2 = 87.94
+    Y2 = 85.219
+    }
+  ViewportTopSnapTarget = 85.2193768036
 $!XYLineAxis 
   XDetail 1
     {
     RangeMin = -50
     RangeMax = 350
     GRSpacing = 50
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     }
 $!XYLineAxis 
   YDetail 1
@@ -280,6 +505,16 @@ $!XYLineAxis
     RangeMin = 0.29999999999999943
     RangeMax = 0.5999999999999992
     GRSpacing = 0.05
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     Title
       {
       Offset = 8
@@ -299,157 +534,28 @@ $!XYLineAxis
 $!AttachText 
   AnchorPos
     {
-    X = 2.305935413536289
-    Y = 97.73895169578623
+    X = 25.87667069710026
+    Y = 93.61484027868643
     }
   TextShape
     {
-    IsBold = No
+    Height = 23
     }
   Anchor = HeadLeft
-  Text = '&(datasetfname)'
-### Frame Number 2 ###
-$!CreateNewFrame 
-$!ReadDataSet  '|LFDSFN3|'
-  InitialPlotType = XYLine
-  IncludeText = No
-  IncludeGeom = No
-  AssignStrandIDs = Yes
-  VarLoadMode = ByName
-  VarNameList = '|LFDSVL3|'
-$!RemoveVar |LFDSVL3|
-$!RemoveVar |LFDSFN3|
-$!ReadDataSet  '|LFDSFN4|'
-  InitialPlotType = XYLine
-  IncludeText = No
-  IncludeGeom = No
-  ReadDataOption = Append
-  ResetStyle = No
-  AssignStrandIDs = Yes
-  VarLoadMode = ByName
-  VarNameList = '|LFDSVL4|'
-$!RemoveVar |LFDSVL4|
-$!RemoveVar |LFDSFN4|
-$!FrameLayout 
-  ShowHeader = No
-  HeaderColor = Green
-  XYPos
-    {
-    X = -1.2831
-    Y = 0.25822
-    }
-  Width = 13.599
-  Height = 7.9836
-$!ThreeDAxis 
-  AspectRatioLimit = 25
-  BoxAspectRatioLimit = 25
-$!PlotType  = XYLine
-$!FrameName  = '10_Forsyth (IN-OUT)'
-$!GlobalTime 
-  SolutionTime = 0
-$!DeleteLineMaps 
-$!ActiveLineMaps  =  [1-2]
-$!GlobalLinePlot 
-  DataLabels
-    {
-    DistanceSkip = 5
-    }
-  Legend
-    {
-    Show = Yes
-    XYPos
-      {
-      X = 94.274
-      Y = 92.152
-      }
-    }
-$!LineMap  [1]
-  Name = 'Current'
-  Assign
-    {
-    Zone = 1
-    XAxisVar = 1
-    YAxisVar = 10
-    }
-  Lines
-    {
-    Color = Black
-    LineThickness = 0.4
-    }
-  Symbols
-    {
-    Color = Red
-    FillColor = Red
-    }
-  BarCharts
-    {
-    Color = Red
-    FillColor = Red
-    }
-  ErrorBars
-    {
-    Color = Red
-    }
-$!LineMap  [2]
-  Name = 'Previous'
-  Assign
-    {
-    Zone = 2
-    XAxisVar = 1
-    YAxisVar = 10
-    }
-  Lines
-    {
-    Color = Custom20
-    LinePattern = Dashed
-    LineThickness = 0.4
-    }
-  Symbols
-    {
-    Color = Red
-    FillColor = Red
-    }
-  BarCharts
-    {
-    Color = Red
-    FillColor = Red
-    }
-  ErrorBars
-    {
-    Color = Red
-    }
-$!XYLineAxis 
-  DepXToYRatio = 1
-$!XYLineAxis 
-  XDetail 1
-    {
-    RangeMin = -50
-    RangeMax = 350
-    GRSpacing = 50
-    }
-$!XYLineAxis 
-  YDetail 1
-    {
-    RangeMin = -9.9999999999999991E-006
-    RangeMax = 5.9999999999999908E-006
-    GRSpacing = 5E-006
-    Title
-      {
-      Offset = 8
-      }
-    }
+  Text = 'Verification case: &(zonename[1])'
 $!AttachText 
   AnchorPos
     {
-    X = 2.305935413536289
-    Y = 97.73895169578623
+    X = 3.938363044278417
+    Y = 10.8187302984479
     }
   TextShape
     {
     IsBold = No
+    Height = 13
     }
   Anchor = HeadLeft
-  Text = '&(datasetfname)'
+  Text = '&(date)\n&(datasetfname)'
 ### Frame Number 3 ###
 $!CreateNewFrame 
 $!ReadDataSet  '|LFDSFN5|'
@@ -475,7 +581,7 @@ $!RemoveVar |LFDSVL6|
 $!RemoveVar |LFDSFN6|
 $!FrameLayout 
   ShowHeader = No
-  HeaderColor = Green
+  HeaderColor = Red
   XYPos
     {
     X = -1.2831
@@ -500,13 +606,22 @@ $!GlobalLinePlot
   Legend
     {
     Show = Yes
+    TextShape
+      {
+      Height = 2
+      }
+    Box
+      {
+      BoxType = None
+      }
     XYPos
       {
-      X = 95
+      X = 96.028
+      Y = 12.853
       }
     }
 $!LineMap  [1]
-  Name = 'Current'
+  Name = '&(AUXZONE[1]:MUTVersion)'
   Assign
     {
     Zone = 1
@@ -520,20 +635,20 @@ $!LineMap  [1]
     }
   Symbols
     {
-    Color = Green
-    FillColor = Green
+    Color = Purple
+    FillColor = Purple
     }
   BarCharts
     {
-    Color = Green
-    FillColor = Green
+    Color = Purple
+    FillColor = Purple
     }
   ErrorBars
     {
-    Color = Green
+    Color = Purple
     }
 $!LineMap  [2]
-  Name = 'Previous'
+  Name = '&(AUXZONE[2]:MUTVersion)'
   Assign
     {
     Zone = 2
@@ -548,36 +663,63 @@ $!LineMap  [2]
     }
   Symbols
     {
-    Color = Green
-    FillColor = Green
+    Color = Purple
+    FillColor = Purple
     }
   BarCharts
     {
-    Color = Green
-    FillColor = Green
+    Color = Purple
+    FillColor = Purple
     }
   ErrorBars
     {
-    Color = Green
+    Color = Purple
     }
 $!XYLineAxis 
   DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
+  ViewportPosition
+    {
+    X1 = 12.758
+    Y1 = 25.624
+    Y2 = 85.013
+    }
+  ViewportTopSnapTarget = 85.013404715
 $!XYLineAxis 
   XDetail 1
     {
     RangeMin = -5
     RangeMax = 20
     GRSpacing = 5
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     }
 $!XYLineAxis 
   YDetail 1
     {
     RangeMin = -100
-    RangeMax = 800
+    RangeMax = 700
     GRSpacing = 100
-    Title
+    Gridlines
       {
-      Offset = 8
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
       }
     }
 $!Linking 
@@ -588,15 +730,28 @@ $!Linking
 $!AttachText 
   AnchorPos
     {
-    X = 2.305935413536289
-    Y = 97.73895169578623
+    X = 25.87667069710026
+    Y = 93.61484027868643
+    }
+  TextShape
+    {
+    Height = 23
+    }
+  Anchor = HeadLeft
+  Text = 'Verification case: &(zonename[1])'
+$!AttachText 
+  AnchorPos
+    {
+    X = 3.938363044278417
+    Y = 10.8187302984479
     }
   TextShape
     {
     IsBold = No
+    Height = 13
     }
   Anchor = HeadLeft
-  Text = '&(datasetfname)'
+  Text = '&(date)\n&(datasetfname)'
 ### Frame Number 4 ###
 $!CreateNewFrame 
 $!ReadDataSet  '|LFDSFN7|'
@@ -622,7 +777,7 @@ $!RemoveVar |LFDSVL8|
 $!RemoveVar |LFDSFN8|
 $!FrameLayout 
   ShowHeader = No
-  HeaderColor = Green
+  HeaderColor = Red
   XYPos
     {
     X = -1.2831
@@ -647,13 +802,22 @@ $!GlobalLinePlot
   Legend
     {
     Show = Yes
+    TextShape
+      {
+      Height = 2
+      }
+    Box
+      {
+      BoxType = None
+      }
     XYPos
       {
-      X = 95
+      X = 96.028
+      Y = 12.853
       }
     }
 $!LineMap  [1]
-  Name = 'Current'
+  Name = '&(AUXZONE[1]:MUTVersion)'
   Assign
     {
     Zone = 1
@@ -667,20 +831,20 @@ $!LineMap  [1]
     }
   Symbols
     {
-    Color = Green
-    FillColor = Green
+    Color = Purple
+    FillColor = Purple
     }
   BarCharts
     {
-    Color = Green
-    FillColor = Green
+    Color = Purple
+    FillColor = Purple
     }
   ErrorBars
     {
-    Color = Green
+    Color = Purple
     }
 $!LineMap  [2]
-  Name = 'Previous'
+  Name = '&(AUXZONE[2]:MUTVersion)'
   Assign
     {
     Zone = 2
@@ -695,36 +859,63 @@ $!LineMap  [2]
     }
   Symbols
     {
-    Color = Green
-    FillColor = Green
+    Color = Purple
+    FillColor = Purple
     }
   BarCharts
     {
-    Color = Green
-    FillColor = Green
+    Color = Purple
+    FillColor = Purple
     }
   ErrorBars
     {
-    Color = Green
+    Color = Purple
     }
 $!XYLineAxis 
   DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
+  ViewportPosition
+    {
+    X1 = 12.758
+    Y1 = 25.624
+    Y2 = 85.013
+    }
+  ViewportTopSnapTarget = 85.013404715
 $!XYLineAxis 
   XDetail 1
     {
     RangeMin = -2000
     RangeMax = 12000
     GRSpacing = 2000
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     }
 $!XYLineAxis 
   YDetail 1
     {
-    RangeMin = -0.5
-    RangeMax = 5.5
-    GRSpacing = 0.5
-    Title
+    RangeMin = -1
+    RangeMax = 6
+    GRSpacing = 1
+    Gridlines
       {
-      Offset = 8
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
       }
     }
 $!Linking 
@@ -735,15 +926,28 @@ $!Linking
 $!AttachText 
   AnchorPos
     {
-    X = 2.305935413536289
-    Y = 97.73895169578623
+    X = 25.87667069710026
+    Y = 93.61484027868643
+    }
+  TextShape
+    {
+    Height = 23
+    }
+  Anchor = HeadLeft
+  Text = 'Verification case: &(zonename[1])'
+$!AttachText 
+  AnchorPos
+    {
+    X = 3.938363044278417
+    Y = 10.8187302984479
     }
   TextShape
     {
     IsBold = No
+    Height = 13
     }
   Anchor = HeadLeft
-  Text = '&(datasetfname)'
+  Text = '&(date)\n&(datasetfname)'
 ### Frame Number 5 ###
 $!CreateNewFrame 
 $!ReadDataSet  '|LFDSFN9|'
@@ -769,7 +973,7 @@ $!RemoveVar |LFDSVL10|
 $!RemoveVar |LFDSFN10|
 $!FrameLayout 
   ShowHeader = No
-  HeaderColor = Green
+  HeaderColor = Red
   XYPos
     {
     X = -1.2831
@@ -794,13 +998,22 @@ $!GlobalLinePlot
   Legend
     {
     Show = Yes
+    TextShape
+      {
+      Height = 2
+      }
+    Box
+      {
+      BoxType = None
+      }
     XYPos
       {
-      X = 95
+      X = 96.028
+      Y = 12.853
       }
     }
 $!LineMap  [1]
-  Name = 'Current'
+  Name = '&(AUXZONE[1]:MUTVersion)'
   Assign
     {
     Zone = 1
@@ -814,20 +1027,20 @@ $!LineMap  [1]
     }
   Symbols
     {
-    Color = Green
-    FillColor = Green
+    Color = Purple
+    FillColor = Purple
     }
   BarCharts
     {
-    Color = Green
-    FillColor = Green
+    Color = Purple
+    FillColor = Purple
     }
   ErrorBars
     {
-    Color = Green
+    Color = Purple
     }
 $!LineMap  [2]
-  Name = 'Previous'
+  Name = '&(AUXZONE[2]:MUTVersion)'
   Assign
     {
     Zone = 2
@@ -842,36 +1055,63 @@ $!LineMap  [2]
     }
   Symbols
     {
-    Color = Green
-    FillColor = Green
+    Color = Purple
+    FillColor = Purple
     }
   BarCharts
     {
-    Color = Green
-    FillColor = Green
+    Color = Purple
+    FillColor = Purple
     }
   ErrorBars
     {
-    Color = Green
+    Color = Purple
     }
 $!XYLineAxis 
   DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
+  ViewportPosition
+    {
+    X1 = 12.758
+    Y1 = 25.624
+    Y2 = 85.013
+    }
+  ViewportTopSnapTarget = 85.013404715
 $!XYLineAxis 
   XDetail 1
     {
     RangeMin = -2000
     RangeMax = 12000
     GRSpacing = 2000
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     }
 $!XYLineAxis 
   YDetail 1
     {
-    RangeMin = -0.5
-    RangeMax = 5.5
-    GRSpacing = 0.5
-    Title
+    RangeMin = -1
+    RangeMax = 6
+    GRSpacing = 1
+    Gridlines
       {
-      Offset = 8
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
       }
     }
 $!Linking 
@@ -882,15 +1122,28 @@ $!Linking
 $!AttachText 
   AnchorPos
     {
-    X = 2.305935413536289
-    Y = 97.73895169578623
+    X = 25.87667069710026
+    Y = 93.61484027868643
+    }
+  TextShape
+    {
+    Height = 23
+    }
+  Anchor = HeadLeft
+  Text = 'Verification case: &(zonename[1])'
+$!AttachText 
+  AnchorPos
+    {
+    X = 3.938363044278417
+    Y = 10.8187302984479
     }
   TextShape
     {
     IsBold = No
+    Height = 13
     }
   Anchor = HeadLeft
-  Text = '&(datasetfname)'
+  Text = '&(date)\n&(datasetfname)'
 ### Frame Number 6 ###
 $!CreateNewFrame 
 $!ReadDataSet  '|LFDSFN11|'
@@ -916,7 +1169,7 @@ $!RemoveVar |LFDSVL12|
 $!RemoveVar |LFDSFN12|
 $!FrameLayout 
   ShowHeader = No
-  HeaderColor = Green
+  HeaderColor = Red
   XYPos
     {
     X = -1.2831
@@ -941,13 +1194,22 @@ $!GlobalLinePlot
   Legend
     {
     Show = Yes
+    TextShape
+      {
+      Height = 2
+      }
+    Box
+      {
+      BoxType = None
+      }
     XYPos
       {
-      X = 95
+      X = 96.028
+      Y = 12.853
       }
     }
 $!LineMap  [1]
-  Name = 'Current'
+  Name = '&(AUXZONE[1]:MUTVersion)'
   Assign
     {
     Zone = 1
@@ -961,20 +1223,20 @@ $!LineMap  [1]
     }
   Symbols
     {
-    Color = Green
-    FillColor = Green
+    Color = Purple
+    FillColor = Purple
     }
   BarCharts
     {
-    Color = Green
-    FillColor = Green
+    Color = Purple
+    FillColor = Purple
     }
   ErrorBars
     {
-    Color = Green
+    Color = Purple
     }
 $!LineMap  [2]
-  Name = 'Previous'
+  Name = '&(AUXZONE[2]:MUTVersion)'
   Assign
     {
     Zone = 2
@@ -989,33 +1251,64 @@ $!LineMap  [2]
     }
   Symbols
     {
-    Color = Green
-    FillColor = Green
+    Color = Purple
+    FillColor = Purple
     }
   BarCharts
     {
-    Color = Green
-    FillColor = Green
+    Color = Purple
+    FillColor = Purple
     }
   ErrorBars
     {
-    Color = Green
+    Color = Purple
     }
 $!XYLineAxis 
   DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
+  ViewportPosition
+    {
+    X1 = 12.758
+    Y1 = 25.624
+    Y2 = 85.013
+    }
+  ViewportTopSnapTarget = 85.013404715
 $!XYLineAxis 
   XDetail 1
     {
     RangeMin = -5
     RangeMax = 20
     GRSpacing = 5
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     }
 $!XYLineAxis 
   YDetail 1
     {
     RangeMin = -5.000000000000003E-007
-    RangeMax = 4.4999999999999976E-006
+    RangeMax = 3.499999999999997E-006
     GRSpacing = 5E-007
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     Title
       {
       Offset = 8
@@ -1029,15 +1322,28 @@ $!Linking
 $!AttachText 
   AnchorPos
     {
-    X = 2.305935413536289
-    Y = 97.73895169578623
+    X = 25.87667069710026
+    Y = 93.61484027868643
+    }
+  TextShape
+    {
+    Height = 23
+    }
+  Anchor = HeadLeft
+  Text = 'Verification case: &(zonename[1])'
+$!AttachText 
+  AnchorPos
+    {
+    X = 3.938363044278417
+    Y = 10.8187302984479
     }
   TextShape
     {
     IsBold = No
+    Height = 13
     }
   Anchor = HeadLeft
-  Text = '&(datasetfname)'
+  Text = '&(date)\n&(datasetfname)'
 ### Frame Number 7 ###
 $!CreateNewFrame 
 $!ReadDataSet  '|LFDSFN13|'
@@ -1088,13 +1394,22 @@ $!GlobalLinePlot
   Legend
     {
     Show = Yes
+    TextShape
+      {
+      Height = 2
+      }
+    Box
+      {
+      BoxType = None
+      }
     XYPos
       {
-      X = 95
+      X = 96.028
+      Y = 12.853
       }
     }
 $!LineMap  [1]
-  Name = 'Current'
+  Name = '&(AUXZONE[1]:MUTVersion)'
   Assign
     {
     Zone = 1
@@ -1121,7 +1436,7 @@ $!LineMap  [1]
     Color = Green
     }
 $!LineMap  [2]
-  Name = 'Previous'
+  Name = '&(AUXZONE[2]:MUTVersion)'
   Assign
     {
     Zone = 2
@@ -1150,12 +1465,34 @@ $!LineMap  [2]
     }
 $!XYLineAxis 
   DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
+  ViewportPosition
+    {
+    X1 = 12.698
+    Y1 = 25.624
+    X2 = 96.404
+    Y2 = 85.013
+    }
+  ViewportTopSnapTarget = 85.013404715
 $!XYLineAxis 
   XDetail 1
     {
     RangeMin = -1000
     RangeMax = 7000
-    GRSpacing = 1000
+    GRSpacing = 2000
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     }
 $!XYLineAxis 
   YDetail 1
@@ -1163,6 +1500,16 @@ $!XYLineAxis
     RangeMin = -0.00019999999999999963
     RangeMax = 0.0014000000000000006
     GRSpacing = 0.0002
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     Title
       {
       Offset = 8
@@ -1176,15 +1523,28 @@ $!Linking
 $!AttachText 
   AnchorPos
     {
-    X = 2.305935413536289
-    Y = 97.73895169578623
+    X = 3.938363044278417
+    Y = 10.8187302984479
     }
   TextShape
     {
     IsBold = No
+    Height = 13
     }
   Anchor = HeadLeft
-  Text = '&(datasetfname)'
+  Text = '&(date)\n&(datasetfname)'
+$!AttachText 
+  AnchorPos
+    {
+    X = 25.87667069710026
+    Y = 93.61484027868643
+    }
+  TextShape
+    {
+    Height = 23
+    }
+  Anchor = HeadLeft
+  Text = 'Verification case: &(zonename[1])'
 ### Frame Number 8 ###
 $!CreateNewFrame 
 $!ReadDataSet  '|LFDSFN15|'
@@ -1235,13 +1595,22 @@ $!GlobalLinePlot
   Legend
     {
     Show = Yes
+    TextShape
+      {
+      Height = 2
+      }
+    Box
+      {
+      BoxType = None
+      }
     XYPos
       {
-      X = 95
+      X = 96.028
+      Y = 12.853
       }
     }
 $!LineMap  [1]
-  Name = 'Current'
+  Name = '&(AUXZONE[1]:MUTVersion)'
   Assign
     {
     Zone = 1
@@ -1268,7 +1637,7 @@ $!LineMap  [1]
     Color = Green
     }
 $!LineMap  [2]
-  Name = 'Previous'
+  Name = '&(AUXZONE[2]:MUTVersion)'
   Assign
     {
     Zone = 2
@@ -1297,12 +1666,34 @@ $!LineMap  [2]
     }
 $!XYLineAxis 
   DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
+  ViewportPosition
+    {
+    X1 = 12.698
+    Y1 = 25.624
+    X2 = 96.404
+    Y2 = 85.013
+    }
+  ViewportTopSnapTarget = 85.013404715
 $!XYLineAxis 
   XDetail 1
     {
     RangeMin = -1000
     RangeMax = 7000
-    GRSpacing = 1000
+    GRSpacing = 2000
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     }
 $!XYLineAxis 
   YDetail 1
@@ -1310,6 +1701,16 @@ $!XYLineAxis
     RangeMin = -0.00019999999999999963
     RangeMax = 0.0014000000000000006
     GRSpacing = 0.0002
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     Title
       {
       Offset = 8
@@ -1323,15 +1724,28 @@ $!Linking
 $!AttachText 
   AnchorPos
     {
-    X = 2.305935413536289
-    Y = 97.73895169578623
+    X = 3.938363044278417
+    Y = 10.8187302984479
     }
   TextShape
     {
     IsBold = No
+    Height = 13
     }
   Anchor = HeadLeft
-  Text = '&(datasetfname)'
+  Text = '&(date)\n&(datasetfname)'
+$!AttachText 
+  AnchorPos
+    {
+    X = 25.87667069710026
+    Y = 93.61484027868643
+    }
+  TextShape
+    {
+    Height = 23
+    }
+  Anchor = HeadLeft
+  Text = 'Verification case: &(zonename[1])'
 ### Frame Number 9 ###
 $!CreateNewFrame 
 $!ReadDataSet  '|LFDSFN17|'
@@ -1382,13 +1796,22 @@ $!GlobalLinePlot
   Legend
     {
     Show = Yes
+    TextShape
+      {
+      Height = 2
+      }
+    Box
+      {
+      BoxType = None
+      }
     XYPos
       {
-      X = 95
+      X = 96.028
+      Y = 12.853
       }
     }
 $!LineMap  [1]
-  Name = 'Current'
+  Name = '&(AUXZONE[1]:MUTVersion)'
   Assign
     {
     Zone = 1
@@ -1415,7 +1838,7 @@ $!LineMap  [1]
     Color = Green
     }
 $!LineMap  [2]
-  Name = 'Previous'
+  Name = '&(AUXZONE[2]:MUTVersion)'
   Assign
     {
     Zone = 2
@@ -1444,12 +1867,34 @@ $!LineMap  [2]
     }
 $!XYLineAxis 
   DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
+  ViewportPosition
+    {
+    X1 = 12.698
+    Y1 = 25.624
+    X2 = 96.404
+    Y2 = 85.013
+    }
+  ViewportTopSnapTarget = 85.013404715
 $!XYLineAxis 
   XDetail 1
     {
     RangeMin = -1000
     RangeMax = 7000
-    GRSpacing = 1000
+    GRSpacing = 2000
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     }
 $!XYLineAxis 
   YDetail 1
@@ -1457,6 +1902,16 @@ $!XYLineAxis
     RangeMin = -0.00019999999999999963
     RangeMax = 0.0014000000000000006
     GRSpacing = 0.0002
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     Title
       {
       Offset = 8
@@ -1470,15 +1925,28 @@ $!Linking
 $!AttachText 
   AnchorPos
     {
-    X = 2.305935413536289
-    Y = 97.73895169578623
+    X = 3.938363044278417
+    Y = 10.8187302984479
     }
   TextShape
     {
     IsBold = No
+    Height = 13
     }
   Anchor = HeadLeft
-  Text = '&(datasetfname)'
+  Text = '&(date)\n&(datasetfname)'
+$!AttachText 
+  AnchorPos
+    {
+    X = 25.87667069710026
+    Y = 93.61484027868643
+    }
+  TextShape
+    {
+    Height = 23
+    }
+  Anchor = HeadLeft
+  Text = 'Verification case: &(zonename[1])'
 ### Frame Number 10 ###
 $!CreateNewFrame 
 $!ReadDataSet  '|LFDSFN19|'
@@ -1529,14 +1997,22 @@ $!GlobalLinePlot
   Legend
     {
     Show = Yes
+    TextShape
+      {
+      Height = 2
+      }
+    Box
+      {
+      BoxType = None
+      }
     XYPos
       {
-      X = 94.635
-      Y = 96.65
+      X = 96.028
+      Y = 12.853
       }
     }
 $!LineMap  [1]
-  Name = 'Current'
+  Name = '&(AUXZONE[1]:MUTVersion)'
   Assign
     {
     Zone = 1
@@ -1563,7 +2039,7 @@ $!LineMap  [1]
     Color = Purple
     }
 $!LineMap  [2]
-  Name = 'Previous'
+  Name = '&(AUXZONE[2]:MUTVersion)'
   Assign
     {
     Zone = 2
@@ -1572,7 +2048,7 @@ $!LineMap  [2]
     }
   Lines
     {
-    Color = Custom13
+    Color = Custom20
     LinePattern = Dashed
     LineThickness = 0.4
     }
@@ -1592,24 +2068,50 @@ $!LineMap  [2]
     }
 $!XYLineAxis 
   DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
   ViewportPosition
     {
-    Y2 = 88
+    X1 = 12.758
+    Y1 = 25.624
+    Y2 = 85.013
     }
+  ViewportTopSnapTarget = 85.013404715
 $!XYLineAxis 
   XDetail 1
     {
-    CoordScale = Log
-    RangeMin = 0.0010000000474974513
-    RangeMax = 120000
-    GRSpacing = 20000
+    RangeMin = -1.2987359391841333
+    RangeMax = 16.143711640993278
+    GRSpacing = 5
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     }
 $!XYLineAxis 
   YDetail 1
     {
-    RangeMin = -50
-    RangeMax = 550
-    GRSpacing = 50
+    RangeMin = -48.398141432891386
+    RangeMax = 555.85974669235804
+    GRSpacing = 100
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     }
 $!Linking 
   BetweenFrames
@@ -1619,15 +2121,28 @@ $!Linking
 $!AttachText 
   AnchorPos
     {
-    X = 2.305935413536289
-    Y = 97.73895169578623
+    X = 25.87667069710026
+    Y = 93.61484027868643
+    }
+  TextShape
+    {
+    Height = 23
+    }
+  Anchor = HeadLeft
+  Text = 'Verification case: &(zonename[1])'
+$!AttachText 
+  AnchorPos
+    {
+    X = 3.938363044278417
+    Y = 10.8187302984479
     }
   TextShape
     {
     IsBold = No
+    Height = 13
     }
   Anchor = HeadLeft
-  Text = '&(datasetfname)'
+  Text = '&(date)\n&(datasetfname)'
 ### Frame Number 11 ###
 $!CreateNewFrame 
 $!ReadDataSet  '|LFDSFN21|'
@@ -1678,14 +2193,22 @@ $!GlobalLinePlot
   Legend
     {
     Show = Yes
+    TextShape
+      {
+      Height = 2
+      }
+    Box
+      {
+      BoxType = None
+      }
     XYPos
       {
-      X = 94.635
-      Y = 96.65
+      X = 96.028
+      Y = 12.853
       }
     }
 $!LineMap  [1]
-  Name = 'Current'
+  Name = '&(AUXZONE[1]:MUTVersion)'
   Assign
     {
     Zone = 1
@@ -1712,7 +2235,7 @@ $!LineMap  [1]
     Color = Purple
     }
 $!LineMap  [2]
-  Name = 'Previous'
+  Name = '&(AUXZONE[2]:MUTVersion)'
   Assign
     {
     Zone = 2
@@ -1721,7 +2244,7 @@ $!LineMap  [2]
     }
   Lines
     {
-    Color = Custom13
+    Color = Custom20
     LinePattern = Dashed
     LineThickness = 0.4
     }
@@ -1741,19 +2264,50 @@ $!LineMap  [2]
     }
 $!XYLineAxis 
   DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
+  ViewportPosition
+    {
+    X1 = 12.758
+    Y1 = 25.624
+    Y2 = 85.013
+    }
+  ViewportTopSnapTarget = 85.013404715
 $!XYLineAxis 
   XDetail 1
     {
     RangeMin = -38.313670678060163
     RangeMax = 238.82194612885158
     GRSpacing = 50
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     }
 $!XYLineAxis 
   YDetail 1
     {
     RangeMin = -0.084456064675606096
     RangeMax = 0.48325909358500979
-    GRSpacing = 0.05
+    GRSpacing = 0.1
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     }
 $!Linking 
   BetweenFrames
@@ -1763,15 +2317,28 @@ $!Linking
 $!AttachText 
   AnchorPos
     {
-    X = 2.305935413536289
-    Y = 97.73895169578623
+    X = 25.87667069710026
+    Y = 93.61484027868643
+    }
+  TextShape
+    {
+    Height = 23
+    }
+  Anchor = HeadLeft
+  Text = 'Verification case: &(zonename[1])'
+$!AttachText 
+  AnchorPos
+    {
+    X = 3.938363044278417
+    Y = 10.8187302984479
     }
   TextShape
     {
     IsBold = No
+    Height = 13
     }
   Anchor = HeadLeft
-  Text = '&(datasetfname)'
+  Text = '&(date)\n&(datasetfname)'
 ### Frame Number 12 ###
 $!CreateNewFrame 
 $!ReadDataSet  '|LFDSFN23|'
@@ -1822,14 +2389,22 @@ $!GlobalLinePlot
   Legend
     {
     Show = Yes
+    TextShape
+      {
+      Height = 2
+      }
+    Box
+      {
+      BoxType = None
+      }
     XYPos
       {
-      X = 94.635
-      Y = 96.65
+      X = 96.028
+      Y = 12.853
       }
     }
 $!LineMap  [1]
-  Name = 'Current'
+  Name = '&(AUXZONE[1]:MUTVersion)'
   Assign
     {
     Zone = 1
@@ -1856,7 +2431,7 @@ $!LineMap  [1]
     Color = Purple
     }
 $!LineMap  [2]
-  Name = 'Previous'
+  Name = '&(AUXZONE[2]:MUTVersion)'
   Assign
     {
     Zone = 2
@@ -1865,7 +2440,7 @@ $!LineMap  [2]
     }
   Lines
     {
-    Color = Custom13
+    Color = Custom20
     LinePattern = Dashed
     LineThickness = 0.4
     }
@@ -1885,19 +2460,50 @@ $!LineMap  [2]
     }
 $!XYLineAxis 
   DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
+  ViewportPosition
+    {
+    X1 = 12.758
+    Y1 = 25.624
+    Y2 = 85.013
+    }
+  ViewportTopSnapTarget = 85.013404715
 $!XYLineAxis 
   XDetail 1
     {
     RangeMin = -38.313670678060163
     RangeMax = 238.82194612885158
     GRSpacing = 50
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     }
 $!XYLineAxis 
   YDetail 1
     {
     RangeMin = -0.084456064675606096
     RangeMax = 0.48325909358500979
-    GRSpacing = 0.05
+    GRSpacing = 0.1
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     }
 $!Linking 
   BetweenFrames
@@ -1907,15 +2513,28 @@ $!Linking
 $!AttachText 
   AnchorPos
     {
-    X = 2.305935413536289
-    Y = 97.73895169578623
+    X = 25.87667069710026
+    Y = 93.61484027868643
+    }
+  TextShape
+    {
+    Height = 23
+    }
+  Anchor = HeadLeft
+  Text = 'Verification case: &(zonename[1])'
+$!AttachText 
+  AnchorPos
+    {
+    X = 3.938363044278417
+    Y = 10.8187302984479
     }
   TextShape
     {
     IsBold = No
+    Height = 13
     }
   Anchor = HeadLeft
-  Text = '&(datasetfname)'
+  Text = '&(date)\n&(datasetfname)'
 ### Frame Number 13 ###
 $!CreateNewFrame 
 $!ReadDataSet  '|LFDSFN25|'
@@ -1966,14 +2585,22 @@ $!GlobalLinePlot
   Legend
     {
     Show = Yes
+    TextShape
+      {
+      Height = 2
+      }
+    Box
+      {
+      BoxType = None
+      }
     XYPos
       {
-      X = 94.635
-      Y = 96.65
+      X = 96.028
+      Y = 12.853
       }
     }
 $!LineMap  [1]
-  Name = 'Current'
+  Name = '&(AUXZONE[1]:MUTVersion)'
   Assign
     {
     Zone = 1
@@ -2000,7 +2627,7 @@ $!LineMap  [1]
     Color = Purple
     }
 $!LineMap  [2]
-  Name = 'Previous'
+  Name = '&(AUXZONE[2]:MUTVersion)'
   Assign
     {
     Zone = 2
@@ -2029,19 +2656,50 @@ $!LineMap  [2]
     }
 $!XYLineAxis 
   DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
+  ViewportPosition
+    {
+    X1 = 12.758
+    Y1 = 25.624
+    Y2 = 85.013
+    }
+  ViewportTopSnapTarget = 85.013404715
 $!XYLineAxis 
   XDetail 1
     {
-    RangeMin = -50
-    RangeMax = 300
+    RangeMin = -38.313670678060163
+    RangeMax = 238.82194612885158
     GRSpacing = 50
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     }
 $!XYLineAxis 
   YDetail 1
     {
-    RangeMin = -0.050000000000000044
-    RangeMax = 0.44999999999999918
-    GRSpacing = 0.05
+    RangeMin = -0.084456064675606096
+    RangeMax = 0.48325909358500979
+    GRSpacing = 0.1
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     }
 $!Linking 
   BetweenFrames
@@ -2051,15 +2709,28 @@ $!Linking
 $!AttachText 
   AnchorPos
     {
-    X = 2.305935413536289
-    Y = 97.73895169578623
+    X = 25.87667069710026
+    Y = 93.61484027868643
+    }
+  TextShape
+    {
+    Height = 23
+    }
+  Anchor = HeadLeft
+  Text = 'Verification case: &(zonename[1])'
+$!AttachText 
+  AnchorPos
+    {
+    X = 3.938363044278417
+    Y = 10.8187302984479
     }
   TextShape
     {
     IsBold = No
+    Height = 13
     }
   Anchor = HeadLeft
-  Text = '&(datasetfname)'
+  Text = '&(date)\n&(datasetfname)'
 ### Frame Number 14 ###
 $!CreateNewFrame 
 $!ReadDataSet  '|LFDSFN27|'
@@ -2085,7 +2756,7 @@ $!RemoveVar |LFDSVL28|
 $!RemoveVar |LFDSFN28|
 $!FrameLayout 
   ShowHeader = No
-  HeaderColor = Green
+  HeaderColor = Red
   XYPos
     {
     X = -1.2831
@@ -2110,18 +2781,27 @@ $!GlobalLinePlot
   Legend
     {
     Show = Yes
+    TextShape
+      {
+      Height = 2
+      }
+    Box
+      {
+      BoxType = None
+      }
     XYPos
       {
-      X = 95
+      X = 96.028
+      Y = 12.853
       }
     }
 $!LineMap  [1]
-  Name = 'Current'
+  Name = '&(AUXZONE[1]:MUTVersion)'
   Assign
     {
     Zone = 1
     XAxisVar = 1
-    YAxisVar = 9
+    YAxisVar = 7
     }
   Lines
     {
@@ -2130,25 +2810,25 @@ $!LineMap  [1]
     }
   Symbols
     {
-    Color = Green
-    FillColor = Green
+    Color = Purple
+    FillColor = Purple
     }
   BarCharts
     {
-    Color = Green
-    FillColor = Green
+    Color = Purple
+    FillColor = Purple
     }
   ErrorBars
     {
-    Color = Green
+    Color = Purple
     }
 $!LineMap  [2]
-  Name = 'Previous'
+  Name = '&(AUXZONE[2]:MUTVersion)'
   Assign
     {
     Zone = 2
     XAxisVar = 1
-    YAxisVar = 9
+    YAxisVar = 7
     }
   Lines
     {
@@ -2158,34 +2838,64 @@ $!LineMap  [2]
     }
   Symbols
     {
-    Color = Green
-    FillColor = Green
+    Color = Purple
+    FillColor = Purple
     }
   BarCharts
     {
-    Color = Green
-    FillColor = Green
+    Color = Purple
+    FillColor = Purple
     }
   ErrorBars
     {
-    Color = Green
+    Color = Purple
     }
 $!XYLineAxis 
   DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
+  ViewportPosition
+    {
+    X1 = 12.758
+    Y1 = 25.624
+    Y2 = 85.013
+    }
+  ViewportTopSnapTarget = 85.013404715
 $!XYLineAxis 
   XDetail 1
     {
-    CoordScale = Log
-    RangeMin = 0.0010000000474974513
-    RangeMax = 1200
-    GRSpacing = 200
+    RangeMin = -38.313670678060163
+    RangeMax = 238.82194612885158
+    GRSpacing = 50
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     }
 $!XYLineAxis 
   YDetail 1
     {
-    RangeMin = -50
-    RangeMax = 550
-    GRSpacing = 50
+    RangeMin = -0.084456064675606096
+    RangeMax = 0.48325909358500979
+    GRSpacing = 0.1
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     }
 $!Linking 
   BetweenFrames
@@ -2195,15 +2905,28 @@ $!Linking
 $!AttachText 
   AnchorPos
     {
-    X = 2.305935413536289
-    Y = 97.73895169578623
+    X = 25.87667069710026
+    Y = 93.61484027868643
+    }
+  TextShape
+    {
+    Height = 23
+    }
+  Anchor = HeadLeft
+  Text = 'Verification case: &(zonename[1])'
+$!AttachText 
+  AnchorPos
+    {
+    X = 3.938363044278417
+    Y = 10.8187302984479
     }
   TextShape
     {
     IsBold = No
+    Height = 13
     }
   Anchor = HeadLeft
-  Text = '&(datasetfname)'
+  Text = '&(date)\n&(datasetfname)'
 ### Frame Number 15 ###
 $!CreateNewFrame 
 $!ReadDataSet  '|LFDSFN29|'
@@ -2254,14 +2977,22 @@ $!GlobalLinePlot
   Legend
     {
     Show = Yes
+    TextShape
+      {
+      Height = 2
+      }
+    Box
+      {
+      BoxType = None
+      }
     XYPos
       {
-      X = 94.635
-      Y = 96.65
+      X = 96.028
+      Y = 12.853
       }
     }
 $!LineMap  [1]
-  Name = 'Current'
+  Name = '&(AUXZONE[1]:MUTVersion)'
   Assign
     {
     Zone = 1
@@ -2288,7 +3019,7 @@ $!LineMap  [1]
     Color = Purple
     }
 $!LineMap  [2]
-  Name = 'Previous'
+  Name = '&(AUXZONE[2]:MUTVersion)'
   Assign
     {
     Zone = 2
@@ -2317,19 +3048,50 @@ $!LineMap  [2]
     }
 $!XYLineAxis 
   DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
+  ViewportPosition
+    {
+    X1 = 12.758
+    Y1 = 25.624
+    Y2 = 85.013
+    }
+  ViewportTopSnapTarget = 85.013404715
 $!XYLineAxis 
   XDetail 1
     {
-    RangeMin = -50
-    RangeMax = 250
+    RangeMin = -38.313670678060163
+    RangeMax = 238.82194612885158
     GRSpacing = 50
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     }
 $!XYLineAxis 
   YDetail 1
     {
-    RangeMin = 0
-    RangeMax = 0.54999999999999916
-    GRSpacing = 0.05
+    RangeMin = -0.084456064675606096
+    RangeMax = 0.48325909358500979
+    GRSpacing = 0.1
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     }
 $!Linking 
   BetweenFrames
@@ -2339,27 +3101,28 @@ $!Linking
 $!AttachText 
   AnchorPos
     {
-    X = 2.305935413536289
-    Y = 97.73895169578623
+    X = 25.87667069710026
+    Y = 93.61484027868643
     }
   TextShape
     {
-    IsBold = No
+    Height = 23
     }
   Anchor = HeadLeft
-  Text = '&(datasetfname)'
+  Text = 'Verification case: &(zonename[1])'
 $!AttachText 
   AnchorPos
     {
-    X = 2.305935413536289
-    Y = 97.73895169578623
+    X = 3.938363044278417
+    Y = 10.8187302984479
     }
   TextShape
     {
     IsBold = No
+    Height = 13
     }
   Anchor = HeadLeft
-  Text = '&(datasetfname)'
+  Text = '&(date)\n&(datasetfname)'
 ### Frame Number 16 ###
 $!CreateNewFrame 
 $!ReadDataSet  '|LFDSFN31|'
@@ -2413,14 +3176,22 @@ $!GlobalLinePlot
   Legend
     {
     Show = Yes
+    TextShape
+      {
+      Height = 2
+      }
+    Box
+      {
+      BoxType = None
+      }
     XYPos
       {
-      X = 94.635
-      Y = 96.65
+      X = 96.028
+      Y = 12.853
       }
     }
 $!LineMap  [1]
-  Name = 'Current'
+  Name = '&(AUXZONE[1]:MUTVersion)'
   Assign
     {
     Zone = 1
@@ -2447,7 +3218,7 @@ $!LineMap  [1]
     Color = Purple
     }
 $!LineMap  [2]
-  Name = 'Previous'
+  Name = '&(AUXZONE[2]:MUTVersion)'
   Assign
     {
     Zone = 2
@@ -2476,19 +3247,50 @@ $!LineMap  [2]
     }
 $!XYLineAxis 
   DepXToYRatio = 1
+  GridArea
+    {
+    DrawBorder = Yes
+    }
+  ViewportPosition
+    {
+    X1 = 12.758
+    Y1 = 25.624
+    Y2 = 85.013
+    }
+  ViewportTopSnapTarget = 85.013404715
 $!XYLineAxis 
   XDetail 1
     {
     RangeMin = -38.313670678060163
     RangeMax = 238.82194612885158
     GRSpacing = 50
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     }
 $!XYLineAxis 
   YDetail 1
     {
     RangeMin = -0.084456064675606096
     RangeMax = 0.48325909358500979
-    GRSpacing = 0.05
+    GRSpacing = 0.1
+    Gridlines
+      {
+      Show = Yes
+      }
+    MinorGridlines
+      {
+      Show = Yes
+      Color = Custom2
+      LinePattern = Solid
+      }
     }
 $!Linking 
   BetweenFrames
@@ -2498,15 +3300,28 @@ $!Linking
 $!AttachText 
   AnchorPos
     {
-    X = 2.305935413536289
-    Y = 97.73895169578623
+    X = 25.87667069710026
+    Y = 93.61484027868643
+    }
+  TextShape
+    {
+    Height = 23
+    }
+  Anchor = HeadLeft
+  Text = 'Verification case: &(zonename[1])'
+$!AttachText 
+  AnchorPos
+    {
+    X = 3.938363044278417
+    Y = 10.8187302984479
     }
   TextShape
     {
     IsBold = No
+    Height = 13
     }
   Anchor = HeadLeft
-  Text = '&(datasetfname)'
+  Text = '&(date)\n&(datasetfname)'
 $!FrameControl ActivateByNumber
-  Frame = 12
+  Frame = 16
 $!SetStyleBase Config
