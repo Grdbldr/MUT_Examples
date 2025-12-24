@@ -4,6 +4,8 @@ fort.8
 debug.txt
 *.meshBIN
 modflow.*
+*.out
+*.tecplot.dat
 *.log
 *.synctex
 .vs
@@ -13,3 +15,4 @@ modflow.*
 !/QGIS/0_data/2_DEMs/Dem_all_5m clipped smoothed v1.tif
 !/1_data/2_DEMs/Dem_all_5m clipped smoothed v1.tif.aux.xml
 !/1_data/2_DEMs/Dem_all_5m clipped smoothed v1.tif
+/6_Abdul_Prism_Cell/gb/gb_message.out
