@@ -89,6 +89,11 @@ build modflow usg
         gwf recharge
         0.4     ! recharge
         3       ! recharge option
+        
+        observation point
+        ConstantHead
+        0.5, 0.5, 0.0
+
                 
     ! -----------------------------------Output Control
     generate output control file

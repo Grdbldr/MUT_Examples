@@ -969,11 +969,11 @@ $!ThreeDView
   AlphaAngle = 1.09975
   ViewerPosition
     {
-    X = 2285.728949352437
-    Y = -6763.412905989227
-    Z = 405.0420674052663
+    X = 1972.44286959675
+    Y = -6884.76923074994
+    Z = 378.7178300839329
     }
-  ViewWidth = 2675.24
+  ViewWidth = 159.47
 $!FieldLayers 
   ShowMesh = No
   ShowEdge = No
@@ -1627,11 +1627,11 @@ $!ThreeDView
   AlphaAngle = 1.09975
   ViewerPosition
     {
-    X = 2285.728949352437
-    Y = -6763.412905989227
-    Z = 405.0420674052663
+    X = 1972.44286959675
+    Y = -6884.76923074994
+    Z = 378.7178300839329
     }
-  ViewWidth = 2675.24
+  ViewWidth = 159.47
 $!FieldLayers 
   ShowMesh = No
   ShowScatter = Yes
@@ -2358,11 +2358,11 @@ $!ThreeDView
   AlphaAngle = 1.09975
   ViewerPosition
     {
-    X = 2285.728949352437
-    Y = -6763.412905989227
-    Z = 405.0420674052663
+    X = 1972.44286959675
+    Y = -6884.76923074994
+    Z = 378.7178300839329
     }
-  ViewWidth = 2675.24
+  ViewWidth = 159.47
 $!FieldLayers 
   ShowContour = Yes
   ShowShade = Yes
