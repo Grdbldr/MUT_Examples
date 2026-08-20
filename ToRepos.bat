@@ -1,4 +1,4 @@
-robocopy . C:\_repo\GrdBldr\MUT_Examples BatchComparisonPlots.lay Run.MUTBatch Run_debug.MUTBatch  ToRepos.bat
+robocopy . C:\_repo\GrdBldr\MUT_Examples BatchComparisonPlots.lay VerificationFolder.List ToRepos.bat
 
 robocopy .\1_VSF_Column C:\_repo\GrdBldr\MUT_Examples\1_VSF_Column  *.mut *.lay *.png
 robocopy .\1_VSF_Column\data C:\_repo\GrdBldr\MUT_Examples\1_VSF_Column\data

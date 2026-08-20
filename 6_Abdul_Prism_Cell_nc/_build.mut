@@ -3,6 +3,9 @@ build modflow usg
 
     ! -----------------------------------Model Options
     nodal control volumes
+
+    ! SWF velocity: Manning reconstruction (VEL OPTIONS ORIGINAL_SWF_VELOCITY)
+    original swf velocity calculation
    
     ! -----------------------------------Grid definition
     2d mesh from gb
