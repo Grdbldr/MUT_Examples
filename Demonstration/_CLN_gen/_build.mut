@@ -1,0 +1,109 @@
+! Examples\_CLN_gen
+!   Test case for new cursor routines for cln cell generation 
+build modflow usg
+
+    ! -----------------------------------Grid definition
+    generate uniform rectangles
+    10.0, 3, 0.   !  Mesh length in X, nRectElements in X, X Offset
+    1.0, 1, 0.   !  Mesh length in Y, nRectElements in Y, Y Offset
+    
+    
+    generate layered gwf domain
+
+        top elevation
+            elevation constant
+                 1.0
+        end top elevation
+    
+        new layer
+    
+            uniform sublayering
+            1
+            
+            elevation constant
+                 0.0
+        end new layer
+        
+    end generate layered gwf domain
+    
+    ! -----------------------------------CLN Domain
+    generate cln domain
+        cln from xyz list
+        Test_CLN.xyzList
+    end generate cln domain
+    
+
+    ! -----------------------------------Static properties 
+    gwf materials database
+    GWF.csv
+
+    active domain 
+    gwf
+    
+        choose all cells
+        
+        chosen cells use gwf material number
+        4
+        
+        gwf initial head
+        1.0 
+        
+        clear chosen cells
+
+    cln materials database
+    CLN.csv
+        
+    active domain 
+    cln
+    
+        choose all zones
+        
+        chosen zones use cln material number
+        1
+        
+        choose all cells
+        cln initial depth
+        1.0d-6
+    
+    ! -----------------------------------Observation points 
+    active domain 
+    cln
+        observation point
+        Obs1 
+        5.   0.5  0.5
+
+    ! -----------------------------------Stress periods, boundary conditions 
+    ! stress period 1
+    stress period
+        type
+        TR
+        
+        duration
+        1.0
+    end stress period
+
+    active domain 
+    gwf
+
+        clear chosen cells
+        choose cell at xyz
+        0.5 0.5 0.5
+        gwf constant head
+        1.0
+    
+        clear chosen cells
+        choose cell at xyz
+        100.  0.0 1.0
+        gwf constant head
+		1.000001
+    ! -----------------------------------Output Control
+    generate output control file
+	  1.0
+    end generate output control file
+    ! -----------------------------------Solver paramters
+    sms database
+    SMS.csv
+    sms parameter set number
+    1
+
+end build modflow usg

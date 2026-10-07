@@ -1,0 +1,151 @@
+#!MC 1410
+$!SetStyleBase Factory
+$!Page
+  Name = 'Tutorial 1: Template mesh'
+  PaperAttributes
+    {
+    BackgroundColor = White
+    IsTransparent = No
+    OrientPortrait = No
+    ShowGrid = No
+    ShowRuler = No
+    ShowPaper = Yes
+    PaperSize = Letter
+    }
+### Frame Template mesh ###
+$!VarSet |LFDSFN1| = '"STANDARDSYNTAX" "1.0" "FILELIST_DATAFILES" "1" "_buildo.TMPLT.tecplot.szplt"'
+$!ReadDataSet  '|LFDSFN1|'
+  DataSetReader = 'Tecplot Subzone Data Loader'
+  InitialPlotType = Cartesian2D
+  AssignStrandIDs = Yes
+$!RemoveVar |LFDSFN1|
+$!FrameLayout
+  ShowHeader = No
+  IsTransparent = No
+  XYPos
+    {
+    X = 0.25
+    Y = 1.5
+    }
+  Width = 10.5
+  Height = 5.0
+$!PlotType = Cartesian2D
+$!FrameName = 'Template mesh'
+$!ActiveFieldMaps = [1]
+$!GlobalContour  1
+  Var = 4
+  ColorMapName = 'Small Rainbow'
+  Labels
+    {
+    NumFormat
+      {
+        Formatting = Integer
+      }
+    }
+  Legend
+    {
+    Show = Yes
+    AnchorAlignment = TopRight
+    XYPos
+      {
+      X = 98
+      Y = 92
+      }
+    AutoResize = Yes
+    OverlayBarGrid = No
+    Box
+      {
+      BoxType = Filled
+      }
+    HeaderTextShape
+      {
+      FontFamily = 'Helvetica'
+      IsBold = Yes
+      SizeUnits = Frame
+      Height = 3
+      }
+    NumberTextShape
+      {
+      FontFamily = 'Helvetica'
+      IsBold = Yes
+      SizeUnits = Frame
+      Height = 2.8
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 1
+  RawData
+3
+1
+2
+3
+$!FieldMap  [1]
+  Mesh
+    {
+    Show = Yes
+    Color = Black
+    LineThickness = 0.05
+    }
+  Contour
+    {
+    Show = Yes
+    ContourType = Flood
+    FloodColoring = Group1
+    UseLightingEffect = Yes
+    }
+  Shade
+    {
+    Color = Custom2
+    }
+  Scatter
+    {
+    Show = No
+    }
+$!FieldLayers
+  ShowContour = Yes
+  ShowShade = Yes
+  ShowMesh = Yes
+  ShowScatter = No
+  ShowEdge = No
+  UseLightingEffect = Yes
+$!TwoDAxis
+  AxisMode = XYDependent
+  DepXToYRatio = 1
+$!View Fit
+$!AttachText
+  AnchorPos
+    {
+    X = 3
+    Y = 95
+    }
+  TextShape
+    {
+      FontFamily = 'Helvetica'
+      IsBold = Yes
+      SizeUnits = Frame
+      Height = 3.5
+    }
+  Box
+    {
+    BoxType = Filled
+    Margin = 20
+    }
+  Anchor = Left
+  Text = '2d mesh from gb: ./gb/grid'
+$!AttachText
+  AnchorPos
+    {
+    X = 3
+    Y = 88
+    }
+  TextShape
+    {
+      FontFamily = 'Helvetica'
+      IsBold = Yes
+      SizeUnits = Frame
+      Height = 2.6
+    }
+  Anchor = Left
+  Text = 'Template mesh (_buildo.TMPLT.tecplot.szplt) coloured by TMPLT Zone'
+$!FrameControl ActivateByNumber
+  Frame = 1

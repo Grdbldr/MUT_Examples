@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import datetime as _dt
+import re
 from itertools import groupby
 from pathlib import Path
 
@@ -32,6 +33,66 @@ def tex_escape(text: str) -> str:
 
 def path_tex(text: str) -> str:
     return r"\path{" + text.replace("\\", "/") + "}"
+
+
+# Wrappable column for tabularx / longtable path cells (requires tabularx + array).
+_X = r">{\raggedright\arraybackslash}X"
+_P = r">{\raggedright\arraybackslash}p{0.42\textwidth}"
+
+
+def _tabularx(colspec: str, header: str, rows: list[str]) -> str:
+    """Full-width tabularx that can wrap long \\path cells."""
+    body = "".join(rows)
+    return (
+        f"\\begin{{tabularx}}{{\\textwidth}}{{{colspec}}}\n"
+        f"\\toprule\n{header} \\\\\n\\midrule\n"
+        f"{body}"
+        "\\bottomrule\n\\end{tabularx}\n"
+    )
+
+
+def _compact_number_token(token: str) -> str | None:
+    """Return a short TeX number like $-2$ if token parses as float; else None."""
+    try:
+        value = float(token)
+    except ValueError:
+        return None
+    if value == int(value):
+        return f"${int(value)}$"
+    return f"${value:g}$"
+
+
+def _format_layer_elevation(text: str) -> str:
+    """Short elevation cell for the GWF layers table."""
+    raw = (text or "").strip()
+    if not raw:
+        return "---"
+    lower = raw.lower()
+    if lower.startswith("base elevation from"):
+        path = raw.split("from", 1)[1].strip()
+        return path_tex(path) if path else "---"
+    if lower.startswith("layer base elevation"):
+        parts = raw.split()
+        for part in parts:
+            num = _compact_number_token(part)
+            if num is not None:
+                unit = "m" if "METER" in raw.upper() else ""
+                return f"{num}\\,{unit}" if unit else num
+    return tex_escape(raw)
+
+
+def _format_layer_offset(text: str) -> str:
+    """Short offset cell for the GWF layers table."""
+    raw = (text or "").strip()
+    if not raw:
+        return "---"
+    parts = raw.split()
+    for part in parts:
+        num = _compact_number_token(part)
+        if num is not None:
+            unit = "m" if "METER" in raw.upper() else ""
+            return f"{num}\\,{unit}" if unit else num
+    return tex_escape(raw)
 
 
 def _listing(text: str, language: str = "") -> str:
@@ -125,7 +186,12 @@ def _item_list(items: list[str]) -> str:
         return "None recorded.\n"
     lines = ["\\begin{itemize}"]
     for item in items:
-        lines.append(f"  \\item {tex_escape(item)}")
+        looks_like_path = ("\\" in item) or ("/" in item) or item.lower().endswith(
+            (".csv", ".mut", ".instructions", ".rts", ".asc", ".xlsx", ".dat")
+        )
+        lines.append(
+            f"  \\item {path_tex(item) if looks_like_path else tex_escape(item)}"
+        )
     lines.append("\\end{itemize}\n")
     return "\n".join(lines) + "\n"
 
@@ -180,6 +246,7 @@ def _preamble(title: str, pdf_title: str) -> str:
 \usepackage{{graphicx}}
 \usepackage{{booktabs}}
 \usepackage{{longtable}}
+\usepackage{{tabularx}}
 \usepackage{{hyperref}}
 \usepackage{{listings}}
 \usepackage{{xcolor}}
@@ -228,20 +295,24 @@ def _chapter_identification(
         "This dossier was generated from MUT build artifacts in the parent folder. "
         "It summarises the numerical model construction and, when present, "
         "USG simulation and post-processed results.\n\n",
-        "\\begin{tabular}{ll}\n\\toprule\nItem & Value \\\\\n\\midrule\n",
     ]
+    id_rows: list[str] = []
     for key, val in rows:
         use_path = ("\\" in val) or ("/" in val)
-        lines.append(f"{key} & {path_tex(val) if use_path else tex_escape(val)} \\\\\n")
-    lines.append("\\bottomrule\n\\end{tabular}\n\n")
+        id_rows.append(
+            f"{key} & {path_tex(val) if use_path else tex_escape(val)} \\\\\n"
+        )
+    lines.append(_tabularx(f"l {_X}", "Item & Value", id_rows))
+    lines.append("\n")
     if usg.nam_header:
         lines.append("NAM header: " + tex_escape(usg.nam_header) + "\n\n")
     if usg.packages:
         lines.append("\\section{NAM packages}\n")
-        lines.append("\\begin{tabular}{ll}\n\\toprule\nType & File \\\\\n\\midrule\n")
-        for ptype, fname in usg.packages:
-            lines.append(f"{tex_escape(ptype)} & {path_tex(fname)} \\\\\n")
-        lines.append("\\bottomrule\n\\end{tabular}\n")
+        pkg_rows = [
+            f"{tex_escape(ptype)} & {path_tex(fname)} \\\\\n"
+            for ptype, fname in usg.packages
+        ]
+        lines.append(_tabularx(f"l {_X}", "Type & File", pkg_rows))
     return "".join(lines)
 
 
@@ -292,18 +363,20 @@ def _chapter_data(inv: ArtifactInventory, build: MutBuildInfo) -> str:
                 lines.append(_listing(excerpt[:4000]))
     if build.referenced_files:
         lines.append("\\section{Referenced files}\n")
-        lines.append("\\begin{tabular}{lll}\n\\toprule\nAs written & Resolved path & Present \\\\\n\\midrule\n")
         seen: set[str] = set()
+        ref_rows: list[str] = []
         for raw, resolved, exists in build.referenced_files:
             key = raw + "|" + resolved
             if key in seen:
                 continue
             seen.add(key)
             flag = "yes" if exists else "no"
-            lines.append(
+            ref_rows.append(
                 f"{path_tex(raw)} & {path_tex(resolved)} & {flag} \\\\\n"
             )
-        lines.append("\\bottomrule\n\\end{tabular}\n")
+        lines.append(
+            _tabularx(f"{_X} {_X} c", "As written & Resolved path & Present", ref_rows)
+        )
     return "".join(lines)
 
 
@@ -322,13 +395,20 @@ def _chapter_mesh(inv: ArtifactInventory, build: MutBuildInfo, layouts: dict[str
         lines.append(_item_list(stats))
     if build.layers:
         lines.append("\\section{GWF layers}\n")
-        lines.append("\\begin{tabular}{llll}\n\\toprule\nName & Sublayers & Elevation & Offset \\\\\n\\midrule\n")
-        for layer in build.layers:
-            lines.append(
-                f"{tex_escape(layer.name)} & {tex_escape(layer.n_sublayers or '')} & "
-                f"{tex_escape(layer.elevation or '')} & {tex_escape(layer.offset or '')} \\\\\n"
+        layer_rows = [
+            f"{tex_escape(layer.name)} & {tex_escape(layer.n_sublayers or '')} & "
+            f"{_format_layer_elevation(layer.elevation or '')} & "
+            f"{_format_layer_offset(layer.offset or '')} \\\\\n"
+            for layer in build.layers
+        ]
+        lines.append(
+            _tabularx(
+                f"l c {_X} {_X}",
+                "Name & Sublayers & Elevation & Offset",
+                layer_rows,
             )
-        lines.append("\\bottomrule\n\\end{tabular}\n\n")
+        )
+        lines.append("\n")
     if inv.build_mut:
         text = inv.build_mut.read_text(encoding="utf-8", errors="replace")
         if len(text) < 12000:
@@ -344,10 +424,12 @@ def _chapter_materials(inv: ArtifactInventory, build: MutBuildInfo, layouts: dic
     lines = ["\\chapter{Materials}\n"]
     if build.materials_db:
         lines.append("\\section{Databases}\n")
-        lines.append("\\begin{tabular}{ll}\n\\toprule\nDomain & File \\\\\n\\midrule\n")
-        for domain, fname in build.materials_db.items():
-            lines.append(f"{tex_escape(domain)} & {path_tex(fname)} \\\\\n")
-        lines.append("\\bottomrule\n\\end{tabular}\n\n")
+        mat_rows = [
+            f"{tex_escape(domain)} & {path_tex(fname)} \\\\\n"
+            for domain, fname in build.materials_db.items()
+        ]
+        lines.append(_tabularx(f"l {_X}", "Domain & File", mat_rows))
+        lines.append("\n")
     if build.assignments:
         lines.append("\\section{Zone assignments}\n")
         for assign in build.assignments:
@@ -403,12 +485,13 @@ def _chapter_bcs(inv: ArtifactInventory, build: MutBuildInfo, layouts: dict[str,
     if build.observations:
         lines.append("\\section{Observation points}\n")
         lines.append(
-            "\\begin{longtable}{llll}\n\\toprule\nDomain & Name & Cell & Location \\\\\n\\midrule\n"
+            f"\\begin{{longtable}}{{lll{_P}}}\n"
+            "\\toprule\nDomain & Name & Cell & Location \\\\\n\\midrule\n"
         )
         for obs in build.observations:
             lines.append(
                 f"{tex_escape(obs.domain)} & {tex_escape(obs.name)} & "
-                f"{tex_escape(obs.cell or '')} & {tex_escape((obs.xyz or '')[:60])} \\\\\n"
+                f"{tex_escape(obs.cell or '')} & {tex_escape((obs.xyz or '')[:80])} \\\\\n"
             )
         lines.append("\\bottomrule\n\\end{longtable}\n\n")
     if build.oc_times:
@@ -465,9 +548,13 @@ def _chapter_results(
             "At the last tabulated budget time "
             f"({tex_escape(_fmt_num(b.time))}):\n"
         )
-        items = [
-            f"IN recharge: {_fmt_num(b.in_recharge)}",
-            f"OUT SWBC: {_fmt_num(b.out_swbc)}",
+        items = [f"IN recharge: {_fmt_num(b.in_recharge)}"]
+        for zname, zval in b.out_swbc_zones.items():
+            items.append(f"OUT SWBC {zname}: {_fmt_num(zval)}")
+        items.append(
+            f"OUT SWBC{' (combined outlets)' if b.out_swbc_zones else ''}: {_fmt_num(b.out_swbc)}"
+        )
+        items += [
             f"IN total: {_fmt_num(b.in_total)}",
             f"OUT total: {_fmt_num(b.out_total)}",
             f"IN minus OUT: {_fmt_num(b.in_minus_out)}",
@@ -484,6 +571,17 @@ def _chapter_results(
                 + ". Values near 1 indicate approximate equilibrium between applied "
                 "rainfall and outlet discharge (storage change small).\n\n"
             )
+            if b.out_swbc_zones:
+                parts = [
+                    f"{zname} {zval / b.in_recharge:.4f}"
+                    + (f" ({100.0 * zval / b.out_swbc:.1f}% of outflow)" if b.out_swbc else "")
+                    for zname, zval in b.out_swbc_zones.items()
+                ]
+                lines.append(
+                    "Per-outlet SWBC outflow / recharge inflow: "
+                    + tex_escape("; ".join(parts))
+                    + ".\n\n"
+                )
         if b.percent_discrepancy is not None and abs(b.percent_discrepancy) < 1.0:
             lines.append(
                 "The final percent discrepancy is small ($<1\\%$), which is consistent "
@@ -516,14 +614,56 @@ def _chapter_results(
     lines.append(_maybe_figure(inv, budget_stem, "Volumetric water budget", "fig:results-budget"))
 
     if usg.obs_final:
-        lines.append("\\section{Observation points (final tabulated values)}\n")
-        for key, row in usg.obs_final.items():
+        lines.append("\\section{Observation points (initial and final values)}\n")
+        lines.append(
+            "Values are taken from the first and last records in each domain "
+            "observation Tecplot file (\\texttt{*.OBS.tecplot.dat}).\n\n"
+        )
+        for key, final_row in usg.obs_final.items():
             lines.append("\\subsection{" + tex_escape(key) + "}\n")
-            # Show a compact subset: time + head/depth columns
-            show = list(row.items())[:12]
-            lines.append(_item_list([f"{k}: {_fmt_num(v)}" for k, v in show]))
-        obs_stem = "GWF_Observations" if (inv.layouts_dir / "GWF_Observations.lay").is_file() else gwf
-        lines.append(_maybe_figure(inv, obs_stem, "Observation time series", "fig:results-obs"))
+            initial_row = usg.obs_initial.get(key) or {}
+            # Prefer header order when available; otherwise final-row keys.
+            names = usg.obs_headers.get(key) or list(final_row.keys())
+            rows: list[str] = []
+            for name in names:
+                if name not in final_row and name not in initial_row:
+                    continue
+                init_v = initial_row.get(name)
+                final_v = final_row.get(name)
+                if init_v is not None and final_v is not None:
+                    diff_s = _fmt_num(final_v - init_v)
+                else:
+                    diff_s = "n/a"
+                rows.append(
+                    f"{tex_escape(name)} & {_fmt_num(init_v)} & {_fmt_num(final_v)} & {diff_s} \\\\\n"
+                )
+            if rows:
+                lines.append(
+                    _tabularx(
+                        f"{_X} r r r",
+                        "Quantity & Initial & Final & Difference",
+                        rows,
+                    )
+                )
+                lines.append("\n")
+            else:
+                lines.append("No observation values were parsed.\n\n")
+        obs_ids = sorted(
+            (sid for sid in layouts if "_Observations_" in sid),
+            key=str.lower,
+        )
+        if obs_ids:
+            lines.append("\\section{Observation time series}\n")
+            lines.append(
+                "Each observation point has its own Tecplot layout and figure, "
+                "with head stacked above saturation (GWF) or depth (SWF).\n\n"
+            )
+            for sid in obs_ids:
+                domain, _, site = sid.partition("_Observations_")
+                site_label = (site or sid).replace("_", " ")
+                caption = f"{domain} {site_label} observation time series"
+                label = "fig:results-obs-" + re.sub(r"[^a-z0-9]+", "-", sid.lower()).strip("-")
+                lines.append(_maybe_figure(inv, sid, caption, label))
 
     vel_stem = gwf
     if not inv.post_file("GWF.Velocity") and inv.post_file("SWF.Velocity"):
@@ -566,15 +706,16 @@ def _derived_views_section(inv: ArtifactInventory) -> str:
         lines.append("\\subsection{Infiltration}\n")
         lines.append(
             "Cell-by-cell SWF-to-GWF flux (areal flux when present) is converted to "
-            "millimetres per hour, with a leading minus so infiltration is positive. "
-            "The legend uses a diverging blue/red colour map centred on zero: "
-            "red is infiltration, blue is groundwater discharge to the surface domain.\n\n"
+            "millimetres per year, with a leading minus so infiltration is positive. "
+            "The legend uses a diverging blue/red colour map in Banded distribution, "
+            "centred on zero: red is infiltration, blue is groundwater discharge to "
+            "the surface domain.\n\n"
         )
         lines.append(
             _maybe_figure(
                 inv,
                 "SWF_Infiltration",
-                "Infiltration [mm/hour]; red = infiltration, blue = GWF discharge to SWF",
+                "Infiltration [mm/year]; red = infiltration, blue = GWF discharge to SWF",
                 "fig:results-infiltration",
             )
         )
@@ -607,7 +748,7 @@ def _chapter_layouts(layouts: list[LayoutFile]) -> str:
         "\\texttt{GWF\\_Mesh.lay} (also copied as \\texttt{GWF.lay}), "
         "\\texttt{GWF\\_Variables.lay}, \\texttt{GWF\\_scatter.lay}, "
         "\\texttt{GWF\\_Results.lay}, and "
-        "\\texttt{GWF\\_Observations.lay}, "
+        "\\texttt{GWF\\_Observations\\_\\textit{site}.lay} (one file per observation point), "
         "and the same pattern for SWF and CLN. "
         "The mesh, variables, and results layouts load finite-element "
         "\\texttt{.tecplot.szplt} files when present (ASCII \\texttt{.tecplot.dat} "
@@ -623,13 +764,12 @@ def _chapter_layouts(layouts: list[LayoutFile]) -> str:
         "Observation-point frames label each sphere with its assigned name "
         "to the right of the symbol. "
         "The results layout has one frame per post-processed field, plus velocity. "
-        "The observations layout has one frame per series: square frames, head on the top row, "
-        "saturation (or depth) on the bottom, sites left-to-right alphabetically "
-        "(further columns may sit off the initial paper view). "
+        "Each observations layout covers one site: stacked frames filling the page "
+        "(head above saturation or depth) so axis text stays readable when exported. "
         "When post-process fields allow it, additional layouts are written: "
         "\\texttt{GWF\\_VolumeBudget.lay} (listing-file volumetric rates, own page), "
         "\\texttt{GWF\\_WaterTable.lay} (pressure-head iso-surface at zero), "
-        "\\texttt{SWF\\_Infiltration.lay} (SWF-to-GWF flux in mm/hour, diverging legend), "
+        "\\texttt{SWF\\_Infiltration.lay} (SWF-to-GWF flux in mm/year, Banded diverging legend), "
         "and \\texttt{GWF\\_SaturationSlices.lay} (X-plane saturation slices). "
         "Cartesian 3-D frames use $3\\times$ vertical exaggeration, the Tecplot "
         "factory XYZ view ($\\psi=60$, $\\theta=240$), a contour legend in the "

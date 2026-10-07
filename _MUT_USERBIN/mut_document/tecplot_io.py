@@ -355,8 +355,8 @@ def var_name(variables: list[str], *needles: str) -> str | None:
     return variables[idx - 1]
 
 
-def mm_per_hour_factor(length_units: str = "", time_units: str = "") -> float:
-    """Convert a length/time flux to millimetres per hour."""
+def mm_per_year_factor(length_units: str = "", time_units: str = "") -> float:
+    """Convert a length/time flux to millimetres per year (365.25-day year)."""
     length = (length_units or "meters").strip().lower()
     time = (time_units or "seconds").strip().lower()
     if length in {"m", "meter", "meters", "metre", "metres"}:
@@ -370,18 +370,18 @@ def mm_per_hour_factor(length_units: str = "", time_units: str = "") -> float:
     else:
         to_mm = 1000.0
     if time in {"s", "sec", "second", "seconds"}:
-        per_hour = 3600.0
+        per_year = 365.25 * 24.0 * 3600.0
     elif time in {"min", "minute", "minutes"}:
-        per_hour = 60.0
+        per_year = 365.25 * 24.0 * 60.0
     elif time in {"h", "hr", "hour", "hours"}:
-        per_hour = 1.0
+        per_year = 365.25 * 24.0
     elif time in {"d", "day", "days"}:
-        per_hour = 1.0 / 24.0
+        per_year = 365.25
     elif time in {"y", "yr", "year", "years"}:
-        per_hour = 1.0 / (365.25 * 24.0)
+        per_year = 1.0
     else:
-        per_hour = 3600.0
-    return to_mm * per_hour
+        per_year = 365.25 * 24.0 * 3600.0
+    return to_mm * per_year
 
 
 def nice_abs_limit(value: float) -> float:

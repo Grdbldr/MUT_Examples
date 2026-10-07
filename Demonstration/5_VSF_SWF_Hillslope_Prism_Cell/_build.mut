@@ -1,0 +1,62 @@
+! This example builds a modflow project from a Grid Builder 2D triangular mesh
+modflow_usg
+
+    modflow prefix
+    hillslope-mc
+   
+   
+    2d mesh from gb
+    ./gb/hillslope
+    
+    generate swf domain
+        top elevation
+            elevation from gb file
+            ./gb/hillslope.nprop.top
+        end
+    end
+
+    
+    generate layered gwf domain
+        zone by layer
+        
+        top elevation
+            elevation from gb file
+            ./gb/hillslope.nprop.top
+        end
+    
+        new layer
+            layer name
+            Top layer
+    
+            uniform sublayering
+            50
+    
+            elevation constant
+            -200.
+        end
+    
+    
+    end 
+    
+    active domain
+    swf
+    
+
+    swf recharge
+    5.56e-6
+    
+    choose gb cells
+    ./gb/hillslope.echos.outlet
+    
+    swf constant head
+    0.01
+ 
+    generate output control file
+        .1 
+    end generate output control file
+    
+    stress periods
+    1
+    .1 1   1.1   TR 
+    
+end build modflow usg

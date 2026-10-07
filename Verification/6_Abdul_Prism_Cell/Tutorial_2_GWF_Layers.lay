@@ -1,0 +1,334 @@
+#!MC 1410
+$!SetStyleBase Factory
+$!Page
+  Name = 'Tutorial 2: GWF layers'
+  PaperAttributes
+    {
+    BackgroundColor = White
+    IsTransparent = No
+    OrientPortrait = No
+    ShowGrid = No
+    ShowRuler = No
+    ShowPaper = Yes
+    PaperSize = Letter
+    }
+### Frame GWF layers ###
+$!VarSet |LFDSFN1| = '"STANDARDSYNTAX" "1.0" "FILELIST_DATAFILES" "1" "_buildo.Modflow.GWF.tecplot.szplt"'
+$!ReadDataSet  '|LFDSFN1|'
+  DataSetReader = 'Tecplot Subzone Data Loader'
+  InitialPlotType = Cartesian3D
+  AssignStrandIDs = Yes
+$!RemoveVar |LFDSFN1|
+$!FrameLayout
+  ShowHeader = No
+  IsTransparent = No
+  XYPos
+    {
+    X = 0.25
+    Y = 0.25
+    }
+  Width = 10.5
+  Height = 4.0
+$!PlotType = Cartesian3D
+$!FrameName = 'GWF layers'
+$!ActiveFieldMaps = [1]
+$!GlobalContour  1
+  Var = 5
+  ColorMapName = 'Small Rainbow'
+  Labels
+    {
+    NumFormat
+      {
+        Formatting = Integer
+      }
+    }
+  Legend
+    {
+    Show = Yes
+    AnchorAlignment = TopRight
+    XYPos
+      {
+      X = 98
+      Y = 95
+      }
+    AutoResize = Yes
+    OverlayBarGrid = No
+    Box
+      {
+      BoxType = Filled
+      }
+    HeaderTextShape
+      {
+      FontFamily = 'Helvetica'
+      IsBold = Yes
+      SizeUnits = Frame
+      Height = 3
+      }
+    NumberTextShape
+      {
+      FontFamily = 'Helvetica'
+      IsBold = Yes
+      SizeUnits = Frame
+      Height = 2.8
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 1
+  RawData
+3
+1
+2
+3
+$!FieldMap  [1]
+  Mesh
+    {
+    Show = Yes
+    Color = Black
+    LineThickness = 0.05
+    }
+  Contour
+    {
+    Show = Yes
+    ContourType = Flood
+    FloodColoring = Group1
+    UseLightingEffect = Yes
+    }
+  Shade
+    {
+    Color = Custom2
+    }
+  Scatter
+    {
+    Show = No
+    }
+  Surfaces
+    {
+    SurfacesToPlot = ExposedCellFaces
+    }
+$!FieldLayers
+  ShowContour = Yes
+  ShowShade = Yes
+  ShowMesh = Yes
+  ShowScatter = No
+  ShowEdge = No
+  UseLightingEffect = Yes
+$!ThreeDAxis
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+  FrameAxis
+    {
+    Show = Yes
+    }
+$!GlobalThreeD
+  AxisScaleFact
+    {
+    X = 1
+    Y = 1
+    Z = 3
+    }
+$!ThreeDView
+  PsiAngle = 60
+  ThetaAngle = 240
+  AlphaAngle = 0
+$!View Fit
+$!AttachText
+  AnchorPos
+    {
+    X = 2
+    Y = 94
+    }
+  TextShape
+    {
+      FontFamily = 'Helvetica'
+      IsBold = Yes
+      SizeUnits = Frame
+      Height = 4.5
+    }
+  Box
+    {
+    BoxType = Filled
+    Margin = 20
+    }
+  Anchor = Left
+  Text = 'generate layered gwf domain: 3 layers x 5 uniform sublayers'
+$!AttachText
+  AnchorPos
+    {
+    X = 2
+    Y = 84
+    }
+  TextShape
+    {
+      FontFamily = 'Helvetica'
+      IsBold = Yes
+      SizeUnits = Frame
+      Height = 3.8
+    }
+  Anchor = Left
+  Text = '1 Top layer, 2 Middle layer, 3 Base layer'
+### Frame GWF sublayers ###
+$!CreateNewFrame
+$!VarSet |LFDSFN1| = '"STANDARDSYNTAX" "1.0" "FILELIST_DATAFILES" "1" "_buildo.Modflow.GWF.tecplot.szplt"'
+$!ReadDataSet  '|LFDSFN1|'
+  DataSetReader = 'Tecplot Subzone Data Loader'
+  InitialPlotType = Cartesian3D
+  AssignStrandIDs = Yes
+$!RemoveVar |LFDSFN1|
+$!FrameLayout
+  ShowHeader = No
+  IsTransparent = No
+  XYPos
+    {
+    X = 0.25
+    Y = 4.3
+    }
+  Width = 10.5
+  Height = 4.0
+$!PlotType = Cartesian3D
+$!FrameName = 'GWF sublayers'
+$!ActiveFieldMaps = [1]
+$!GlobalContour  1
+  Var = 4
+  ColorMapName = 'Sequential - Viridis'
+  Labels
+    {
+    NumFormat
+      {
+        Formatting = Integer
+      }
+    }
+  Legend
+    {
+    Show = Yes
+    AnchorAlignment = TopRight
+    XYPos
+      {
+      X = 98
+      Y = 95
+      }
+    AutoResize = Yes
+    OverlayBarGrid = No
+    Box
+      {
+      BoxType = Filled
+      }
+    HeaderTextShape
+      {
+      FontFamily = 'Helvetica'
+      IsBold = Yes
+      SizeUnits = Frame
+      Height = 3
+      }
+    NumberTextShape
+      {
+      FontFamily = 'Helvetica'
+      IsBold = Yes
+      SizeUnits = Frame
+      Height = 2.8
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 1
+  RawData
+15
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+$!FieldMap  [1]
+  Mesh
+    {
+    Show = Yes
+    Color = Black
+    LineThickness = 0.05
+    }
+  Contour
+    {
+    Show = Yes
+    ContourType = Flood
+    FloodColoring = Group1
+    UseLightingEffect = Yes
+    }
+  Shade
+    {
+    Color = Custom2
+    }
+  Scatter
+    {
+    Show = No
+    }
+  Surfaces
+    {
+    SurfacesToPlot = ExposedCellFaces
+    }
+$!FieldLayers
+  ShowContour = Yes
+  ShowShade = Yes
+  ShowMesh = Yes
+  ShowScatter = No
+  ShowEdge = No
+  UseLightingEffect = Yes
+$!Blanking
+  Value
+    {
+    Include = Yes
+    Constraint 1
+      {
+      Include = Yes
+      VarA = 1
+      RelOp = GreaterThan
+      ValueCutoff = 40
+      }
+    }
+$!ThreeDAxis
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+  FrameAxis
+    {
+    Show = Yes
+    }
+$!GlobalThreeD
+  AxisScaleFact
+    {
+    X = 1
+    Y = 1
+    Z = 3
+    }
+$!ThreeDView
+  PsiAngle = 60
+  ThetaAngle = 240
+  AlphaAngle = 0
+$!View Fit
+$!AttachText
+  AnchorPos
+    {
+    X = 2
+    Y = 94
+    }
+  TextShape
+    {
+      FontFamily = 'Helvetica'
+      IsBold = Yes
+      SizeUnits = Frame
+      Height = 4.5
+    }
+  Box
+    {
+    BoxType = Filled
+    Margin = 20
+    }
+  Anchor = Left
+  Text = 'Cutaway at X = 40: 15 model layers (uniform sublayering 5)'
+$!FrameControl ActivateByNumber
+  Frame = 1

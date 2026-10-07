@@ -13,7 +13,7 @@ from parse_usg import UsgRunInfo
 from tecplot_io import (
     ascii_var_absmax,
     is_binary_tecplot,
-    mm_per_hour_factor,
+    mm_per_year_factor,
     nice_abs_limit,
     read_point_xyz,
     read_tecplot_header,
@@ -150,11 +150,11 @@ def _pretty_units(units: str) -> str:
     text = (units or "").strip()
     if not text:
         return ""
-    return text.lower()
+    return text.upper()
 
 
 def _qty_title(name: str, units: str) -> str:
-    """Axis title with auxiliary units in parentheses, e.g. Head (meters)."""
+    """Axis title with auxiliary units in parentheses, e.g. Head (METERS)."""
     suffix = _pretty_units(units)
     if suffix:
         return f"{name} ({suffix})"
@@ -163,31 +163,56 @@ def _qty_title(name: str, units: str) -> str:
 
 def _obs_y_title(kind: str, length_units: str) -> str:
     if kind == "HEAD":
-        return _qty_title("Head", length_units or "meters")
+        return _qty_title("Head", length_units or "METERS")
     if kind == "DEPTH":
-        return _qty_title("Depth", length_units or "meters")
+        return _qty_title("Depth", length_units or "METERS")
     if kind == "SATURATION":
         return "Saturation (-)"
     return kind.title() if kind else "Value"
 
 
-def _obs_two_row_slots(n_cols: int) -> tuple[list[tuple[float, float, float, float]], list[tuple[float, float, float, float]]]:
-    """Square frames: two rows fill the Letter page height; extra columns run off to the right."""
-    if n_cols <= 0:
-        return [], []
-    page_h = 8.5
-    margin = 0.12
-    gap = 0.08
-    size = (page_h - 2.0 * margin - gap) / 2.0
-    left = margin
-    bottom = margin
-    top: list[tuple[float, float, float, float]] = []
-    bot: list[tuple[float, float, float, float]] = []
-    for col in range(n_cols):
-        x = left + col * (size + gap)
-        top.append((x, bottom + size + gap, size, size))
-        bot.append((x, bottom, size, size))
-    return top, bot
+def _safe_layout_stem(text: str) -> str:
+    """Filesystem-safe stem for layout / PNG names (keeps letters, digits, ._-)."""
+    cleaned = re.sub(r"[^\w.\-]+", "_", (text or "").strip(), flags=re.UNICODE)
+    cleaned = re.sub(r"_+", "_", cleaned).strip("._-")
+    return cleaned or "point"
+
+
+def _obs_point_slots(n_series: int) -> list[tuple[float, float, float, float]]:
+    """Stacked frames filling Letter landscape for one observation point.
+
+    Series are assigned low-to-high paper Y. Tecplot ``ExportRegion = AllFrames``
+    PNG output shows lower paper Y toward the top of the image, so series[0]
+    (Head) appears above later series (Saturation / Depth) in the figure.
+    """
+    if n_series <= 0:
+        return []
+    page_w, page_h = 11.0, 8.5
+    margin, gap = 0.25, 0.12
+    width = page_w - 2.0 * margin
+    usable_h = page_h - 2.0 * margin - max(0, n_series - 1) * gap
+    height = usable_h / float(n_series)
+    slots: list[tuple[float, float, float, float]] = []
+    for i in range(n_series):
+        y = margin + i * (height + gap)
+        slots.append((margin, y, width, height))
+    return slots
+
+
+def _obs_series_for_site(kinds: dict[str, str]) -> list[tuple[str, str]]:
+    """Ordered (kind, variable name) pairs: Head, then Saturation or Depth, then extras."""
+    ordered: list[tuple[str, str]] = []
+    if "HEAD" in kinds:
+        ordered.append(("HEAD", kinds["HEAD"]))
+    if "SATURATION" in kinds:
+        ordered.append(("SATURATION", kinds["SATURATION"]))
+    elif "DEPTH" in kinds:
+        ordered.append(("DEPTH", kinds["DEPTH"]))
+    for kind, var_name in kinds.items():
+        if kind in ("HEAD", "SATURATION", "DEPTH"):
+            continue
+        ordered.append((kind, var_name))
+    return ordered
 
 
 def _obs_path(inv: ArtifactInventory, domain: str) -> Path | None:
@@ -883,7 +908,9 @@ class _LayoutBuilder:
         show_axes: bool = True,
         transparent: bool = True,
         point_labels: list[str] | None = None,
+        keep_only: tuple[int, int] | None = None,
     ) -> None:
+        """keep_only=(var_num, value) blanks every point whose var differs from value."""
         x, y, w, h = slot
         if self.frame_count_on_page == 0:
             self.chunks.append(
@@ -904,6 +931,11 @@ class _LayoutBuilder:
                 show_axes=show_axes,
             )
         )
+        if keep_only:
+            self.chunks.append(_value_keep_only(*keep_only))
+            self.chunks.append(
+                f"$!RenameDataSetZone\n  Zone = 1\n  Name = '{_escape(frame_name)}'\n"
+            )
         if point_labels:
             self.chunks.append(_scatter_obs_labels(read_point_xyz(path), point_labels))
         self.chunks.append(_linking(link_view=True, link_size=True))
@@ -1017,6 +1049,7 @@ _SCATTER_STYLE = {
     "WEL": ("Magenta", 1.0),
     "OBS_SCATTER": ("Red", 1.0),
 }
+_SWBC_ZONE_COLORS = ("Custom8", "Custom3", "Custom13", "Custom28")
 
 
 def _scatter_files(inv: ArtifactInventory, domain: str) -> list[tuple[str, Path]]:
@@ -1086,6 +1119,22 @@ def _value_blanking(var_num: int | None) -> str:
       VarA = {var_num}
       RelOp = LessThanOrEqual
       ValueCutoff = 0
+      }}
+    }}
+"""
+
+
+def _value_keep_only(var_num: int, value: int) -> str:
+    return f"""$!Blanking
+  Value
+    {{
+    Include = Yes
+    Constraint 1
+      {{
+      Include = Yes
+      VarA = {var_num}
+      RelOp = NotEqualTo
+      ValueCutoff = {value}
       }}
     }}
 """
@@ -1510,23 +1559,17 @@ def _infiltration_style(
     levels: list[float],
     color_limit: float | None,
 ) -> str:
-    cmap = ""
-    if color_limit is not None and color_limit > 0:
-        cmap = f"""  ColorMapFilter
-    {{
-    ColorMapDistribution = Continuous
-    ContinuousColor
-      {{
-      CMin = {-color_limit:g}
-      CMax = {color_limit:g}
-      }}
-    }}
+    # Always Banded (never Continuous); levels carry the zero-centred bands.
+    cmap = """  ColorMapFilter
+    {
+    ColorMapDistribution = Banded
+    }
 """
     return f"""$!PlotType = Cartesian3D
 $!FrameName = 'SWF Infiltration'
 $!ActiveFieldMaps = [1]
 {_threed_axis_block()}$!AlterData
-  Equation = '{{Infiltration [mm/hour]}} = -{{{flux_name}}}*{factor:g}'
+  Equation = '{{Infiltration [mm/year]}} = -{{{flux_name}}}*{factor:g}'
 {_solution_time(solution_time)}{_value_blanking(ibound_var)}$!GlobalContour  1
   Var = {infil_var}
   ColorMapName = 'Diverging - Blue/Red'
@@ -1692,19 +1735,14 @@ def apply_symmetric_legend_to_layout(path: Path, limit: float) -> None:
     filter_block = (
         "  ColorMapFilter\n"
         "    {\n"
-        "    ColorMapDistribution = Continuous\n"
-        "    ContinuousColor\n"
-        "      {\n"
-        f"      CMin = {-outer:g}\n"
-        f"      CMax = {outer:g}\n"
-        "      }\n"
+        "    ColorMapDistribution = Banded\n"
         "    }\n"
     )
     if "ColorMapName = 'Diverging - Blue/Red'" not in text:
         return
-    if "ColorMapFilter" in text and "CMin" in text:
+    if "ColorMapFilter" in text:
         text = re.sub(
-            r"ColorMapFilter\s*\{.*?ContinuousColor\s*\{.*?CMin\s*=\s*[^\s]+.*?CMax\s*=\s*[^\s]+.*?\}\s*\}",
+            r"ColorMapFilter\s*\{.*?\}",
             filter_block.strip(),
             text,
             count=1,
@@ -1749,6 +1787,7 @@ def _remove_stale_layouts(layouts_dir: Path, keep: set[str]) -> None:
             path.name == "model_documentation.lay"
             or path.name.startswith(stale_prefixes)
             or path.name in _DERIVED_LAYOUTS
+            or "_Observations" in path.name
         ):
             path.unlink()
 
@@ -1825,15 +1864,31 @@ def write_layouts(
         if not files:
             return []
         slot = _overlap_slot()
-        n = len(files)
-        names: list[str] = []
         prefix = domain.upper() + "_"
-        for i, (key, path) in enumerate(files):
+        # One layer per file; SWBC with named zones becomes one layer per outlet.
+        layers: list[tuple[str, Path, str, tuple[int, int] | None, str | None]] = []
+        for key, path in files:
             label = key.replace("_", " ")
             suffix = key.upper()[len(prefix) :] if key.upper().startswith(prefix) else key.upper()
             if suffix == "OBS_SCATTER":
                 label = f"{domain} OBS"
+            zone_var = (
+                var_index(read_tecplot_header(path).get("variables") or [], "SWBC Zone")
+                if suffix == "SWBC" and usg.swbc_zone_names
+                else None
+            )
+            if zone_var:
+                for iz, zname in enumerate(usg.swbc_zone_names, start=1):
+                    color = _SWBC_ZONE_COLORS[(iz - 1) % len(_SWBC_ZONE_COLORS)]
+                    layers.append((suffix, path, f"{label} {zname}", (zone_var, iz), color))
+            else:
+                layers.append((suffix, path, label, None, None))
+        n = len(layers)
+        names: list[str] = []
+        for i, (suffix, path, label, keep_only, zone_color) in enumerate(layers):
             color, frame_size = _SCATTER_STYLE.get(suffix, ("Red", 1.0))
+            if zone_color:
+                color = zone_color
             top_index = n - 1 - i
             labels = _obs_names_for_domain(build, domain) if "OBS" in suffix else None
             b.add_scatter(
@@ -1847,6 +1902,7 @@ def write_layouts(
                 show_axes=(suffix == "CELLS"),
                 transparent=(suffix != "CELLS"),
                 point_labels=labels,
+                keep_only=keep_only,
             )
             names.append(label)
         return names
@@ -1897,7 +1953,7 @@ def write_layouts(
                     needles or [("Y",)],
                     x_title=_qty_title(
                         "Time",
-                        (getattr(build, "time_units", "") if build else "") or "seconds",
+                        (getattr(build, "time_units", "") if build else "") or "SECONDS",
                     ),
                 )
             elif kind == "vector":
@@ -1923,57 +1979,19 @@ def write_layouts(
             names.append(name)
         return names
 
-    def fill_observations(b: _LayoutBuilder, domain: str) -> list[str]:
-        obs = _obs_path(inv, domain)
-        if not obs:
-            return []
-        header = read_tecplot_header(obs)
-        series = _obs_series(header.get("variables") or [])
+    def fill_observation_point(
+        b: _LayoutBuilder,
+        obs: Path,
+        kinds: dict[str, str],
+        x_title: str,
+        length_u: str,
+    ) -> list[str]:
+        series = _obs_series_for_site(kinds)
         if not series:
             return []
-        by_site: dict[str, dict[str, str]] = {}
-        for var_name in series:
-            site, kind = _obs_site_and_kind(var_name)
-            if not site:
-                continue
-            by_site.setdefault(site, {})[kind or var_name] = var_name
-        sites = sorted(by_site, key=str.lower)
-        if not sites:
-            return []
-        top_slots, bot_slots = _obs_two_row_slots(len(sites))
-        length_u = (
-            (getattr(build, "length_units", "") if build else "")
-            or header.get("length_units")
-            or "meters"
-        )
-        time_u = (
-            (getattr(build, "time_units", "") if build else "")
-            or header.get("time_units")
-            or "seconds"
-        )
-        x_title = _qty_title("Time", time_u)
+        slots = _obs_point_slots(len(series))
         names: list[str] = []
-        for slot, site in zip(top_slots, sites):
-            var_name = by_site[site].get("HEAD")
-            if var_name:
-                b.add_xy(
-                    obs,
-                    var_name,
-                    slot,
-                    [(var_name,)],
-                    x_title=x_title,
-                    y_title=_obs_y_title("HEAD", length_u),
-                )
-                names.append(var_name)
-        for slot, site in zip(bot_slots, sites):
-            kinds = by_site[site]
-            if kinds.get("SATURATION"):
-                kind = "SATURATION"
-            elif kinds.get("DEPTH"):
-                kind = "DEPTH"
-            else:
-                continue
-            var_name = kinds[kind]
+        for slot, (kind, var_name) in zip(slots, series):
             b.add_xy(
                 obs,
                 var_name,
@@ -2015,10 +2033,35 @@ def write_layouts(
         frames = fill_results(builder, domain)
         emit_builder(f"{domain}_Results", f"{domain} Results", builder, frames)
 
-        builder = _LayoutBuilder(inv.layouts_dir)
-        builder.start_file(f"{domain} Observations")
-        frames = fill_observations(builder, domain)
-        emit_builder(f"{domain}_Observations", f"{domain} Observations", builder, frames)
+        obs = _obs_path(inv, domain)
+        if obs:
+            header = read_tecplot_header(obs)
+            series = _obs_series(header.get("variables") or [])
+            by_site: dict[str, dict[str, str]] = {}
+            for series_name in series:
+                site, kind = _obs_site_and_kind(series_name)
+                if not site:
+                    continue
+                by_site.setdefault(site, {})[kind or series_name] = series_name
+            length_u = (
+                (getattr(build, "length_units", "") if build else "")
+                or header.get("length_units")
+                or "METERS"
+            )
+            time_u = (
+                (getattr(build, "time_units", "") if build else "")
+                or header.get("time_units")
+                or "SECONDS"
+            )
+            x_title = _qty_title("Time", time_u)
+            for site in sorted(by_site, key=str.lower):
+                builder = _LayoutBuilder(inv.layouts_dir)
+                builder.start_file(f"{domain} Observations {site}")
+                frames = fill_observation_point(
+                    builder, obs, by_site[site], x_title, length_u
+                )
+                stem = f"{domain}_Observations_{_safe_layout_stem(site)}"
+                emit_builder(stem, f"{domain} Observations {site}", builder, frames)
 
     budget = inv.post_file("VolumeBudget")
     if budget:
@@ -2029,7 +2072,7 @@ def write_layouts(
             time_u = (
                 (getattr(build, "time_units", "") if build else "")
                 or header.get("time_units")
-                or "seconds"
+                or "SECONDS"
             )
             builder = _LayoutBuilder(inv.layouts_dir)
             builder.start_file("GWF Volume Budget")
@@ -2098,7 +2141,7 @@ def write_layouts(
         if flux_name:
             t_swf = usg.last_times.get("SWF")
             ibound_idx = var_index(variables, "SWF Ibound", "Ibound")
-            factor = mm_per_hour_factor(
+            factor = mm_per_year_factor(
                 getattr(build, "length_units", "") if build else "",
                 getattr(build, "time_units", "") if build else "",
             )
@@ -2127,7 +2170,7 @@ def write_layouts(
                 "SWF_Infiltration",
                 "SWF Infiltration",
                 builder,
-                ["Infiltration [mm/hour]"],
+                ["Infiltration [mm/year]"],
                 symmetric_legend=needs_pass,
             )
 

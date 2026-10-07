@@ -1,0 +1,21 @@
+! This example builds a 2D mesh from an outer boundary defined in QGIS
+build triangular mesh
+    ! Tecplot output mesh prefix 
+    Regional
+    
+    ! name of outer boundary file
+    ImportRegionalBoundary_xy.csv
+    
+    ! Target element length
+    300.  
+    
+    ! zone of refinement
+    refine inside polygon
+    ImportSiteBoundary_xy.csv
+    
+    ! refinement at well
+    wells from id_x_y file
+    well.id_x_y
+    10.
+end build triangular mesh
+

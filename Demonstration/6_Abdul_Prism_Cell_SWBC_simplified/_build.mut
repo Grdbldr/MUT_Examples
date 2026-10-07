@@ -1,0 +1,167 @@
+! This example builds a modflow project of the Abdul Field Experiment
+! The SWF mesh and top of the GWF mesh are defined by a 2D Grid Builder triangular mesh
+build modflow usg
+! Simplified critical depth input
+
+    ! -----------------------------------Grid definition
+    2d mesh from gb
+    ./gb/grid
+    
+    generate swf domain
+        top elevation
+            elevation from gb file
+            ./gb/grid.nprop.Surface elevation
+        end
+    end
+
+    
+    generate layered gwf domain
+
+        top elevation
+            elevation from gb file
+            ./gb/grid.nprop.Surface elevation
+        end
+    
+        new layer
+            layer name
+            Top layer
+    
+            uniform sublayering
+            5
+    
+            elevation from gb file
+            ./gb/grid.nprop.Surface elevation - 0.5 m
+        end
+    
+        new layer
+            layer name
+            Middle layer
+    
+            uniform sublayering
+            5
+    
+            elevation from gb file
+            ./gb/grid.nprop.Surface elevation - 1.5 m
+        end
+    
+        new layer
+            layer name
+            Base layer
+    
+            uniform sublayering
+            5
+    
+            elevation constant 
+            0.0
+        end
+    
+    
+    end 
+    
+    ! -----------------------------------Modflow parameters 
+    sms database
+    SMS.csv
+    sms parameter set number
+    1
+
+    gwf materials database
+    GWF.csv
+
+    active domain 
+    gwf
+    
+        clear chosen zones
+        choose zone number
+        1
+        choose zone number
+        2
+        choose zone number
+        3
+        
+        clear chosen cells
+        choose cells by chosen zones
+                
+        chosen cells use gwf material number
+        4
+        
+        gwf initial head
+        2.78d0
+    
+    swf materials database
+    SWF.csv
+    
+    active domain 
+    swf
+    
+        clear chosen zones
+        choose zone number
+        1
+        chosen zones use swf material number
+        1
+        
+        clear chosen zones
+        choose zone number
+        2
+        chosen zones use swf material number
+        2
+
+        choose all cells
+
+        swf initial depth
+        1.0d-4
+
+    ! -----------------------------------Stress periods, boundary conditions 
+    ! stress period 1
+    stress period
+        type
+        TR
+        
+        duration
+        3000.0d0
+    end
+
+    active domain 
+    swf
+        choose all cells
+        swf recharge
+        5.56d-6
+        4
+        
+        clear chosen cells
+        clear chosen nodes
+        choose cells from gb elements
+        ./gb/grid.echos.Critical depth outlet
+        swf critical depth with sidelength1
+        
+    ! stress period 2
+    stress period
+        type
+        TR
+        
+        duration
+        3000.0d0
+        
+    end
+
+    active domain 
+    swf
+        choose all cells
+        swf recharge
+        0.0d0
+        4
+        
+    ! -----------------------------------Output Control
+    generate output control file
+        1e-4
+        60.
+        300.0
+        600.0
+        900.0
+        1200.0
+        1500.0
+        3000.0
+        4500.0
+        6000.0
+    end generate output control file
+      
+end build modflow usg

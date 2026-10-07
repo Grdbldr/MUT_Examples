@@ -1,7 +1,7 @@
 #!MC 1410
-$!VarSet |LFDSFN1| = '"_posto.modflow.GWF.tecplot.dat"'
+$!VarSet |LFDSFN1| = '"STANDARDSYNTAX" "1.0" "FILELIST_DATAFILES" "1" "_posto.modflow.GWF.tecplot.szplt"'
 $!VarSet |LFDSVL1| = '"X" "Y" "Z" "GWF z Cell" "GWF Layer" "GWF Ibound" "GWF Initial head" "GWF Head" "GWF Saturation" "GWF to STORAGE" "GWF to CONSTANT_HEAD" "GWF to SWF" "GWF to FLOW_FACES"'
-$!VarSet |LFDSFN2| = '"_posto.modflow.SWF.tecplot.dat"'
+$!VarSet |LFDSFN2| = '"STANDARDSYNTAX" "1.0" "FILELIST_DATAFILES" "1" "_posto.modflow.SWF.tecplot.szplt"'
 $!VarSet |LFDSVL2| = '"X" "Y" "Z" "SWF z Cell" "SWF Layer" "SWF Ibound" "SWF Initial head" "SWF Head" "SWF Depth" "SWF to STORAGE" "SWF to CONSTANT_HEAD" "SWF to GWF" "SWF to FLOW_FACES" "SWF to SWBC"'
 $!SetStyleBase Factory
 $!CreateColorMap 
@@ -219,10 +219,8 @@ $!Page
     }
 ### Frame Number 1 ###
 $!ReadDataSet  '|LFDSFN1|'
+  DataSetReader = 'Tecplot Subzone Data Loader'
   InitialPlotType = Cartesian3D
-  IncludeText = No
-  IncludeGeom = No
-  ResetStyle = No
   AssignStrandIDs = Yes
   VarLoadMode = ByName
   VarNameList = '|LFDSVL1|'
@@ -997,10 +995,8 @@ $!Linking
 ### Frame Number 3 ###
 $!CreateNewFrame 
 $!ReadDataSet  '|LFDSFN2|'
+  DataSetReader = 'Tecplot Subzone Data Loader'
   InitialPlotType = Cartesian3D
-  IncludeText = No
-  IncludeGeom = No
-  ResetStyle = No
   AssignStrandIDs = Yes
   VarLoadMode = ByName
   VarNameList = '|LFDSVL2|'

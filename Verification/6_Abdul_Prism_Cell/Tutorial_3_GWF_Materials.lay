@@ -1,0 +1,581 @@
+#!MC 1410
+$!SetStyleBase Factory
+$!Page
+  Name = 'Tutorial 3: GWF materials and initial head'
+  PaperAttributes
+    {
+    BackgroundColor = White
+    IsTransparent = No
+    OrientPortrait = No
+    ShowGrid = No
+    ShowRuler = No
+    ShowPaper = Yes
+    PaperSize = Letter
+    }
+### Frame GWF Zone ###
+$!VarSet |LFDSFN1| = '"STANDARDSYNTAX" "1.0" "FILELIST_DATAFILES" "1" "_buildo.Modflow.GWF.tecplot.szplt"'
+$!ReadDataSet  '|LFDSFN1|'
+  DataSetReader = 'Tecplot Subzone Data Loader'
+  InitialPlotType = Cartesian3D
+  AssignStrandIDs = Yes
+$!RemoveVar |LFDSFN1|
+$!FrameLayout
+  ShowHeader = No
+  IsTransparent = No
+  XYPos
+    {
+    X = 0.25
+    Y = 0.25
+    }
+  Width = 5.25
+  Height = 4.0
+$!PlotType = Cartesian3D
+$!FrameName = 'GWF Zone'
+$!ActiveFieldMaps = [1]
+$!GlobalContour  1
+  Var = 5
+  ColorMapName = 'Small Rainbow'
+  Labels
+    {
+    NumFormat
+      {
+        Formatting = Integer
+      }
+    }
+  Legend
+    {
+    Show = Yes
+    AnchorAlignment = TopRight
+    XYPos
+      {
+      X = 98
+      Y = 95
+      }
+    AutoResize = Yes
+    OverlayBarGrid = No
+    Box
+      {
+      BoxType = Filled
+      }
+    HeaderTextShape
+      {
+      FontFamily = 'Helvetica'
+      IsBold = Yes
+      SizeUnits = Frame
+      Height = 3
+      }
+    NumberTextShape
+      {
+      FontFamily = 'Helvetica'
+      IsBold = Yes
+      SizeUnits = Frame
+      Height = 2.8
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 1
+  RawData
+3
+1
+2
+3
+$!FieldMap  [1]
+  Mesh
+    {
+    Show = No
+    Color = Black
+    LineThickness = 0.05
+    }
+  Contour
+    {
+    Show = Yes
+    ContourType = Flood
+    FloodColoring = Group1
+    UseLightingEffect = Yes
+    }
+  Shade
+    {
+    Color = Custom2
+    }
+  Scatter
+    {
+    Show = No
+    }
+  Surfaces
+    {
+    SurfacesToPlot = ExposedCellFaces
+    }
+$!FieldLayers
+  ShowContour = Yes
+  ShowShade = Yes
+  ShowMesh = No
+  ShowScatter = No
+  ShowEdge = No
+  UseLightingEffect = Yes
+$!ThreeDAxis
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+  FrameAxis
+    {
+    Show = Yes
+    }
+$!GlobalThreeD
+  AxisScaleFact
+    {
+    X = 1
+    Y = 1
+    Z = 3
+    }
+$!ThreeDView
+  PsiAngle = 60
+  ThetaAngle = 240
+  AlphaAngle = 0
+$!View Fit
+$!AttachText
+  AnchorPos
+    {
+    X = 2
+    Y = 94
+    }
+  TextShape
+    {
+      FontFamily = 'Helvetica'
+      IsBold = Yes
+      SizeUnits = Frame
+      Height = 5
+    }
+  Box
+    {
+    BoxType = Filled
+    Margin = 20
+    }
+  Anchor = Left
+  Text = 'choose zone number 1, 2, 3'
+### Frame GWF Kh ###
+$!CreateNewFrame
+$!VarSet |LFDSFN1| = '"STANDARDSYNTAX" "1.0" "FILELIST_DATAFILES" "1" "_buildo.Modflow.GWF.tecplot.szplt"'
+$!ReadDataSet  '|LFDSFN1|'
+  DataSetReader = 'Tecplot Subzone Data Loader'
+  InitialPlotType = Cartesian3D
+  AssignStrandIDs = Yes
+$!RemoveVar |LFDSFN1|
+$!FrameLayout
+  ShowHeader = No
+  IsTransparent = No
+  XYPos
+    {
+    X = 5.5
+    Y = 0.25
+    }
+  Width = 5.25
+  Height = 4.0
+$!PlotType = Cartesian3D
+$!FrameName = 'GWF Kh'
+$!ActiveFieldMaps = [1]
+$!GlobalContour  1
+  Var = 8
+  ColorMapName = 'Sequential - Viridis'
+  Labels
+    {
+    NumFormat
+      {
+        Formatting = Exponential
+        Precision = 2
+      }
+    }
+  Legend
+    {
+    Show = Yes
+    AnchorAlignment = TopRight
+    XYPos
+      {
+      X = 98
+      Y = 95
+      }
+    AutoResize = Yes
+    OverlayBarGrid = No
+    Box
+      {
+      BoxType = Filled
+      }
+    HeaderTextShape
+      {
+      FontFamily = 'Helvetica'
+      IsBold = Yes
+      SizeUnits = Frame
+      Height = 3
+      }
+    NumberTextShape
+      {
+      FontFamily = 'Helvetica'
+      IsBold = Yes
+      SizeUnits = Frame
+      Height = 2.8
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 1
+  RawData
+4
+5e-06
+8e-06
+1.2e-05
+1.5e-05
+$!FieldMap  [1]
+  Mesh
+    {
+    Show = No
+    Color = Black
+    LineThickness = 0.05
+    }
+  Contour
+    {
+    Show = Yes
+    ContourType = Flood
+    FloodColoring = Group1
+    UseLightingEffect = Yes
+    }
+  Shade
+    {
+    Color = Custom2
+    }
+  Scatter
+    {
+    Show = No
+    }
+  Surfaces
+    {
+    SurfacesToPlot = ExposedCellFaces
+    }
+$!FieldLayers
+  ShowContour = Yes
+  ShowShade = Yes
+  ShowMesh = No
+  ShowScatter = No
+  ShowEdge = No
+  UseLightingEffect = Yes
+$!ThreeDAxis
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+  FrameAxis
+    {
+    Show = Yes
+    }
+$!GlobalThreeD
+  AxisScaleFact
+    {
+    X = 1
+    Y = 1
+    Z = 3
+    }
+$!ThreeDView
+  PsiAngle = 60
+  ThetaAngle = 240
+  AlphaAngle = 0
+$!View Fit
+$!AttachText
+  AnchorPos
+    {
+    X = 2
+    Y = 94
+    }
+  TextShape
+    {
+      FontFamily = 'Helvetica'
+      IsBold = Yes
+      SizeUnits = Frame
+      Height = 5
+    }
+  Box
+    {
+    BoxType = Filled
+    Margin = 20
+    }
+  Anchor = Left
+  Text = 'gwf material 5: Kh = 1e-5 m/s'
+### Frame GWF Alpha ###
+$!CreateNewFrame
+$!VarSet |LFDSFN1| = '"STANDARDSYNTAX" "1.0" "FILELIST_DATAFILES" "1" "_buildo.Modflow.GWF.tecplot.szplt"'
+$!ReadDataSet  '|LFDSFN1|'
+  DataSetReader = 'Tecplot Subzone Data Loader'
+  InitialPlotType = Cartesian3D
+  AssignStrandIDs = Yes
+$!RemoveVar |LFDSFN1|
+$!FrameLayout
+  ShowHeader = No
+  IsTransparent = No
+  XYPos
+    {
+    X = 0.25
+    Y = 4.3
+    }
+  Width = 5.25
+  Height = 4.0
+$!PlotType = Cartesian3D
+$!FrameName = 'GWF Alpha'
+$!ActiveFieldMaps = [1]
+$!GlobalContour  1
+  Var = 12
+  ColorMapName = 'Sequential - Viridis'
+  Labels
+    {
+    NumFormat
+      {
+        Formatting = FixedFloat
+        Precision = 2
+      }
+    }
+  Legend
+    {
+    Show = Yes
+    AnchorAlignment = TopRight
+    XYPos
+      {
+      X = 98
+      Y = 95
+      }
+    AutoResize = Yes
+    OverlayBarGrid = No
+    Box
+      {
+      BoxType = Filled
+      }
+    HeaderTextShape
+      {
+      FontFamily = 'Helvetica'
+      IsBold = Yes
+      SizeUnits = Frame
+      Height = 3
+      }
+    NumberTextShape
+      {
+      FontFamily = 'Helvetica'
+      IsBold = Yes
+      SizeUnits = Frame
+      Height = 2.8
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 1
+  RawData
+4
+1.5
+1.8
+2.0
+2.3
+$!FieldMap  [1]
+  Mesh
+    {
+    Show = No
+    Color = Black
+    LineThickness = 0.05
+    }
+  Contour
+    {
+    Show = Yes
+    ContourType = Flood
+    FloodColoring = Group1
+    UseLightingEffect = Yes
+    }
+  Shade
+    {
+    Color = Custom2
+    }
+  Scatter
+    {
+    Show = No
+    }
+  Surfaces
+    {
+    SurfacesToPlot = ExposedCellFaces
+    }
+$!FieldLayers
+  ShowContour = Yes
+  ShowShade = Yes
+  ShowMesh = No
+  ShowScatter = No
+  ShowEdge = No
+  UseLightingEffect = Yes
+$!ThreeDAxis
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+  FrameAxis
+    {
+    Show = Yes
+    }
+$!GlobalThreeD
+  AxisScaleFact
+    {
+    X = 1
+    Y = 1
+    Z = 3
+    }
+$!ThreeDView
+  PsiAngle = 60
+  ThetaAngle = 240
+  AlphaAngle = 0
+$!View Fit
+$!AttachText
+  AnchorPos
+    {
+    X = 2
+    Y = 94
+    }
+  TextShape
+    {
+      FontFamily = 'Helvetica'
+      IsBold = Yes
+      SizeUnits = Frame
+      Height = 5
+    }
+  Box
+    {
+    BoxType = Filled
+    Margin = 20
+    }
+  Anchor = Left
+  Text = 'gwf material 5: Alpha = 1.9 1/m'
+### Frame GWF Initial head ###
+$!CreateNewFrame
+$!VarSet |LFDSFN1| = '"STANDARDSYNTAX" "1.0" "FILELIST_DATAFILES" "1" "_buildo.Modflow.GWF.tecplot.szplt"'
+$!ReadDataSet  '|LFDSFN1|'
+  DataSetReader = 'Tecplot Subzone Data Loader'
+  InitialPlotType = Cartesian3D
+  AssignStrandIDs = Yes
+$!RemoveVar |LFDSFN1|
+$!FrameLayout
+  ShowHeader = No
+  IsTransparent = No
+  XYPos
+    {
+    X = 5.5
+    Y = 4.3
+    }
+  Width = 5.25
+  Height = 4.0
+$!PlotType = Cartesian3D
+$!FrameName = 'GWF Initial head'
+$!ActiveFieldMaps = [1]
+$!GlobalContour  1
+  Var = 16
+  ColorMapName = 'Sequential - Viridis'
+  Labels
+    {
+    NumFormat
+      {
+        Formatting = FixedFloat
+        Precision = 2
+      }
+    }
+  Legend
+    {
+    Show = Yes
+    AnchorAlignment = TopRight
+    XYPos
+      {
+      X = 98
+      Y = 95
+      }
+    AutoResize = Yes
+    OverlayBarGrid = No
+    Box
+      {
+      BoxType = Filled
+      }
+    HeaderTextShape
+      {
+      FontFamily = 'Helvetica'
+      IsBold = Yes
+      SizeUnits = Frame
+      Height = 3
+      }
+    NumberTextShape
+      {
+      FontFamily = 'Helvetica'
+      IsBold = Yes
+      SizeUnits = Frame
+      Height = 2.8
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 1
+  RawData
+4
+2.7
+2.76
+2.8
+2.86
+$!FieldMap  [1]
+  Mesh
+    {
+    Show = No
+    Color = Black
+    LineThickness = 0.05
+    }
+  Contour
+    {
+    Show = Yes
+    ContourType = Flood
+    FloodColoring = Group1
+    UseLightingEffect = Yes
+    }
+  Shade
+    {
+    Color = Custom2
+    }
+  Scatter
+    {
+    Show = No
+    }
+  Surfaces
+    {
+    SurfacesToPlot = ExposedCellFaces
+    }
+$!FieldLayers
+  ShowContour = Yes
+  ShowShade = Yes
+  ShowMesh = No
+  ShowScatter = No
+  ShowEdge = No
+  UseLightingEffect = Yes
+$!ThreeDAxis
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+  FrameAxis
+    {
+    Show = Yes
+    }
+$!GlobalThreeD
+  AxisScaleFact
+    {
+    X = 1
+    Y = 1
+    Z = 3
+    }
+$!ThreeDView
+  PsiAngle = 60
+  ThetaAngle = 240
+  AlphaAngle = 0
+$!View Fit
+$!AttachText
+  AnchorPos
+    {
+    X = 2
+    Y = 94
+    }
+  TextShape
+    {
+      FontFamily = 'Helvetica'
+      IsBold = Yes
+      SizeUnits = Frame
+      Height = 5
+    }
+  Box
+    {
+    BoxType = Filled
+    Margin = 20
+    }
+  Anchor = Left
+  Text = 'gwf initial head 2.78 m'
+$!FrameControl ActivateByNumber
+  Frame = 1

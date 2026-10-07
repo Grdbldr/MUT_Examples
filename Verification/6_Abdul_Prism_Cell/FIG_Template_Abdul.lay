@@ -1,13 +1,13 @@
 #!MC 1410
-$!VarSet |LFDSFN1| = '"..\..\..\..\..\..\Work\Examples\6_Abdul_Prism_Cell\_buildo.Modflow.GWF.tecplot.dat"'
+$!VarSet |LFDSFN1| = '"STANDARDSYNTAX" "1.0" "FILELIST_DATAFILES" "1" "_buildo.Modflow.GWF.tecplot.szplt"'
 $!VarSet |LFDSVL1| = '"X" "Y" "Z" "GWF Layer" "GWF Zone" "GWF Cell Top" "GWF Cell Bottom" "GWF Kh" "GWF Kv" "GWF Ss" "GWF Sy" "GWF Alpha" "GWF Beta" "GWF Sr" "GWF Brooks" "GWF Initial head"'
-$!VarSet |LFDSFN2| = '"..\..\..\..\..\..\Work\Examples\6_Abdul_Prism_Cell\_buildo.TMPLT.tecplot.dat"'
+$!VarSet |LFDSFN2| = '"STANDARDSYNTAX" "1.0" "FILELIST_DATAFILES" "1" "_buildo.TMPLT.tecplot.szplt"'
 $!VarSet |LFDSVL2| = '"X" "Y" "Z" "TMPLT Zone" "TMPLT Element Area" "TMPLTInner circle radius"'
-$!VarSet |LFDSFN3| = '"..\..\..\..\..\..\Work\Examples\6_Abdul_Prism_Cell\_buildo.Modflow.GWF.tecplot.dat"'
+$!VarSet |LFDSFN3| = '"STANDARDSYNTAX" "1.0" "FILELIST_DATAFILES" "1" "_buildo.Modflow.GWF.tecplot.szplt"'
 $!VarSet |LFDSVL3| = '"X" "Y" "Z" "TMPLT Zone" "TMPLT Element Area" "TMPLTInner circle radius" "GWF Layer" "GWF Zone" "GWF Cell Top" "GWF Cell Bottom" "GWF Kh" "GWF Kv" "GWF Ss" "GWF Sy" "GWF Alpha" "GWF Beta" "GWF Sr" "GWF Brooks" "GWF Initial head"'
-$!VarSet |LFDSFN4| = '"..\..\..\..\..\..\Work\Examples\6_Abdul_Prism_Cell\_buildo.Modflow.SWF.tecplot.dat"'
+$!VarSet |LFDSFN4| = '"STANDARDSYNTAX" "1.0" "FILELIST_DATAFILES" "1" "_buildo.Modflow.SWF.tecplot.szplt"'
 $!VarSet |LFDSVL4| = '"X" "Y" "Z" "TMPLT Zone" "TMPLT Element Area" "TMPLTInner circle radius" "GWF Layer" "GWF Zone" "GWF Cell Top" "GWF Cell Bottom" "GWF Kh" "GWF Kv" "GWF Ss" "GWF Sy" "GWF Alpha" "GWF Beta" "GWF Sr" "GWF Brooks" "GWF Initial head" "SWF Zone" "SWF zCell" "SWF SWF-GWF connection length" "SWF Initial Depth" "SWF Cell area"'
-$!VarSet |LFDSFN5| = '"..\..\..\..\..\..\Work\Examples\6_Abdul_Prism_Cell\_buildo.Modflow.SWF.tecplot.dat"'
+$!VarSet |LFDSFN5| = '"STANDARDSYNTAX" "1.0" "FILELIST_DATAFILES" "1" "_buildo.Modflow.SWF.tecplot.szplt"'
 $!VarSet |LFDSVL5| = '"X" "Y" "Z" "SWF Zone" "SWF zCell" "SWF SWF-GWF connection length" "SWF Initial Depth" "SWF Cell area"'
 $!SetStyleBase Factory
 $!CreateColorMap 
@@ -225,10 +225,8 @@ $!Page
     }
 ### Frame Number 1 ###
 $!ReadDataSet  '|LFDSFN1|'
+  DataSetReader = 'Tecplot Subzone Data Loader'
   InitialPlotType = Cartesian3D
-  IncludeText = No
-  IncludeGeom = No
-  ResetStyle = No
   AssignStrandIDs = Yes
   VarLoadMode = ByName
   VarNameList = '|LFDSVL1|'
@@ -967,32 +965,26 @@ $!AttachText
 ### Frame Number 2 ###
 $!CreateNewFrame 
 $!ReadDataSet  '|LFDSFN2|'
+  DataSetReader = 'Tecplot Subzone Data Loader'
   InitialPlotType = Cartesian3D
-  IncludeText = No
-  IncludeGeom = No
-  ResetStyle = No
   AssignStrandIDs = Yes
   VarLoadMode = ByName
   VarNameList = '|LFDSVL2|'
 $!RemoveVar |LFDSVL2|
 $!RemoveVar |LFDSFN2|
 $!ReadDataSet  '|LFDSFN3|'
+  DataSetReader = 'Tecplot Subzone Data Loader'
   InitialPlotType = Cartesian3D
-  IncludeText = No
-  IncludeGeom = No
   ReadDataOption = Append
-  ResetStyle = No
   AssignStrandIDs = Yes
   VarLoadMode = ByName
   VarNameList = '|LFDSVL3|'
 $!RemoveVar |LFDSVL3|
 $!RemoveVar |LFDSFN3|
 $!ReadDataSet  '|LFDSFN4|'
+  DataSetReader = 'Tecplot Subzone Data Loader'
   InitialPlotType = Cartesian3D
-  IncludeText = No
-  IncludeGeom = No
   ReadDataOption = Append
-  ResetStyle = No
   AssignStrandIDs = Yes
   VarLoadMode = ByName
   VarNameList = '|LFDSVL4|'
@@ -1693,10 +1685,8 @@ $!AttachText
 ### Frame Number 3 ###
 $!CreateNewFrame 
 $!ReadDataSet  '|LFDSFN5|'
+  DataSetReader = 'Tecplot Subzone Data Loader'
   InitialPlotType = Cartesian3D
-  IncludeText = No
-  IncludeGeom = No
-  ResetStyle = No
   AssignStrandIDs = Yes
   VarLoadMode = ByName
   VarNameList = '|LFDSVL5|'
