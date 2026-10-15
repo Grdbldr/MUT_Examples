@@ -1,0 +1,80 @@
+{
+  "mesh": {
+    "name": "GR Regional",
+    "boundary_spacing_m": 300.0,
+    "interior_points": 5000,
+    "fixed_points_file": "",
+    "smoothing_iterations": 0,
+    "status": "defined",
+    "created": "2026-10-14T16:00:58"
+  },
+  "crs": "EPSG:32617",
+  "interior_spacing_m": 1206.5104943756187,
+  "outputs": {
+    "gb_grd": "C:\\Work\\Examples-Release\\Demonstration\\Grand River Watershed\\2_mesh\\GR_Regional\\GR_Regional.grd",
+    "gb_xyc": "C:\\Work\\Examples-Release\\Demonstration\\Grand River Watershed\\2_mesh\\GR_Regional\\GR_Regional.xyc",
+    "gb_in3": "C:\\Work\\Examples-Release\\Demonstration\\Grand River Watershed\\2_mesh\\GR_Regional\\GR_Regional.in3",
+    "gb_ean": "C:\\Work\\Examples-Release\\Demonstration\\Grand River Watershed\\2_mesh\\GR_Regional\\GR_Regional.ean",
+    "gpkg": "C:\\Work\\Examples-Release\\Demonstration\\Grand River Watershed\\2_mesh\\GR_Regional\\GR_Regional.gpkg",
+    "xy_csv": "C:\\Work\\Examples-Release\\Demonstration\\Grand River Watershed\\2_mesh\\GR_Regional\\GR_Regional_xyCoord.csv",
+    "idnode_csv": "C:\\Work\\Examples-Release\\Demonstration\\Grand River Watershed\\2_mesh\\GR_Regional\\GR_Regional_idNode.csv",
+    "snippet": "C:\\Work\\Examples-Release\\Demonstration\\Grand River Watershed\\2_mesh\\GR_Regional\\mut_snippet.txt"
+  },
+  "stats": {
+    "initial": {
+      "nodes": 8199,
+      "elements": 13207,
+      "fixed_nodes": 3189,
+      "free_nodes": 5010,
+      "nodes_by_source": {
+        "boundary": 3189,
+        "interior": 5010,
+        "user": 0,
+        "inserted": 0
+      },
+      "min_angle_deg": 4.518596874895519,
+      "mean_min_angle_deg": 50.39060491369956,
+      "max_angle_deg": 158.76915009966623,
+      "elements_min_angle_below_20_percent": 12.008783221019156,
+      "area_m2": {
+        "min": 7143.5603407003255,
+        "max": 1481920.029675204,
+        "mean": 506507.41815784597,
+        "total": 6689443471.610672
+      },
+      "edge_length_m": {
+        "min": 113.72109656587486,
+        "max": 2008.7354730387488,
+        "mean": 1059.648887864786
+      }
+    },
+    "final": {
+      "nodes": 8199,
+      "elements": 13207,
+      "fixed_nodes": 3189,
+      "free_nodes": 5010,
+      "nodes_by_source": {
+        "boundary": 3189,
+        "interior": 5010,
+        "user": 0,
+        "inserted": 0
+      },
+      "min_angle_deg": 4.518596874895519,
+      "mean_min_angle_deg": 50.39060491369956,
+      "max_angle_deg": 158.76915009966623,
+      "elements_min_angle_below_20_percent": 12.008783221019156,
+      "area_m2": {
+        "min": 7143.5603407003255,
+        "max": 1481920.029675204,
+        "mean": 506507.41815784597,
+        "total": 6689443471.610672
+      },
+      "edge_length_m": {
+        "min": 113.72109656587486,
+        "max": 2008.7354730387488,
+        "mean": 1059.648887864786
+      }
+    }
+  },
+  "warnings": []
+}

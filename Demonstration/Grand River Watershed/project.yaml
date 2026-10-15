@@ -1,0 +1,72 @@
+name: Grand River Watershed
+description: ''
+site:
+  lat: 43.992741
+  lon: -80.266591
+crs: EPSG:32617
+output_folder: C:\Work\Examples-Release\Demonstration\Grand River Watershed
+data_folder: C:\Work\Examples-Release\Demonstration\Grand River Watershed
+regional_buffer_km: 20.0
+boundary_mode: watershed
+boundary_file: C:\Work\Examples-Release\Demonstration\Grand River Watershed\1_data\boundary\model_boundary.geojson
+boundary_name: Grand River above 42.8950, -79.6250
+boundary_source: Global Watersheds (outlet 42.8950, -79.6250)
+boundary_margin_km: 1.0
+providers:
+- nrcan_mrdem30
+- copernicus_glo30
+- usgs_3dep_1m
+- nrcan_hrdem
+- opentopography_lidar
+- shangguan2017_dtb
+data_files: []
+options:
+  coarse_resolution_m: 30.0
+  fine_resolution_m: 1.0
+  fine_threshold_m: 5.0
+  min_thickness_m: 1.0
+  lake_bathymetry: true
+  lake_min_area_ha: 2.0
+focus_areas:
+- name: Luther marsh II
+  mode: digitized
+  boundary_file: C:\Work\Examples-Release\Demonstration\Grand River Watershed\1_data\focus\Luther_marsh_II\focus_boundary.geojson
+  source: digitized on the QGIS map
+  feature_name: ''
+  outlet_lat: null
+  outlet_lon: null
+  delineation: none
+  margin_m: 200.0
+  resolution_m: 10.0
+  status: built
+  created: '2026-10-14T09:02:22'
+- name: Luther marsh
+  mode: rectangle
+  boundary_file: C:\Work\Examples-Release\Demonstration\Grand River Watershed\1_data\focus\Luther_marsh\focus_boundary.geojson
+  source: QGIS map
+  feature_name: ''
+  outlet_lat: null
+  outlet_lon: null
+  delineation: none
+  margin_m: 200.0
+  resolution_m: 10.0
+  status: built
+  created: '2026-10-14T08:57:33'
+meshes:
+- name: GR Regional
+  boundary_spacing_m: 300.0
+  interior_points: 5000
+  fixed_points_file: ''
+  smoothing_iterations: 0
+  boundary_tolerance_m: 0.0
+  status: built
+  created: '2026-10-14T16:00:58'
+- name: GR Regional 2
+  boundary_spacing_m: 300.0
+  interior_points: 5000
+  fixed_points_file: ''
+  smoothing_iterations: 0
+  boundary_tolerance_m: 0.0
+  status: built
+  created: '2026-10-14T16:18:40'
+created: '2026-10-13T13:41:47'

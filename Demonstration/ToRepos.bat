@@ -20,3 +20,10 @@ robocopy .\_default_layer C:\_repo\GrdBldr\MUT_Examples\Demonstration\_default_l
 
 robocopy .\_BuildTriangularMesh\1_qgis C:\_repo\GrdBldr\MUT_Examples\Demonstration\_BuildTriangularMesh\1_qgis /E
 robocopy .\_BuildTriangularMesh\2_meshes C:\_repo\GrdBldr\MUT_Examples\Demonstration\_BuildTriangularMesh\2_meshes /E
+
+set GRW=C:\_repo\GrdBldr\MUT_Examples\Demonstration\Grand River Watershed
+robocopy ".\Grand River Watershed" "%GRW%" project.yaml *.qgz *.md
+robocopy ".\Grand River Watershed\1_data" "%GRW%\1_data" *.geojson *.json *.md /S
+robocopy ".\Grand River Watershed\1_data\surfaces" "%GRW%\1_data\surfaces" ground_top.tif bedrock_bottom.tif surficial_thickness.tif lake_depth.tif
+robocopy ".\Grand River Watershed\2_mesh" "%GRW%\2_mesh" /E
+

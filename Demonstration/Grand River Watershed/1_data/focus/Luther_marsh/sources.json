@@ -1,0 +1,252 @@
+{
+  "focus_area": {
+    "name": "Luther marsh",
+    "mode": "rectangle",
+    "boundary_file": "C:\\Work\\Examples-Release\\Demonstration\\Grand River Watershed\\1_data\\focus\\Luther_marsh\\focus_boundary.geojson",
+    "source": "QGIS map",
+    "feature_name": "",
+    "outlet_lat": null,
+    "outlet_lon": null,
+    "delineation": "none",
+    "margin_m": 200.0,
+    "resolution_m": 10.0,
+    "status": "built",
+    "created": "2026-10-14T08:57:33"
+  },
+  "grid": {
+    "epsg": 32617,
+    "xmin": 539400.0,
+    "ymin": 4854900.0,
+    "xmax": 555750.0,
+    "ymax": 4874220.0,
+    "res": 10.0
+  },
+  "outputs": {
+    "ground_top_focus": "C:\\Work\\Examples-Release\\Demonstration\\Grand River Watershed\\1_data\\focus\\Luther_marsh\\ground_top_10m.tif",
+    "ground_top_focus_water_surface": "C:\\Work\\Examples-Release\\Demonstration\\Grand River Watershed\\1_data\\focus\\Luther_marsh\\ground_top_10m_water_surface.tif",
+    "lake_depth": "C:\\Work\\Examples-Release\\Demonstration\\Grand River Watershed\\1_data\\focus\\Luther_marsh\\lake_depth_10m.tif"
+  },
+  "hillshades": {
+    "ground_top_focus": "C:\\Work\\Examples-Release\\Demonstration\\Grand River Watershed\\1_data\\focus\\Luther_marsh\\ground_top_10m_hillshade.tif"
+  },
+  "lakes_file": "C:\\Work\\Examples-Release\\Demonstration\\Grand River Watershed\\1_data\\focus\\Luther_marsh\\lakes.geojson",
+  "sources": [
+    {
+      "role": "fine",
+      "provider": "nrcan_hrdem",
+      "title": "NRCan HRDEM lidar DTM (1-2 m)",
+      "path": "C:\\Work\\Examples-Release\\Demonstration\\Grand River Watershed\\0_incoming\\downloads\\nrcan_hrdem_fine_10m.tif",
+      "quantity": "elevation",
+      "resolution_m": 1.0,
+      "vertical_accuracy": "about 0.1-0.3 m (lidar)",
+      "vertical_datum": "CGVD2013",
+      "licence": "Open Government Licence - Canada",
+      "citation": "Natural Resources Canada, High Resolution Digital Elevation Model (HRDEM) - CanElevation Series. https://open.canada.ca/data/en/dataset/957782bf-847c-4644-a757-e383c0057995",
+      "urls": [
+        "https://canelevation-dem.s3.ca-central-1.amazonaws.com/hrdem-lidar/ON-Lake_Erie_Fall_2017-1m-dtm.tif",
+        "https://canelevation-dem.s3.ca-central-1.amazonaws.com/hrdem-lidar/ON-Lake_Erie_2018-1m-dtm.tif",
+        "https://canelevation-dem.s3.ca-central-1.amazonaws.com/hrdem-lidar/ON-Lake_Huron_2022-1m-dtm.tif",
+        "https://canelevation-dem.s3.ca-central-1.amazonaws.com/hrdem-lidar/ON-Upper_Thames_Grand_River_2025-1m-dtm.tif"
+      ],
+      "retrieved": "2026-10-14T17:20:40+00:00",
+      "notes": "4 project(s): ON-Lake_Erie_Fall_2017-1m, ON-Lake_Erie_2018-1m, ON-Lake_Huron_2022-1m, ON-Upper_Thames_Grand_River_2025-1m; model area filled to 100.0%"
+    },
+    {
+      "role": "bathymetry",
+      "provider": "estimated_bathymetry",
+      "title": "Estimated lake bathymetry (not measured)",
+      "path": "",
+      "quantity": "depth below water surface",
+      "resolution_m": null,
+      "vertical_accuracy": "not measured; estimated from lake shape and surrounding slope, depth errors of tens of percent or more",
+      "vertical_datum": "depth below the DEM water surface",
+      "licence": "derived",
+      "citation": "Depth from distance to shore (Hollister, J.W., Milstead, W.B., 2010, Lake and Reservoir Management 26, 194-199) with the maximum depth predicted from the surrounding land slope (Hollister, J.W., Milstead, W.B., Urrutia, M.A., 2011, PLoS ONE 6(9), e25764), the method used for GLOBathy (Khazaei et al., 2022, Scientific Data 9, 36).",
+      "urls": [],
+      "retrieved": "2026-10-14T17:20:43+00:00",
+      "notes": "10 lake(s)"
+    },
+    {
+      "role": "bathymetry",
+      "provider": "osm_lakes",
+      "title": "Lake outlines (OpenStreetMap)",
+      "path": "",
+      "quantity": "lake polygons",
+      "resolution_m": null,
+      "vertical_accuracy": "",
+      "vertical_datum": "",
+      "licence": "ODbL",
+      "citation": "Feature geometry (c) OpenStreetMap contributors, ODbL. https://www.openstreetmap.org/copyright",
+      "urls": [],
+      "retrieved": "2026-10-14T17:20:43+00:00",
+      "notes": "10 water bodies of at least 2 ha"
+    }
+  ],
+  "stats": {
+    "bathymetry": {
+      "lakes": [
+        {
+          "name": "(unnamed)",
+          "osm_id": "way/53823742",
+          "water": "water",
+          "area_ha": 5.942213619152643,
+          "water_level_m": 481.39186096191406,
+          "flat_percent": 90.32258064516128,
+          "method": "estimated",
+          "max_depth_m": 5.025412687046709,
+          "mean_depth_m": 1.8113379604094855,
+          "samples": 0,
+          "note": "estimated: max depth 5.0 m = land slope 4.73% (within 106 m) x 106 m to shore"
+        },
+        {
+          "name": "(unnamed)",
+          "osm_id": "way/53823752",
+          "water": "lake",
+          "area_ha": 65.42737636527522,
+          "water_level_m": 481.92132568359375,
+          "flat_percent": 90.01663893510815,
+          "method": "estimated",
+          "max_depth_m": 9.702156103608203,
+          "mean_depth_m": 3.5267356009005173,
+          "samples": 0,
+          "note": "estimated: max depth 9.7 m = land slope 4.62% (within 210 m) x 210 m to shore"
+        },
+        {
+          "name": "(unnamed)",
+          "osm_id": "way/53823764",
+          "water": "lake",
+          "area_ha": 7.028544606096763,
+          "water_level_m": 482.5486602783203,
+          "flat_percent": 99.83552631578947,
+          "method": "estimated",
+          "max_depth_m": 1.5063608153524257,
+          "mean_depth_m": 0.5964461048702177,
+          "samples": 0,
+          "note": "estimated: max depth 1.5 m = land slope 1.40% (within 108 m) x 108 m to shore"
+        },
+        {
+          "name": "(unnamed)",
+          "osm_id": "way/53823769",
+          "water": "water",
+          "area_ha": 4.8780571423046295,
+          "water_level_m": 485.1252136230469,
+          "flat_percent": 91.77377892030847,
+          "method": "estimated",
+          "max_depth_m": 2.0562893469798458,
+          "mean_depth_m": 0.7864414384583247,
+          "samples": 0,
+          "note": "estimated: max depth 2.1 m = land slope 2.63% (within 78 m) x 78 m to shore"
+        },
+        {
+          "name": "(unnamed)",
+          "osm_id": "way/53823801",
+          "water": "water",
+          "area_ha": 17.996716714867205,
+          "water_level_m": 482.3014373779297,
+          "flat_percent": 99.49109414758269,
+          "method": "estimated",
+          "max_depth_m": 1.9840987706373072,
+          "mean_depth_m": 0.6680555821998316,
+          "samples": 0,
+          "note": "estimated: max depth 2.0 m = land slope 1.17% (within 170 m) x 170 m to shore"
+        },
+        {
+          "name": "(unnamed)",
+          "osm_id": "way/53824047",
+          "water": "water",
+          "area_ha": 8.767854093041631,
+          "water_level_m": 483.38836669921875,
+          "flat_percent": 89.14616497829233,
+          "method": "estimated",
+          "max_depth_m": 1.225524344483568,
+          "mean_depth_m": 0.4335992511253865,
+          "samples": 0,
+          "note": "estimated: max depth 1.2 m = land slope 1.33% (within 92 m) x 92 m to shore"
+        },
+        {
+          "name": "(unnamed)",
+          "osm_id": "way/53824048",
+          "water": "water",
+          "area_ha": 3.3801536791055464,
+          "water_level_m": 481.67974853515625,
+          "flat_percent": 61.832061068702295,
+          "method": "estimated",
+          "max_depth_m": 0.5,
+          "mean_depth_m": 0.20531637704392844,
+          "samples": 0,
+          "note": "estimated: max depth 0.5 m = land slope 0.27% (within 64 m) x 64 m to shore"
+        },
+        {
+          "name": "(unnamed)",
+          "osm_id": "way/53824053",
+          "water": "water",
+          "area_ha": 8.400943338513374,
+          "water_level_m": 484.3290710449219,
+          "flat_percent": 49.929278642149924,
+          "method": "estimated",
+          "max_depth_m": 0.5,
+          "mean_depth_m": 0.18601321932752268,
+          "samples": 0,
+          "note": "estimated: max depth 0.5 m = land slope 0.29% (within 98 m) x 98 m to shore"
+        },
+        {
+          "name": "Luther Lake",
+          "osm_id": "relation/49951",
+          "water": "lake",
+          "area_ha": 1296.302827886468,
+          "water_level_m": 481.64141845703125,
+          "flat_percent": 90.48840927258193,
+          "method": "estimated",
+          "max_depth_m": 7.2138354513868155,
+          "mean_depth_m": 1.9254009676833637,
+          "samples": 0,
+          "note": "estimated: max depth 7.2 m = land slope 1.08% (within 670 m) x 670 m to shore"
+        },
+        {
+          "name": "(unnamed)",
+          "osm_id": "relation/539809",
+          "water": "lake",
+          "area_ha": 3.929611944317259,
+          "water_level_m": 481.7265625,
+          "flat_percent": 97.95918367346938,
+          "method": "estimated",
+          "max_depth_m": 0.5,
+          "mean_depth_m": 0.22095015593089465,
+          "samples": 0,
+          "note": "estimated: max depth 0.5 m = land slope 0.47% (within 40 m) x 40 m to shore"
+        }
+      ],
+      "counts": {
+        "estimated": 10
+      }
+    },
+    "inside_outline_coverage_percent": {
+      "value": 100.0
+    },
+    "focus_minus_regional": {
+      "mean": 0.009101170600666349,
+      "std": 0.2012839697879132,
+      "cells": 350980
+    },
+    "ground_top_focus": {
+      "min": 448.8623046875,
+      "max": 515.6082153320312,
+      "mean": 480.6789128935887,
+      "coverage_percent": 100.0
+    },
+    "ground_top_focus_water_surface": {
+      "min": 448.8623046875,
+      "max": 515.6082153320312,
+      "mean": 480.7667507333188,
+      "coverage_percent": 100.0
+    },
+    "lake_depth": {
+      "min": 0.050767309963703156,
+      "max": 9.702156066894531,
+      "mean": 1.9441495519192722,
+      "coverage_percent": 4.501934266593222
+    }
+  },
+  "warnings": [],
+  "suggestions": []
+}

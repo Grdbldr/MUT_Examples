@@ -1,0 +1,5 @@
+! Delaunay mesh 'GR Regional 2' from MUT Model Builder; the path assumes the model folder is
+! two levels below C:\Work\Examples-Release\Demonstration\Grand River Watershed (edit it otherwise; MUT reads at most 80 characters).
+nodal control volumes
+2d mesh from gb
+..\..\2_mesh\GR_Regional_2\GR_Regional_2

@@ -1,0 +1,70 @@
+{
+  "focus_area": {
+    "name": "Luther marsh II",
+    "mode": "digitized",
+    "boundary_file": "C:\\Work\\Examples-Release\\Demonstration\\Grand River Watershed\\1_data\\focus\\Luther_marsh_II\\focus_boundary.geojson",
+    "source": "digitized on the QGIS map",
+    "feature_name": "",
+    "outlet_lat": null,
+    "outlet_lon": null,
+    "delineation": "none",
+    "margin_m": 200.0,
+    "resolution_m": 10.0,
+    "status": "built",
+    "created": "2026-10-14T09:02:22"
+  },
+  "grid": {
+    "epsg": 32617,
+    "xmin": 539760.0,
+    "ymin": 4858560.0,
+    "xmax": 552090.0,
+    "ymax": 4872930.0,
+    "res": 10.0
+  },
+  "outputs": {
+    "ground_top_focus": "C:\\Work\\Examples-Release\\Demonstration\\Grand River Watershed\\1_data\\focus\\Luther_marsh_II\\ground_top_10m.tif"
+  },
+  "hillshades": {
+    "ground_top_focus": "C:\\Work\\Examples-Release\\Demonstration\\Grand River Watershed\\1_data\\focus\\Luther_marsh_II\\ground_top_10m_hillshade.tif"
+  },
+  "sources": [
+    {
+      "role": "fine",
+      "provider": "nrcan_hrdem",
+      "title": "NRCan HRDEM lidar DTM (1-2 m)",
+      "path": "C:\\Work\\Examples-Release\\Demonstration\\Grand River Watershed\\0_incoming\\downloads\\nrcan_hrdem_fine_10m.tif",
+      "quantity": "elevation",
+      "resolution_m": 1.0,
+      "vertical_accuracy": "about 0.1-0.3 m (lidar)",
+      "vertical_datum": "CGVD2013",
+      "licence": "Open Government Licence - Canada",
+      "citation": "Natural Resources Canada, High Resolution Digital Elevation Model (HRDEM) - CanElevation Series. https://open.canada.ca/data/en/dataset/957782bf-847c-4644-a757-e383c0057995",
+      "urls": [
+        "https://canelevation-dem.s3.ca-central-1.amazonaws.com/hrdem-lidar/ON-Lake_Erie_Fall_2017-1m-dtm.tif",
+        "https://canelevation-dem.s3.ca-central-1.amazonaws.com/hrdem-lidar/ON-Lake_Erie_2018-1m-dtm.tif",
+        "https://canelevation-dem.s3.ca-central-1.amazonaws.com/hrdem-lidar/ON-Lake_Huron_2022-1m-dtm.tif",
+        "https://canelevation-dem.s3.ca-central-1.amazonaws.com/hrdem-lidar/ON-Upper_Thames_Grand_River_2025-1m-dtm.tif"
+      ],
+      "retrieved": "2026-10-14T13:02:39+00:00",
+      "notes": "4 project(s): ON-Lake_Erie_Fall_2017-1m, ON-Lake_Erie_2018-1m, ON-Lake_Huron_2022-1m, ON-Upper_Thames_Grand_River_2025-1m; model area filled to 100.0%"
+    }
+  ],
+  "stats": {
+    "inside_outline_coverage_percent": {
+      "value": 100.0
+    },
+    "focus_minus_regional": {
+      "mean": 0.006759190059343872,
+      "std": 0.19373898030239126,
+      "cells": 196869
+    },
+    "ground_top_focus": {
+      "min": 462.1221618652344,
+      "max": 515.6011352539062,
+      "mean": 483.5357265776596,
+      "coverage_percent": 100.0
+    }
+  },
+  "warnings": [],
+  "suggestions": []
+}
